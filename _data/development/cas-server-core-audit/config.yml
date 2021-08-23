@@ -1,0 +1,129 @@
+---
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.String"
+  description: "Request header to use identify the client address. <p> If the application\
+    \ is sitting behind a load balancer, the client address typically ends up being\
+    \ the load balancer address itself. A common example for a header here would be\
+    \ {@code X-Forwarded-For} to glean the client address from the request, assuming\
+    \ the load balancer is configured correctly to pass that header along."
+  shortDescription: "Request header to use identify the client address."
+  name: "cas.audit.engine.alternate-client-addr-header-name"
+  defaultValue: ""
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.String"
+  description: "Request header to use identify the server address."
+  shortDescription: "Request header to use identify the server address."
+  name: "cas.audit.engine.alternate-server-addr-header-name"
+  defaultValue: ""
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.String"
+  description: "Application code to use in the audit logs. <p> This is a unique code\
+    \ that acts as the identifier for the application. In case audit logs are aggregated\
+    \ in a central location. This makes it easy to identify the application and filter\
+    \ results based on the code."
+  shortDescription: "Application code to use in the audit logs."
+  name: "cas.audit.engine.app-code"
+  defaultValue: "CAS"
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties$AuditFormatTypes"
+  description: "The audit format to use in the logs.\nAvailable values are as follows:\n\
+    <ul><li>{@code DEFAULT}: Default audit format.</li><li>{@code JSON}: Output audit\
+    \ logs as JSON strings\nwhere necessary/possible.</li></ul>"
+  shortDescription: "The audit format to use in the logs."
+  name: "cas.audit.engine.audit-format"
+  defaultValue: "DEFAULT"
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.Boolean"
+  description: "Whether auditing functionality should be enabled."
+  shortDescription: "Whether auditing functionality should be enabled."
+  name: "cas.audit.engine.enabled"
+  defaultValue: true
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Indicate a list of supported audit actions that should be excluded,\
+    \ filtered and ignored by CAS audit managers. Each supported action can be treated\
+    \ as a regular expression to match against built-in CAS actions."
+  shortDescription: "Indicate a list of supported audit actions that should be excluded,\
+    \ filtered and ignored by CAS audit managers."
+  name: "cas.audit.engine.excluded-actions"
+  defaultValue: ""
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.Boolean"
+  description: "Indicates whether catastrophic audit failures should be logged or\
+    \ whether errors should bubble up and thrown back."
+  shortDescription: "Indicates whether catastrophic audit failures should be logged\
+    \ or whether errors should bubble up and thrown back."
+  name: "cas.audit.engine.ignore-audit-failures"
+  defaultValue: false
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.Boolean"
+  description: "Whether ticket validation events in the audit log should include information\
+    \ about the assertion that is validated; things such as the principal id and attributes\
+    \ released."
+  shortDescription: "Whether ticket validation events in the audit log should include\
+    \ information about the assertion that is validated; things such as the principal\
+    \ id and attributes released."
+  name: "cas.audit.engine.include-validation-assertion"
+  defaultValue: false
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.Integer"
+  description: "Retrieve audit records from storage, starting from now and going back\
+    \ the indicated number of days in history."
+  shortDescription: "Retrieve audit records from storage, starting from now and going\
+    \ back the indicated number of days in history."
+  name: "cas.audit.engine.number-of-days-in-history"
+  defaultValue: 30
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Indicate a list of supported audit actions that should be recognized,\
+    \ processed and recorded by CAS audit managers. Each supported action can be treated\
+    \ as a regular expression to match against built-in CAS actions."
+  shortDescription: "Indicate a list of supported audit actions that should be recognized,\
+    \ processed and recorded by CAS audit managers."
+  name: "cas.audit.engine.supported-actions"
+  defaultValue: ""
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditEngineProperties"
+  type: "java.lang.Boolean"
+  description: "Determines whether a local DNS lookup should be made to query for\
+    \ the CAS server address. <p> By default, the server is address is determined\
+    \ from the request. Aside from special headers, this option allows one to query\
+    \ DNS to look up the server address of the CAS server processing requests."
+  shortDescription: "Determines whether a local DNS lookup should be made to query\
+    \ for the CAS server address."
+  name: "cas.audit.engine.use-server-host-address"
+  defaultValue: false
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditSlf4jLogProperties"
+  type: "java.lang.Boolean"
+  description: "Decide whether Slf4j audits should be enabled."
+  shortDescription: "Decide whether Slf4j audits should be enabled."
+  name: "cas.audit.slf4j.enabled"
+  defaultValue: true
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditSlf4jLogProperties"
+  type: "java.lang.String"
+  description: "Character to separate audit fields if single-line audits are used."
+  shortDescription: "Character to separate audit fields if single-line audits are\
+    \ used."
+  name: "cas.audit.slf4j.singleline-separator"
+  defaultValue: "|"
+- module: "cas-server-core-audit"
+  owner: "org.apereo.cas.configuration.model.core.audit.AuditSlf4jLogProperties"
+  type: "java.lang.Boolean"
+  description: "Indicates whether audit logs should be recorded as a single-line.\
+    \ <p> By default, audit logs are split into multiple lines where each action and\
+    \ activity takes up a full line. This is a more compact version."
+  shortDescription: "Indicates whether audit logs should be recorded as a single-line."
+  name: "cas.audit.slf4j.use-single-line"
+  defaultValue: false

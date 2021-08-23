@@ -1,0 +1,243 @@
+---
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "boolean"
+  description: "Whether CAS should enable its own attribute resolution machinery\n\
+    after having received a response from wsfed."
+  shortDescription: "Whether CAS should enable its own attribute resolution machinery\
+    \ after having received a response from wsfed."
+  name: "cas.authn.wsfed[].attribute-resolver-enabled"
+  defaultValue: true
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "Indicates how attributes should be recorded into the principal object.\n\
+    Useful if you wish to additionally resolve attributes on top of what wsfed provides.\n\
+    Accepted values are {@code CAS,WSFED,BOTH}."
+  shortDescription: "Indicates how attributes should be recorded into the principal\
+    \ object."
+  name: "cas.authn.wsfed[].attributes-type"
+  defaultValue: "WSFED"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "boolean"
+  description: "Whether CAS should auto redirect to this wsfed instance."
+  shortDescription: "Whether CAS should auto redirect to this wsfed instance."
+  name: "cas.authn.wsfed[].auto-redirect"
+  defaultValue: true
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "java.lang.String"
+  description: "A regular expression pattern that indicates the set of allowed IP\
+    \ addresses,\nwhen {@link #isPinToSession()} is cofigured. In the event that there\
+    \ is a mismatch\nbetween the cookie IP address and the current request-provided\
+    \ IP address (i.e. network switches, VPN, etc),\nthe cookie can still be considered\
+    \ valid if the new IP address matches the pattern\nspecified here."
+  shortDescription: "A regular expression pattern that indicates the set of allowed\
+    \ IP addresses, when {@link #isPinToSession()} is cofigured."
+  name: "cas.authn.wsfed[].cookie.allowed-ip-addresses-pattern"
+  defaultValue: ""
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "java.lang.String"
+  description: "CAS Cookie comment, describes the cookie's usage and purpose."
+  shortDescription: "CAS Cookie comment, describes the cookie's usage and purpose."
+  name: "cas.authn.wsfed[].cookie.comment"
+  defaultValue: "CAS Cookie"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie domain. Specifies the domain within which this cookie should\
+    \ be presented.\nThe form of the domain name is specified by RFC 2965. A domain\
+    \ name begins with a dot (.foo.com)\nand means that the cookie is visible to servers\
+    \ in a\nspecified Domain Name System (DNS) zone (for example, www.foo.com, but\
+    \ not a.b.foo.com).\nBy default, cookies are only returned to the server that\
+    \ sent them."
+  shortDescription: "Cookie domain."
+  name: "cas.authn.wsfed[].cookie.domain"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "boolean"
+  description: "true if this cookie contains the HttpOnly attribute. This means that\
+    \ the cookie should\nnot be accessible to scripting engines, like javascript."
+  shortDescription: "true if this cookie contains the HttpOnly attribute."
+  name: "cas.authn.wsfed[].cookie.http-only"
+  defaultValue: true
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "int"
+  description: "The maximum age of the cookie, specified in seconds. By default, {@code\
+    \ -1} indicating\nthe cookie will persist until browser shutdown.\nA positive\
+    \ value indicates that the cookie will expire after that many seconds have passed.\
+    \ Note that the value is\nthe maximum age when the cookie will expire, not the\
+    \ cookie's current age.\nA negative value means that the cookie is not stored\
+    \ persistently and will be deleted when the Web browser exits.\nA zero value causes\
+    \ the cookie to be deleted."
+  shortDescription: "The maximum age of the cookie, specified in seconds."
+  name: "cas.authn.wsfed[].cookie.max-age"
+  defaultValue: ""
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie name. Constructs a cookie with a specified name and value.\n\
+    The name must conform to RFC 2965. That means it can contain only ASCII alphanumeric\
+    \ characters and\ncannot contain commas, semicolons, or white space or begin with\
+    \ a {@code $} character.\nThe cookie's name cannot be changed after creation.\n\
+    By default, cookies are created according to the RFC 2965 cookie specification.\n\
+    Cookie names are automatically calculated assigned by CAS at runtime, and there\
+    \ is usually\nno need to customize the name or assign it a different value unless\
+    \ a special use case warrants the change."
+  shortDescription: "Cookie name."
+  name: "cas.authn.wsfed[].cookie.name"
+  defaultValue: ""
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie path.\nSpecifies a path for the cookie to which the client\
+    \ should return the cookie.\nThe cookie is visible to all the pages in the directory\
+    \ you specify, and all the pages in that directory's\nsubdirectories. A cookie's\
+    \ path must include the servlet that set the cookie, for example, /catalog,\n\
+    which makes the cookie visible to all directories on the server under /catalog.\n\
+    Consult RFC 2965 (available on the Internet) for more information on setting path\
+    \ names for cookies."
+  shortDescription: "Cookie path."
+  name: "cas.authn.wsfed[].cookie.path"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "boolean"
+  description: "When generating cookie values, determine whether the value\nshould\
+    \ be compounded and signed with the properties of\nthe current session, such as\
+    \ IP address, user-agent, etc."
+  shortDescription: "When generating cookie values, determine whether the value should\
+    \ be compounded and signed with the properties of the current session, such as\
+    \ IP address, user-agent, etc."
+  name: "cas.authn.wsfed[].cookie.pin-to-session"
+  defaultValue: true
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "java.lang.String"
+  description: "If a cookie is only intended to be accessed in a first party context,\
+    \ the\ndeveloper has the option to apply one of settings\n{@code SameSite=Lax}\
+    \ or {@code SameSite=Strict} or {@code SameSite=None} to prevent external access.\n\
+    <p>\nTo safeguard more websites and their users, the new secure-by-default model\n\
+    assumes all cookies should be protected from external access unless otherwise\n\
+    specified. Developers must use a new cookie setting, {@code SameSite=None}, to\
+    \ designate\ncookies for cross-site access. When the {@code SameSite=None} attribute\
+    \ is present, an additional\n{@code Secure} attribute is used so cross-site cookies\
+    \ can only be accessed over HTTPS\nconnections.\n</p>\n<p>Accepted values are:\
+    \ {@code Lax}, {@code Strict},  {@code None}.</p>"
+  shortDescription: "If a cookie is only intended to be accessed in a first party\
+    \ context, the developer has the option to apply one of settings {@code SameSite=Lax}\
+    \ or {@code SameSite=Strict} or {@code SameSite=None} to prevent external access."
+  name: "cas.authn.wsfed[].cookie.same-site-policy"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegatedCookieProperties"
+  type: "boolean"
+  description: "True if sending this cookie should be restricted to a secure protocol,\
+    \ or\nfalse if the it can be sent using any protocol."
+  shortDescription: "True if sending this cookie should be restricted to a secure\
+    \ protocol, or false if the it can be sent using any protocol."
+  name: "cas.authn.wsfed[].cookie.secure"
+  defaultValue: true
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "The path to the public key/certificate used to handle and verify encrypted\
+    \ assertions."
+  shortDescription: "The path to the public key/certificate used to handle and verify\
+    \ encrypted assertions."
+  name: "cas.authn.wsfed[].encryption-certificate"
+  defaultValue: "classpath:certificate.crt"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "The path to the private key used to handle and verify encrypted assertions."
+  shortDescription: "The path to the private key used to handle and verify encrypted\
+    \ assertions."
+  name: "cas.authn.wsfed[].encryption-private-key"
+  defaultValue: "classpath:private.key"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "The private key password."
+  shortDescription: "The private key password."
+  name: "cas.authn.wsfed[].encryption-private-key-password"
+  defaultValue: "NONE"
+- required: true
+  module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "Internal identifier for this wsfed configuration.\nIf undefined, the\
+    \ identifier would be auto-generated by CAS itself.\nIn the event that there is\
+    \ more than on CAS server defined in a clustered\ndeployment, this identifier\
+    \ must be statically defined in the configuration."
+  shortDescription: "Internal identifier for this wsfed configuration."
+  name: "cas.authn.wsfed[].id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "The attribute extracted from the assertion and used to construct the\
+    \ CAS principal id."
+  shortDescription: "The attribute extracted from the assertion and used to construct\
+    \ the CAS principal id."
+  name: "cas.authn.wsfed[].identity-attribute"
+  defaultValue: "upn"
+- required: true
+  module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "The entity id or the identifier of the Wsfed instance."
+  shortDescription: "The entity id or the identifier of the Wsfed instance."
+  name: "cas.authn.wsfed[].identity-provider-identifier"
+  defaultValue: "http://adfs.example.org/adfs/services/trust"
+- required: true
+  module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "Wsfed identity provider url."
+  shortDescription: "Wsfed identity provider url."
+  name: "cas.authn.wsfed[].identity-provider-url"
+  defaultValue: "https://adfs.example.org/adfs/ls/"
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "Name of the authentication handler."
+  shortDescription: "Name of the authentication handler."
+  name: "cas.authn.wsfed[].name"
+  defaultValue: ""
+- module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "int"
+  description: "The order of the authentication handler in the chain."
+  shortDescription: "The order of the authentication handler in the chain."
+  name: "cas.authn.wsfed[].order"
+  defaultValue: "MAX_VALUE"
+- required: true
+  module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "The identifier for CAS (RP) registered with wsfed."
+  shortDescription: "The identifier for CAS (RP) registered with wsfed."
+  name: "cas.authn.wsfed[].relying-party-identifier"
+  defaultValue: "urn:cas:localhost"
+- required: true
+  module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "Locations of signing certificates used to verify assertions."
+  shortDescription: "Locations of signing certificates used to verify assertions."
+  name: "cas.authn.wsfed[].signing-certificate-resources"
+  defaultValue: "classpath:adfs-signing.crt"
+- duration: true
+  module: "cas-server-support-wsfederation-webflow"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationDelegationProperties"
+  type: "java.lang.String"
+  description: "Tolerance value used to skew assertions to support clock drift."
+  shortDescription: "Tolerance value used to skew assertions to support clock drift."
+  name: "cas.authn.wsfed[].tolerance"
+  defaultValue: "PT10S"

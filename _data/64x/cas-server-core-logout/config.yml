@@ -1,0 +1,52 @@
+---
+- module: "cas-server-core-logout"
+  owner: "org.apereo.cas.configuration.model.core.logout.LogoutProperties"
+  type: "java.lang.Boolean"
+  description: "Before logout, allow the option to confirm on the web interface."
+  shortDescription: "Before logout, allow the option to confirm on the web interface."
+  name: "cas.logout.confirm-logout"
+  defaultValue: false
+- module: "cas-server-core-logout"
+  owner: "org.apereo.cas.configuration.model.core.logout.LogoutProperties"
+  type: "java.lang.Boolean"
+  description: "Whether CAS should be allowed to redirect to an alternative location\
+    \ after logout."
+  shortDescription: "Whether CAS should be allowed to redirect to an alternative location\
+    \ after logout."
+  name: "cas.logout.follow-service-redirects"
+  defaultValue: false
+- module: "cas-server-core-logout"
+  owner: "org.apereo.cas.configuration.model.core.logout.LogoutProperties"
+  type: "java.lang.String"
+  description: "The target destination to which CAS should redirect after logout is\
+    \ indicated and extracted by a parameter name of your choosing here. If none specified,\
+    \ the default will be used as {@code service}."
+  shortDescription: "The target destination to which CAS should redirect after logout\
+    \ is indicated and extracted by a parameter name of your choosing here."
+  name: "cas.logout.redirect-parameter"
+  defaultValue: "service"
+- module: "cas-server-core-logout"
+  owner: "org.apereo.cas.configuration.model.core.logout.LogoutProperties"
+  type: "java.lang.String"
+  description: "A url to which CAS must immediately redirect after all logout operations\
+    \ have completed. Typically useful in scenarios where CAS is acting as a proxy\
+    \ and needs to redirect to an external identity provider's logout endpoint in\
+    \ order to remove a session, etc."
+  shortDescription: "A url to which CAS must immediately redirect after all logout\
+    \ operations have completed."
+  name: "cas.logout.redirect-url"
+  defaultValue: ""
+- module: "cas-server-core-logout"
+  owner: "org.apereo.cas.configuration.model.core.logout.LogoutProperties"
+  type: "java.lang.Boolean"
+  description: "Indicates whether tickets issued and linked to a ticket-granting ticket\
+    \ should also be removed as part of logout. There are a number of tickets issued\
+    \ by CAS whose expiration policy is usually by default bound to the SSO expiration\
+    \ policy and the active TGT, yet such tickets may be allowed to live beyond the\
+    \ normal lifetime of a CAS SSO session with options to be renewed. Examples include\
+    \ OAuth's access tokens, etc. Set this option to true if you want all linked tickets\
+    \ to be removed."
+  shortDescription: "Indicates whether tickets issued and linked to a ticket-granting\
+    \ ticket should also be removed as part of logout."
+  name: "cas.logout.remove-descendant-tickets"
+  defaultValue: false

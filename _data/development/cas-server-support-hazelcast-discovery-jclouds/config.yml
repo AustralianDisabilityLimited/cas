@@ -1,0 +1,328 @@
+---
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Cloud Provider credential, can be thought of as a password for cloud\
+    \ services."
+  shortDescription: "Cloud Provider credential, can be thought of as a password for\
+    \ cloud services."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.credential"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Used for cloud providers which require an extra JSON or P12 key file.\
+    \ This denotes the path of that file. Only tested with Google Compute Engine.\
+    \ (Required if Google Compute Engine is used.)"
+  shortDescription: "Used for cloud providers which require an extra JSON or P12 key\
+    \ file."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.credential-path"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines the endpoint for a generic API such as OpenStack or CloudStack\
+    \ (optional)."
+  shortDescription: "Defines the endpoint for a generic API such as OpenStack or CloudStack\
+    \ (optional)."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.endpoint"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters instance groups (optional). When used with AWS it maps to\
+    \ security group."
+  shortDescription: "Filters instance groups (optional)."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.group"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Cloud Provider identity, can be thought of as a user name for cloud\
+    \ services."
+  shortDescription: "Cloud Provider identity, can be thought of as a user name for\
+    \ cloud services."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.identity"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "Port which the hazelcast instance service uses on the cluster member.\
+    \ Default value is 5701. (optional)"
+  shortDescription: "Port which the hazelcast instance service uses on the cluster\
+    \ member."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.port"
+  defaultValue: -1
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "String value that is used to identify ComputeService provider. For\
+    \ example, \"google-compute-engine\" is used for Google Cloud services. See <a\
+    \ href=\"https://jclouds.apache.org/reference/providers/#compute\">here</a> for\
+    \ more info."
+  shortDescription: "String value that is used to identify ComputeService provider."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.provider"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines region for a cloud service (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Defines region for a cloud service (optional)."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.regions"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Used for IAM role support specific to AWS (optional, but if defined,\
+    \ no identity or credential should be defined in the configuration)."
+  shortDescription: "Used for IAM role support specific to AWS (optional, but if defined,\
+    \ no identity or credential should be defined in the configuration)."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.role-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters cloud instances with tags (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Filters cloud instances with tags (optional)."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.tag-keys"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters cloud instances with tags (optional) Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Filters cloud instances with tags (optional) Can be used with\
+    \ comma separated values for multiple values."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.tag-values"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines zone for a cloud service (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Defines zone for a cloud service (optional)."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.jclouds.zones"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Cloud Provider credential, can be thought of as a password for cloud\
+    \ services."
+  shortDescription: "Cloud Provider credential, can be thought of as a password for\
+    \ cloud services."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.credential"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Used for cloud providers which require an extra JSON or P12 key file.\
+    \ This denotes the path of that file. Only tested with Google Compute Engine.\
+    \ (Required if Google Compute Engine is used.)"
+  shortDescription: "Used for cloud providers which require an extra JSON or P12 key\
+    \ file."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.credential-path"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines the endpoint for a generic API such as OpenStack or CloudStack\
+    \ (optional)."
+  shortDescription: "Defines the endpoint for a generic API such as OpenStack or CloudStack\
+    \ (optional)."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.endpoint"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters instance groups (optional). When used with AWS it maps to\
+    \ security group."
+  shortDescription: "Filters instance groups (optional)."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.group"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Cloud Provider identity, can be thought of as a user name for cloud\
+    \ services."
+  shortDescription: "Cloud Provider identity, can be thought of as a user name for\
+    \ cloud services."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.identity"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "Port which the hazelcast instance service uses on the cluster member.\
+    \ Default value is 5701. (optional)"
+  shortDescription: "Port which the hazelcast instance service uses on the cluster\
+    \ member."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.port"
+  defaultValue: -1
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "String value that is used to identify ComputeService provider. For\
+    \ example, \"google-compute-engine\" is used for Google Cloud services. See <a\
+    \ href=\"https://jclouds.apache.org/reference/providers/#compute\">here</a> for\
+    \ more info."
+  shortDescription: "String value that is used to identify ComputeService provider."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.provider"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines region for a cloud service (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Defines region for a cloud service (optional)."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.regions"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Used for IAM role support specific to AWS (optional, but if defined,\
+    \ no identity or credential should be defined in the configuration)."
+  shortDescription: "Used for IAM role support specific to AWS (optional, but if defined,\
+    \ no identity or credential should be defined in the configuration)."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.role-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters cloud instances with tags (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Filters cloud instances with tags (optional)."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.tag-keys"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters cloud instances with tags (optional) Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Filters cloud instances with tags (optional) Can be used with\
+    \ comma separated values for multiple values."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.tag-values"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines zone for a cloud service (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Defines zone for a cloud service (optional)."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.jclouds.zones"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Cloud Provider credential, can be thought of as a password for cloud\
+    \ services."
+  shortDescription: "Cloud Provider credential, can be thought of as a password for\
+    \ cloud services."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.credential"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Used for cloud providers which require an extra JSON or P12 key file.\
+    \ This denotes the path of that file. Only tested with Google Compute Engine.\
+    \ (Required if Google Compute Engine is used.)"
+  shortDescription: "Used for cloud providers which require an extra JSON or P12 key\
+    \ file."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.credential-path"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines the endpoint for a generic API such as OpenStack or CloudStack\
+    \ (optional)."
+  shortDescription: "Defines the endpoint for a generic API such as OpenStack or CloudStack\
+    \ (optional)."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.endpoint"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters instance groups (optional). When used with AWS it maps to\
+    \ security group."
+  shortDescription: "Filters instance groups (optional)."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.group"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Cloud Provider identity, can be thought of as a user name for cloud\
+    \ services."
+  shortDescription: "Cloud Provider identity, can be thought of as a user name for\
+    \ cloud services."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.identity"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "Port which the hazelcast instance service uses on the cluster member.\
+    \ Default value is 5701. (optional)"
+  shortDescription: "Port which the hazelcast instance service uses on the cluster\
+    \ member."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.port"
+  defaultValue: -1
+- required: true
+  module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "String value that is used to identify ComputeService provider. For\
+    \ example, \"google-compute-engine\" is used for Google Cloud services. See <a\
+    \ href=\"https://jclouds.apache.org/reference/providers/#compute\">here</a> for\
+    \ more info."
+  shortDescription: "String value that is used to identify ComputeService provider."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.provider"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines region for a cloud service (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Defines region for a cloud service (optional)."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.regions"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Used for IAM role support specific to AWS (optional, but if defined,\
+    \ no identity or credential should be defined in the configuration)."
+  shortDescription: "Used for IAM role support specific to AWS (optional, but if defined,\
+    \ no identity or credential should be defined in the configuration)."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.role-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters cloud instances with tags (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Filters cloud instances with tags (optional)."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.tag-keys"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Filters cloud instances with tags (optional) Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Filters cloud instances with tags (optional) Can be used with\
+    \ comma separated values for multiple values."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.tag-values"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-jclouds"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastJCloudsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Defines zone for a cloud service (optional). Can be used with comma\
+    \ separated values for multiple values."
+  shortDescription: "Defines zone for a cloud service (optional)."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.jclouds.zones"
+  defaultValue: ""

@@ -1,0 +1,56 @@
+---
+- method: "GET"
+  path: "attributeConsent/export"
+  name: "attributeConsent"
+  endpointType: "RestControllerEndpoint"
+  signature: "AttributeConsentReportEndpoint.export()"
+  owner: "org.apereo.cas.consent.AttributeConsentReportEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Export consent decisions as a zip file."
+  produces:
+  - "application/octet-stream"
+- method: "GET"
+  path: "attributeConsent/{principal}"
+  name: "attributeConsent"
+  endpointType: "RestControllerEndpoint"
+  signature: "AttributeConsentReportEndpoint.consentDecisions(java.lang.String)"
+  owner: "org.apereo.cas.consent.AttributeConsentReportEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Get consent decisions for principal."
+  parameters:
+  - name: "principal"
+    required: true
+  produces:
+  - "application/json"
+- method: "DELETE"
+  path: "attributeConsent/{principal}/{decisionId}"
+  name: "attributeConsent"
+  endpointType: "RestControllerEndpoint"
+  signature: "AttributeConsentReportEndpoint.revokeConsents(java.lang.String,long)"
+  owner: "org.apereo.cas.consent.AttributeConsentReportEndpoint"
+  returnType: "boolean"
+  casEndpoint: true
+  summary: "Delete a consent decision for principal using a decision id."
+  parameters:
+  - name: "principal"
+    required: false
+  - name: "decisionId"
+    required: true
+  produces:
+  - "application/json"
+- method: "POST"
+  path: "attributeConsent/import"
+  name: "attributeConsent"
+  endpointType: "RestControllerEndpoint"
+  signature: "AttributeConsentReportEndpoint.importAccount(javax.servlet.http.HttpServletRequest) "
+  owner: "org.apereo.cas.consent.AttributeConsentReportEndpoint"
+  returnType: "HttpStatus"
+  casEndpoint: true
+  summary: "Import a consent decision as a JSON document."
+  parameters:
+  - name: "request"
+    required: true
+  consumes:
+  - "application/json"

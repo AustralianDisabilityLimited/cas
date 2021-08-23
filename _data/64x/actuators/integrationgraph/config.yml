@@ -1,0 +1,18 @@
+---
+- method: "GET"
+  path: "integrationgraph"
+  name: "integrationgraph"
+  endpointType: "Endpoint"
+  signature: "IntegrationGraphEndpoint.graph()"
+  owner: "org.springframework.boot.actuate.integration.IntegrationGraphEndpoint"
+  returnType: "Graph"
+  casEndpoint: false
+  summary: "Exposes a graph containing all Spring Integration components."
+- method: "POST"
+  path: "integrationgraph"
+  name: "integrationgraph"
+  endpointType: "Endpoint"
+  signature: "IntegrationGraphEndpoint.rebuild()"
+  owner: "org.springframework.boot.actuate.integration.IntegrationGraphEndpoint"
+  casEndpoint: false
+  summary: "Exposes a graph containing all Spring Integration components."

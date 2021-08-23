@@ -1,0 +1,632 @@
+---
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.support.custom.CasCustomProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Collection of custom settings that can be utilized for a local deployment.\
+    \ The settings should be available to CAS views and webflows for altering UI and/or\
+    \ introducing custom behavior to any extended customized component without introducing\
+    \ a new property namespace. This is defined as a map, where the key should be\
+    \ the setting name and the value should be the setting value."
+  shortDescription: "Collection of custom settings that can be utilized for a local\
+    \ deployment."
+  name: "cas.custom.properties"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpRequestProperties"
+  type: "java.lang.Boolean"
+  description: "Whether CAS should accept multi-valued parameters in incoming requests.\
+    \ Example block would to prevent requests where more than one {@code service}\
+    \ parameter is specified."
+  shortDescription: "Whether CAS should accept multi-valued parameters in incoming\
+    \ requests."
+  name: "cas.http-web-request.allow-multi-value-parameters"
+  defaultValue: false
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpRequestProperties"
+  type: "java.lang.String"
+  description: "Characters to block in incoming requests. {@code none} is a special\
+    \ value. Separate characters by a space."
+  shortDescription: "Characters to block in incoming requests."
+  name: "cas.http-web-request.characters-to-forbid"
+  defaultValue: "none"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.lang.Boolean"
+  description: "The Access-Control-Allow-Credentials header Indicates whether or not\
+    \ the response to the request can be exposed when the credentials flag is true.\
+    \  When used as part of a response to a preflight request, this indicates whether\
+    \ or not the actual request can be made using credentials. Note that simple GET\
+    \ requests are not preflighted, and so if a request is made for a resource with\
+    \ credentials, if this header is not returned with the resource, the response\
+    \ is ignored by the browser and not returned to web content."
+  shortDescription: "The Access-Control-Allow-Credentials header Indicates whether\
+    \ or not the response to the request can be exposed when the credentials flag\
+    \ is true."
+  name: "cas.http-web-request.cors.allow-credentials"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "The Access-Control-Allow-Headers header is used in response to a preflight\
+    \ request to indicate which HTTP headers can be used when making the actual request.\
+    \ Default is everything."
+  shortDescription: "The Access-Control-Allow-Headers header is used in response to\
+    \ a preflight request to indicate which HTTP headers can be used when making the\
+    \ actual request."
+  name: "cas.http-web-request.cors.allow-headers"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "The Access-Control-Allow-Methods header specifies the method or methods\
+    \ allowed when accessing the resource. This is used in response to a pre-flight\
+    \ request. The conditions under which a request is pre-flighted are discussed\
+    \ above. Default is everything."
+  shortDescription: "The Access-Control-Allow-Methods header specifies the method\
+    \ or methods allowed when accessing the resource."
+  name: "cas.http-web-request.cors.allow-methods"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Comma-separated list of origin patterns to allow. Unlike allowed origins\
+    \ which only supports {@code *}, origin patterns are more flexible (for example\
+    \ {@code https://*.example.com}) and can be used when credentials are allowed.\
+    \ When no allowed origin patterns or allowed origins are set, CORS support is\
+    \ disabled."
+  shortDescription: "Comma-separated list of origin patterns to allow."
+  name: "cas.http-web-request.cors.allow-origin-patterns"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "The Origin header indicates the origin of the cross-site access request\
+    \ or preflight request. The origin is a URI indicating the server from which the\
+    \ request initiated. When credentials are allowed, '*' cannot be used and origin\
+    \ patterns should be configured instead. It does not include any path information,\
+    \ but only the server name."
+  shortDescription: "The Origin header indicates the origin of the cross-site access\
+    \ request or preflight request."
+  name: "cas.http-web-request.cors.allow-origins"
+  defaultValue: ""
+- required: true
+  module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.lang.Boolean"
+  description: "Whether CORS should be enabled for http requests."
+  shortDescription: "Whether CORS should be enabled for http requests."
+  name: "cas.http-web-request.cors.enabled"
+  defaultValue: false
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "The Access-Control-Expose-Headers header lets a server accept headers\
+    \ that browsers are allowed to access."
+  shortDescription: "The Access-Control-Expose-Headers header lets a server accept\
+    \ headers that browsers are allowed to access."
+  name: "cas.http-web-request.cors.exposed-headers"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpCorsRequestProperties"
+  type: "java.lang.Long"
+  description: "The Access-Control-Max-Age header indicates how long the results of\
+    \ a preflight request can be cached."
+  shortDescription: "The Access-Control-Max-Age header indicates how long the results\
+    \ of a preflight request can be cached."
+  name: "cas.http-web-request.cors.max-age"
+  defaultValue: 3600
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpRequestProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Custom response headers to inject into the response as needed."
+  shortDescription: "Custom response headers to inject into the response as needed."
+  name: "cas.http-web-request.custom-headers"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.Boolean"
+  description: "When true, will inject the following headers into the response for\
+    \ non-static resources. &lt;pre&gt; Cache-Control: no-cache, no-store, max-age=0,\
+    \ must-revalidate Pragma: no-cache Expires: 0 &lt;/pre&gt;"
+  shortDescription: "When true, will inject the following headers into the response\
+    \ for non-static resources."
+  name: "cas.http-web-request.header.cache"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.String"
+  description: "Helps you reduce XSS risks on modern browsers by declaring what dynamic\
+    \ resources are allowed to load via a HTTP Header. Header value is made up of\
+    \ one or more directives. Multiple directives are separated with a semicolon."
+  shortDescription: "Helps you reduce XSS risks on modern browsers by declaring what\
+    \ dynamic resources are allowed to load via a HTTP Header."
+  name: "cas.http-web-request.header.content-security-policy"
+  defaultValue: ""
+- required: true
+  module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.Boolean"
+  description: "Allow CAS to inject and enforce http security headers via an http\
+    \ filter that are outlined here for caching, HSTS, etc."
+  shortDescription: "Allow CAS to inject and enforce http security headers via an\
+    \ http filter that are outlined here for caching, HSTS, etc."
+  name: "cas.http-web-request.header.enabled"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.Boolean"
+  description: "When true, will inject the following headers into the response: {@code\
+    \ Strict-Transport-Security: max-age=15768000 ; includeSubDomains}."
+  shortDescription: "When true, will inject the following headers into the response:\
+    \ {@code Strict-Transport-Security: max-age=15768000 ; includeSubDomains}."
+  name: "cas.http-web-request.header.hsts"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.Boolean"
+  description: "When true, will inject the following headers into the response: {@code\
+    \ X-Content-Type-Options: nosniff}."
+  shortDescription: "When true, will inject the following headers into the response:\
+    \ {@code X-Content-Type-Options: nosniff}."
+  name: "cas.http-web-request.header.xcontent"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.Boolean"
+  description: "When true, will inject the following headers into the response: {@code\
+    \ X-Frame-Options: DENY}."
+  shortDescription: "When true, will inject the following headers into the response:\
+    \ {@code X-Frame-Options: DENY}."
+  name: "cas.http-web-request.header.xframe"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.String"
+  description: "Will inject values into the {@code X-Frame-Options} header into the\
+    \ response."
+  shortDescription: "Will inject values into the {@code X-Frame-Options} header into\
+    \ the response."
+  name: "cas.http-web-request.header.xframe-options"
+  defaultValue: "DENY"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.Boolean"
+  description: "When true, will inject the following headers into the response: {@code\
+    \ X-XSS-Protection: 1; mode=block}."
+  shortDescription: "When true, will inject the following headers into the response:\
+    \ {@code X-XSS-Protection: 1; mode=block}."
+  name: "cas.http-web-request.header.xss"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpHeadersRequestProperties"
+  type: "java.lang.String"
+  description: "Will inject values into the {@code X-XSS-Protection} header into the\
+    \ response."
+  shortDescription: "Will inject values into the {@code X-XSS-Protection} header into\
+    \ the response."
+  name: "cas.http-web-request.header.xss-options"
+  defaultValue: "1; mode=block"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpRequestProperties"
+  type: "java.lang.String"
+  description: "Parameters that are only allowed and accepted during posts."
+  shortDescription: "Parameters that are only allowed and accepted during posts."
+  name: "cas.http-web-request.only-post-params"
+  defaultValue: "username,password"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpRequestProperties"
+  type: "java.lang.String"
+  description: "Parameters to sanitize and cross-check in incoming requests. The special\
+    \ value * instructs the Filter to check all parameters."
+  shortDescription: "Parameters to sanitize and cross-check in incoming requests."
+  name: "cas.http-web-request.params-to-check"
+  defaultValue: "ticket,service,renew,gateway,warn,method,target,SAMLart,pgtUrl,pgt,pgtId,pgtIou,targetService,entityId,token"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpRequestProperties"
+  type: "java.lang.String"
+  description: "Specify a regular expression that would be checked against the request\
+    \ URL. If a successful match is found, the request would be blocked."
+  shortDescription: "Specify a regular expression that would be checked against the\
+    \ request URL."
+  name: "cas.http-web-request.pattern-to-block"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpWebRequestProperties"
+  type: "java.lang.String"
+  description: "Control and specify the encoding for all http requests."
+  shortDescription: "Control and specify the encoding for all http requests."
+  name: "cas.http-web-request.web.encoding"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.security.HttpWebRequestProperties"
+  type: "java.lang.Boolean"
+  description: "Whether specified encoding should be forced for every request. Whether\
+    \ the specified encoding is supposed to override existing request and response\
+    \ encodings"
+  shortDescription: "Whether specified encoding should be forced for every request."
+  name: "cas.http-web-request.web.force-encoding"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.String"
+  description: "A regular expression pattern that indicates the set of allowed IP\
+    \ addresses, when {@link #isPinToSession()} is cofigured. In the event that there\
+    \ is a mismatch between the cookie IP address and the current request-provided\
+    \ IP address (i.e. network switches, VPN, etc), the cookie can still be considered\
+    \ valid if the new IP address matches the pattern specified here."
+  shortDescription: "A regular expression pattern that indicates the set of allowed\
+    \ IP addresses, when {@link #isPinToSession()} is cofigured."
+  name: "cas.locale.cookie.allowed-ip-addresses-pattern"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.String"
+  description: "CAS Cookie comment, describes the cookie's usage and purpose."
+  shortDescription: "CAS Cookie comment, describes the cookie's usage and purpose."
+  name: "cas.locale.cookie.comment"
+  defaultValue: "CAS Cookie"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie domain. Specifies the domain within which this cookie should\
+    \ be presented. The form of the domain name is specified by RFC 2965. A domain\
+    \ name begins with a dot (.foo.com) and means that the cookie is visible to servers\
+    \ in a specified Domain Name System (DNS) zone (for example, www.foo.com, but\
+    \ not a.b.foo.com). By default, cookies are only returned to the server that sent\
+    \ them."
+  shortDescription: "Cookie domain."
+  name: "cas.locale.cookie.domain"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.Boolean"
+  description: "true if this cookie contains the HttpOnly attribute. This means that\
+    \ the cookie should not be accessible to scripting engines, like javascript."
+  shortDescription: "true if this cookie contains the HttpOnly attribute."
+  name: "cas.locale.cookie.http-only"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.Integer"
+  description: "The maximum age of the cookie, specified in seconds. By default, {@code\
+    \ -1} indicating the cookie will persist until browser shutdown. A positive value\
+    \ indicates that the cookie will expire after that many seconds have passed. Note\
+    \ that the value is the maximum age when the cookie will expire, not the cookie's\
+    \ current age. A negative value means that the cookie is not stored persistently\
+    \ and will be deleted when the Web browser exits. A zero value causes the cookie\
+    \ to be deleted."
+  shortDescription: "The maximum age of the cookie, specified in seconds."
+  name: "cas.locale.cookie.max-age"
+  defaultValue: -1
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie name. Constructs a cookie with a specified name and value.\
+    \ The name must conform to RFC 2965. That means it can contain only ASCII alphanumeric\
+    \ characters and cannot contain commas, semicolons, or white space or begin with\
+    \ a {@code $} character. The cookie's name cannot be changed after creation. By\
+    \ default, cookies are created according to the RFC 2965 cookie specification.\
+    \ Cookie names are automatically calculated assigned by CAS at runtime, and there\
+    \ is usually no need to customize the name or assign it a different value unless\
+    \ a special use case warrants the change."
+  shortDescription: "Cookie name."
+  name: "cas.locale.cookie.name"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie path. Specifies a path for the cookie to which the client should\
+    \ return the cookie. The cookie is visible to all the pages in the directory you\
+    \ specify, and all the pages in that directory's subdirectories. A cookie's path\
+    \ must include the servlet that set the cookie, for example, /catalog, which makes\
+    \ the cookie visible to all directories on the server under /catalog. Consult\
+    \ RFC 2965 (available on the Internet) for more information on setting path names\
+    \ for cookies."
+  shortDescription: "Cookie path."
+  name: "cas.locale.cookie.path"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.Boolean"
+  description: "When generating cookie values, determine whether the value should\
+    \ be compounded and signed with the properties of the current session, such as\
+    \ IP address, user-agent, etc."
+  shortDescription: "When generating cookie values, determine whether the value should\
+    \ be compounded and signed with the properties of the current session, such as\
+    \ IP address, user-agent, etc."
+  name: "cas.locale.cookie.pin-to-session"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.String"
+  description: "If a cookie is only intended to be accessed in a first party context,\
+    \ the developer has the option to apply one of settings {@code SameSite=Lax} or\
+    \ {@code SameSite=Strict} or {@code SameSite=None} to prevent external access.\
+    \ <p> To safeguard more websites and their users, the new secure-by-default model\
+    \ assumes all cookies should be protected from external access unless otherwise\
+    \ specified. Developers must use a new cookie setting, {@code SameSite=None},\
+    \ to designate cookies for cross-site access. When the {@code SameSite=None} attribute\
+    \ is present, an additional {@code Secure} attribute is used so cross-site cookies\
+    \ can only be accessed over HTTPS connections. </p> <p>Accepted values are: {@code\
+    \ Lax}, {@code Strict},  {@code None}.</p>"
+  shortDescription: "If a cookie is only intended to be accessed in a first party\
+    \ context, the developer has the option to apply one of settings {@code SameSite=Lax}\
+    \ or {@code SameSite=Strict} or {@code SameSite=None} to prevent external access."
+  name: "cas.locale.cookie.same-site-policy"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleCookieProperties"
+  type: "java.lang.Boolean"
+  description: "True if sending this cookie should be restricted to a secure protocol,\
+    \ or false if the it can be sent using any protocol."
+  shortDescription: "True if sending this cookie should be restricted to a secure\
+    \ protocol, or false if the it can be sent using any protocol."
+  name: "cas.locale.cookie.secure"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleProperties"
+  type: "java.lang.String"
+  description: "Default locale."
+  shortDescription: "Default locale."
+  name: "cas.locale.default-value"
+  defaultValue: "en"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleProperties"
+  type: "java.lang.Boolean"
+  description: "When set to true, locale resolution via request parameters and such\
+    \ is ignored and the locale default value is always enforced."
+  shortDescription: "When set to true, locale resolution via request parameters and\
+    \ such is ignored and the locale default value is always enforced."
+  name: "cas.locale.force-default-locale"
+  defaultValue: false
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.LocaleProperties"
+  type: "java.lang.String"
+  description: "Parameter name to use when switching locales."
+  shortDescription: "Parameter name to use when switching locales."
+  name: "cas.locale.param-name"
+  defaultValue: "locale"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.MessageBundleProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "A list of strings representing base names for this message bundle.\
+    \ Set an array of basenames, each following the basic ResourceBundle convention\
+    \ of not specifying file extension or language codes. The resource location format\
+    \ is up to the specific MessageSource implementation. Regular and XMl properties\
+    \ files are supported: e.g. \"messages\" will find a \"messages.properties\",\
+    \ \"messages_en.properties\" etc arrangement as well as \"messages.xml\", \"messages_en.xml\"\
+    \ etc. The associated resource bundles will be checked sequentially when resolving\
+    \ a message code. Note that message definitions in a previous resource bundle\
+    \ will override ones in a later bundle, due to the sequential lookup."
+  shortDescription: "A list of strings representing base names for this message bundle."
+  name: "cas.message-bundle.base-names"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.MessageBundleProperties"
+  type: "java.lang.Integer"
+  description: "Cache size."
+  shortDescription: "Cache size."
+  name: "cas.message-bundle.cache-seconds"
+  defaultValue: 180
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.MessageBundleProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "A list of strings representing common names for this message bundle.\
+    \ Specify locale-independent common messages, with the message code as key and\
+    \ the full message String (may contain argument placeholders) as value. <p> Entries\
+    \ in last common names override first values (as opposed to baseNames used in\
+    \ message bundles)."
+  shortDescription: "A list of strings representing common names for this message\
+    \ bundle."
+  name: "cas.message-bundle.common-names"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.MessageBundleProperties"
+  type: "java.lang.String"
+  description: "Message bundle character encoding."
+  shortDescription: "Message bundle character encoding."
+  name: "cas.message-bundle.encoding"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.MessageBundleProperties"
+  type: "java.lang.Boolean"
+  description: "Flag that controls whether to fallback to the default system locale\
+    \ if no locale is specified explicitly. Set whether to fall back to the system\
+    \ Locale if no files for a specific Locale have been found. If this is turned\
+    \ off, the only fallback will be the default file (e.g. \"messages.properties\"\
+    \ for basename \"messages\"). Falling back to the system Locale is the default\
+    \ behavior of {@link java.util.ResourceBundle}. However, this is often not desirable\
+    \ in an application server environment, where the system Locale is not relevant\
+    \ to the application at all: set this flag to {@code false} in such a scenario."
+  shortDescription: "Flag that controls whether to fallback to the default system\
+    \ locale if no locale is specified explicitly."
+  name: "cas.message-bundle.fallback-system-locale"
+  defaultValue: false
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.MessageBundleProperties"
+  type: "java.lang.Boolean"
+  description: "Flag that controls whether to use code message. Set whether to use\
+    \ the message code as default message instead of throwing a {@code NoSuchMessageException}.\
+    \ Useful for development and debugging. Note: In case of a {@code MessageSourceResolvable}\
+    \ with multiple codes (like a FieldError) and a MessageSource that has a parent\
+    \ MessageSource, do not activate \"useCodeAsDefaultMessage\" in the parent: Else,\
+    \ you'll get the first code returned as message by the parent, without attempts\
+    \ to check further codes."
+  shortDescription: "Flag that controls whether to use code message."
+  name: "cas.message-bundle.use-code-message"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.ViewProperties"
+  type: "java.lang.Boolean"
+  description: "When set to {@code true}, attempts to calculate and display the list\
+    \ of authorized services for the authenticated user on successful authentication\
+    \ attempts."
+  shortDescription: "When set to {@code true}, attempts to calculate and display the\
+    \ list of authorized services for the authenticated user on successful authentication\
+    \ attempts."
+  name: "cas.view.authorized-services-on-successful-login"
+  defaultValue: false
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas10ViewProperties"
+  type: "org.apereo.cas.configuration.model.core.web.view.Cas10ViewProperties$ValidationAttributesRendererTypes"
+  description: "Indicates how attributes in the final validation response should be\
+    \ formatted. Options available are: <ul> <li>{@code DEFAULT}: The default option\
+    \ implements the rendering strategy specified by the CAS protocol.</li> <li>{@code\
+    \ VALUES_PER_LINE}: Includes the attribute value on each single line. (Values\
+    \ are comma-separated, if multiple).</li> </ul>\nAvailable values are as follows:\n\
+    <ul><li>{@code DEFAULT}: Render attributes using CAS protocol suggestions.</li><li>{@code\
+    \ VALUES_PER_LINE}: Inline attribute value(s) on each line.</li></ul>"
+  shortDescription: "Indicates how attributes in the final validation response should\
+    \ be formatted."
+  name: "cas.view.cas1.attribute-renderer-type"
+  defaultValue: "DEFAULT"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas20ViewProperties"
+  type: "java.lang.String"
+  description: "The relative location of the CAS3 failure view bean."
+  shortDescription: "The relative location of the CAS3 failure view bean."
+  name: "cas.view.cas2.failure"
+  defaultValue: "protocol/2.0/casServiceValidationFailure"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas20ProxyViewProperties"
+  type: "java.lang.String"
+  description: "The relative location of the CAS2 proxy failure view bean."
+  shortDescription: "The relative location of the CAS2 proxy failure view bean."
+  name: "cas.view.cas2.proxy.failure"
+  defaultValue: "protocol/2.0/casProxyFailureView"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas20ProxyViewProperties"
+  type: "java.lang.String"
+  description: "The relative location of the CAS2 proxy success view bean."
+  shortDescription: "The relative location of the CAS2 proxy success view bean."
+  name: "cas.view.cas2.proxy.success"
+  defaultValue: "protocol/2.0/casProxySuccessView"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas20ViewProperties"
+  type: "java.lang.String"
+  description: "The relative location of the CAS2 success view bean."
+  shortDescription: "The relative location of the CAS2 success view bean."
+  name: "cas.view.cas2.success"
+  defaultValue: "protocol/2.0/casServiceValidationSuccess"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas20ViewProperties"
+  type: "java.lang.Boolean"
+  description: "Whether v2 protocol support should be forward compatible to act like\
+    \ v3 and match its response, mainly for attribute release."
+  shortDescription: "Whether v2 protocol support should be forward compatible to act\
+    \ like v3 and match its response, mainly for attribute release."
+  name: "cas.view.cas2.v3-forward-compatible"
+  defaultValue: true
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas30ViewProperties"
+  type: "org.apereo.cas.configuration.model.core.web.view.Cas30ViewProperties$ValidationAttributesRendererTypes"
+  description: "Indicates how attributes in the final validation response should be\
+    \ formatted. Options available are: <ul> <li>{@code DEFAULT}: The default option\
+    \ implements the rendering strategy specified by the CAS protocol.</li> <li>{@code\
+    \ INLINE}: Includes the attribute name and value as XML attributes.</li> </ul>\n\
+    Available values are as follows:\n<ul><li>{@code DEFAULT}: Render attributes using\
+    \ CAS protocol suggestions.</li><li>{@code INLINE}: Inline attribute name/value\
+    \ as XML attributes.</li></ul>"
+  shortDescription: "Indicates how attributes in the final validation response should\
+    \ be formatted."
+  name: "cas.view.cas3.attribute-renderer-type"
+  defaultValue: "DEFAULT"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas30ViewProperties"
+  type: "java.lang.String"
+  description: "The relative location of the CAS3 success validation bean."
+  shortDescription: "The relative location of the CAS3 success validation bean."
+  name: "cas.view.cas3.failure"
+  defaultValue: "protocol/3.0/casServiceValidationFailure"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.Cas30ViewProperties"
+  type: "java.lang.String"
+  description: "The relative location of the CAS3 success validation bean."
+  shortDescription: "The relative location of the CAS3 success validation bean."
+  name: "cas.view.cas3.success"
+  defaultValue: "protocol/3.0/casServiceValidationSuccess"
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.CustomLoginFieldViewProperties"
+  type: "java.lang.String"
+  description: "The id of the custom converter to use to convert bound property values."
+  shortDescription: "The id of the custom converter to use to convert bound property\
+    \ values."
+  name: "cas.view.custom-login-form-fields.[key].converter"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.CustomLoginFieldViewProperties"
+  type: "java.lang.String"
+  description: "The key for this field found in the message bundle\nused to present\
+    \ a label/text in CAS views."
+  shortDescription: "The key for this field found in the message bundle used to present\
+    \ a label/text in CAS views."
+  name: "cas.view.custom-login-form-fields.[key].message-bundle-key"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.CustomLoginFieldViewProperties"
+  type: "boolean"
+  description: "Whether this field is required to have a value."
+  shortDescription: "Whether this field is required to have a value."
+  name: "cas.view.custom-login-form-fields.[key].required"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.ViewProperties"
+  type: "java.lang.String"
+  description: "The default redirect URL if none is specified after a successful authentication\
+    \ event."
+  shortDescription: "The default redirect URL if none is specified after a successful\
+    \ authentication event."
+  name: "cas.view.default-redirect-url"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.RestfulViewProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.view.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.RestfulViewProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.view.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.RestfulViewProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.view.rest.headers"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.RestfulViewProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.view.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.RestfulViewProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.view.rest.url"
+  defaultValue: ""
+- module: "cas-server-core-web"
+  owner: "org.apereo.cas.configuration.model.core.web.view.ViewProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Comma separated paths to where CAS templates may be found."
+  shortDescription: "Comma separated paths to where CAS templates may be found."
+  name: "cas.view.template-prefixes"
+  defaultValue: ""

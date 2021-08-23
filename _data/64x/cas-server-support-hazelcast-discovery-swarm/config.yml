@@ -1,0 +1,274 @@
+---
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.Boolean"
+  description: "Enable provider."
+  shortDescription: "Enable provider."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.dns-provider.enabled"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.String"
+  description: "Comma separated list of docker services and associated ports to be\
+    \ considered peers of this service. Note, this must include itself (the definition\
+    \ of serviceName and servicePort) if the service is to cluster with other instances\
+    \ of this service."
+  shortDescription: "Comma separated list of docker services and associated ports\
+    \ to be considered peers of this service."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.dns-provider.peer-services"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.String"
+  description: "Name of the docker service that this instance is running in."
+  shortDescription: "Name of the docker service that this instance is running in."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.dns-provider.service-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.Integer"
+  description: "Internal port that hazelcast is listening on."
+  shortDescription: "Internal port that hazelcast is listening on."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.dns-provider.service-port"
+  defaultValue: 5701
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of Docker network names to discover matching\
+    \ services on."
+  shortDescription: "Comma delimited list of Docker network names to discover matching\
+    \ services on."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.member-provider.docker-network-names"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of relevant Docker service label=values to find\
+    \ tasks/containers on the networks."
+  shortDescription: "Comma delimited list of relevant Docker service label=values\
+    \ to find tasks/containers on the networks."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.member-provider.docker-service-labels"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of relevant Docker service names to find tasks/containers\
+    \ on the networks."
+  shortDescription: "Comma delimited list of relevant Docker service names to find\
+    \ tasks/containers on the networks."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.member-provider.docker-service-names"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Boolean"
+  description: "Enable provider."
+  shortDescription: "Enable provider."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.member-provider.enabled"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Integer"
+  description: "The raw port that hazelcast is listening on. IMPORTANT: This is NOT\
+    \ a docker \"published\" port, nor is it necessarily a EXPOSEd port. It is the\
+    \ hazelcast port that the service is configured with, this must be the same for\
+    \ all matched containers in order to work, and just using the default of 5701\
+    \ is the simplest way to go."
+  shortDescription: "The raw port that hazelcast is listening on."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.member-provider.hazelcast-peer-port"
+  defaultValue: 5701
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Boolean"
+  description: "If Swarm Mgr URI is SSL, to enable skip-verify for it."
+  shortDescription: "If Swarm Mgr URI is SSL, to enable skip-verify for it."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.member-provider.skip-verify-ssl"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Swarm Manager URI (overrides DOCKER_HOST)."
+  shortDescription: "Swarm Manager URI (overrides DOCKER_HOST)."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.docker-swarm.member-provider.swarm-mgr-uri"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.Boolean"
+  description: "Enable provider."
+  shortDescription: "Enable provider."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.dns-provider.enabled"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.String"
+  description: "Comma separated list of docker services and associated ports to be\
+    \ considered peers of this service. Note, this must include itself (the definition\
+    \ of serviceName and servicePort) if the service is to cluster with other instances\
+    \ of this service."
+  shortDescription: "Comma separated list of docker services and associated ports\
+    \ to be considered peers of this service."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.dns-provider.peer-services"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.String"
+  description: "Name of the docker service that this instance is running in."
+  shortDescription: "Name of the docker service that this instance is running in."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.dns-provider.service-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.Integer"
+  description: "Internal port that hazelcast is listening on."
+  shortDescription: "Internal port that hazelcast is listening on."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.dns-provider.service-port"
+  defaultValue: 5701
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of Docker network names to discover matching\
+    \ services on."
+  shortDescription: "Comma delimited list of Docker network names to discover matching\
+    \ services on."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.member-provider.docker-network-names"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of relevant Docker service label=values to find\
+    \ tasks/containers on the networks."
+  shortDescription: "Comma delimited list of relevant Docker service label=values\
+    \ to find tasks/containers on the networks."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.member-provider.docker-service-labels"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of relevant Docker service names to find tasks/containers\
+    \ on the networks."
+  shortDescription: "Comma delimited list of relevant Docker service names to find\
+    \ tasks/containers on the networks."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.member-provider.docker-service-names"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Boolean"
+  description: "Enable provider."
+  shortDescription: "Enable provider."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.member-provider.enabled"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Integer"
+  description: "The raw port that hazelcast is listening on. IMPORTANT: This is NOT\
+    \ a docker \"published\" port, nor is it necessarily a EXPOSEd port. It is the\
+    \ hazelcast port that the service is configured with, this must be the same for\
+    \ all matched containers in order to work, and just using the default of 5701\
+    \ is the simplest way to go."
+  shortDescription: "The raw port that hazelcast is listening on."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.member-provider.hazelcast-peer-port"
+  defaultValue: 5701
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Boolean"
+  description: "If Swarm Mgr URI is SSL, to enable skip-verify for it."
+  shortDescription: "If Swarm Mgr URI is SSL, to enable skip-verify for it."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.member-provider.skip-verify-ssl"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Swarm Manager URI (overrides DOCKER_HOST)."
+  shortDescription: "Swarm Manager URI (overrides DOCKER_HOST)."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.docker-swarm.member-provider.swarm-mgr-uri"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.Boolean"
+  description: "Enable provider."
+  shortDescription: "Enable provider."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.dns-provider.enabled"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.String"
+  description: "Comma separated list of docker services and associated ports to be\
+    \ considered peers of this service. Note, this must include itself (the definition\
+    \ of serviceName and servicePort) if the service is to cluster with other instances\
+    \ of this service."
+  shortDescription: "Comma separated list of docker services and associated ports\
+    \ to be considered peers of this service."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.dns-provider.peer-services"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.String"
+  description: "Name of the docker service that this instance is running in."
+  shortDescription: "Name of the docker service that this instance is running in."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.dns-provider.service-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.DnsRProvider"
+  type: "java.lang.Integer"
+  description: "Internal port that hazelcast is listening on."
+  shortDescription: "Internal port that hazelcast is listening on."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.dns-provider.service-port"
+  defaultValue: 5701
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of Docker network names to discover matching\
+    \ services on."
+  shortDescription: "Comma delimited list of Docker network names to discover matching\
+    \ services on."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.member-provider.docker-network-names"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of relevant Docker service label=values to find\
+    \ tasks/containers on the networks."
+  shortDescription: "Comma delimited list of relevant Docker service label=values\
+    \ to find tasks/containers on the networks."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.member-provider.docker-service-labels"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Comma delimited list of relevant Docker service names to find tasks/containers\
+    \ on the networks."
+  shortDescription: "Comma delimited list of relevant Docker service names to find\
+    \ tasks/containers on the networks."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.member-provider.docker-service-names"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Boolean"
+  description: "Enable provider."
+  shortDescription: "Enable provider."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.member-provider.enabled"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Integer"
+  description: "The raw port that hazelcast is listening on. IMPORTANT: This is NOT\
+    \ a docker \"published\" port, nor is it necessarily a EXPOSEd port. It is the\
+    \ hazelcast port that the service is configured with, this must be the same for\
+    \ all matched containers in order to work, and just using the default of 5701\
+    \ is the simplest way to go."
+  shortDescription: "The raw port that hazelcast is listening on."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.member-provider.hazelcast-peer-port"
+  defaultValue: 5701
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.Boolean"
+  description: "If Swarm Mgr URI is SSL, to enable skip-verify for it."
+  shortDescription: "If Swarm Mgr URI is SSL, to enable skip-verify for it."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.member-provider.skip-verify-ssl"
+  defaultValue: false
+- module: "cas-server-support-hazelcast-discovery-swarm"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastDockerSwarmDiscoveryProperties.MemberAddressProvider"
+  type: "java.lang.String"
+  description: "Swarm Manager URI (overrides DOCKER_HOST)."
+  shortDescription: "Swarm Manager URI (overrides DOCKER_HOST)."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.docker-swarm.member-provider.swarm-mgr-uri"
+  defaultValue: ""

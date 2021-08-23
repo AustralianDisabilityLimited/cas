@@ -1,0 +1,34 @@
+---
+- method: "GET"
+  path: "multifactorTrustedDevices"
+  name: "multifactorTrustedDevices"
+  endpointType: "Endpoint"
+  signature: "MultifactorAuthenticationTrustReportEndpoint.devices()"
+  owner: "org.apereo.cas.trusted.web.MultifactorAuthenticationTrustReportEndpoint"
+  returnType: "Set"
+  casEndpoint: true
+  summary: "Get collection of trusted devices."
+- method: "GET"
+  path: "multifactorTrustedDevices/{username}"
+  name: "multifactorTrustedDevices"
+  endpointType: "Endpoint"
+  signature: "MultifactorAuthenticationTrustReportEndpoint.devicesForUser(java.lang.String)"
+  owner: "org.apereo.cas.trusted.web.MultifactorAuthenticationTrustReportEndpoint"
+  returnType: "Set"
+  casEndpoint: true
+  summary: "Get collection of trusted devices for the user."
+  parameters:
+  - name: "username"
+    required: true
+- method: "DELETE"
+  path: "multifactorTrustedDevices/{key}"
+  name: "multifactorTrustedDevices"
+  endpointType: "Endpoint"
+  signature: "MultifactorAuthenticationTrustReportEndpoint.revoke(java.lang.String)"
+  owner: "org.apereo.cas.trusted.web.MultifactorAuthenticationTrustReportEndpoint"
+  returnType: "Integer"
+  casEndpoint: true
+  summary: "Remove trusted device using its key."
+  parameters:
+  - name: "key"
+    required: true

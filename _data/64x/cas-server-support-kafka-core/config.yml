@@ -1,0 +1,40 @@
+---
+- module: "cas-server-support-kafka-core"
+  owner: "org.apereo.cas.configuration.model.support.kafka.KafkaSingleTopicProperties"
+  type: "java.lang.String"
+  description: "Specify the final compression type for a given topic. This configuration\
+    \ accepts the standard compression codecs ({@code 'gzip', 'snappy', 'lz4', 'zstd'}).\
+    \ It additionally accepts 'uncompressed' which is equivalent to no compression;\
+    \ and 'producer' which means retain the original compression codec set by the\
+    \ producer."
+  shortDescription: "Specify the final compression type for a given topic."
+  name: "cas.service-registry.stream.kafka.topic.compression-type"
+  defaultValue: "gzip"
+- module: "cas-server-support-kafka-core"
+  owner: "org.apereo.cas.configuration.model.support.kafka.KafkaSingleTopicProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Additional configuration options, as pointed out by {@code TopicConfig}."
+  shortDescription: "Additional configuration options, as pointed out by {@code TopicConfig}."
+  name: "cas.service-registry.stream.kafka.topic.config"
+  defaultValue: ""
+- module: "cas-server-support-kafka-core"
+  owner: "org.apereo.cas.configuration.model.support.kafka.KafkaSingleTopicProperties"
+  type: "java.lang.String"
+  description: "Set the name of the topic."
+  shortDescription: "Set the name of the topic."
+  name: "cas.service-registry.stream.kafka.topic.name"
+  defaultValue: ""
+- module: "cas-server-support-kafka-core"
+  owner: "org.apereo.cas.configuration.model.support.kafka.KafkaSingleTopicProperties"
+  type: "java.lang.Integer"
+  description: "Set the number of partitions (default 1)."
+  shortDescription: "Set the number of partitions (default 1)."
+  name: "cas.service-registry.stream.kafka.topic.partitions"
+  defaultValue: 1
+- module: "cas-server-support-kafka-core"
+  owner: "org.apereo.cas.configuration.model.support.kafka.KafkaSingleTopicProperties"
+  type: "java.lang.Integer"
+  description: "Set the number of replicas (default 1)."
+  shortDescription: "Set the number of replicas (default 1)."
+  name: "cas.service-registry.stream.kafka.topic.replicas"
+  defaultValue: 1

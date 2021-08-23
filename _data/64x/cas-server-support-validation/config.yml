@@ -1,0 +1,26 @@
+---
+- module: "cas-server-support-validation"
+  owner: "org.apereo.cas.configuration.model.core.authentication.AuthenticationAttributeReleaseProperties"
+  type: "java.lang.Boolean"
+  description: "Whether CAS authentication/protocol attributes should be released\
+    \ as part of ticket validation."
+  shortDescription: "Whether CAS authentication/protocol attributes should be released\
+    \ as part of ticket validation."
+  name: "cas.authn.authentication-attribute-release.enabled"
+  defaultValue: true
+- module: "cas-server-support-validation"
+  owner: "org.apereo.cas.configuration.model.core.authentication.AuthenticationAttributeReleaseProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of authentication attributes that should never be released."
+  shortDescription: "List of authentication attributes that should never be released."
+  name: "cas.authn.authentication-attribute-release.never-release"
+  defaultValue: ""
+- module: "cas-server-support-validation"
+  owner: "org.apereo.cas.configuration.model.core.authentication.AuthenticationAttributeReleaseProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of authentication attributes that should be the only ones released.\
+    \ An empty list indicates all attributes should be released."
+  shortDescription: "List of authentication attributes that should be the only ones\
+    \ released."
+  name: "cas.authn.authentication-attribute-release.only-release"
+  defaultValue: ""

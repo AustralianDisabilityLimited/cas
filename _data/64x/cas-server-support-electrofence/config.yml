@@ -1,0 +1,95 @@
+---
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.Agent"
+  type: "java.lang.Boolean"
+  description: "Enable user-agent checking and criteria to calculate risky authentication\
+    \ attempts."
+  shortDescription: "Enable user-agent checking and criteria to calculate risky authentication\
+    \ attempts."
+  name: "cas.authn.adaptive.risk.agent.enabled"
+  defaultValue: false
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.DateTime"
+  type: "java.lang.Boolean"
+  description: "Enable date/time checking and criteria to calculate risky authentication\
+    \ attempts."
+  shortDescription: "Enable date/time checking and criteria to calculate risky authentication\
+    \ attempts."
+  name: "cas.authn.adaptive.risk.date-time.enabled"
+  defaultValue: false
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.DateTime"
+  type: "java.lang.Integer"
+  description: "The hourly window used before and after each authentication event\
+    \ in calculation to establish a pattern that can then be compared against the\
+    \ threshold."
+  shortDescription: "The hourly window used before and after each authentication event\
+    \ in calculation to establish a pattern that can then be compared against the\
+    \ threshold."
+  name: "cas.authn.adaptive.risk.date-time.window-in-hours"
+  defaultValue: 2
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties"
+  type: "java.lang.Long"
+  description: "Indicates how far back the search in authentication history must go\
+    \ in order to locate authentication events."
+  shortDescription: "Indicates how far back the search in authentication history must\
+    \ go in order to locate authentication events."
+  name: "cas.authn.adaptive.risk.days-in-recent-history"
+  defaultValue: 30
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.GeoLocation"
+  type: "java.lang.Boolean"
+  description: "Enable geolocation checking and criteria to calculate risky authentication\
+    \ attempts."
+  shortDescription: "Enable geolocation checking and criteria to calculate risky authentication\
+    \ attempts."
+  name: "cas.authn.adaptive.risk.geo-location.enabled"
+  defaultValue: false
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.IpAddress"
+  type: "java.lang.Boolean"
+  description: "Enable IP address checking and criteria to calculate risky authentication\
+    \ attempts."
+  shortDescription: "Enable IP address checking and criteria to calculate risky authentication\
+    \ attempts."
+  name: "cas.authn.adaptive.risk.ip.enabled"
+  defaultValue: false
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.Response"
+  type: "java.lang.Boolean"
+  description: "If an authentication attempt is deemed risky, block the response and\
+    \ do not allow further attempts."
+  shortDescription: "If an authentication attempt is deemed risky, block the response\
+    \ and do not allow further attempts."
+  name: "cas.authn.adaptive.risk.response.block-attempt"
+  defaultValue: false
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.Response"
+  type: "java.lang.String"
+  description: "If an authentication attempt is deemed risky, force a multi-factor\
+    \ authentication event noted by the provider id here."
+  shortDescription: "If an authentication attempt is deemed risky, force a multi-factor\
+    \ authentication event noted by the provider id here."
+  name: "cas.authn.adaptive.risk.response.mfa-provider"
+  defaultValue: ""
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties.Response"
+  type: "java.lang.String"
+  description: "If an authentication attempt is deemed risky, communicate the nature\
+    \ of this attempt back to the application via a special attribute in the final\
+    \ CAS response indicated here."
+  shortDescription: "If an authentication attempt is deemed risky, communicate the\
+    \ nature of this attempt back to the application via a special attribute in the\
+    \ final CAS response indicated here."
+  name: "cas.authn.adaptive.risk.response.risky-authentication-attribute"
+  defaultValue: "triggeredRiskBasedAuthentication"
+- module: "cas-server-support-electrofence"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RiskBasedAuthenticationProperties"
+  type: "java.lang.Double"
+  description: "The risk threshold factor beyond which the authentication event may\
+    \ be considered risky."
+  shortDescription: "The risk threshold factor beyond which the authentication event\
+    \ may be considered risky."
+  name: "cas.authn.adaptive.risk.threshold"
+  defaultValue: 0.6

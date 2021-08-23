@@ -1,0 +1,46 @@
+---
+- module: "cas-server-support-reports"
+  owner: "org.apereo.cas.configuration.model.core.monitor.ActuatorEndpointProperties"
+  type: "java.util.List<EndpointAccessLevel>"
+  description: "Define the security access level of the endpoint.\nAvailable values\
+    \ are as follows:\n<ul><li>{@code PERMIT}: Allow open access to the endpoint.</li><li>{@code\
+    \ ANONYMOUS}: Allow anonymous access to the endpoint.</li><li>{@code DENY}: Block\
+    \ access to the endpoint.</li><li>{@code AUTHENTICATED}: Require authenticated\
+    \ access to the endpoint.</li><li>{@code ROLE}: Require authenticated access to\
+    \ the endpoint along with a role requirement.</li><li>{@code AUTHORITY}: Require\
+    \ authenticated access to the endpoint along with an authority requirement.</li><li>{@code\
+    \ IP_ADDRESS}: Require authenticated access to the endpoint using a collection\
+    \ of IP addresses.</li></ul>"
+  shortDescription: "Define the security access level of the endpoint."
+  name: "cas.monitor.endpoints.endpoint.[key].access"
+  defaultValue: ""
+- module: "cas-server-support-reports"
+  owner: "org.apereo.cas.configuration.model.core.monitor.ActuatorEndpointProperties"
+  type: "java.util.List<String>"
+  description: "Required user authorities."
+  shortDescription: "Required user authorities."
+  name: "cas.monitor.endpoints.endpoint.[key].required-authorities"
+  defaultValue: ""
+- module: "cas-server-support-reports"
+  owner: "org.apereo.cas.configuration.model.core.monitor.ActuatorEndpointProperties"
+  type: "java.util.List<String>"
+  description: "Required ip addresses."
+  shortDescription: "Required ip addresses."
+  name: "cas.monitor.endpoints.endpoint.[key].required-ip-addresses"
+  defaultValue: ""
+- module: "cas-server-support-reports"
+  owner: "org.apereo.cas.configuration.model.core.monitor.ActuatorEndpointProperties"
+  type: "java.util.List<String>"
+  description: "Required user roles."
+  shortDescription: "Required user roles."
+  name: "cas.monitor.endpoints.endpoint.[key].required-roles"
+  defaultValue: ""
+- module: "cas-server-support-reports"
+  owner: "org.apereo.cas.configuration.model.core.monitor.ActuatorEndpointsMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "Control whether access to endpoints can be controlled via form-based\
+    \ login over the web via a special admin login endpoint."
+  shortDescription: "Control whether access to endpoints can be controlled via form-based\
+    \ login over the web via a special admin login endpoint."
+  name: "cas.monitor.endpoints.form-login-enabled"
+  defaultValue: false

@@ -1,0 +1,27 @@
+---
+- method: "GET"
+  path: "loggers"
+  name: "loggers"
+  endpointType: "Endpoint"
+  signature: "LoggersEndpoint.loggers()"
+  owner: "org.springframework.boot.actuate.logging.LoggersEndpoint"
+  returnType: "Map"
+  casEndpoint: false
+  summary: "Logger configuration and levels."
+- method: "GET"
+  path: "loggers/{name}"
+  name: "loggers"
+  endpointType: "Endpoint"
+  signature: "LoggersEndpoint.loggerLevels(java.lang.String)"
+  owner: "org.springframework.boot.actuate.logging.LoggersEndpoint"
+  returnType: "LoggerLevels"
+  casEndpoint: false
+  summary: "Logger configuration and levels."
+- method: "POST"
+  path: "loggers/{name}"
+  name: "loggers"
+  endpointType: "Endpoint"
+  signature: "LoggersEndpoint.configureLogLevel(java.lang.String,org.springframework.boot.logging.LogLevel)"
+  owner: "org.springframework.boot.actuate.logging.LoggersEndpoint"
+  casEndpoint: false
+  summary: "Logger configuration and levels."

@@ -1,0 +1,241 @@
+---
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.lang.Long"
+  description: "Expire and forget device registration records after this period."
+  shortDescription: "Expire and forget device registration records after this period."
+  name: "cas.authn.mfa.u2f.core.expire-devices"
+  defaultValue: 30
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.util.concurrent.TimeUnit"
+  description: "Device registration record expiration time unit."
+  shortDescription: "Device registration record expiration time unit."
+  name: "cas.authn.mfa.u2f.core.expire-devices-time-unit"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.lang.Long"
+  description: "Expire and forget device registration requests after this period."
+  shortDescription: "Expire and forget device registration requests after this period."
+  name: "cas.authn.mfa.u2f.core.expire-registrations"
+  defaultValue: 30
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.util.concurrent.TimeUnit"
+  description: "Device registration requests expiration time unit."
+  shortDescription: "Device registration requests expiration time unit."
+  name: "cas.authn.mfa.u2f.core.expire-registrations-time-unit"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "org.apereo.cas.configuration.model.support.mfa.BaseMultifactorAuthenticationProviderProperties$MultifactorAuthenticationProviderFailureModes"
+  description: "The failure mode policy for this MFA provider. The authentication\
+    \ policy by default supports fail-closed mode, which means that if you attempt\
+    \ to exercise a particular provider available to CAS and the provider cannot be\
+    \ reached, authentication will be stopped and an error will be displayed. You\
+    \ can of course change this behavior so that authentication proceeds without exercising\
+    \ the provider functionality, if that provider cannot respond. Each defined multifactor\
+    \ authentication provider can set its own failure mode policy. Failure modes set\
+    \ at this location will override the global failure mode, but defer to any failure\
+    \ mode set by the registered service.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ OPEN}: Disallow MFA, proceed with authentication but don't communicate MFA to\
+    \ the RP.</li><li>{@code CLOSED}: Disallow MFA, block with authentication.</li><li>{@code\
+    \ PHANTOM}: Disallow MFA, proceed with authentication and communicate MFA to the\
+    \ RP.</li><li>{@code NONE}: Do not check for failure at all.</li><li>{@code UNDEFINED}:\
+    \ The default one indicating that no failure mode is set at all.</li></ul>"
+  shortDescription: "The failure mode policy for this MFA provider."
+  name: "cas.authn.mfa.u2f.core.failure-mode"
+  defaultValue: "CLOSED"
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The identifier for the multifactor provider. In most cases, this need\
+    \ not be configured explicitly, unless multiple instances of the same provider\
+    \ type are configured in CAS."
+  shortDescription: "The identifier for the multifactor provider."
+  name: "cas.authn.mfa.u2f.core.id"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The name of the authentication handler used to verify credentials\
+    \ in MFA."
+  shortDescription: "The name of the authentication handler used to verify credentials\
+    \ in MFA."
+  name: "cas.authn.mfa.u2f.core.name"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "The order of the authentication handler in the chain."
+  shortDescription: "The order of the authentication handler in the chain."
+  name: "cas.authn.mfa.u2f.core.order"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "At times, CAS needs to determine the correct provider when step-up\
+    \ authentication is required. Consider for a moment that CAS already has established\
+    \ an SSO session with/without a provider and has reached a level of authentication.\
+    \ Another incoming request attempts to exercise that SSO session with a different\
+    \ and often competing authentication requirement that may differ from the authentication\
+    \ level CAS has already established. Concretely, examples may be: <ul> <li>CAS\
+    \ has achieved an SSO session, but a separate request now requires step-up authentication\
+    \ with DuoSecurity.</li> <li>CAS has achieved an SSO session with an authentication\
+    \ level satisfied by DuoSecurity, but a separate request now requires step-up\
+    \ authentication with YubiKey. </li> </ul> In certain scenarios, CAS will attempt\
+    \ to rank authentication levels and compare them with each other. If CAS already\
+    \ has achieved a level that is higher than what the incoming request requires,\
+    \ no step-up authentication will be performed. If the opposite is true, CAS will\
+    \ route the authentication flow to the required authentication level and upon\
+    \ success, will adjust the SSO session with the new higher authentication level\
+    \ now satisfied. Ranking of authentication methods is done per provider via specific\
+    \ properties for each. Note that the higher the rank value is, the higher on the\
+    \ security scale it remains. A provider that ranks higher with a larger weight\
+    \ value trumps and override others with a lower value."
+  shortDescription: "At times, CAS needs to determine the correct provider when step-up\
+    \ authentication is required."
+  name: "cas.authn.mfa.u2f.core.rank"
+  defaultValue: 0
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FCoreMultifactorAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Indicates whether this provider should support trusted devices."
+  shortDescription: "Indicates whether this provider should support trusted devices."
+  name: "cas.authn.mfa.u2f.core.trusted-device-enabled"
+  defaultValue: false
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMultifactorAuthenticationProperties"
+  type: "org.apereo.cas.configuration.model.support.mfa.BaseMultifactorAuthenticationProviderProperties$MultifactorAuthenticationProviderFailureModes"
+  description: "The failure mode policy for this MFA provider. The authentication\
+    \ policy by default supports fail-closed mode, which means that if you attempt\
+    \ to exercise a particular provider available to CAS and the provider cannot be\
+    \ reached, authentication will be stopped and an error will be displayed. You\
+    \ can of course change this behavior so that authentication proceeds without exercising\
+    \ the provider functionality, if that provider cannot respond. Each defined multifactor\
+    \ authentication provider can set its own failure mode policy. Failure modes set\
+    \ at this location will override the global failure mode, but defer to any failure\
+    \ mode set by the registered service.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ OPEN}: Disallow MFA, proceed with authentication but don't communicate MFA to\
+    \ the RP.</li><li>{@code CLOSED}: Disallow MFA, block with authentication.</li><li>{@code\
+    \ PHANTOM}: Disallow MFA, proceed with authentication and communicate MFA to the\
+    \ RP.</li><li>{@code NONE}: Do not check for failure at all.</li><li>{@code UNDEFINED}:\
+    \ The default one indicating that no failure mode is set at all.</li></ul>"
+  shortDescription: "The failure mode policy for this MFA provider."
+  name: "cas.authn.mfa.u2f.failure-mode"
+  defaultValue: "CLOSED"
+- required: true
+  module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FGroovyMultifactorAuthenticationProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.mfa.u2f.groovy.location"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The identifier for the multifactor provider. In most cases, this need\
+    \ not be configured explicitly, unless multiple instances of the same provider\
+    \ type are configured in CAS."
+  shortDescription: "The identifier for the multifactor provider."
+  name: "cas.authn.mfa.u2f.id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FJsonMultifactorAuthenticationProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.mfa.u2f.json.location"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The name of the authentication handler used to verify credentials\
+    \ in MFA."
+  shortDescription: "The name of the authentication handler used to verify credentials\
+    \ in MFA."
+  name: "cas.authn.mfa.u2f.name"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMultifactorAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "The order of the authentication handler in the chain."
+  shortDescription: "The order of the authentication handler in the chain."
+  name: "cas.authn.mfa.u2f.order"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMultifactorAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "At times, CAS needs to determine the correct provider when step-up\
+    \ authentication is required. Consider for a moment that CAS already has established\
+    \ an SSO session with/without a provider and has reached a level of authentication.\
+    \ Another incoming request attempts to exercise that SSO session with a different\
+    \ and often competing authentication requirement that may differ from the authentication\
+    \ level CAS has already established. Concretely, examples may be: <ul> <li>CAS\
+    \ has achieved an SSO session, but a separate request now requires step-up authentication\
+    \ with DuoSecurity.</li> <li>CAS has achieved an SSO session with an authentication\
+    \ level satisfied by DuoSecurity, but a separate request now requires step-up\
+    \ authentication with YubiKey. </li> </ul> In certain scenarios, CAS will attempt\
+    \ to rank authentication levels and compare them with each other. If CAS already\
+    \ has achieved a level that is higher than what the incoming request requires,\
+    \ no step-up authentication will be performed. If the opposite is true, CAS will\
+    \ route the authentication flow to the required authentication level and upon\
+    \ success, will adjust the SSO session with the new higher authentication level\
+    \ now satisfied. Ranking of authentication methods is done per provider via specific\
+    \ properties for each. Note that the higher the rank value is, the higher on the\
+    \ security scale it remains. A provider that ranks higher with a larger weight\
+    \ value trumps and override others with a lower value."
+  shortDescription: "At times, CAS needs to determine the correct provider when step-up\
+    \ authentication is required."
+  name: "cas.authn.mfa.u2f.rank"
+  defaultValue: 0
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FRestfulMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.mfa.u2f.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FRestfulMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.mfa.u2f.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FRestfulMultifactorAuthenticationProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.mfa.u2f.rest.headers"
+  defaultValue: ""
+- module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FRestfulMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.mfa.u2f.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-support-u2f"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FRestfulMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.mfa.u2f.rest.url"
+  defaultValue: ""

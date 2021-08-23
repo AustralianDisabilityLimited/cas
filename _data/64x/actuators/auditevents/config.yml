@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "auditevents"
+  name: "auditevents"
+  endpointType: "Endpoint"
+  signature: "AuditEventsEndpoint.events(java.lang.String,java.time.OffsetDateTime,java.lang.String)"
+  owner: "org.springframework.boot.actuate.audit.AuditEventsEndpoint"
+  returnType: "AuditEventsDescriptor"
+  casEndpoint: false
+  summary: "Provides information about the applicationâ\x80\x99s audit events."

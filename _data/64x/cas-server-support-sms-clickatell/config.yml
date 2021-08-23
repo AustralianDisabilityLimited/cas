@@ -1,0 +1,17 @@
+---
+- required: true
+  module: "cas-server-support-sms-clickatell"
+  owner: "org.apereo.cas.configuration.model.support.sms.ClickatellProperties"
+  type: "java.lang.String"
+  description: "URL to contact and send messages."
+  shortDescription: "URL to contact and send messages."
+  name: "cas.sms-provider.clickatell.server-url"
+  defaultValue: "https://platform.clickatell.com/messages"
+- required: true
+  module: "cas-server-support-sms-clickatell"
+  owner: "org.apereo.cas.configuration.model.support.sms.ClickatellProperties"
+  type: "java.lang.String"
+  description: "Secure token used to establish a handshake with the service."
+  shortDescription: "Secure token used to establish a handshake with the service."
+  name: "cas.sms-provider.clickatell.token"
+  defaultValue: ""

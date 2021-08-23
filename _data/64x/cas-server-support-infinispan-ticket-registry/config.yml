@@ -1,0 +1,17 @@
+---
+- required: true
+  module: "cas-server-support-infinispan-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.infinispan.InfinispanProperties"
+  type: "java.lang.String"
+  description: "Cache name to create and hold tickets in."
+  shortDescription: "Cache name to create and hold tickets in."
+  name: "cas.ticket.registry.infinispan.cache-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-infinispan-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.infinispan.InfinispanProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "Path to the infinispan XML configuration file."
+  shortDescription: "Path to the infinispan XML configuration file."
+  name: "cas.ticket.registry.infinispan.config-location"
+  defaultValue: ""

@@ -1,0 +1,176 @@
+---
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "Set the daemon state of the IO thread (defaults to true)."
+  shortDescription: "Set the daemon state of the IO thread (defaults to true)."
+  name: "cas.monitor.memcached.daemon"
+  defaultValue: true
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.String"
+  description: "Failure mode. Acceptable values are {@code Redistribute,Retry,Cancel}."
+  shortDescription: "Failure mode."
+  name: "cas.monitor.memcached.failure-mode"
+  defaultValue: "Redistribute"
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.String"
+  description: "Hash algorithm. Acceptable values are {@code NATIVE_HASH,CRC_HASH,FNV1_64_HASH,FNV1A_64_HASH,FNV1_32_HASH,FNV1A_32_HASH,KETAMA_HASH}."
+  shortDescription: "Hash algorithm."
+  name: "cas.monitor.memcached.hash-algorithm"
+  defaultValue: "FNV1_64_HASH"
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "If true, {@code reset} is called automatically after an entire object\
+    \ graph has been read or written. If false, {@code reset} must be called manually,\
+    \ which allows unregistered class names, references, and other information to\
+    \ span multiple object graphs."
+  shortDescription: "If true, {@code reset} is called automatically after an entire\
+    \ object graph has been read or written."
+  name: "cas.monitor.memcached.kryo-auto-reset"
+  defaultValue: false
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "If true, each appearance of an object in the graph after the first\
+    \ is stored as an integer ordinal. When set to true, {@code MapReferenceResolver}\
+    \ is used. This enables references to the same object and cyclic graphs to be\
+    \ serialized, but typically adds overhead of one byte per object."
+  shortDescription: "If true, each appearance of an object in the graph after the\
+    \ first is stored as an integer ordinal."
+  name: "cas.monitor.memcached.kryo-objects-by-reference"
+  defaultValue: false
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "If true, an exception is thrown when an unregistered class is encountered.\
+    \ <p> If false, when an unregistered class is encountered, its fully qualified\
+    \ class name will be serialized and the default serializer for the class used\
+    \ to serialize the object. Subsequent appearances of the class within the same\
+    \ object graph are serialized as an int id. Registered classes are serialized\
+    \ as an int id, avoiding the overhead of serializing the class name, but have\
+    \ the drawback of needing to know the classes to be serialized up front.  See\
+    \ {@code ComponentSerializationPlan} for help here. </p>"
+  shortDescription: "If true, an exception is thrown when an unregistered class is\
+    \ encountered."
+  name: "cas.monitor.memcached.kryo-registration-required"
+  defaultValue: true
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.String"
+  description: "Locator mode. Acceptable values are {@code ARRAY_MOD, CONSISTENT,\
+    \ VBUCKET}."
+  shortDescription: "Locator mode."
+  name: "cas.monitor.memcached.locator-type"
+  defaultValue: "ARRAY_MOD"
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Integer"
+  description: "Set the value for the maxTotal configuration attribute for pools created\
+    \ with this configuration instance."
+  shortDescription: "Set the value for the maxTotal configuration attribute for pools\
+    \ created with this configuration instance."
+  name: "cas.monitor.memcached.max-idle"
+  defaultValue: 8
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Long"
+  description: "Set the maximum reconnect delay."
+  shortDescription: "Set the maximum reconnect delay."
+  name: "cas.monitor.memcached.max-reconnect-delay"
+  defaultValue: -1
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Integer"
+  description: "Sets the cap on the number of objects that can be allocated by the\
+    \ pool (checked out to clients, or idle awaiting checkout) at a given time. Use\
+    \ a negative value for no limit."
+  shortDescription: "Sets the cap on the number of objects that can be allocated by\
+    \ the pool (checked out to clients, or idle awaiting checkout) at a given time."
+  name: "cas.monitor.memcached.max-total"
+  defaultValue: 20
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Integer"
+  description: "Get the value for the minIdle configuration attribute for pools created\
+    \ with this configuration instance."
+  shortDescription: "Get the value for the minIdle configuration attribute for pools\
+    \ created with this configuration instance."
+  name: "cas.monitor.memcached.min-idle"
+  defaultValue: 0
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Long"
+  description: "Set the default operation timeout in milliseconds."
+  shortDescription: "Set the default operation timeout in milliseconds."
+  name: "cas.monitor.memcached.op-timeout"
+  defaultValue: -1
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.String"
+  description: "Protocol. Acceptable values are {@code TEXT, BINARY}."
+  shortDescription: "Protocol."
+  name: "cas.monitor.memcached.protocol"
+  defaultValue: "TEXT"
+- required: true
+  module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.String"
+  description: "Comma-separated list of memcached servers."
+  shortDescription: "Comma-separated list of memcached servers."
+  name: "cas.monitor.memcached.servers"
+  defaultValue: "localhost:11211"
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "Set to false if the default operation optimization is not desirable."
+  shortDescription: "Set to false if the default operation optimization is not desirable."
+  name: "cas.monitor.memcached.should-optimize"
+  defaultValue: false
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Long"
+  description: "The number of seconds to wait for connections to finish before shutting\
+    \ down the client."
+  shortDescription: "The number of seconds to wait for connections to finish before\
+    \ shutting down the client."
+  name: "cas.monitor.memcached.shutdown-timeout-seconds"
+  defaultValue: -1
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Integer"
+  description: "Set the maximum timeout exception threshold."
+  shortDescription: "Set the maximum timeout exception threshold."
+  name: "cas.monitor.memcached.timeout-exception-threshold"
+  defaultValue: 2
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "org.apereo.cas.configuration.model.support.memcached.BaseMemcachedProperties$TranscoderTypes"
+  description: "Indicate the transcoder type.\nAvailable values are as follows:\n\
+    <ul><li>{@code KRYO}: CAS transcoder implementation based on Kryo fast serialization\
+    \ framework\nsuited for efficient serialization of tickets. Provides pooling mechanisms\n\
+    as well as control over object registration and sequences.</li><li>{@code SERIAL}:\
+    \ Kryp native transcoder that serializes and compresses objects.</li><li>{@code\
+    \ WHALIN}: Transcoder that provides compatibility with Greg Whalin's memcached\
+    \ client.</li><li>{@code WHALINV1}: Handles old whalin encoding: data type is\
+    \ in the first byte of the value.</li></ul>"
+  shortDescription: "Indicate the transcoder type."
+  name: "cas.monitor.memcached.transcoder"
+  defaultValue: "KRYO"
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Integer"
+  description: "For transcoders other than kryo, determines the compression threshold.\
+    \ Does not apply to kryo."
+  shortDescription: "For transcoders other than kryo, determines the compression threshold."
+  name: "cas.monitor.memcached.transcoder-compression-threshold"
+  defaultValue: 16384
+- module: "cas-server-support-memcached-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MemcachedMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "Set to true if you'd like to enable the Nagle algorithm."
+  shortDescription: "Set to true if you'd like to enable the Nagle algorithm."
+  name: "cas.monitor.memcached.use-nagle-algorithm"
+  defaultValue: false

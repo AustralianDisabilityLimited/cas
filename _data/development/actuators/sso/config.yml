@@ -1,0 +1,15 @@
+---
+- method: "GET"
+  path: "sso"
+  name: "sso"
+  endpointType: "RestControllerEndpoint"
+  signature: "SingleSignOnSessionStatusEndpoint.ssoStatus(javax.servlet.http.HttpServletRequest)"
+  owner: "org.apereo.cas.web.report.SingleSignOnSessionStatusEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Get current status of single sign-on."
+  parameters:
+  - name: "request"
+    required: true
+  produces:
+  - "application/json"

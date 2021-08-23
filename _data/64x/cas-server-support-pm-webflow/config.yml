@@ -1,0 +1,75 @@
+---
+- module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.PasswordManagementCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Flag to indicate whether successful password change should trigger\
+    \ login automatically."
+  shortDescription: "Flag to indicate whether successful password change should trigger\
+    \ login automatically."
+  name: "cas.authn.pm.core.auto-login"
+  defaultValue: false
+- required: true
+  module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.PasswordManagementCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Flag to indicate if password management facility is enabled."
+  shortDescription: "Flag to indicate if password management facility is enabled."
+  name: "cas.authn.pm.core.enabled"
+  defaultValue: false
+- required: true
+  module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.PasswordManagementCoreProperties"
+  type: "java.lang.String"
+  description: "A String value representing password policy regex pattern. Minimum\
+    \ 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet,\
+    \ 1 Number and 1 Special Character."
+  shortDescription: "A String value representing password policy regex pattern."
+  name: "cas.authn.pm.core.policy-pattern"
+  defaultValue: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,10}"
+- module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.PasswordHistoryCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Flag to indicate if password history tracking is enabled."
+  shortDescription: "Flag to indicate if password history tracking is enabled."
+  name: "cas.authn.pm.history.core.enabled"
+  defaultValue: false
+- module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.PasswordManagementProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.pm.LdapPasswordManagementProperties>"
+  description: "Manage account passwords in LDAP."
+  shortDescription: "Manage account passwords in LDAP."
+  name: "cas.authn.pm.ldap"
+  defaultValue: ""
+- module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.ResetPasswordManagementProperties"
+  type: "java.lang.Long"
+  description: "How long in minutes should the password expiration link remain valid."
+  shortDescription: "How long in minutes should the password expiration link remain\
+    \ valid."
+  name: "cas.authn.pm.reset.expiration-minutes"
+  defaultValue: 1
+- module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.ResetPasswordManagementProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the Password Management Token will contain the client IP Address."
+  shortDescription: "Whether the Password Management Token will contain the client\
+    \ IP Address."
+  name: "cas.authn.pm.reset.include-client-ip-address"
+  defaultValue: true
+- module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.ResetPasswordManagementProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the Password Management Token will contain the server IP Address."
+  shortDescription: "Whether the Password Management Token will contain the server\
+    \ IP Address."
+  name: "cas.authn.pm.reset.include-server-ip-address"
+  defaultValue: true
+- module: "cas-server-support-pm-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pm.ResetPasswordManagementProperties"
+  type: "java.lang.Boolean"
+  description: "Whether reset operations require security questions, or should they\
+    \ be marked as optional."
+  shortDescription: "Whether reset operations require security questions, or should\
+    \ they be marked as optional."
+  name: "cas.authn.pm.reset.security-questions-enabled"
+  defaultValue: true

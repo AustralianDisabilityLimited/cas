@@ -1,0 +1,3397 @@
+---
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.bitbucket.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.bitbucket.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.bitbucket.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.bitbucket.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.bitbucket.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.bitbucket.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.bitbucket.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.bitbucket.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.bitbucket.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationBitBucketProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.bitbucket.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties>"
+  description: "Settings that deal with having CAS Servers as an external delegated-to\
+    \ authentication provider."
+  shortDescription: "Settings that deal with having CAS Servers as an external delegated-to\
+    \ authentication provider."
+  name: "cas.authn.pac4j.cas"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.cas[].auto-redirect"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.cas[].callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.cas[].callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.cas[].client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.cas[].css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.cas[].display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.cas[].enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "java.lang.String"
+  description: "The CAS server login url."
+  shortDescription: "The CAS server login url."
+  name: "cas.authn.pac4j.cas[].login-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.cas[].principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.cas.Pac4jCasClientProperties"
+  type: "java.lang.String"
+  description: "CAS protocol to use.\nAcceptable values are {@code CAS10, CAS20, CAS20_PROXY,\
+    \ CAS30, CAS30_PROXY, SAML}."
+  shortDescription: "CAS protocol to use."
+  name: "cas.authn.pac4j.cas[].protocol"
+  defaultValue: "CAS20"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.Boolean"
+  description: "Decide if cookie paths should be automatically configured based on\
+    \ the application context path, when the cookie path is not configured."
+  shortDescription: "Decide if cookie paths should be automatically configured based\
+    \ on the application context path, when the cookie path is not configured."
+  name: "cas.authn.pac4j.cookie.auto-configure-cookie-path"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.String"
+  description: "CAS Cookie comment, describes the cookie's usage and purpose."
+  shortDescription: "CAS Cookie comment, describes the cookie's usage and purpose."
+  name: "cas.authn.pac4j.cookie.comment"
+  defaultValue: "CAS Cookie"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie domain. Specifies the domain within which this cookie should\
+    \ be presented. The form of the domain name is specified by RFC 2965. A domain\
+    \ name begins with a dot (.foo.com) and means that the cookie is visible to servers\
+    \ in a specified Domain Name System (DNS) zone (for example, www.foo.com, but\
+    \ not a.b.foo.com). By default, cookies are only returned to the server that sent\
+    \ them."
+  shortDescription: "Cookie domain."
+  name: "cas.authn.pac4j.cookie.domain"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.Boolean"
+  description: "Determine whether cookie settings should be enabled to track delgated\
+    \ authentication choices and identity providers."
+  shortDescription: "Determine whether cookie settings should be enabled to track\
+    \ delgated authentication choices and identity providers."
+  name: "cas.authn.pac4j.cookie.enabled"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.Boolean"
+  description: "true if this cookie contains the HttpOnly attribute. This means that\
+    \ the cookie should not be accessible to scripting engines, like javascript."
+  shortDescription: "true if this cookie contains the HttpOnly attribute."
+  name: "cas.authn.pac4j.cookie.http-only"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.Integer"
+  description: "The maximum age of the cookie, specified in seconds. By default, {@code\
+    \ -1} indicating the cookie will persist until browser shutdown. A positive value\
+    \ indicates that the cookie will expire after that many seconds have passed. Note\
+    \ that the value is the maximum age when the cookie will expire, not the cookie's\
+    \ current age. A negative value means that the cookie is not stored persistently\
+    \ and will be deleted when the Web browser exits. A zero value causes the cookie\
+    \ to be deleted."
+  shortDescription: "The maximum age of the cookie, specified in seconds."
+  name: "cas.authn.pac4j.cookie.max-age"
+  defaultValue: -1
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie name. Constructs a cookie with a specified name and value.\
+    \ The name must conform to RFC 2965. That means it can contain only ASCII alphanumeric\
+    \ characters and cannot contain commas, semicolons, or white space or begin with\
+    \ a {@code $} character. The cookie's name cannot be changed after creation. By\
+    \ default, cookies are created according to the RFC 2965 cookie specification.\
+    \ Cookie names are automatically calculated assigned by CAS at runtime, and there\
+    \ is usually no need to customize the name or assign it a different value unless\
+    \ a special use case warrants the change."
+  shortDescription: "Cookie name."
+  name: "cas.authn.pac4j.cookie.name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.String"
+  description: "Cookie path. Specifies a path for the cookie to which the client should\
+    \ return the cookie. The cookie is visible to all the pages in the directory you\
+    \ specify, and all the pages in that directory's subdirectories. A cookie's path\
+    \ must include the servlet that set the cookie, for example, /catalog, which makes\
+    \ the cookie visible to all directories on the server under /catalog. Consult\
+    \ RFC 2965 (available on the Internet) for more information on setting path names\
+    \ for cookies."
+  shortDescription: "Cookie path."
+  name: "cas.authn.pac4j.cookie.path"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.String"
+  description: "If a cookie is only intended to be accessed in a first party context,\
+    \ the developer has the option to apply one of settings {@code SameSite=Lax} or\
+    \ {@code SameSite=Strict} or {@code SameSite=None} to prevent external access.\
+    \ <p> To safeguard more websites and their users, the new secure-by-default model\
+    \ assumes all cookies should be protected from external access unless otherwise\
+    \ specified. Developers must use a new cookie setting, {@code SameSite=None},\
+    \ to designate cookies for cross-site access. When the {@code SameSite=None} attribute\
+    \ is present, an additional {@code Secure} attribute is used so cross-site cookies\
+    \ can only be accessed over HTTPS connections. </p> <p>Accepted values are: {@code\
+    \ Lax}, {@code Strict},  {@code None}.</p>"
+  shortDescription: "If a cookie is only intended to be accessed in a first party\
+    \ context, the developer has the option to apply one of settings {@code SameSite=Lax}\
+    \ or {@code SameSite=Strict} or {@code SameSite=None} to prevent external access."
+  name: "cas.authn.pac4j.cookie.same-site-policy"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCookieProperties"
+  type: "java.lang.Boolean"
+  description: "True if sending this cookie should be restricted to a secure protocol,\
+    \ or false if the it can be sent using any protocol."
+  shortDescription: "True if sending this cookie should be restricted to a secure\
+    \ protocol, or false if the it can be sent using any protocol."
+  name: "cas.authn.pac4j.cookie.secure"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Whether initialization of delegated identity providers should be done\
+    \ eagerly typically during startup."
+  shortDescription: "Whether initialization of delegated identity providers should\
+    \ be done eagerly typically during startup."
+  name: "cas.authn.pac4j.core.lazy-init"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCoreProperties"
+  type: "java.lang.String"
+  description: "The name of the authentication handler in CAS used for delegation."
+  shortDescription: "The name of the authentication handler in CAS used for delegation."
+  name: "cas.authn.pac4j.core.name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCoreProperties"
+  type: "java.lang.Integer"
+  description: "Order of the authentication handler in the chain."
+  shortDescription: "Order of the authentication handler in the chain."
+  name: "cas.authn.pac4j.core.order"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCoreProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.core.principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Indicates whether profiles and other session data, collected as part\
+    \ of pac4j flows and requests that are kept by the container session, should be\
+    \ replicated across the cluster using CAS and its own ticket registry. Without\
+    \ this option, profile data and other related pieces of information should be\
+    \ manually replicated via means and libraries outside of CAS."
+  shortDescription: "Indicates whether profiles and other session data, collected\
+    \ as part of pac4j flows and requests that are kept by the container session,\
+    \ should be replicated across the cluster using CAS and its own ticket registry."
+  name: "cas.authn.pac4j.core.replicate-sessions"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationCoreProperties"
+  type: "java.lang.Boolean"
+  description: "When constructing the final user profile from the delegated provider,\
+    \ determines if the provider id should be combined with the principal id."
+  shortDescription: "When constructing the final user profile from the delegated provider,\
+    \ determines if the provider id should be combined with the principal id."
+  name: "cas.authn.pac4j.core.typed-id-used"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.dropbox.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.dropbox.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.dropbox.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.dropbox.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.dropbox.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.dropbox.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.dropbox.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.dropbox.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.dropbox.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationDropboxProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.dropbox.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.facebook.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.facebook.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.facebook.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.facebook.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.facebook.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.facebook.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.facebook.enabled"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "Custom fields to include in the request."
+  shortDescription: "Custom fields to include in the request."
+  name: "cas.authn.pac4j.facebook.fields"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.facebook.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.facebook.principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "The requested scope."
+  shortDescription: "The requested scope."
+  name: "cas.authn.pac4j.facebook.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFacebookProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.facebook.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.foursquare.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.foursquare.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.foursquare.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.foursquare.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.foursquare.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.foursquare.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.foursquare.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.foursquare.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.foursquare.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationFoursquareProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.foursquare.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.github.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.github.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.github.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.github.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.github.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.github.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.github.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.github.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.github.principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "The requested scope from the provider.  The default scope is {@code\
+    \ user}, i.e. {@code read/write} access to the GitHub user account.  For a full\
+    \ list of possible scopes, <a href=\"https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/\"\
+    >see this</a>)."
+  shortDescription: "The requested scope from the provider."
+  name: "cas.authn.pac4j.github.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGitHubProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.github.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.google.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.google.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.google.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.google.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.google.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.google.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.google.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.google.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.google.principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "The requested scope."
+  shortDescription: "The requested scope."
+  name: "cas.authn.pac4j.google.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGoogleProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.google.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.hi-org-server.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.hi-org-server.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.hi-org-server.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.hi-org-server.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.hi-org-server.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.hi-org-server.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.hi-org-server.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.hi-org-server.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.hi-org-server.principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "The requested scope."
+  shortDescription: "The requested scope."
+  name: "cas.authn.pac4j.hi-org-server.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationHiOrgServerProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.hi-org-server.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.linked-in.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.linked-in.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.linked-in.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.linked-in.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.linked-in.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.linked-in.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.linked-in.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.linked-in.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.linked-in.principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "The requested scope."
+  shortDescription: "The requested scope."
+  name: "cas.authn.pac4j.linked-in.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationLinkedInProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.linked-in.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties>"
+  description: "Settings that deal with having OAuth2-capable providers as an external\
+    \ delegated-to authentication provider."
+  shortDescription: "Settings that deal with having OAuth2-capable providers as an\
+    \ external delegated-to authentication provider."
+  name: "cas.authn.pac4j.oauth2"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Authorization endpoint of the provider."
+  shortDescription: "Authorization endpoint of the provider."
+  name: "cas.authn.pac4j.oauth2[].auth-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.oauth2[].auto-redirect"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.oauth2[].callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.oauth2[].callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.oauth2[].client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.oauth2[].css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.util.Map<String,String>"
+  description: "Custom parameters in form of key-value pairs sent along in authZ requests,\
+    \ etc."
+  shortDescription: "Custom parameters in form of key-value pairs sent along in authZ\
+    \ requests, etc."
+  name: "cas.authn.pac4j.oauth2[].custom-params"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.oauth2[].display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.oauth2[].enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.oauth2[].id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.oauth2[].principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.util.Map<String,String>"
+  description: "Profile attributes to request and collect in form of key-value pairs."
+  shortDescription: "Profile attributes to request and collect in form of key-value\
+    \ pairs."
+  name: "cas.authn.pac4j.oauth2[].profile-attrs"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Profile path portion of the profile endpoint of the provider."
+  shortDescription: "Profile path portion of the profile endpoint of the provider."
+  name: "cas.authn.pac4j.oauth2[].profile-path"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Profile endpoint of the provider."
+  shortDescription: "Profile endpoint of the provider."
+  name: "cas.authn.pac4j.oauth2[].profile-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Http method to use when asking for profile."
+  shortDescription: "Http method to use when asking for profile."
+  name: "cas.authn.pac4j.oauth2[].profile-verb"
+  defaultValue: "POST"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Response type determines the authentication flow on the Authentication\
+    \ Server."
+  shortDescription: "Response type determines the authentication flow on the Authentication\
+    \ Server."
+  name: "cas.authn.pac4j.oauth2[].response-type"
+  defaultValue: "code"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "The scope requested from the identity provider."
+  shortDescription: "The scope requested from the identity provider."
+  name: "cas.authn.pac4j.oauth2[].scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.oauth2[].secret"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oauth.Pac4jOAuth20ClientProperties"
+  type: "java.lang.String"
+  description: "Token endpoint of the provider."
+  shortDescription: "Token endpoint of the provider."
+  name: "cas.authn.pac4j.oauth2[].token-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jOidcClientProperties>"
+  description: "Settings that deal with having OpenID Connect Providers as an external\
+    \ delegated-to authentication provider."
+  shortDescription: "Settings that deal with having OpenID Connect Providers as an\
+    \ external delegated-to authentication provider."
+  name: "cas.authn.pac4j.oidc"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.oidc[].apple.auto-redirect"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.oidc[].apple.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.oidc[].apple.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.oidc[].apple.client-name"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Read timeout of the OIDC client."
+  shortDescription: "Read timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].apple.connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.oidc[].apple.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.util.Map<String,String>"
+  description: "Custom parameters to send along in authZ requests, etc."
+  shortDescription: "Custom parameters to send along in authZ requests, etc."
+  name: "cas.authn.pac4j.oidc[].apple.custom-params"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "boolean"
+  description: "Disable PKCE support for the provider."
+  shortDescription: "Disable PKCE support for the provider."
+  name: "cas.authn.pac4j.oidc[].apple.disable-pkce"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The discovery endpoint to locate the provide metadata."
+  shortDescription: "The discovery endpoint to locate the provide metadata."
+  name: "cas.authn.pac4j.oidc[].apple.discovery-uri"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.oidc[].apple.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.oidc[].apple.enabled"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "boolean"
+  description: "Checks if sessions expire with token expiration."
+  shortDescription: "Checks if sessions expire with token expiration."
+  name: "cas.authn.pac4j.oidc[].apple.expire-session-with-token"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.oidc[].apple.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Logout url used for this provider."
+  shortDescription: "Logout url used for this provider."
+  name: "cas.authn.pac4j.oidc[].apple.logout-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.util.List<String>"
+  description: "List arbitrary mappings of claims when fetching user profiles.\nUses\
+    \ a \"directed list\" where the allowed\nsyntax would be {@code claim->attribute}."
+  shortDescription: "List arbitrary mappings of claims when fetching user profiles."
+  name: "cas.authn.pac4j.oidc[].apple.mapped-claims"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Clock skew in order to account for drift, when validating id tokens."
+  shortDescription: "Clock skew in order to account for drift, when validating id\
+    \ tokens."
+  name: "cas.authn.pac4j.oidc[].apple.max-clock-skew"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The JWS algorithm to use forcefully when validating ID tokens.\nIf\
+    \ none is defined, the first algorithm from metadata will be used."
+  shortDescription: "The JWS algorithm to use forcefully when validating ID tokens."
+  name: "cas.authn.pac4j.oidc[].apple.preferred-jws-algorithm"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.oidc[].apple.principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Private key obtained from Apple.\nMust point to a resource that resolved\
+    \ to an elliptic curve (EC) private key."
+  shortDescription: "Private key obtained from Apple."
+  name: "cas.authn.pac4j.oidc[].apple.private-key"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The identifier for the private key.\nUsually the 10 character Key\
+    \ ID of the private key you create\nin Apple."
+  shortDescription: "The identifier for the private key."
+  name: "cas.authn.pac4j.oidc[].apple.private-key-id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Connect timeout of the OIDC client."
+  shortDescription: "Connect timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].apple.read-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response mode specifies how the result of the authorization request\
+    \ is formatted.\nFor backward compatibility the default value is empty, which\
+    \ means the default pac4j (empty) response mode is used.\nPossible values includes\
+    \ \"query\", \"fragment\", \"form_post\", or \"web_message\""
+  shortDescription: "The response mode specifies how the result of the authorization\
+    \ request is formatted."
+  name: "cas.authn.pac4j.oidc[].apple.response-mode"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response type tells the authorization server which grant to execute.\n\
+    For backward compatibility the default value is empty, which means the default\
+    \ pac4j (\"code\") response type is used.\nPossibles values includes \"code\"\
+    , \"token\" or \"id_token\"."
+  shortDescription: "The response type tells the authorization server which grant\
+    \ to execute."
+  name: "cas.authn.pac4j.oidc[].apple.response-type"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Requested scope(s)."
+  shortDescription: "Requested scope(s)."
+  name: "cas.authn.pac4j.oidc[].apple.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.oidc[].apple.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Apple team identifier.\nUsually, 10 character string given to you\
+    \ by Apple."
+  shortDescription: "Apple team identifier."
+  name: "cas.authn.pac4j.oidc[].apple.team-id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Client secret expiration timeout."
+  shortDescription: "Client secret expiration timeout."
+  name: "cas.authn.pac4j.oidc[].apple.timeout"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "java.lang.String"
+  description: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  shortDescription: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  name: "cas.authn.pac4j.oidc[].apple.token-expiration-advance"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAppleOidcClientProperties"
+  type: "boolean"
+  description: "Whether an initial nonce should be to used\ninitially for replay attack\
+    \ mitigation."
+  shortDescription: "Whether an initial nonce should be to used initially for replay\
+    \ attack mitigation."
+  name: "cas.authn.pac4j.oidc[].apple.use-nonce"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.oidc[].azure.auto-redirect"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.oidc[].azure.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.oidc[].azure.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.oidc[].azure.client-name"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Read timeout of the OIDC client."
+  shortDescription: "Read timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].azure.connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.oidc[].azure.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.util.Map<String,String>"
+  description: "Custom parameters to send along in authZ requests, etc."
+  shortDescription: "Custom parameters to send along in authZ requests, etc."
+  name: "cas.authn.pac4j.oidc[].azure.custom-params"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "boolean"
+  description: "Disable PKCE support for the provider."
+  shortDescription: "Disable PKCE support for the provider."
+  name: "cas.authn.pac4j.oidc[].azure.disable-pkce"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "The discovery endpoint to locate the provide metadata."
+  shortDescription: "The discovery endpoint to locate the provide metadata."
+  name: "cas.authn.pac4j.oidc[].azure.discovery-uri"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.oidc[].azure.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.oidc[].azure.enabled"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "boolean"
+  description: "Checks if sessions expire with token expiration."
+  shortDescription: "Checks if sessions expire with token expiration."
+  name: "cas.authn.pac4j.oidc[].azure.expire-session-with-token"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.oidc[].azure.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Logout url used for this provider."
+  shortDescription: "Logout url used for this provider."
+  name: "cas.authn.pac4j.oidc[].azure.logout-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.util.List<String>"
+  description: "List arbitrary mappings of claims when fetching user profiles.\nUses\
+    \ a \"directed list\" where the allowed\nsyntax would be {@code claim->attribute}."
+  shortDescription: "List arbitrary mappings of claims when fetching user profiles."
+  name: "cas.authn.pac4j.oidc[].azure.mapped-claims"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Clock skew in order to account for drift, when validating id tokens."
+  shortDescription: "Clock skew in order to account for drift, when validating id\
+    \ tokens."
+  name: "cas.authn.pac4j.oidc[].azure.max-clock-skew"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "The JWS algorithm to use forcefully when validating ID tokens.\nIf\
+    \ none is defined, the first algorithm from metadata will be used."
+  shortDescription: "The JWS algorithm to use forcefully when validating ID tokens."
+  name: "cas.authn.pac4j.oidc[].azure.preferred-jws-algorithm"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.oidc[].azure.principal-attribute-id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Connect timeout of the OIDC client."
+  shortDescription: "Connect timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].azure.read-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response mode specifies how the result of the authorization request\
+    \ is formatted.\nFor backward compatibility the default value is empty, which\
+    \ means the default pac4j (empty) response mode is used.\nPossible values includes\
+    \ \"query\", \"fragment\", \"form_post\", or \"web_message\""
+  shortDescription: "The response mode specifies how the result of the authorization\
+    \ request is formatted."
+  name: "cas.authn.pac4j.oidc[].azure.response-mode"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response type tells the authorization server which grant to execute.\n\
+    For backward compatibility the default value is empty, which means the default\
+    \ pac4j (\"code\") response type is used.\nPossibles values includes \"code\"\
+    , \"token\" or \"id_token\"."
+  shortDescription: "The response type tells the authorization server which grant\
+    \ to execute."
+  name: "cas.authn.pac4j.oidc[].azure.response-type"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Requested scope(s)."
+  shortDescription: "Requested scope(s)."
+  name: "cas.authn.pac4j.oidc[].azure.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.oidc[].azure.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Azure AD tenant name.\nAfter tenant is configured, {@link #getDiscoveryUri()}\
+    \ property will be overridden.\n<p>\nAzure AD tenant name can take 4 different\
+    \ values:\n<ul>\n<li>{@code common}: Users with both a personal Microsoft account\
+    \ and a work or\nschool account from Azure AD can sign in. </li>\n<li>{@code organizations}:\
+    \ Only users with work or school accounts from Azure\nAD can sign in.</li>\n<li>{@code\
+    \ consumers}: Only users with a personal Microsoft account can sign\nin.</li>\n\
+    <li>Specific tenant domain name or ID: Only user with account under that the\n\
+    specified tenant can login</li>\n</ul>"
+  shortDescription: "Azure AD tenant name."
+  name: "cas.authn.pac4j.oidc[].azure.tenant"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "java.lang.String"
+  description: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  shortDescription: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  name: "cas.authn.pac4j.oidc[].azure.token-expiration-advance"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jAzureOidcClientProperties"
+  type: "boolean"
+  description: "Whether an initial nonce should be to used\ninitially for replay attack\
+    \ mitigation."
+  shortDescription: "Whether an initial nonce should be to used initially for replay\
+    \ attack mitigation."
+  name: "cas.authn.pac4j.oidc[].azure.use-nonce"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.oidc[].generic.auto-redirect"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.oidc[].generic.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.oidc[].generic.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.oidc[].generic.client-name"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Read timeout of the OIDC client."
+  shortDescription: "Read timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].generic.connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.oidc[].generic.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.util.Map<String,String>"
+  description: "Custom parameters to send along in authZ requests, etc."
+  shortDescription: "Custom parameters to send along in authZ requests, etc."
+  name: "cas.authn.pac4j.oidc[].generic.custom-params"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Disable PKCE support for the provider."
+  shortDescription: "Disable PKCE support for the provider."
+  name: "cas.authn.pac4j.oidc[].generic.disable-pkce"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The discovery endpoint to locate the provide metadata."
+  shortDescription: "The discovery endpoint to locate the provide metadata."
+  name: "cas.authn.pac4j.oidc[].generic.discovery-uri"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.oidc[].generic.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.oidc[].generic.enabled"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Checks if sessions expire with token expiration."
+  shortDescription: "Checks if sessions expire with token expiration."
+  name: "cas.authn.pac4j.oidc[].generic.expire-session-with-token"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.oidc[].generic.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Logout url used for this provider."
+  shortDescription: "Logout url used for this provider."
+  name: "cas.authn.pac4j.oidc[].generic.logout-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.util.List<String>"
+  description: "List arbitrary mappings of claims when fetching user profiles.\nUses\
+    \ a \"directed list\" where the allowed\nsyntax would be {@code claim->attribute}."
+  shortDescription: "List arbitrary mappings of claims when fetching user profiles."
+  name: "cas.authn.pac4j.oidc[].generic.mapped-claims"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Clock skew in order to account for drift, when validating id tokens."
+  shortDescription: "Clock skew in order to account for drift, when validating id\
+    \ tokens."
+  name: "cas.authn.pac4j.oidc[].generic.max-clock-skew"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The JWS algorithm to use forcefully when validating ID tokens.\nIf\
+    \ none is defined, the first algorithm from metadata will be used."
+  shortDescription: "The JWS algorithm to use forcefully when validating ID tokens."
+  name: "cas.authn.pac4j.oidc[].generic.preferred-jws-algorithm"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.oidc[].generic.principal-attribute-id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Connect timeout of the OIDC client."
+  shortDescription: "Connect timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].generic.read-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response mode specifies how the result of the authorization request\
+    \ is formatted.\nFor backward compatibility the default value is empty, which\
+    \ means the default pac4j (empty) response mode is used.\nPossible values includes\
+    \ \"query\", \"fragment\", \"form_post\", or \"web_message\""
+  shortDescription: "The response mode specifies how the result of the authorization\
+    \ request is formatted."
+  name: "cas.authn.pac4j.oidc[].generic.response-mode"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response type tells the authorization server which grant to execute.\n\
+    For backward compatibility the default value is empty, which means the default\
+    \ pac4j (\"code\") response type is used.\nPossibles values includes \"code\"\
+    , \"token\" or \"id_token\"."
+  shortDescription: "The response type tells the authorization server which grant\
+    \ to execute."
+  name: "cas.authn.pac4j.oidc[].generic.response-type"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Requested scope(s)."
+  shortDescription: "Requested scope(s)."
+  name: "cas.authn.pac4j.oidc[].generic.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.oidc[].generic.secret"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  shortDescription: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  name: "cas.authn.pac4j.oidc[].generic.token-expiration-advance"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Whether an initial nonce should be to used\ninitially for replay attack\
+    \ mitigation."
+  shortDescription: "Whether an initial nonce should be to used initially for replay\
+    \ attack mitigation."
+  name: "cas.authn.pac4j.oidc[].generic.use-nonce"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.oidc[].google.auto-redirect"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.oidc[].google.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.oidc[].google.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.oidc[].google.client-name"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Read timeout of the OIDC client."
+  shortDescription: "Read timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].google.connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.oidc[].google.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.util.Map<String,String>"
+  description: "Custom parameters to send along in authZ requests, etc."
+  shortDescription: "Custom parameters to send along in authZ requests, etc."
+  name: "cas.authn.pac4j.oidc[].google.custom-params"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Disable PKCE support for the provider."
+  shortDescription: "Disable PKCE support for the provider."
+  name: "cas.authn.pac4j.oidc[].google.disable-pkce"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The discovery endpoint to locate the provide metadata."
+  shortDescription: "The discovery endpoint to locate the provide metadata."
+  name: "cas.authn.pac4j.oidc[].google.discovery-uri"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.oidc[].google.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.oidc[].google.enabled"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Checks if sessions expire with token expiration."
+  shortDescription: "Checks if sessions expire with token expiration."
+  name: "cas.authn.pac4j.oidc[].google.expire-session-with-token"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.oidc[].google.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Logout url used for this provider."
+  shortDescription: "Logout url used for this provider."
+  name: "cas.authn.pac4j.oidc[].google.logout-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.util.List<String>"
+  description: "List arbitrary mappings of claims when fetching user profiles.\nUses\
+    \ a \"directed list\" where the allowed\nsyntax would be {@code claim->attribute}."
+  shortDescription: "List arbitrary mappings of claims when fetching user profiles."
+  name: "cas.authn.pac4j.oidc[].google.mapped-claims"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Clock skew in order to account for drift, when validating id tokens."
+  shortDescription: "Clock skew in order to account for drift, when validating id\
+    \ tokens."
+  name: "cas.authn.pac4j.oidc[].google.max-clock-skew"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The JWS algorithm to use forcefully when validating ID tokens.\nIf\
+    \ none is defined, the first algorithm from metadata will be used."
+  shortDescription: "The JWS algorithm to use forcefully when validating ID tokens."
+  name: "cas.authn.pac4j.oidc[].google.preferred-jws-algorithm"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.oidc[].google.principal-attribute-id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Connect timeout of the OIDC client."
+  shortDescription: "Connect timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].google.read-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response mode specifies how the result of the authorization request\
+    \ is formatted.\nFor backward compatibility the default value is empty, which\
+    \ means the default pac4j (empty) response mode is used.\nPossible values includes\
+    \ \"query\", \"fragment\", \"form_post\", or \"web_message\""
+  shortDescription: "The response mode specifies how the result of the authorization\
+    \ request is formatted."
+  name: "cas.authn.pac4j.oidc[].google.response-mode"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response type tells the authorization server which grant to execute.\n\
+    For backward compatibility the default value is empty, which means the default\
+    \ pac4j (\"code\") response type is used.\nPossibles values includes \"code\"\
+    , \"token\" or \"id_token\"."
+  shortDescription: "The response type tells the authorization server which grant\
+    \ to execute."
+  name: "cas.authn.pac4j.oidc[].google.response-type"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Requested scope(s)."
+  shortDescription: "Requested scope(s)."
+  name: "cas.authn.pac4j.oidc[].google.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.oidc[].google.secret"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "java.lang.String"
+  description: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  shortDescription: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  name: "cas.authn.pac4j.oidc[].google.token-expiration-advance"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.BasePac4jOidcClientProperties"
+  type: "boolean"
+  description: "Whether an initial nonce should be to used\ninitially for replay attack\
+    \ mitigation."
+  shortDescription: "Whether an initial nonce should be to used initially for replay\
+    \ attack mitigation."
+  name: "cas.authn.pac4j.oidc[].google.use-nonce"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.oidc[].keycloak.auto-redirect"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Keycloak base URL used to construct metadata discovery URI."
+  shortDescription: "Keycloak base URL used to construct metadata discovery URI."
+  name: "cas.authn.pac4j.oidc[].keycloak.base-uri"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.oidc[].keycloak.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.oidc[].keycloak.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.oidc[].keycloak.client-name"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Read timeout of the OIDC client."
+  shortDescription: "Read timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].keycloak.connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.oidc[].keycloak.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.util.Map<String,String>"
+  description: "Custom parameters to send along in authZ requests, etc."
+  shortDescription: "Custom parameters to send along in authZ requests, etc."
+  name: "cas.authn.pac4j.oidc[].keycloak.custom-params"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "boolean"
+  description: "Disable PKCE support for the provider."
+  shortDescription: "Disable PKCE support for the provider."
+  name: "cas.authn.pac4j.oidc[].keycloak.disable-pkce"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "The discovery endpoint to locate the provide metadata."
+  shortDescription: "The discovery endpoint to locate the provide metadata."
+  name: "cas.authn.pac4j.oidc[].keycloak.discovery-uri"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.oidc[].keycloak.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.oidc[].keycloak.enabled"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "boolean"
+  description: "Checks if sessions expire with token expiration."
+  shortDescription: "Checks if sessions expire with token expiration."
+  name: "cas.authn.pac4j.oidc[].keycloak.expire-session-with-token"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.oidc[].keycloak.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Logout url used for this provider."
+  shortDescription: "Logout url used for this provider."
+  name: "cas.authn.pac4j.oidc[].keycloak.logout-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.util.List<String>"
+  description: "List arbitrary mappings of claims when fetching user profiles.\nUses\
+    \ a \"directed list\" where the allowed\nsyntax would be {@code claim->attribute}."
+  shortDescription: "List arbitrary mappings of claims when fetching user profiles."
+  name: "cas.authn.pac4j.oidc[].keycloak.mapped-claims"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Clock skew in order to account for drift, when validating id tokens."
+  shortDescription: "Clock skew in order to account for drift, when validating id\
+    \ tokens."
+  name: "cas.authn.pac4j.oidc[].keycloak.max-clock-skew"
+  defaultValue: "PT5S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "The JWS algorithm to use forcefully when validating ID tokens.\nIf\
+    \ none is defined, the first algorithm from metadata will be used."
+  shortDescription: "The JWS algorithm to use forcefully when validating ID tokens."
+  name: "cas.authn.pac4j.oidc[].keycloak.preferred-jws-algorithm"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.oidc[].keycloak.principal-attribute-id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Connect timeout of the OIDC client."
+  shortDescription: "Connect timeout of the OIDC client."
+  name: "cas.authn.pac4j.oidc[].keycloak.read-timeout"
+  defaultValue: "PT5S"
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Keycloak realm used to construct metadata discovery URI."
+  shortDescription: "Keycloak realm used to construct metadata discovery URI."
+  name: "cas.authn.pac4j.oidc[].keycloak.realm"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response mode specifies how the result of the authorization request\
+    \ is formatted.\nFor backward compatibility the default value is empty, which\
+    \ means the default pac4j (empty) response mode is used.\nPossible values includes\
+    \ \"query\", \"fragment\", \"form_post\", or \"web_message\""
+  shortDescription: "The response mode specifies how the result of the authorization\
+    \ request is formatted."
+  name: "cas.authn.pac4j.oidc[].keycloak.response-mode"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "The response type tells the authorization server which grant to execute.\n\
+    For backward compatibility the default value is empty, which means the default\
+    \ pac4j (\"code\") response type is used.\nPossibles values includes \"code\"\
+    , \"token\" or \"id_token\"."
+  shortDescription: "The response type tells the authorization server which grant\
+    \ to execute."
+  name: "cas.authn.pac4j.oidc[].keycloak.response-type"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Requested scope(s)."
+  shortDescription: "Requested scope(s)."
+  name: "cas.authn.pac4j.oidc[].keycloak.scope"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.oidc[].keycloak.secret"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "java.lang.String"
+  description: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  shortDescription: "Default time period advance (in seconds) for considering an access\
+    \ token expired."
+  name: "cas.authn.pac4j.oidc[].keycloak.token-expiration-advance"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.oidc.Pac4jKeyCloakOidcClientProperties"
+  type: "boolean"
+  description: "Whether an initial nonce should be to used\ninitially for replay attack\
+    \ mitigation."
+  shortDescription: "Whether an initial nonce should be to used initially for replay\
+    \ attack mitigation."
+  name: "cas.authn.pac4j.oidc[].keycloak.use-nonce"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.paypal.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.paypal.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.paypal.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.paypal.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.paypal.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.paypal.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.paypal.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.paypal.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.paypal.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationPayPalProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.paypal.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.pac4j.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.pac4j.rest.basic-auth-username"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProperties"
+  type: "java.lang.String"
+  description: "Control the expiration policy of the cache that holds on the results\
+    \ from the rest api."
+  shortDescription: "Control the expiration policy of the cache that holds on the\
+    \ results from the rest api."
+  name: "cas.authn.pac4j.rest.cache-duration"
+  defaultValue: "PT8H"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.pac4j.rest.headers"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.pac4j.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.pac4j.rest.url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties>"
+  description: "Settings that deal with having SAML2 IdPs as an external delegated-to\
+    \ authentication provider."
+  shortDescription: "Settings that deal with having SAML2 IdPs as an external delegated-to\
+    \ authentication provider."
+  name: "cas.authn.pac4j.saml"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Maximum skew in seconds between SP and IDP clocks.\nThis skew is added\
+    \ onto the {@code NotOnOrAfter} field in seconds\nfor the SAML response validation."
+  shortDescription: "Maximum skew in seconds between SP and IDP clocks."
+  name: "cas.authn.pac4j.saml[].accepted-skew"
+  defaultValue: "PT300S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether the signature validation should be disabled.\nNever set this\
+    \ property to {@code true} in production."
+  shortDescription: "Whether the signature validation should be disabled."
+  name: "cas.authn.pac4j.saml[].all-signature-validation-disabled"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "int"
+  description: "Allows the SAML client to select a specific ACS url from the metadata,\
+    \ if defined.\nA negative value de-activates the selection process and is the\
+    \ default."
+  shortDescription: "Allows the SAML client to select a specific ACS url from the\
+    \ metadata, if defined."
+  name: "cas.authn.pac4j.saml[].assertion-consumer-service-index"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "int"
+  description: "AttributeConsumingServiceIndex attribute of AuthnRequest element.\n\
+    The given index points out a specific AttributeConsumingService structure, declared\
+    \ into the\nService Provider (SP)'s metadata, to be used to specify all the attributes\
+    \ that the Service Provider\nis asking to be released within the authentication\
+    \ assertion returned by the Identity Provider (IdP).\nThis attribute won't be\
+    \ sent with the request unless a positive value (including 0) is defined."
+  shortDescription: "AttributeConsumingServiceIndex attribute of AuthnRequest element."
+  name: "cas.authn.pac4j.saml[].attribute-consuming-service-index"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.util.List<String>"
+  description: "Requested authentication context class in authn requests."
+  shortDescription: "Requested authentication context class in authn requests."
+  name: "cas.authn.pac4j.saml[].authn-context-class-ref"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Specifies the comparison rule that should be used to evaluate the\
+    \ specified authentication methods.\nFor example, if exact is specified, the authentication\
+    \ method used must match one of the authentication\nmethods specified by the AuthnContextClassRef\
+    \ elements.\nAuthContextClassRef element require comparison rule to be used to\
+    \ evaluate the specified\nauthentication methods. If not explicitly specified\
+    \ \"exact\" rule will be used by default.\nOther acceptable values are minimum,\
+    \ maximum, better."
+  shortDescription: "Specifies the comparison rule that should be used to evaluate\
+    \ the specified authentication methods."
+  name: "cas.authn.pac4j.saml[].authn-context-comparison-type"
+  defaultValue: "exact"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.saml[].auto-redirect"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.util.List<String>"
+  description: "Collection of signing signature blocked algorithms, if any, to override\
+    \ the global defaults."
+  shortDescription: "Collection of signing signature blocked algorithms, if any, to\
+    \ override the global defaults."
+  name: "cas.authn.pac4j.saml[].blocked-signature-signing-algorithms"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow\nback to the CAS server one\
+    \ the identity\nprovider is successfully done. This may be\nused at the discretion\
+    \ of the client and its type\nto build service parameters, redirect URIs, etc.\n\
+    If none is specified, the CAS server's login endpoint\nwill be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.saml[].callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties.CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved.\nDefault is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.saml[].callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "int"
+  description: "Define the validity period for the certificate\nin number of days.\
+    \ The end-date of the certificate\nis controlled by this setting, when defined\
+    \ as a value\ngreater than zero."
+  shortDescription: "Define the validity period for the certificate in number of days."
+  name: "cas.authn.pac4j.saml[].certificate-expiration-days"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "A name to append to signing certificates generated.\nThe named part\
+    \ appended can be useful to identify for which clientName it was generated\nIf\
+    \ no name is provided the default certificate name will be used."
+  shortDescription: "A name to append to signing certificates generated."
+  name: "cas.authn.pac4j.saml[].certificate-name-to-append"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Certificate signature algorithm to use\nwhen generating the certificate."
+  shortDescription: "Certificate signature algorithm to use when generating the certificate."
+  name: "cas.authn.pac4j.saml[].certificate-signature-alg"
+  defaultValue: "SHA1WithRSA"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness.\nThis name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\")\nis added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for\ncustom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.saml[].client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.saml[].css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The destination binding to use\nwhen creating authentication requests."
+  shortDescription: "The destination binding to use when creating authentication requests."
+  name: "cas.authn.pac4j.saml[].destination-binding"
+  defaultValue: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client\nfor decoration and\
+    \ client presentation purposes.\nIf left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.saml[].display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether the client/external identity provider should be considered\n\
+    active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.saml[].enabled"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether authentication requests should be tagged as forced auth."
+  shortDescription: "Whether authentication requests should be tagged as forced auth."
+  name: "cas.authn.pac4j.saml[].force-auth"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Force generation of the keystore."
+  shortDescription: "Force generation of the keystore."
+  name: "cas.authn.pac4j.saml[].force-keystore-generation"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Attribute friendly name."
+  shortDescription: "Attribute friendly name."
+  name: "cas.authn.pac4j.saml[].friendly-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The metadata location of the identity provider that is to handle authentications."
+  shortDescription: "The metadata location of the identity provider that is to handle\
+    \ authentications."
+  name: "cas.authn.pac4j.saml[].identity-provider-metadata-path"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The key alias used in the keystore."
+  shortDescription: "The key alias used in the keystore."
+  name: "cas.authn.pac4j.saml[].keystore-alias"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The password to use when generating the SP/CAS keystore."
+  shortDescription: "The password to use when generating the SP/CAS keystore."
+  name: "cas.authn.pac4j.saml[].keystore-password"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Location of the keystore to use and generate the SP/CAS keystore."
+  shortDescription: "Location of the keystore to use and generate the SP/CAS keystore."
+  name: "cas.authn.pac4j.saml[].keystore-path"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.util.List<String>"
+  description: "Describes the map of attributes that are to be fetched from the credential\
+    \ (map keys)\nand then transformed/renamed using map values before they are put\
+    \ into a profile.\nAn example might be to fetch {@code givenName} from credential\
+    \ and rename it to {@code urn:oid:2.5.4.42} or vice versa.\nNote that this setting\
+    \ only applies to attribute names, and not friendly-names.\nList arbitrary mappings\
+    \ of claims. Uses a \"directed list\" where the allowed\nsyntax would be {@code\
+    \ givenName->urn:oid:2.5.4.42}."
+  shortDescription: "Describes the map of attributes that are to be fetched from the\
+    \ credential (map keys) and then transformed/renamed using map values before they\
+    \ are put into a profile."
+  name: "cas.authn.pac4j.saml[].mapped-attributes"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Once you have an authenticated session on the identity provider, usually\
+    \ it won't prompt you again to enter your\ncredentials and it will automatically\
+    \ generate a new assertion for you. By default, the SAML client\nwill accept assertions\
+    \ based on a previous authentication for one hour.\nYou can adjust this behavior\
+    \ by modifying this setting. The unit of time here is seconds."
+  shortDescription: "Once you have an authenticated session on the identity provider,\
+    \ usually it won't prompt you again to enter your credentials and it will automatically\
+    \ generate a new assertion for you."
+  name: "cas.authn.pac4j.saml[].maximum-authentication-lifetime"
+  defaultValue: "PT3600S"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Factory implementing this interface provides services for storing\
+    \ and retrieval of SAML messages for\ne.g. verification of retrieved responses.\
+    \ The default factory is an always empty store.\nYou may choose {@code org.pac4j.saml.store.HttpSessionStore}\
+    \ instead which allows SAML messages to be stored in a distributed session store\n\
+    specially required for high availability deployments and validation operations."
+  shortDescription: "Factory implementing this interface provides services for storing\
+    \ and retrieval of SAML messages for e.g. verification of retrieved responses."
+  name: "cas.authn.pac4j.saml[].message-store-factory"
+  defaultValue: "org.pac4j.saml.store.EmptyStoreFactory"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Attribute name."
+  shortDescription: "Attribute name."
+  name: "cas.authn.pac4j.saml[].name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Attribute name format."
+  shortDescription: "Attribute name format."
+  name: "cas.authn.pac4j.saml[].name-format"
+  defaultValue: "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "TriStateBoolean"
+  description: "Flag to indicate whether the allow-create flags\nfor nameid policies\
+    \ should be set to true, false or ignored/defined."
+  shortDescription: "Flag to indicate whether the allow-create flags for nameid policies\
+    \ should be set to true, false or ignored/defined."
+  name: "cas.authn.pac4j.saml[].name-id-policy-allow-create"
+  defaultValue: "TRUE"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "NameID policy to request in the authentication requests."
+  shortDescription: "NameID policy to request in the authentication requests."
+  name: "cas.authn.pac4j.saml[].name-id-policy-format"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether authentication requests should be tagged as passive."
+  shortDescription: "Whether authentication requests should be tagged as passive."
+  name: "cas.authn.pac4j.saml[].passive"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.saml[].principal-attribute-id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The attribute found in the saml response\nthat may be used to establish\
+    \ the authenticated\nuser and build a profile for CAS."
+  shortDescription: "The attribute found in the saml response that may be used to\
+    \ establish the authenticated user and build a profile for CAS."
+  name: "cas.authn.pac4j.saml[].principal-id-attribute"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The password to use when generating the private key for the SP/CAS\
+    \ keystore."
+  shortDescription: "The password to use when generating the private key for the SP/CAS\
+    \ keystore."
+  name: "cas.authn.pac4j.saml[].private-key-password"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Provider name set for the saml authentication request.\nSets the human-readable\
+    \ name of the requester for use by\nthe presenter's user agent or the identity\
+    \ provider."
+  shortDescription: "Provider name set for the saml authentication request."
+  name: "cas.authn.pac4j.saml[].provider-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.util.List<ServiceProviderRequestedAttribute>"
+  description: "List of attributes requested by the service provider\nthat would be\
+    \ put into the service provider metadata."
+  shortDescription: "List of attributes requested by the service provider that would\
+    \ be put into the service provider metadata."
+  name: "cas.authn.pac4j.saml[].requested-attributes"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether this attribute is required and should\nbe marked so in the\
+    \ metadata."
+  shortDescription: "Whether this attribute is required and should be marked so in\
+    \ the metadata."
+  name: "cas.authn.pac4j.saml[].required"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The entity id of the SP/CAS that is used in the SP metadata generation\
+    \ process."
+  shortDescription: "The entity id of the SP/CAS that is used in the SP metadata generation\
+    \ process."
+  name: "cas.authn.pac4j.saml[].service-provider-entity-id"
+  defaultValue: "https://apereo.org/cas/samlsp"
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "Location of the SP metadata to use and generate."
+  shortDescription: "Location of the SP metadata to use and generate."
+  name: "cas.authn.pac4j.saml[].service-provider-metadata-path"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether or not the authnRequest should be signed."
+  shortDescription: "Whether or not the authnRequest should be signed."
+  name: "cas.authn.pac4j.saml[].sign-authn-request"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether or not the Logout Request sent from the SP should be signed."
+  shortDescription: "Whether or not the Logout Request sent from the SP should be\
+    \ signed."
+  name: "cas.authn.pac4j.saml[].sign-service-provider-logout-request"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether or not SAML SP metadata should be signed when generated."
+  shortDescription: "Whether or not SAML SP metadata should be signed when generated."
+  name: "cas.authn.pac4j.saml[].sign-service-provider-metadata"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.util.List<String>"
+  description: "Collection of signing signature algorithms, if any, to override the\
+    \ global defaults."
+  shortDescription: "Collection of signing signature algorithms, if any, to override\
+    \ the global defaults."
+  name: "cas.authn.pac4j.saml[].signature-algorithms"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.lang.String"
+  description: "The signing signature canonicalization algorithm, if any, to override\
+    \ the global defaults."
+  shortDescription: "The signing signature canonicalization algorithm, if any, to\
+    \ override the global defaults."
+  name: "cas.authn.pac4j.saml[].signature-canonicalization-algorithm"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "java.util.List<String>"
+  description: "Collection of signing signature reference digest methods, if any,\
+    \ to override the global defaults."
+  shortDescription: "Collection of signing signature reference digest methods, if\
+    \ any, to override the global defaults."
+  name: "cas.authn.pac4j.saml[].signature-reference-digest-methods"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether name qualifiers should be produced\nin the final saml response."
+  shortDescription: "Whether name qualifiers should be produced in the final saml\
+    \ response."
+  name: "cas.authn.pac4j.saml[].use-name-qualifier"
+  defaultValue: true
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether metadata should be marked to request sign assertions."
+  shortDescription: "Whether metadata should be marked to request sign assertions."
+  name: "cas.authn.pac4j.saml[].wants-assertions-signed"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.saml.Pac4jSamlClientProperties"
+  type: "boolean"
+  description: "Whether a response has to be mandatory signed."
+  shortDescription: "Whether a response has to be mandatory signed."
+  name: "cas.authn.pac4j.saml[].wants-responses-signed"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.twitter.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.twitter.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.twitter.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.twitter.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.twitter.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.twitter.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.twitter.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.twitter.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.Boolean"
+  description: "Set to true to request the user's email address from the Twitter API.\
+    \ For this to have an effect it must first be enabled in the Twitter developer\
+    \ console."
+  shortDescription: "Set to true to request the user's email address from the Twitter\
+    \ API."
+  name: "cas.authn.pac4j.twitter.include-email"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.twitter.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationTwitterProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.twitter.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.windows-live.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.windows-live.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.windows-live.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.windows-live.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.windows-live.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.windows-live.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.windows-live.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.windows-live.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.windows-live.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWindowsLiveProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.windows-live.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.wordpress.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.wordpress.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.wordpress.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.wordpress.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.wordpress.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.wordpress.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.wordpress.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.wordpress.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.wordpress.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationWordpressProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.wordpress.secret"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.Boolean"
+  description: "Auto-redirect to this client."
+  shortDescription: "Auto-redirect to this client."
+  name: "cas.authn.pac4j.yahoo.auto-redirect"
+  defaultValue: false
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.String"
+  description: "Callback URL to use to return the flow back to the CAS server one\
+    \ the identity provider is successfully done. This may be used at the discretion\
+    \ of the client and its type to build service parameters, redirect URIs, etc.\
+    \ If none is specified, the CAS server's login endpoint will be used as the basis\
+    \ of the final callback url."
+  shortDescription: "Callback URL to use to return the flow back to the CAS server\
+    \ one the identity provider is successfully done."
+  name: "cas.authn.pac4j.yahoo.callback-url"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "org.apereo.cas.configuration.model.support.pac4j.Pac4jBaseClientProperties$CallbackUrlTypes"
+  description: "Determine how the callback url should be resolved. Default is {@link\
+    \ CallbackUrlTypes#QUERY_PARAMETER}.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ PATH_PARAMETER}: Path parameter callback url.\nThe client name is added to the\
+    \ path of the callback URL.</li><li>{@code QUERY_PARAMETER}: Query parameter callback\
+    \ url.\nThe client name is added to the path of a query parameter.</li><li>{@code\
+    \ NONE}: No callback url.\nNo name is added to the callback URL to be able to\
+    \ distinguish the client.</li></ul>"
+  shortDescription: "Determine how the callback url should be resolved."
+  name: "cas.authn.pac4j.yahoo.callback-url-type"
+  defaultValue: "QUERY_PARAMETER"
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.String"
+  description: "Name of the client mostly for UI purposes and uniqueness. This name,\
+    \ with 'non-word' characters converted to '-' (e.g. \"This Org (New)\" becomes\
+    \ \"This-Org--New-\") is added to the \"class\" attribute of the redirect link\
+    \ on the login page, to allow for custom styling of individual IdPs (e.g. for\
+    \ an organization logo)."
+  shortDescription: "Name of the client mostly for UI purposes and uniqueness."
+  name: "cas.authn.pac4j.yahoo.client-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.String"
+  description: "CSS class that should be assigned to this client."
+  shortDescription: "CSS class that should be assigned to this client."
+  name: "cas.authn.pac4j.yahoo.css-class"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.String"
+  description: "Indicate the title or display name of the client for decoration and\
+    \ client presentation purposes. If left blank, the client original name would\
+    \ be used by default."
+  shortDescription: "Indicate the title or display name of the client for decoration\
+    \ and client presentation purposes."
+  name: "cas.authn.pac4j.yahoo.display-name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  shortDescription: "Whether the client/external identity provider should be considered\
+    \ active and enabled for integration purposes."
+  name: "cas.authn.pac4j.yahoo.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.String"
+  description: "The client id."
+  shortDescription: "The client id."
+  name: "cas.authn.pac4j.yahoo.id"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.String"
+  description: "The attribute to use as the principal identifier built during and\
+    \ upon a successful authentication attempt."
+  shortDescription: "The attribute to use as the principal identifier built during\
+    \ and upon a successful authentication attempt."
+  name: "cas.authn.pac4j.yahoo.principal-attribute-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-pac4j-webflow"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationYahooProperties"
+  type: "java.lang.String"
+  description: "The client secret."
+  shortDescription: "The client secret."
+  name: "cas.authn.pac4j.yahoo.secret"
+  defaultValue: ""

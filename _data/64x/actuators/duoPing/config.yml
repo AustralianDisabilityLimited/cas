@@ -1,0 +1,15 @@
+---
+- method: "GET"
+  path: "duoPing"
+  name: "duoPing"
+  endpointType: "Endpoint"
+  signature: "DuoSecurityPingEndpoint.pingDuo(java.lang.String)"
+  owner: "org.apereo.cas.adaptors.duo.web.DuoSecurityPingEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Ping Duo Security given the provider id."
+  parameters:
+  - name: "providerId"
+    required: false
+  produces:
+  - "application/json"

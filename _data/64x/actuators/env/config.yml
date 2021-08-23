@@ -1,0 +1,19 @@
+---
+- method: "GET"
+  path: "env/{toMatch}"
+  name: "env"
+  endpointType: "Endpoint"
+  signature: "EnvironmentEndpoint.environmentEntry(java.lang.String)"
+  owner: "org.springframework.boot.actuate.env.EnvironmentEndpoint"
+  returnType: "EnvironmentEntryDescriptor"
+  casEndpoint: false
+  summary: "Produces a collection of all application properties."
+- method: "GET"
+  path: "env"
+  name: "env"
+  endpointType: "Endpoint"
+  signature: "EnvironmentEndpoint.environment(java.lang.String)"
+  owner: "org.springframework.boot.actuate.env.EnvironmentEndpoint"
+  returnType: "EnvironmentDescriptor"
+  casEndpoint: false
+  summary: "Produces a collection of all application properties."

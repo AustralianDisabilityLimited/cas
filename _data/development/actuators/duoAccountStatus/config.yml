@@ -1,0 +1,17 @@
+---
+- method: "GET"
+  path: "duoAccountStatus/{username}"
+  name: "duoAccountStatus"
+  endpointType: "Endpoint"
+  signature: "DuoSecurityUserAccountStatusEndpoint.fetchAccountStatus(java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.adaptors.duo.web.DuoSecurityUserAccountStatusEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Fetch Duo Security user account status."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "providerId"
+    required: false
+  produces:
+  - "application/json"

@@ -1,0 +1,11 @@
+---
+- method: "GET"
+  path: "conditions"
+  name: "conditions"
+  endpointType: "Endpoint"
+  signature: "ConditionsReportEndpoint.applicationConditionEvaluation()"
+  owner: "org.springframework.boot.actuate.autoconfigure.condition.ConditionsReportEndpoint"
+  returnType: "ApplicationConditionEvaluation"
+  casEndpoint: false
+  summary: "Shows the conditions that were evaluated on configuration and auto-configuration\
+    \ classes and the reasons."

@@ -1,0 +1,224 @@
+---
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "The default auto-commit behavior of connections in the pool. Determined\
+    \ whether queries such as update/insert should be immediately executed without\
+    \ waiting for an underlying transaction."
+  shortDescription: "The default auto-commit behavior of connections in the pool."
+  name: "cas.service-registry.jpa.autocommit"
+  defaultValue: false
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.Integer"
+  description: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  shortDescription: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  name: "cas.service-registry.jpa.batch-size"
+  defaultValue: 100
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Attempts to do a JNDI data source look up for the data source name\
+    \ specified. Will attempt to locate the data source object as is."
+  shortDescription: "Attempts to do a JNDI data source look up for the data source\
+    \ name specified."
+  name: "cas.service-registry.jpa.data-source-name"
+  defaultValue: ""
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Hibernate feature to automatically validate and exports DDL to the\
+    \ schema. By default, creates and drops the schema automatically when a session\
+    \ is starts and ends. Setting the value to {@code validate} or {@code none} may\
+    \ be more desirable for production, but any of the following options can be used:\
+    \ <ul>     <li>{@code validate}: Validate the schema, but make no changes to the\
+    \ database.</li>     <li>{@code update}: Update the schema.</li>     <li>{@code\
+    \ create}: Create the schema, destroying previous data.</li>     <li>{@code create-drop}:\
+    \ Drop the schema at the end of the session.</li>     <li>{@code none}: Do nothing.</li>\
+    \ </ul> <p> Note that during a version migration where any schema has changed\
+    \ {@code create-drop} will result in the loss of all data as soon as CAS is started.\
+    \ For transient data like tickets this is probably not an issue, but in cases\
+    \ like the audit table important data could be lost. Using `update`, while safe\
+    \ for data, is confirmed to result in invalid database state. {@code validate}\
+    \ or {@code none} settings are likely the only safe options for production use.\
+    \ </p> For more info, <a href=\"http://docs.spring.io/spring-framework/docs/current/javadoc-api\"\
+    >see this</a>."
+  shortDescription: "Hibernate feature to automatically validate and exports DDL to\
+    \ the schema."
+  name: "cas.service-registry.jpa.ddl-auto"
+  defaultValue: "update"
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  shortDescription: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  name: "cas.service-registry.jpa.default-catalog"
+  defaultValue: ""
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Qualify unqualified table names with the given schema/tablespace in\
+    \ generated SQL."
+  shortDescription: "Qualify unqualified table names with the given schema/tablespace\
+    \ in generated SQL."
+  name: "cas.service-registry.jpa.default-schema"
+  defaultValue: ""
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The database dialect is a configuration setting for platform independent\
+    \ software (JPA, Hibernate, etc) which allows such software to translate its generic\
+    \ SQL statements into vendor specific DDL, DML."
+  shortDescription: "The database dialect is a configuration setting for platform\
+    \ independent software (JPA, Hibernate, etc) which allows such software to translate\
+    \ its generic SQL statements into vendor specific DDL, DML."
+  name: "cas.service-registry.jpa.dialect"
+  defaultValue: "org.hibernate.dialect.HSQLDialect"
+- required: true
+  module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The JDBC driver used to connect to the database."
+  shortDescription: "The JDBC driver used to connect to the database."
+  name: "cas.service-registry.jpa.driver-class"
+  defaultValue: "org.hsqldb.jdbcDriver"
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.Long"
+  description: "Set the pool initialization failure timeout. <ul> <li>Any value greater\
+    \ than zero will be treated as a timeout for pool initialization. The calling\
+    \ thread will be blocked from continuing until a successful connection to the\
+    \ database, or until the timeout is reached.  If the timeout is reached, then\
+    \ a {@code PoolInitializationException} will be thrown. </li> <li>A value of zero\
+    \ will <i>not</i>  prevent the pool from starting in the case that a connection\
+    \ cannot be obtained. However, upon start the pool will attempt to obtain a connection\
+    \ and validate that the {@code connectionTestQuery} and {@code connectionInitSql}\
+    \ are valid.  If those validations fail, an exception will be thrown.  If a connection\
+    \ cannot be obtained, the validation is skipped and the the pool will start and\
+    \ continue to try to obtain connections in the background. This can mean that\
+    \ callers to {@code DataSource#getConnection()} may encounter exceptions. </li>\
+    \ <li>A value less than zero will <i>not</i> bypass any connection attempt and\
+    \ validation during startup, and therefore the pool will start immediately.  The\
+    \ pool will continue to try to obtain connections in the background. This can\
+    \ mean that callers to {@code DataSource#getConnection()} may encounter exceptions.\
+    \ </li> </ul> Note that if this timeout value is greater than or equal to zero\
+    \ (0), and therefore an initial connection validation is performed, this timeout\
+    \ does not override the {@code connectionTimeout} or {@code validationTimeout};\
+    \ they will be honored before this timeout is applied.  The default value is one\
+    \ millisecond."
+  shortDescription: "Set the pool initialization failure timeout."
+  name: "cas.service-registry.jpa.fail-fast-timeout"
+  defaultValue: 1
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.Integer"
+  description: "Used to specify number of rows to be fetched in a select query."
+  shortDescription: "Used to specify number of rows to be fetched in a select query."
+  name: "cas.service-registry.jpa.fetch-size"
+  defaultValue: 100
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Allow hibernate to generate query statistics."
+  shortDescription: "Allow hibernate to generate query statistics."
+  name: "cas.service-registry.jpa.generate-statistics"
+  defaultValue: false
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The SQL query to be executed to test the validity of connections."
+  shortDescription: "The SQL query to be executed to test the validity of connections."
+  name: "cas.service-registry.jpa.health-query"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Controls the maximum amount of time that a connection is allowed to\
+    \ sit idle in the pool."
+  shortDescription: "Controls the maximum amount of time that a connection is allowed\
+    \ to sit idle in the pool."
+  name: "cas.service-registry.jpa.idle-timeout"
+  defaultValue: "PT10M"
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "This property determines whether data source isolates internal pool\
+    \ queries, such as the connection alive test, in their own transaction. <p> Since\
+    \ these are typically read-only queries, it is rarely necessary to encapsulate\
+    \ them in their own transaction. This property only applies if {@link #autocommit}\
+    \ is disabled."
+  shortDescription: "This property determines whether data source isolates internal\
+    \ pool queries, such as the connection alive test, in their own transaction."
+  name: "cas.service-registry.jpa.isolate-internal-queries"
+  defaultValue: false
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Defines the isolation level for transactions. @see org.springframework.transaction.TransactionDefinition"
+  shortDescription: "Defines the isolation level for transactions."
+  name: "cas.service-registry.jpa.isolation-level-name"
+  defaultValue: "ISOLATION_READ_COMMITTED"
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.Integer"
+  description: "Controls the amount of time that a connection can be out of the pool\
+    \ before a message is logged indicating a possible connection leak."
+  shortDescription: "Controls the amount of time that a connection can be out of the\
+    \ pool before a message is logged indicating a possible connection leak."
+  name: "cas.service-registry.jpa.leak-threshold"
+  defaultValue: 3000
+- required: true
+  module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The database connection password."
+  shortDescription: "The database connection password."
+  name: "cas.service-registry.jpa.password"
+  defaultValue: ""
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Fully-qualified name of the class that can control the physical naming\
+    \ strategy of hibernate."
+  shortDescription: "Fully-qualified name of the class that can control the physical\
+    \ naming strategy of hibernate."
+  name: "cas.service-registry.jpa.physical-naming-strategy-class-name"
+  defaultValue: "org.apereo.cas.hibernate.CasHibernatePhysicalNamingStrategy"
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Defines the propagation behavior for transactions. @see org.springframework.transaction.TransactionDefinition"
+  shortDescription: "Defines the propagation behavior for transactions."
+  name: "cas.service-registry.jpa.propagation-behavior-name"
+  defaultValue: "PROPAGATION_REQUIRED"
+- module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Additional settings provided by Hibernate in form of key-value pairs."
+  shortDescription: "Additional settings provided by Hibernate in form of key-value\
+    \ pairs."
+  name: "cas.service-registry.jpa.properties"
+  defaultValue: ""
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The database connection URL."
+  shortDescription: "The database connection URL."
+  name: "cas.service-registry.jpa.url"
+  defaultValue: "jdbc:hsqldb:mem:cas-hsql-database"
+- required: true
+  module: "cas-server-support-jpa-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.jpa.serviceregistry.JpaServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The database user. <p> The database user must have sufficient permissions\
+    \ to be able to handle schema changes and updates, when needed."
+  shortDescription: "The database user."
+  name: "cas.service-registry.jpa.user"
+  defaultValue: "sa"

@@ -1,0 +1,81 @@
+---
+- module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "Query option consistency level. The consistency level set through\
+    \ this method will be use for queries that don't explicitly have a consistency\
+    \ level. Accepted values are:{@code ALL, ANY, EACH_QUORUM, LOCAL_ONE, LOCAL_QUORUM,\
+    \ LOCAL_SERIAL, ONE, QUORUM, SERIAL, THREE, TWO}."
+  shortDescription: "Query option consistency level."
+  name: "cas.ticket.registry.cassandra.consistency-level"
+  defaultValue: "LOCAL_QUORUM"
+- required: true
+  module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "The list of contact points to use for the new cluster."
+  shortDescription: "The list of contact points to use for the new cluster."
+  name: "cas.ticket.registry.cassandra.contact-points"
+  defaultValue: ""
+- module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Flag that indicates whether to drop tables on start up."
+  shortDescription: "Flag that indicates whether to drop tables on start up."
+  name: "cas.ticket.registry.cassandra.drop-tables-on-startup"
+  defaultValue: false
+- required: true
+  module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "Keyspace address to use where the cluster would connect."
+  shortDescription: "Keyspace address to use where the cluster would connect."
+  name: "cas.ticket.registry.cassandra.keyspace"
+  defaultValue: ""
+- module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "Used by a DC-ware round-robin load balancing policy. This policy provides\
+    \ round-robin queries over the node of the local data center. It also includes\
+    \ in the query plans returned a configurable number of hosts in the remote data\
+    \ centers, but those are always tried after the local nodes. In other words, this\
+    \ policy guarantees that no host in a remote data center will be queried unless\
+    \ no host in the local data center can be reached."
+  shortDescription: "Used by a DC-ware round-robin load balancing policy."
+  name: "cas.ticket.registry.cassandra.local-dc"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "Password to bind and establish a connection to cassandra."
+  shortDescription: "Password to bind and establish a connection to cassandra."
+  name: "cas.ticket.registry.cassandra.password"
+  defaultValue: ""
+- module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "Query option serial consistency level. The serial consistency level\
+    \ set through this method will be use for queries that don't explicitly have a\
+    \ serial consistency level. Accepted values are:{@code ALL, ANY, EACH_QUORUM,\
+    \ LOCAL_ONE, LOCAL_QUORUM, LOCAL_SERIAL, ONE, QUORUM, SERIAL, THREE, TWO}."
+  shortDescription: "Query option serial consistency level."
+  name: "cas.ticket.registry.cassandra.serial-consistency-level"
+  defaultValue: "LOCAL_SERIAL"
+- duration: true
+  module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "The request timeout. This defines how long the driver will wait for\
+    \ a given Cassandra node to answer a query."
+  shortDescription: "The request timeout."
+  name: "cas.ticket.registry.cassandra.timeout"
+  defaultValue: "PT5S"
+- required: true
+  module: "cas-server-support-cassandra-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.cassandra.ticketregistry.CassandraTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "Username to bind and establish a connection to cassandra."
+  shortDescription: "Username to bind and establish a connection to cassandra."
+  name: "cas.ticket.registry.cassandra.username"
+  defaultValue: ""

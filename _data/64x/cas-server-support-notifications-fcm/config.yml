@@ -1,0 +1,37 @@
+---
+- module: "cas-server-support-notifications-fcm"
+  owner: "org.apereo.cas.configuration.model.support.firebase.GoogleFirebaseCloudMessagingProperties"
+  type: "java.lang.String"
+  description: "Firebase database url."
+  shortDescription: "Firebase database url."
+  name: "cas.google-firebase-messaging.database-url"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-notifications-fcm"
+  owner: "org.apereo.cas.configuration.model.support.firebase.GoogleFirebaseCloudMessagingProperties"
+  type: "java.lang.String"
+  description: "The principal attribute name that contains the registration token\
+    \ for the user. Registration tokens that are provided by clients during the handshake\
+    \ process should be stored on the server, and made available to CAS as a principal\
+    \ attribute."
+  shortDescription: "The principal attribute name that contains the registration token\
+    \ for the user."
+  name: "cas.google-firebase-messaging.registration-token-attribute-name"
+  defaultValue: ""
+- module: "cas-server-support-notifications-fcm"
+  owner: "org.apereo.cas.configuration.model.support.firebase.GoogleFirebaseCloudMessagingProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Required scopes to properly communicate with the firebase cloud."
+  shortDescription: "Required scopes to properly communicate with the firebase cloud."
+  name: "cas.google-firebase-messaging.scopes"
+  defaultValue: ""
+- module: "cas-server-support-notifications-fcm"
+  owner: "org.apereo.cas.configuration.model.support.firebase.GoogleFirebaseCloudMessagingProperties"
+  type: "org.apereo.cas.configuration.model.SpringResourceProperties"
+  description: "Path to the service account key json file. This can optional if you\
+    \ set the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} to the file\
+    \ path of the JSON file that contains your service account key. If this is undefined,\
+    \ the property value will be used instead."
+  shortDescription: "Path to the service account key json file."
+  name: "cas.google-firebase-messaging.service-account-key"
+  defaultValue: ""

@@ -1,0 +1,164 @@
+---
+- duration: true
+  module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Client execution timeout."
+  shortDescription: "Client execution timeout."
+  name: "cas.sms-provider.sns.client-execution-timeout"
+  defaultValue: "10000"
+- duration: true
+  module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Connection timeout."
+  shortDescription: "Connection timeout."
+  name: "cas.sms-provider.sns.connection-timeout"
+  defaultValue: "5000"
+- required: true
+  module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Use access-key provided by AWS to authenticate."
+  shortDescription: "Use access-key provided by AWS to authenticate."
+  name: "cas.sms-provider.sns.credential-access-key"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Use secret key provided by AWS to authenticate."
+  shortDescription: "Use secret key provided by AWS to authenticate."
+  name: "cas.sms-provider.sns.credential-secret-key"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "AWS custom endpoint."
+  shortDescription: "AWS custom endpoint."
+  name: "cas.sms-provider.sns.endpoint"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Local address."
+  shortDescription: "Local address."
+  name: "cas.sms-provider.sns.local-address"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.Integer"
+  description: "Maximum connections setting."
+  shortDescription: "Maximum connections setting."
+  name: "cas.sms-provider.sns.max-connections"
+  defaultValue: 10
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "The maximum amount in USD that you are willing to spend to send the\
+    \ SMS message. Amazon SNS will not send the message if it determines that doing\
+    \ so would incur a cost that exceeds the maximum price. This attribute has no\
+    \ effect if your month-to-date SMS costs have already exceeded the limit set for\
+    \ the MonthlySpendLimit attribute, which you set by using the SetSMSAttributes\
+    \ request. If you are sending the message to an Amazon SNS topic, the maximum\
+    \ price applies to each message delivery to each phone number that is subscribed\
+    \ to the topic."
+  shortDescription: "The maximum amount in USD that you are willing to spend to send\
+    \ the SMS message."
+  name: "cas.sms-provider.sns.max-price"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Profile name to use."
+  shortDescription: "Profile name to use."
+  name: "cas.sms-provider.sns.profile-name"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Profile path."
+  shortDescription: "Profile path."
+  name: "cas.sms-provider.sns.profile-path"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Optionally specifies the proxy host to connect through."
+  shortDescription: "Optionally specifies the proxy host to connect through."
+  name: "cas.sms-provider.sns.proxy-host"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Optionally specifies the proxy password to connect through."
+  shortDescription: "Optionally specifies the proxy password to connect through."
+  name: "cas.sms-provider.sns.proxy-password"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Optionally specifies the proxy username to connect through."
+  shortDescription: "Optionally specifies the proxy username to connect through."
+  name: "cas.sms-provider.sns.proxy-username"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "AWS region used."
+  shortDescription: "AWS region used."
+  name: "cas.sms-provider.sns.region"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Outline the requested retry mode. Accepted values are {@code STANDARD,\
+    \ LEGACY}."
+  shortDescription: "Outline the requested retry mode."
+  name: "cas.sms-provider.sns.retry-mode"
+  defaultValue: "STANDARD"
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "A custom ID that contains up to 11 alphanumeric characters, including\
+    \ at least one letter and no spaces.  The sender ID is displayed as the message\
+    \ sender on the receiving device. For example, you can use your business brand\
+    \ to make the message source easier to recognize. Support for sender IDs varies\
+    \ by country and/or region. For example, messages delivered to U.S. phone numbers\
+    \ will not display the sender ID. If you do not specify a sender ID, the message\
+    \ will display a long code as the sender ID in supported countries and regions.\
+    \ For countries or regions that require an alphabetic sender ID, the message displays\
+    \ NOTICE as the sender ID."
+  shortDescription: "A custom ID that contains up to 11 alphanumeric characters, including\
+    \ at least one letter and no spaces."
+  name: "cas.sms-provider.sns.sender-id"
+  defaultValue: ""
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "The type of message that you are sending. <ul> <li>Promotional - Noncritical\
+    \ messages, such as marketing messages. Amazon SNS optimizes the message delivery\
+    \ to incur the lowest cost.</li> <li>Transactional – Critical messages that support\
+    \ customer transactions, such as one-time passcodes for multi-factor authentication.\
+    \ Amazon SNS optimizes the message delivery to achieve the highest reliability.\
+    \ </li> </ul>"
+  shortDescription: "The type of message that you are sending."
+  name: "cas.sms-provider.sns.sms-type"
+  defaultValue: "Transactional"
+- duration: true
+  module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.String"
+  description: "Socket timeout."
+  shortDescription: "Socket timeout."
+  name: "cas.sms-provider.sns.socket-timeout"
+  defaultValue: "5000"
+- module: "cas-server-support-sms-aws-sns"
+  owner: "org.apereo.cas.configuration.model.support.sms.AmazonSnsProperties"
+  type: "java.lang.Boolean"
+  description: "Flag that indicates whether to use reaper."
+  shortDescription: "Flag that indicates whether to use reaper."
+  name: "cas.sms-provider.sns.use-reaper"
+  defaultValue: false

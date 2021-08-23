@@ -1,0 +1,39 @@
+---
+- required: true
+  module: "cas-server-support-aup-webflow"
+  owner: "org.apereo.cas.configuration.model.support.aup.AcceptableUsagePolicyCoreProperties"
+  type: "java.lang.String"
+  description: "AUP attribute to choose in order to determine whether policy has been\
+    \ accepted or not. The attribute is expected to contain a boolean value where\
+    \ {@code true} indicates policy has been accepted and {@code false} indicates\
+    \ otherwise. The attribute is fetched for the principal from configured sources\
+    \ and compared for the right match to determine policy status. If the attribute\
+    \ is not found, the policy status is considered as denied."
+  shortDescription: "AUP attribute to choose in order to determine whether policy\
+    \ has been accepted or not."
+  name: "cas.acceptable-usage-policy.core.aup-attribute-name"
+  defaultValue: "aupAccepted"
+- module: "cas-server-support-aup-webflow"
+  owner: "org.apereo.cas.configuration.model.support.aup.AcceptableUsagePolicyCoreProperties"
+  type: "java.lang.String"
+  description: "AUP attribute to choose whose single value dictates how CAS should\
+    \ fetch the policy terms from the relevant message bundles."
+  shortDescription: "AUP attribute to choose whose single value dictates how CAS should\
+    \ fetch the policy terms from the relevant message bundles."
+  name: "cas.acceptable-usage-policy.core.aup-policy-terms-attribute-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-aup-webflow"
+  owner: "org.apereo.cas.configuration.model.support.aup.AcceptableUsagePolicyCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Allows AUP to be turned off on startup."
+  shortDescription: "Allows AUP to be turned off on startup."
+  name: "cas.acceptable-usage-policy.core.enabled"
+  defaultValue: true
+- module: "cas-server-support-aup-webflow"
+  owner: "org.apereo.cas.configuration.model.support.aup.AcceptableUsagePolicyProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.aup.LdapAcceptableUsagePolicyProperties>"
+  description: "Control AUP via LDAP."
+  shortDescription: "Control AUP via LDAP."
+  name: "cas.acceptable-usage-policy.ldap"
+  defaultValue: ""

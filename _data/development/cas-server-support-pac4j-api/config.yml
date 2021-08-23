@@ -1,0 +1,127 @@
+---
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.String"
+  description: "A regular expression pattern that indicates the set of allowed IP\
+    \ addresses, when {@link #isPinToSession()} is cofigured. In the event that there\
+    \ is a mismatch between the cookie IP address and the current request-provided\
+    \ IP address (i.e. network switches, VPN, etc), the cookie can still be considered\
+    \ valid if the new IP address matches the pattern specified here."
+  shortDescription: "A regular expression pattern that indicates the set of allowed\
+    \ IP addresses, when {@link #isPinToSession()} is cofigured."
+  name: "cas.session-replication.cookie.allowed-ip-addresses-pattern"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.Boolean"
+  description: "Decide if cookie paths should be automatically configured based on\
+    \ the application context path, when the cookie path is not configured."
+  shortDescription: "Decide if cookie paths should be automatically configured based\
+    \ on the application context path, when the cookie path is not configured."
+  name: "cas.session-replication.cookie.auto-configure-cookie-path"
+  defaultValue: true
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.String"
+  description: "CAS Cookie comment, describes the cookie's usage and purpose."
+  shortDescription: "CAS Cookie comment, describes the cookie's usage and purpose."
+  name: "cas.session-replication.cookie.comment"
+  defaultValue: "CAS Cookie"
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.String"
+  description: "Cookie domain. Specifies the domain within which this cookie should\
+    \ be presented. The form of the domain name is specified by RFC 2965. A domain\
+    \ name begins with a dot (.foo.com) and means that the cookie is visible to servers\
+    \ in a specified Domain Name System (DNS) zone (for example, www.foo.com, but\
+    \ not a.b.foo.com). By default, cookies are only returned to the server that sent\
+    \ them."
+  shortDescription: "Cookie domain."
+  name: "cas.session-replication.cookie.domain"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.Boolean"
+  description: "true if this cookie contains the HttpOnly attribute. This means that\
+    \ the cookie should not be accessible to scripting engines, like javascript."
+  shortDescription: "true if this cookie contains the HttpOnly attribute."
+  name: "cas.session-replication.cookie.http-only"
+  defaultValue: true
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.Integer"
+  description: "The maximum age of the cookie, specified in seconds. By default, {@code\
+    \ -1} indicating the cookie will persist until browser shutdown. A positive value\
+    \ indicates that the cookie will expire after that many seconds have passed. Note\
+    \ that the value is the maximum age when the cookie will expire, not the cookie's\
+    \ current age. A negative value means that the cookie is not stored persistently\
+    \ and will be deleted when the Web browser exits. A zero value causes the cookie\
+    \ to be deleted."
+  shortDescription: "The maximum age of the cookie, specified in seconds."
+  name: "cas.session-replication.cookie.max-age"
+  defaultValue: -1
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.String"
+  description: "Cookie name. Constructs a cookie with a specified name and value.\
+    \ The name must conform to RFC 2965. That means it can contain only ASCII alphanumeric\
+    \ characters and cannot contain commas, semicolons, or white space or begin with\
+    \ a {@code $} character. The cookie's name cannot be changed after creation. By\
+    \ default, cookies are created according to the RFC 2965 cookie specification.\
+    \ Cookie names are automatically calculated assigned by CAS at runtime, and there\
+    \ is usually no need to customize the name or assign it a different value unless\
+    \ a special use case warrants the change."
+  shortDescription: "Cookie name."
+  name: "cas.session-replication.cookie.name"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.String"
+  description: "Cookie path. Specifies a path for the cookie to which the client should\
+    \ return the cookie. The cookie is visible to all the pages in the directory you\
+    \ specify, and all the pages in that directory's subdirectories. A cookie's path\
+    \ must include the servlet that set the cookie, for example, /catalog, which makes\
+    \ the cookie visible to all directories on the server under /catalog. Consult\
+    \ RFC 2965 (available on the Internet) for more information on setting path names\
+    \ for cookies."
+  shortDescription: "Cookie path."
+  name: "cas.session-replication.cookie.path"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.Boolean"
+  description: "When generating cookie values, determine whether the value should\
+    \ be compounded and signed with the properties of the current session, such as\
+    \ IP address, user-agent, etc."
+  shortDescription: "When generating cookie values, determine whether the value should\
+    \ be compounded and signed with the properties of the current session, such as\
+    \ IP address, user-agent, etc."
+  name: "cas.session-replication.cookie.pin-to-session"
+  defaultValue: true
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.String"
+  description: "If a cookie is only intended to be accessed in a first party context,\
+    \ the developer has the option to apply one of settings {@code SameSite=Lax} or\
+    \ {@code SameSite=Strict} or {@code SameSite=None} to prevent external access.\
+    \ <p> To safeguard more websites and their users, the new secure-by-default model\
+    \ assumes all cookies should be protected from external access unless otherwise\
+    \ specified. Developers must use a new cookie setting, {@code SameSite=None},\
+    \ to designate cookies for cross-site access. When the {@code SameSite=None} attribute\
+    \ is present, an additional {@code Secure} attribute is used so cross-site cookies\
+    \ can only be accessed over HTTPS connections. </p> <p>Accepted values are: {@code\
+    \ Lax}, {@code Strict},  {@code None}.</p>"
+  shortDescription: "If a cookie is only intended to be accessed in a first party\
+    \ context, the developer has the option to apply one of settings {@code SameSite=Lax}\
+    \ or {@code SameSite=Strict} or {@code SameSite=None} to prevent external access."
+  name: "cas.session-replication.cookie.same-site-policy"
+  defaultValue: ""
+- module: "cas-server-support-pac4j-api"
+  owner: "org.apereo.cas.configuration.model.support.replication.CookieSessionReplicationProperties"
+  type: "java.lang.Boolean"
+  description: "True if sending this cookie should be restricted to a secure protocol,\
+    \ or false if the it can be sent using any protocol."
+  shortDescription: "True if sending this cookie should be restricted to a secure\
+    \ protocol, or false if the it can be sent using any protocol."
+  name: "cas.session-replication.cookie.secure"
+  defaultValue: true

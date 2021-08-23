@@ -1,0 +1,26 @@
+---
+- method: "POST"
+  path: "awsSts"
+  name: "awsSts"
+  endpointType: "RestControllerEndpoint"
+  signature: "AmazonSecurityTokenServiceEndpoint.fetchCredentials(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.util.MultiValueMap<java.lang.String,\
+    \ java.lang.String>,javax.servlet.http.HttpServletRequest)"
+  owner: "org.apereo.cas.aws.AmazonSecurityTokenServiceEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Fetch temporary credentials from Amazon Security Token Service."
+  parameters:
+  - name: "duration"
+    required: false
+  - name: "tokenCode"
+    required: false
+  - name: "profile"
+    required: false
+  - name: "serialNumber"
+    required: false
+  - name: "roleArn"
+    required: false
+  - name: "requestBody"
+    required: false
+  - name: "request"
+    required: false

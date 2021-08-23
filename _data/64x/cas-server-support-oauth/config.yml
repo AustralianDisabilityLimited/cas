@@ -1,0 +1,117 @@
+---
+- module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthAccessTokenProperties"
+  type: "java.lang.Boolean"
+  description: "Create access token as JWTs."
+  shortDescription: "Create access token as JWTs."
+  name: "cas.authn.oauth.access-token.create-as-jwt"
+  defaultValue: false
+- duration: true
+  module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthAccessTokenProperties"
+  type: "java.lang.String"
+  description: "Hard timeout to kill the access token and expire it."
+  shortDescription: "Hard timeout to kill the access token and expire it."
+  name: "cas.authn.oauth.access-token.max-time-to-live-in-seconds"
+  defaultValue: "PT28800S"
+- duration: true
+  module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthAccessTokenProperties"
+  type: "java.lang.String"
+  description: "Sliding window for the access token expiration policy. Essentially,\
+    \ this is an idle time out."
+  shortDescription: "Sliding window for the access token expiration policy."
+  name: "cas.authn.oauth.access-token.time-to-kill-in-seconds"
+  defaultValue: "PT7200S"
+- module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthCodeProperties"
+  type: "java.lang.Integer"
+  description: "Number of times this code is valid and can be used."
+  shortDescription: "Number of times this code is valid and can be used."
+  name: "cas.authn.oauth.code.number-of-uses"
+  defaultValue: 1
+- module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthCodeProperties"
+  type: "java.lang.Long"
+  description: "Duration in seconds where the code is valid."
+  shortDescription: "Duration in seconds where the code is valid."
+  name: "cas.authn.oauth.code.time-to-kill-in-seconds"
+  defaultValue: 30
+- duration: true
+  module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthDeviceTokenProperties"
+  type: "java.lang.String"
+  description: "Hard timeout to kill the access token and expire it."
+  shortDescription: "Hard timeout to kill the access token and expire it."
+  name: "cas.authn.oauth.device-token.max-time-to-live-in-seconds"
+  defaultValue: "PT5M"
+- duration: true
+  module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthDeviceTokenProperties"
+  type: "java.lang.String"
+  description: "The device refresh interval. The client should attempt to acquire\
+    \ an access token every few seconds (at a rate specified by interval) by POSTing\
+    \ to the access token endpoint on the server."
+  shortDescription: "The device refresh interval."
+  name: "cas.authn.oauth.device-token.refresh-interval"
+  defaultValue: "PT15S"
+- duration: true
+  module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthDeviceUserCodeProperties"
+  type: "java.lang.String"
+  description: "Hard timeout to kill the access token and expire it."
+  shortDescription: "Hard timeout to kill the access token and expire it."
+  name: "cas.authn.oauth.device-user-code.max-time-to-live-in-seconds"
+  defaultValue: "PT1M"
+- module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthDeviceUserCodeProperties"
+  type: "java.lang.Integer"
+  description: "Length of the generated user code."
+  shortDescription: "Length of the generated user code."
+  name: "cas.authn.oauth.device-user-code.user-code-length"
+  defaultValue: 8
+- module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthGrantsProperties.ResourceOwner"
+  type: "java.lang.Boolean"
+  description: "Whether using the resource-owner grant should enforce authorization\
+    \ rules and per-service policies based on a service parameter is provided as a\
+    \ header outside the normal semantics of the grant and protocol."
+  shortDescription: "Whether using the resource-owner grant should enforce authorization\
+    \ rules and per-service policies based on a service parameter is provided as a\
+    \ header outside the normal semantics of the grant and protocol."
+  name: "cas.authn.oauth.grants.resource-owner.require-service-header"
+  defaultValue: false
+- duration: true
+  module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthRefreshTokenProperties"
+  type: "java.lang.String"
+  description: "Hard timeout beyond which the refresh token is considered expired."
+  shortDescription: "Hard timeout beyond which the refresh token is considered expired."
+  name: "cas.authn.oauth.refresh-token.time-to-kill-in-seconds"
+  defaultValue: "P14D"
+- module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthProperties"
+  type: "java.lang.Boolean"
+  description: "Indicates whether profiles and other session data, collected as part\
+    \ of OAuth flows and requests that are kept by the container session, should be\
+    \ replicated across the cluster using CAS and its own ticket registry. Without\
+    \ this option, OAuth profile data and other related pieces of information should\
+    \ be manually replicated via means and libraries outside of CAS."
+  shortDescription: "Indicates whether profiles and other session data, collected\
+    \ as part of OAuth flows and requests that are kept by the container session,\
+    \ should be replicated across the cluster using CAS and its own ticket registry."
+  name: "cas.authn.oauth.replicate-sessions"
+  defaultValue: false
+- module: "cas-server-support-oauth"
+  owner: "org.apereo.cas.configuration.model.support.oauth.OAuthProperties"
+  type: "org.apereo.cas.configuration.model.support.oauth.OAuthProperties$UserProfileViewTypes"
+  description: "User profile view type determines how the final user profile should\
+    \ be rendered once an access token is \"validated\".\nAvailable values are as\
+    \ follows:\n<ul><li>{@code NESTED}: Return and render the user profile view in\
+    \ nested mode.\nThis is the default option, most usually.</li><li>{@code FLAT}:\
+    \ Return and render the user profile view in flattened mode\nwhere all attributes\
+    \ are flattened down to one level only.</li></ul>"
+  shortDescription: "User profile view type determines how the final user profile\
+    \ should be rendered once an access token is \"validated\"."
+  name: "cas.authn.oauth.user-profile-view-type"
+  defaultValue: "NESTED"

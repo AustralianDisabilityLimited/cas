@@ -1,0 +1,10 @@
+---
+- method: "POST"
+  path: "resume"
+  name: "resume"
+  endpointType: "Endpoint"
+  signature: "ResumeEndpoint.resume()"
+  owner: "org.springframework.cloud.context.restart.RestartEndpoint$ResumeEndpoint"
+  returnType: "Boolean"
+  casEndpoint: false
+  summary: "Resume the application context lifecycle."

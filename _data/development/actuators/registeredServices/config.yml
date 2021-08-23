@@ -1,0 +1,74 @@
+---
+- method: "GET"
+  path: "registeredServices/export"
+  name: "registeredServices"
+  endpointType: "RestControllerEndpoint"
+  signature: "RegisteredServicesEndpoint.export()"
+  owner: "org.apereo.cas.web.report.RegisteredServicesEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Export registered services as a zip file."
+  produces:
+  - "application/octet-stream"
+- method: "GET"
+  path: "registeredServices"
+  name: "registeredServices"
+  endpointType: "RestControllerEndpoint"
+  signature: "RegisteredServicesEndpoint.handle() "
+  owner: "org.apereo.cas.web.report.RegisteredServicesEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Handle and produce a list of services from registry."
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"
+- method: "GET"
+  path: "registeredServices/{id}"
+  name: "registeredServices"
+  endpointType: "RestControllerEndpoint"
+  signature: "RegisteredServicesEndpoint.fetchService(java.lang.String) "
+  owner: "org.apereo.cas.web.report.RegisteredServicesEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Fetch service either by numeric id or service id pattern."
+  parameters:
+  - name: "id"
+    required: true
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"
+- method: "DELETE"
+  path: "registeredServices/{id}"
+  name: "registeredServices"
+  endpointType: "RestControllerEndpoint"
+  signature: "RegisteredServicesEndpoint.deleteService(java.lang.String) "
+  owner: "org.apereo.cas.web.report.RegisteredServicesEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Delete registered service by id."
+  parameters:
+  - name: "id"
+    required: true
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"
+- method: "POST"
+  path: "registeredServices/import"
+  name: "registeredServices"
+  endpointType: "RestControllerEndpoint"
+  signature: "RegisteredServicesEndpoint.importService(javax.servlet.http.HttpServletRequest) "
+  owner: "org.apereo.cas.web.report.RegisteredServicesEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Import registered services as a JSON document or a zip file."
+  parameters:
+  - name: "request"
+    required: true
+  consumes:
+  - "application/octet-stream"
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"

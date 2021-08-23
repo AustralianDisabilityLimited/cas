@@ -1,0 +1,42 @@
+---
+- required: true
+  module: "cas-server-support-geolocation-googlemaps"
+  owner: "org.apereo.cas.configuration.model.support.geo.googlemaps.GoogleMapsProperties"
+  type: "java.lang.String"
+  description: "Authenticate into google maps via an API key."
+  shortDescription: "Authenticate into google maps via an API key."
+  name: "cas.google-maps.api-key"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-geolocation-googlemaps"
+  owner: "org.apereo.cas.configuration.model.support.geo.googlemaps.GoogleMapsProperties"
+  type: "java.lang.String"
+  description: "Authenticate into google maps via a client id."
+  shortDescription: "Authenticate into google maps via a client id."
+  name: "cas.google-maps.client-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-geolocation-googlemaps"
+  owner: "org.apereo.cas.configuration.model.support.geo.googlemaps.GoogleMapsProperties"
+  type: "java.lang.String"
+  description: "Authenticate into google maps via a client secret."
+  shortDescription: "Authenticate into google maps via a client secret."
+  name: "cas.google-maps.client-secret"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-geolocation-googlemaps"
+  owner: "org.apereo.cas.configuration.model.support.geo.googlemaps.GoogleMapsProperties"
+  type: "java.lang.String"
+  description: "The connection timeout when reaching out to google maps."
+  shortDescription: "The connection timeout when reaching out to google maps."
+  name: "cas.google-maps.connect-timeout"
+  defaultValue: "PT3S"
+- module: "cas-server-support-geolocation-googlemaps"
+  owner: "org.apereo.cas.configuration.model.support.geo.googlemaps.GoogleMapsProperties"
+  type: "java.lang.Boolean"
+  description: "When true, a strategy for handling URL requests using Google App Engine's\
+    \ URL Fetch API."
+  shortDescription: "When true, a strategy for handling URL requests using Google\
+    \ App Engine's URL Fetch API."
+  name: "cas.google-maps.google-apps-engine"
+  defaultValue: false

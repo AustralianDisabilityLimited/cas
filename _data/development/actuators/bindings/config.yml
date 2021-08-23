@@ -1,0 +1,27 @@
+---
+- method: "GET"
+  path: "bindings/{name}"
+  name: "bindings"
+  endpointType: "Endpoint"
+  signature: "BindingsEndpoint.queryState(java.lang.String)"
+  owner: "org.springframework.cloud.stream.endpoint.BindingsEndpoint"
+  returnType: "Binding"
+  casEndpoint: false
+  summary: "Describes lifecycle event bindings for Spring Cloud Stream."
+- method: "GET"
+  path: "bindings"
+  name: "bindings"
+  endpointType: "Endpoint"
+  signature: "BindingsEndpoint.queryStates()"
+  owner: "org.springframework.cloud.stream.endpoint.BindingsEndpoint"
+  returnType: "List"
+  casEndpoint: false
+  summary: "Describes lifecycle event bindings for Spring Cloud Stream."
+- method: "POST"
+  path: "bindings/{name}"
+  name: "bindings"
+  endpointType: "Endpoint"
+  signature: "BindingsEndpoint.changeState(java.lang.String,org.springframework.cloud.stream.binding.BindingsLifecycleController$State)"
+  owner: "org.springframework.cloud.stream.endpoint.BindingsEndpoint"
+  casEndpoint: false
+  summary: "Describes lifecycle event bindings for Spring Cloud Stream."

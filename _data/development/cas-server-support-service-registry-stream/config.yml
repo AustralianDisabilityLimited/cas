@@ -1,0 +1,30 @@
+---
+- module: "cas-server-support-service-registry-stream"
+  owner: "org.apereo.cas.configuration.model.support.services.stream.StreamingServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Whether service registry events should be streamed and published across\
+    \ a CAS cluster. One typical workflow is to enable the publisher on one master\
+    \ node and have others consume definitions and changes from the upstream master\
+    \ node in order to avoid overrides and timing issues as changes may step over\
+    \ each other if the service registry schedule is not timed correctly."
+  shortDescription: "Whether service registry events should be streamed and published\
+    \ across a CAS cluster."
+  name: "cas.service-registry.stream.enabled"
+  defaultValue: true
+- module: "cas-server-support-service-registry-stream"
+  owner: "org.apereo.cas.configuration.model.support.services.stream.StreamingServiceRegistryProperties"
+  type: "org.apereo.cas.configuration.model.support.services.stream.StreamingServiceRegistryProperties$ReplicationModes"
+  description: "Indicates the replication mode. Accepted values are: <ul> <li>{@code\
+    \ ACTIVE_ACTIVE}: All CAS nodes sync copies of definitions and keep them locally.</li>\
+    \ <li>{@code ACTIVE_PASSIVE}: One master node keeps definitions and streams changes\
+    \ to other passive nodes</li> </ul>\nAvailable values are as follows:\n<ul><li>{@code\
+    \ ACTIVE_ACTIVE}: In this replication mode, all CAS nodes will try to sync copies\n\
+    of service definition files individually on each node.</li><li>{@code ACTIVE_PASSIVE}:\
+    \ In this replication mode, one CAS service is designated to be the master\nthat\
+    \ contains all service definition files locally, and will stream changes\nto other\
+    \ CAS passive nodes. Passive CAS nodes only access the replication\ncache to retrieve\
+    \ services, and will not individually keep copies of the\nservice definition files\
+    \ on disk.</li></ul>"
+  shortDescription: "Indicates the replication mode."
+  name: "cas.service-registry.stream.replication-mode"
+  defaultValue: "ACTIVE_PASSIVE"

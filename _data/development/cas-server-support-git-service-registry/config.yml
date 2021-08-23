@@ -1,0 +1,144 @@
+---
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The branch to checkout and activate, defaults to {@code master}."
+  shortDescription: "The branch to checkout and activate, defaults to {@code master}."
+  name: "cas.service-registry.git.active-branch"
+  defaultValue: "master"
+- required: true
+  module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "If the repository is to be cloned, this will allow a select list of\
+    \ branches to be fetched. List the branch names separated by commas or use {@code\
+    \ *} to clone all branches. Defaults to all branches."
+  shortDescription: "If the repository is to be cloned, this will allow a select list\
+    \ of branches to be fetched."
+  name: "cas.service-registry.git.branches-to-clone"
+  defaultValue: "*"
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "When establishing an ssh session, determine if default identities\
+    \ loaded on the machine should be excluded/removed and identity should only be\
+    \ limited to those loaded from given keys."
+  shortDescription: "When establishing an ssh session, determine if default identities\
+    \ loaded on the machine should be excluded/removed and identity should only be\
+    \ limited to those loaded from given keys."
+  name: "cas.service-registry.git.clear-existing-identities"
+  defaultValue: false
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Determine whether service definitions in the git repository should\
+    \ be located/stored in groups and separate folder structures based on the service\
+    \ type. @see #getRootDirectory()"
+  shortDescription: "Determine whether service definitions in the git repository should\
+    \ be located/stored in groups and separate folder structures based on the service\
+    \ type."
+  name: "cas.service-registry.git.group-by-type"
+  defaultValue: true
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "org.apereo.cas.configuration.model.support.git.services.BaseGitProperties$HttpClientTypes"
+  description: "Implementation of HTTP client to use when doing git operations via\
+    \ http/https. The jgit library sets the connection factory statically (globally)\
+    \ so this property should be set to the same value for all git repositories (services,\
+    \ saml, etc). Not doing so might result in one connection factory being used for\
+    \ clone and another for subsequent fetches.\nAvailable values are as follows:\n\
+    <ul><li>{@code JDK}: Built-in JDK http/https client.</li><li>{@code HTTP_CLIENT}:\
+    \ Apache HTTP Client http/https client.</li></ul>"
+  shortDescription: "Implementation of HTTP client to use when doing git operations\
+    \ via http/https."
+  name: "cas.service-registry.git.http-client-type"
+  defaultValue: "JDK"
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Password used to access or push to the repository."
+  shortDescription: "Password used to access or push to the repository."
+  name: "cas.service-registry.git.password"
+  defaultValue: ""
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Password for the SSH private key."
+  shortDescription: "Password for the SSH private key."
+  name: "cas.service-registry.git.private-key-passphrase"
+  defaultValue: ""
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Decide whether changes should be pushed back into the remote repository."
+  shortDescription: "Decide whether changes should be pushed back into the remote\
+    \ repository."
+  name: "cas.service-registry.git.push-changes"
+  defaultValue: false
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The address of the git repository. Could be a URL or a file-system\
+    \ path."
+  shortDescription: "The address of the git repository."
+  name: "cas.service-registry.git.repository-url"
+  defaultValue: ""
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Root directory in the git repository structure to track service definition\
+    \ files. This might be most useful if the git repository is tasked with other\
+    \ types of files and configurations and allowing a separate root directory for\
+    \ service definitions provide a clean separation between services files and everything\
+    \ else. This setting may work in concert with {@link #isGroupByType()}. If left\
+    \ blank, the root folder of the git repository itself is used as the root directory\
+    \ for service definitions."
+  shortDescription: "Root directory in the git repository structure to track service\
+    \ definition files."
+  name: "cas.service-registry.git.root-directory"
+  defaultValue: ""
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Whether or not commits should be signed."
+  shortDescription: "Whether or not commits should be signed."
+  name: "cas.service-registry.git.sign-commits"
+  defaultValue: false
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "As with using SSH with public keys, an SSH session with {@code ssh://user@example.com/repo.git}\
+    \ must be specified to use password-secured SSH connections."
+  shortDescription: "As with using SSH with public keys, an SSH session with {@code\
+    \ ssh://user@example.com/repo.git} must be specified to use password-secured SSH\
+    \ connections."
+  name: "cas.service-registry.git.ssh-session-password"
+  defaultValue: ""
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Whether on not to turn on strict host key checking. true will be \"\
+    yes\", false will be \"no\", \"ask\" not supported."
+  shortDescription: "Whether on not to turn on strict host key checking. true will\
+    \ be \"yes\", false will be \"no\", \"ask\" not supported."
+  name: "cas.service-registry.git.strict-host-key-checking"
+  defaultValue: true
+- duration: true
+  module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Timeout for git operations such as push and pull in seconds."
+  shortDescription: "Timeout for git operations such as push and pull in seconds."
+  name: "cas.service-registry.git.timeout"
+  defaultValue: "PT10S"
+- module: "cas-server-support-git-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.git.services.GitServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "Username used to access or push to the repository."
+  shortDescription: "Username used to access or push to the repository."
+  name: "cas.service-registry.git.username"
+  defaultValue: ""

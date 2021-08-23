@@ -1,0 +1,21 @@
+---
+- required: true
+  module: "cas-server-support-yaml-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.services.yaml.YamlServiceRegistryProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.service-registry.yaml.location"
+  defaultValue: ""
+- module: "cas-server-support-yaml-service-registry"
+  owner: "org.apereo.cas.configuration.model.support.services.yaml.YamlServiceRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Flag indicating whether a background watcher thread is enabled for\
+    \ the purposes of live reloading of service registry data changes from persistent\
+    \ data store."
+  shortDescription: "Flag indicating whether a background watcher thread is enabled\
+    \ for the purposes of live reloading of service registry data changes from persistent\
+    \ data store."
+  name: "cas.service-registry.yaml.watcher-enabled"
+  defaultValue: true

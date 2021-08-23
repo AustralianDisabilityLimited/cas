@@ -1,0 +1,226 @@
+---
+- required: true
+  module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.String"
+  description: "The name of the cache manager instance. @deprecated Since 6.2"
+  shortDescription: "The name of the cache manager instance."
+  name: "cas.ticket.registry.ehcache.cache-manager-name"
+  defaultValue: "ticketRegistryCacheManager"
+  deprecationLevel: "ERROR"
+- required: true
+  module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "Set the location of the EhCache config file. A typical value is \"\
+    /WEB-INF/ehcache.xml\". Default is \"ehcache.xml\" in the root of the class path,\
+    \ or if not found, \"ehcache-failsafe.xml\" in the EhCache jar (default EhCache\
+    \ initialization). @deprecated Since 6.2"
+  shortDescription: "Set the location of the EhCache config file."
+  name: "cas.ticket.registry.ehcache.config-location"
+  defaultValue: ""
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Integer"
+  description: "The interval in seconds between runs of the disk expiry thread. @deprecated\
+    \ Since 6.2"
+  shortDescription: "The interval in seconds between runs of the disk expiry thread."
+  name: "cas.ticket.registry.ehcache.disk-expiry-thread-interval-seconds"
+  defaultValue: 0
+  deprecationLevel: "ERROR"
+- required: true
+  module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Enabled allows this registry to be disabled on startup (so registry\
+    \ choice can be made at runtime). @deprecated Since 6.2"
+  shortDescription: "Enabled allows this registry to be disabled on startup (so registry\
+    \ choice can be made at runtime)."
+  name: "cas.ticket.registry.ehcache.enabled"
+  defaultValue: true
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Sets whether elements are eternal. If eternal, timeouts are ignored\
+    \ and the element is never expired. False by default. @deprecated Since 6.2"
+  shortDescription: "Sets whether elements are eternal."
+  name: "cas.ticket.registry.ehcache.eternal"
+  defaultValue: false
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to load the cache bootstrapper asynchronously. @deprecated\
+    \ Since 6.2"
+  shortDescription: "Whether to load the cache bootstrapper asynchronously."
+  name: "cas.ticket.registry.ehcache.loader-async"
+  defaultValue: true
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Integer"
+  description: "The maximum serialized size of the elements to request from a remote\
+    \ cache peer during bootstrap. @deprecated Since 6.2"
+  shortDescription: "The maximum serialized size of the elements to request from a\
+    \ remote cache peer during bootstrap."
+  name: "cas.ticket.registry.ehcache.max-chunk-size"
+  defaultValue: 5000000
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Integer"
+  description: "Builder which sets the maximum number entries in cache. @deprecated\
+    \ Since 6.2"
+  shortDescription: "Builder which sets the maximum number entries in cache."
+  name: "cas.ticket.registry.ehcache.max-elements-in-cache"
+  defaultValue: 0
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Integer"
+  description: "Builder that sets the maximum objects to be held in memory (0 = no\
+    \ limit). @deprecated Since 6.2"
+  shortDescription: "Builder that sets the maximum objects to be held in memory (0\
+    \ = no limit)."
+  name: "cas.ticket.registry.ehcache.max-elements-in-memory"
+  defaultValue: 10000
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Integer"
+  description: "Builder which sets the maximum number elements on Disk. 0 means unlimited.\
+    \ @deprecated Since 6.2"
+  shortDescription: "Builder which sets the maximum number elements on Disk. 0 means\
+    \ unlimited."
+  name: "cas.ticket.registry.ehcache.max-elements-on-disk"
+  defaultValue: 0
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Integer"
+  description: "Maximum batch size for replication ops. @deprecated Since 6.2"
+  shortDescription: "Maximum batch size for replication ops."
+  name: "cas.ticket.registry.ehcache.maximum-batch-size"
+  defaultValue: 100
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.String"
+  description: "Builder which Sets the eviction policy. An invalid argument will set\
+    \ it to null. <ul> <li>LRU - least recently used</li> <li>LFU - least frequently\
+    \ used</li> <li>FIFO - first in first out, the oldest element by creation time</li>\
+    \ </ul> @deprecated Since 6.2"
+  shortDescription: "Builder which Sets the eviction policy."
+  name: "cas.ticket.registry.ehcache.memory-store-eviction-policy"
+  defaultValue: "LRU"
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.String"
+  description: "Sets the persistence strategy. Acceptable values are: <ul> <li>LOCALTEMPSWAP:\
+    \ Standard open source (non fault-tolerant) on-disk persistence.</li> <li>DISTRIBUTED:\
+    \ Terracotta clustered persistence (requires a Terracotta clustered cache)</li>\
+    \ <li>LOCALRESTARTABLE: Enterprise fault tolerant persistence</li> <li>NONE: No\
+    \ persistence</li> </ul> @deprecated Since 6.2"
+  shortDescription: "Sets the persistence strategy."
+  name: "cas.ticket.registry.ehcache.persistence"
+  defaultValue: "NONE"
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to replicate puts. @deprecated Since 6.2"
+  shortDescription: "Whether to replicate puts."
+  name: "cas.ticket.registry.ehcache.replicate-puts"
+  defaultValue: true
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Whether a put should replicated by copy or by invalidation, (a remove).\
+    \ By copy is best when the entry is expensive to produce. By invalidation is best\
+    \ when we are really trying to force other caches to sync back to a canonical\
+    \ source like a database. An example of a latter usage would be a read/write cache\
+    \ being used in Hibernate. This setting only has effect if #replicateUpdates is\
+    \ true. @deprecated Since 6.2"
+  shortDescription: "Whether a put should replicated by copy or by invalidation, (a\
+    \ remove)."
+  name: "cas.ticket.registry.ehcache.replicate-puts-via-copy"
+  defaultValue: true
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to replicate removes. @deprecated Since 6.2"
+  shortDescription: "Whether to replicate removes."
+  name: "cas.ticket.registry.ehcache.replicate-removals"
+  defaultValue: true
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to replicate updates. @deprecated Since 6.2"
+  shortDescription: "Whether to replicate updates."
+  name: "cas.ticket.registry.ehcache.replicate-updates"
+  defaultValue: true
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Whether an update (a put) should be by copy or by invalidation, (a\
+    \ remove). By copy is best when the entry is expensive to produce. By invalidation\
+    \ is best when we are really trying to force other caches to sync back to a canonical\
+    \ source like a database. An example of a latter usage would be a read/write cache\
+    \ being used in Hibernate. This setting only has effect if #replicateUpdates is\
+    \ true. @deprecated Since 6.2"
+  shortDescription: "Whether an update (a put) should be by copy or by invalidation,\
+    \ (a remove)."
+  name: "cas.ticket.registry.ehcache.replicate-updates-via-copy"
+  defaultValue: true
+  deprecationLevel: "ERROR"
+- duration: true
+  module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.String"
+  description: "The replication interval in milliseconds for the cache replicator.\
+    \ @deprecated Since 6.2"
+  shortDescription: "The replication interval in milliseconds for the cache replicator."
+  name: "cas.ticket.registry.ehcache.replication-interval"
+  defaultValue: "PT10S"
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Set whether the EhCache CacheManager should be shared (as a singleton\
+    \ at the ClassLoader level) or independent (typically local within the application).\
+    \ Default is \"false\", creating an independent local instance. NOTE: This feature\
+    \ allows for sharing this EhCacheManagerFactoryBean's CacheManager with any code\
+    \ calling CacheManager.create() in the same ClassLoader space, with no need to\
+    \ agree on a specific CacheManager name. However, it only supports a single EhCacheManagerFactoryBean\
+    \ involved which will control the lifecycle of the underlying CacheManager (in\
+    \ particular, its shutdown). @deprecated Since 6.2"
+  shortDescription: "Set whether the EhCache CacheManager should be shared (as a singleton\
+    \ at the ClassLoader level) or independent (typically local within the application)."
+  name: "cas.ticket.registry.ehcache.shared"
+  defaultValue: false
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.lang.Boolean"
+  description: "Sets the persistence write mode. @deprecated Since 6.2"
+  shortDescription: "Sets the persistence write mode."
+  name: "cas.ticket.registry.ehcache.synchronous-writes"
+  defaultValue: false
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-ehcache-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.EhcacheProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Allows system properties to be set prior to ehcache.xml parsing. EhCache\
+    \ will interpolate system properties in the ehcache xml config file e.g. ${ehCacheMulticastAddress}.\
+    \ @deprecated Since 6.2"
+  shortDescription: "Allows system properties to be set prior to ehcache.xml parsing."
+  name: "cas.ticket.registry.ehcache.system-props"
+  defaultValue: ""
+  deprecationLevel: "ERROR"

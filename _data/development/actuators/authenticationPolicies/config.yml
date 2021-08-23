@@ -1,0 +1,30 @@
+---
+- method: "GET"
+  path: "authenticationPolicies/{name}"
+  name: "authenticationPolicies"
+  endpointType: "Endpoint"
+  signature: "RegisteredAuthenticationPoliciesEndpoint.fetchPolicy(java.lang.String)"
+  owner: "org.apereo.cas.web.report.RegisteredAuthenticationPoliciesEndpoint"
+  returnType: "AuthenticationPolicyDetails"
+  casEndpoint: true
+  summary: "Get available authentication policy by name."
+  parameters:
+  - name: "name"
+    required: true
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"
+- method: "GET"
+  path: "authenticationPolicies"
+  name: "authenticationPolicies"
+  endpointType: "Endpoint"
+  signature: "RegisteredAuthenticationPoliciesEndpoint.handle()"
+  owner: "org.apereo.cas.web.report.RegisteredAuthenticationPoliciesEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Get available authentication policies."
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"

@@ -1,0 +1,19 @@
+---
+- method: "POST"
+  path: "busenv/{destinations}"
+  name: "busenv"
+  endpointType: "Endpoint"
+  signature: "EnvironmentBusEndpoint.busEnvWithDestination(java.lang.String,java.lang.String,java.lang.String[])"
+  owner: "org.springframework.cloud.bus.endpoint.EnvironmentBusEndpoint"
+  casEndpoint: false
+  summary: "Updates each instances environment with the specified key/value pair across\
+    \ multiple instances."
+- method: "POST"
+  path: "busenv"
+  name: "busenv"
+  endpointType: "Endpoint"
+  signature: "EnvironmentBusEndpoint.busEnv(java.lang.String,java.lang.String)"
+  owner: "org.springframework.cloud.bus.endpoint.EnvironmentBusEndpoint"
+  casEndpoint: false
+  summary: "Updates each instances environment with the specified key/value pair across\
+    \ multiple instances."

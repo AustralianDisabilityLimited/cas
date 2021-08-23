@@ -1,0 +1,766 @@
+---
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.acceptable-usage-policy.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.acceptable-usage-policy.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.acceptable-usage-policy.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.acceptable-usage-policy.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.acceptable-usage-policy.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.acceptable-usage-policy.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.audit.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.audit.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.audit.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.audit.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.audit.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.audit.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.mfa.gauth.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.mfa.gauth.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.mfa.gauth.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.mfa.gauth.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.mfa.gauth.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.mfa.gauth.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.mfa.trusted.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.mfa.trusted.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.mfa.trusted.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.mfa.trusted.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.mfa.trusted.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.mfa.trusted.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.mfa.u2f.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.mfa.u2f.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.mfa.u2f.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.mfa.u2f.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.mfa.u2f.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.mfa.u2f.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.mfa.web-authn.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.mfa.web-authn.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.mfa.web-authn.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.mfa.web-authn.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.mfa.web-authn.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.mfa.web-authn.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.mfa.yubikey.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.mfa.yubikey.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.mfa.yubikey.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.mfa.yubikey.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.mfa.yubikey.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.mfa.yubikey.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.passwordless.accounts.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.passwordless.accounts.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.passwordless.accounts.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.passwordless.accounts.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.passwordless.accounts.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.passwordless.accounts.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.authn.saml-idp.metadata.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.authn.saml-idp.metadata.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.authn.saml-idp.metadata.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.authn.saml-idp.metadata.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.authn.saml-idp.metadata.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.authn.saml-idp.metadata.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.consent.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.consent.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.consent.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.consent.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.consent.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.consent.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.events.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.events.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.events.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.events.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.events.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.events.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.monitor.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.monitor.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.monitor.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.monitor.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.monitor.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.monitor.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.service-registry.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.service-registry.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.service-registry.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.service-registry.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.service-registry.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.service-registry.mongo.pool.per-host"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum idle time of a pooled connection.  A zero value indicates\
+    \ no limit to the idle time.  A pooled connection that has exceeded its idle time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum idle time of a pooled connection."
+  name: "cas.ticket.registry.mongo.pool.idle-time"
+  defaultValue: "PT30S"
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time a pooled connection can live for.  A zero value indicates\
+    \ no limit to the life time.  A pooled connection that has exceeded its life time\
+    \ will be closed and replaced when necessary by a new connection."
+  shortDescription: "The maximum time a pooled connection can live for."
+  name: "cas.ticket.registry.mongo.pool.life-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Maximum number of connections to keep around."
+  shortDescription: "Maximum number of connections to keep around."
+  name: "cas.ticket.registry.mongo.pool.max-size"
+  defaultValue: 10
+- duration: true
+  module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.String"
+  description: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  shortDescription: "The maximum time that a thread may wait for a connection to become\
+    \ available."
+  name: "cas.ticket.registry.mongo.pool.max-wait-time"
+  defaultValue: "PT60S"
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Minimum number of connections to keep around."
+  shortDescription: "Minimum number of connections to keep around."
+  name: "cas.ticket.registry.mongo.pool.min-size"
+  defaultValue: 1
+- module: "cas-server-support-mongo-core"
+  owner: "org.apereo.cas.configuration.model.support.mongo.MongoDbConnectionPoolProperties"
+  type: "java.lang.Integer"
+  description: "Total number of connections allowed per host."
+  shortDescription: "Total number of connections allowed per host."
+  name: "cas.ticket.registry.mongo.pool.per-host"
+  defaultValue: 10

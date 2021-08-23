@@ -1,0 +1,38 @@
+---
+- module: "cas-server-support-rest-service-registry"
+  owner: "org.apereo.cas.configuration.model.core.services.RestfulServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.service-registry.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-rest-service-registry"
+  owner: "org.apereo.cas.configuration.model.core.services.RestfulServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.service-registry.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-rest-service-registry"
+  owner: "org.apereo.cas.configuration.model.core.services.RestfulServiceRegistryProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.service-registry.rest.headers"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-rest-service-registry"
+  owner: "org.apereo.cas.configuration.model.core.services.RestfulServiceRegistryProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.service-registry.rest.url"
+  defaultValue: ""

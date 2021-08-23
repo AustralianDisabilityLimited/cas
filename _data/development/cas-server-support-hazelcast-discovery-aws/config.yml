@@ -1,0 +1,280 @@
+---
+- required: true
+  module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS access key."
+  shortDescription: "AWS access key."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.access-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "The maximum amount of time Hazelcast will try to connect to a well\
+    \ known member before giving up. Setting this value too low could mean that a\
+    \ member is not able to connect to a cluster. Setting the value too high means\
+    \ that member startup could slow down because of longer timeouts (for example,\
+    \ when a well known member is not up). Increasing this value is recommended if\
+    \ you have many IPs listed and the members cannot properly build up the cluster.\
+    \ Its default value is 5."
+  shortDescription: "The maximum amount of time Hazelcast will try to connect to a\
+    \ well known member before giving up."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.connection-timeout-seconds"
+  defaultValue: 5
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Host header. i.e. {@code ec2.amazonaws.com}. The URL that is the entry\
+    \ point for a web service."
+  shortDescription: "Host header. i.e."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.host-header"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If you do not want to use access key and secret key, you can specify\
+    \ iam-role. Hazelcast fetches your credentials by using your IAM role. This setting\
+    \ only affects deployments on Amazon EC2. If you are deploying CAS in an Amazon\
+    \ ECS environment, the role should not be specified. The role is fetched from\
+    \ the task definition that is assigned to run CAS."
+  shortDescription: "If you do not want to use access key and secret key, you can\
+    \ specify iam-role."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.iam-role"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "Hazelcast port. Typically may be set to {@code 5701}. You can set\
+    \ searching for other ports rather than 5701 if you've members on different ports."
+  shortDescription: "Hazelcast port."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.port"
+  defaultValue: -1
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS region. i.e. {@code us-east-1}. The region where your members\
+    \ are running."
+  shortDescription: "AWS region. i.e."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.region"
+  defaultValue: "us-east-1"
+- required: true
+  module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS secret key."
+  shortDescription: "AWS secret key."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.secret-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a security group is configured, only instances within that security\
+    \ group are selected."
+  shortDescription: "If a security group is configured, only instances within that\
+    \ security group are selected."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.security-group-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  shortDescription: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.tag-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  shortDescription: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.aws.tag-value"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS access key."
+  shortDescription: "AWS access key."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.access-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "The maximum amount of time Hazelcast will try to connect to a well\
+    \ known member before giving up. Setting this value too low could mean that a\
+    \ member is not able to connect to a cluster. Setting the value too high means\
+    \ that member startup could slow down because of longer timeouts (for example,\
+    \ when a well known member is not up). Increasing this value is recommended if\
+    \ you have many IPs listed and the members cannot properly build up the cluster.\
+    \ Its default value is 5."
+  shortDescription: "The maximum amount of time Hazelcast will try to connect to a\
+    \ well known member before giving up."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.connection-timeout-seconds"
+  defaultValue: 5
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Host header. i.e. {@code ec2.amazonaws.com}. The URL that is the entry\
+    \ point for a web service."
+  shortDescription: "Host header. i.e."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.host-header"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If you do not want to use access key and secret key, you can specify\
+    \ iam-role. Hazelcast fetches your credentials by using your IAM role. This setting\
+    \ only affects deployments on Amazon EC2. If you are deploying CAS in an Amazon\
+    \ ECS environment, the role should not be specified. The role is fetched from\
+    \ the task definition that is assigned to run CAS."
+  shortDescription: "If you do not want to use access key and secret key, you can\
+    \ specify iam-role."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.iam-role"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "Hazelcast port. Typically may be set to {@code 5701}. You can set\
+    \ searching for other ports rather than 5701 if you've members on different ports."
+  shortDescription: "Hazelcast port."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.port"
+  defaultValue: -1
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS region. i.e. {@code us-east-1}. The region where your members\
+    \ are running."
+  shortDescription: "AWS region. i.e."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.region"
+  defaultValue: "us-east-1"
+- required: true
+  module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS secret key."
+  shortDescription: "AWS secret key."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.secret-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a security group is configured, only instances within that security\
+    \ group are selected."
+  shortDescription: "If a security group is configured, only instances within that\
+    \ security group are selected."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.security-group-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  shortDescription: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.tag-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  shortDescription: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.aws.tag-value"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS access key."
+  shortDescription: "AWS access key."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.access-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "The maximum amount of time Hazelcast will try to connect to a well\
+    \ known member before giving up. Setting this value too low could mean that a\
+    \ member is not able to connect to a cluster. Setting the value too high means\
+    \ that member startup could slow down because of longer timeouts (for example,\
+    \ when a well known member is not up). Increasing this value is recommended if\
+    \ you have many IPs listed and the members cannot properly build up the cluster.\
+    \ Its default value is 5."
+  shortDescription: "The maximum amount of time Hazelcast will try to connect to a\
+    \ well known member before giving up."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.connection-timeout-seconds"
+  defaultValue: 5
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "Host header. i.e. {@code ec2.amazonaws.com}. The URL that is the entry\
+    \ point for a web service."
+  shortDescription: "Host header. i.e."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.host-header"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If you do not want to use access key and secret key, you can specify\
+    \ iam-role. Hazelcast fetches your credentials by using your IAM role. This setting\
+    \ only affects deployments on Amazon EC2. If you are deploying CAS in an Amazon\
+    \ ECS environment, the role should not be specified. The role is fetched from\
+    \ the task definition that is assigned to run CAS."
+  shortDescription: "If you do not want to use access key and secret key, you can\
+    \ specify iam-role."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.iam-role"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.Integer"
+  description: "Hazelcast port. Typically may be set to {@code 5701}. You can set\
+    \ searching for other ports rather than 5701 if you've members on different ports."
+  shortDescription: "Hazelcast port."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.port"
+  defaultValue: -1
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS region. i.e. {@code us-east-1}. The region where your members\
+    \ are running."
+  shortDescription: "AWS region. i.e."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.region"
+  defaultValue: "us-east-1"
+- required: true
+  module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "AWS secret key."
+  shortDescription: "AWS secret key."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.secret-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a security group is configured, only instances within that security\
+    \ group are selected."
+  shortDescription: "If a security group is configured, only instances within that\
+    \ security group are selected."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.security-group-name"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  shortDescription: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.tag-key"
+  defaultValue: ""
+- module: "cas-server-support-hazelcast-discovery-aws"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAwsDiscoveryProperties"
+  type: "java.lang.String"
+  description: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  shortDescription: "If a tag key/value is set, only instances with that tag key/value\
+    \ will be selected."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.aws.tag-value"
+  defaultValue: ""

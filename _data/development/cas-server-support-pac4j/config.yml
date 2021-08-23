@@ -1,0 +1,55 @@
+---
+- required: true
+  module: "cas-server-support-pac4j"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationGroovyProvisioningProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.pac4j.provisioning.groovy.location"
+  defaultValue: ""
+- module: "cas-server-support-pac4j"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProvisioningProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.pac4j.provisioning.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-pac4j"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProvisioningProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.pac4j.provisioning.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-pac4j"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProvisioningProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.pac4j.provisioning.rest.headers"
+  defaultValue: ""
+- module: "cas-server-support-pac4j"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProvisioningProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.pac4j.provisioning.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-support-pac4j"
+  owner: "org.apereo.cas.configuration.model.support.pac4j.Pac4jDelegatedAuthenticationRestfulProvisioningProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.pac4j.provisioning.rest.url"
+  defaultValue: ""

@@ -1,0 +1,1065 @@
+---
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GroovyPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether attribute repository should consider the underlying\nattribute\
+    \ names in a case-insensitive manner."
+  shortDescription: "Whether attribute repository should consider the underlying attribute\
+    \ names in a case-insensitive manner."
+  name: "cas.authn.attribute-repository.groovy[].case-insensitive"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GroovyPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.groovy[].id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GroovyPrincipalAttributesProperties"
+  type: "Resource"
+  description: "The location of the resource. Resources can be URLS, or\nfiles found\
+    \ either on the classpath or outside somewhere\nin the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.attribute-repository.groovy[].location"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GroovyPrincipalAttributesProperties"
+  type: "int"
+  description: "The order of this attribute repository in the chain of repositories.\n\
+    Can be used to explicitly position this source in chain and affects\nmerging strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.groovy[].order"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GrouperPrincipalAttributesProperties"
+  type: "java.lang.Boolean"
+  description: "Enable the attribute repository source."
+  shortDescription: "Enable the attribute repository source."
+  name: "cas.authn.attribute-repository.grouper.enabled"
+  defaultValue: false
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GrouperPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.grouper.id"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GrouperPrincipalAttributesProperties"
+  type: "java.lang.Integer"
+  description: "The order of this attribute repository in the chain of repositories.\
+    \ Can be used to explicitly position this source in chain and affects merging\
+    \ strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.grouper.order"
+  defaultValue: 0
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GrouperPrincipalAttributesProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Custom parameters defined as a {@link Map} to pass onto the attribute\
+    \ repository which ultimately will be passed onto the grouper client. Key is the\
+    \ parameter name and value is the parameter value."
+  shortDescription: "Custom parameters defined as a {@link Map} to pass onto the attribute\
+    \ repository which ultimately will be passed onto the grouper client."
+  name: "cas.authn.attribute-repository.grouper.parameters"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GrouperPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Indicate how the username passed to the attribute repository should\
+    \ be set and treated by the grouper client to look up records. Accepted values\
+    \ are: {@code SUBJECT_IDENTIFIER}, {@code SUBJECT_ATTRIBUTE_NAME}, {@code SUBJECT_ID}."
+  shortDescription: "Indicate how the username passed to the attribute repository\
+    \ should be set and treated by the grouper client to look up records."
+  name: "cas.authn.attribute-repository.grouper.subject-type"
+  defaultValue: "SUBJECT_ID"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GrouperPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The attribute name that would be used to look up and determine the\
+    \ user id from the query map. The value linked to this attribute would be used\
+    \ as the username or subject by the attribute repository to pass on to the ultimate\
+    \ source to locate the user record."
+  shortDescription: "The attribute name that would be used to look up and determine\
+    \ the user id from the query map."
+  name: "cas.authn.attribute-repository.grouper.username-attribute"
+  defaultValue: "username"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.util.Map<String,String>"
+  description: "Map of attributes to fetch from the database.\nAttributes are defined\
+    \ using a key-value structure\nwhere CAS allows the attribute name/key to be renamed\
+    \ virtually\nto a different attribute. The key is the attribute fetched\nfrom\
+    \ the data source and the value is the attribute name CAS should\nuse for virtual\
+    \ renames.\nAttributes may be allowed to be virtually renamed and remapped. The\
+    \ key in the\nattribute map is the original attribute,\nand the value should be\
+    \ the virtually-renamed attribute."
+  shortDescription: "Map of attributes to fetch from the database."
+  name: "cas.authn.attribute-repository.jdbc[].attributes"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "boolean"
+  description: "The default auto-commit behavior of connections in the pool.\nDetermined\
+    \ whether queries such as update/insert should be immediately executed\nwithout\
+    \ waiting for an underlying transaction."
+  shortDescription: "The default auto-commit behavior of connections in the pool."
+  name: "cas.authn.attribute-repository.jdbc[].autocommit"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "int"
+  description: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  shortDescription: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  name: "cas.authn.attribute-repository.jdbc[].batch-size"
+  defaultValue: "100"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "When constructing the final person object from the attribute repository,\n\
+    indicate how the username should be canonicalized.\nAccepted values are:\n<ul>\n\
+    <li>{@code UPPER}: Transform the final person id into uppercase characters.</li>\n\
+    <li>{@code LOWER}: Transform the final person id into lowercase characters.</li>\n\
+    <li>{@code NONE}: Do nothing.</li>\n</ul>"
+  shortDescription: "When constructing the final person object from the attribute\
+    \ repository, indicate how the username should be canonicalized."
+  name: "cas.authn.attribute-repository.jdbc[].case-canonicalization"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.util.List<String>"
+  description: "Collection of attributes, used to build the SQL query, that should\
+    \ go through\na case canonicalization process defined as {@code key->value}.\n\
+    Note that the key is not the name of\nthe attribute, but the query attribute that\
+    \ is used in generating the\nfinal query clause (i.e. {@code username}). The value\
+    \ can be {@code NONE, LOWER, UPPER}.\n\nIt's also possible to define a list of\
+    \ attributes without a\ncase canonicalization override such as {@code username,\
+    \ attribute2}\nin which case {@link #caseCanonicalization} will dictate the final\
+    \ outcome."
+  shortDescription: "Collection of attributes, used to build the SQL query, that should\
+    \ go through a case canonicalization process defined as {@code key->value}."
+  name: "cas.authn.attribute-repository.jdbc[].case-insensitive-query-attributes"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.util.Map<String,String>"
+  description: "Used only when there is a mapping of many rows to one user.\nThis\
+    \ is done using a key-value structure where the key is the\nname of the \"attribute\
+    \ name\" column  the value is the name of the \"attribute value\" column.\nIf\
+    \ the table structure is as such:\n&lt;pre&gt;\n-----------------------------\n\
+    uid | attr_name  | attr_value\n-----------------------------\ntom | first_name\
+    \ | Thomas\n&lt;/pre&gt;\nThen a column mapping must be specified to teach CAS\
+    \ to use {@code attr_name}\nand {@code attr_value} for attribute names and values."
+  shortDescription: "Used only when there is a mapping of many rows to one user."
+  name: "cas.authn.attribute-repository.jdbc[].column-mappings"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Attempts to do a JNDI data source look up for the data source name\
+    \ specified.\nWill attempt to locate the data source object as is."
+  shortDescription: "Attempts to do a JNDI data source look up for the data source\
+    \ name specified."
+  name: "cas.authn.attribute-repository.jdbc[].data-source-name"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Hibernate feature to automatically validate and exports DDL to the\
+    \ schema.\nBy default, creates and drops the schema automatically when a session\
+    \ is starts and ends.\nSetting the value to {@code validate} or {@code none} may\
+    \ be more desirable for production,\nbut any of the following options can be used:\n\
+    <ul>\n    <li>{@code validate}: Validate the schema, but make no changes to the\
+    \ database.</li>\n    <li>{@code update}: Update the schema.</li>\n    <li>{@code\
+    \ create}: Create the schema, destroying previous data.</li>\n    <li>{@code create-drop}:\
+    \ Drop the schema at the end of the session.</li>\n    <li>{@code none}: Do nothing.</li>\n\
+    </ul>\n<p>\nNote that during a version migration where any schema has changed\
+    \ {@code create-drop} will result\nin the loss of all data as soon as CAS is started.\
+    \ For transient data like tickets this is probably\nnot an issue, but in cases\
+    \ like the audit table important data could be lost. Using `update`, while safe\n\
+    for data, is confirmed to result in invalid database state. {@code validate} or\
+    \ {@code none} settings\nare likely the only safe options for production use.\n\
+    </p>\nFor more info, <a href=\"http://docs.spring.io/spring-framework/docs/current/javadoc-api\"\
+    >see this</a>."
+  shortDescription: "Hibernate feature to automatically validate and exports DDL to\
+    \ the schema."
+  name: "cas.authn.attribute-repository.jdbc[].ddl-auto"
+  defaultValue: "update"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  shortDescription: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  name: "cas.authn.attribute-repository.jdbc[].default-catalog"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Qualify unqualified table names with the given schema/tablespace in\
+    \ generated SQL."
+  shortDescription: "Qualify unqualified table names with the given schema/tablespace\
+    \ in generated SQL."
+  name: "cas.authn.attribute-repository.jdbc[].default-schema"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The database dialect is a configuration setting for platform independent\
+    \ software (JPA, Hibernate, etc)\nwhich allows such software to translate its\
+    \ generic SQL statements into vendor specific DDL, DML."
+  shortDescription: "The database dialect is a configuration setting for platform\
+    \ independent software (JPA, Hibernate, etc) which allows such software to translate\
+    \ its generic SQL statements into vendor specific DDL, DML."
+  name: "cas.authn.attribute-repository.jdbc[].dialect"
+  defaultValue: "org.hibernate.dialect.HSQLDialect"
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The JDBC driver used to connect to the database."
+  shortDescription: "The JDBC driver used to connect to the database."
+  name: "cas.authn.attribute-repository.jdbc[].driver-class"
+  defaultValue: "org.hsqldb.jdbcDriver"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "long"
+  description: "Set the pool initialization failure timeout.\n<ul>\n<li>Any value\
+    \ greater than zero will be treated as a timeout for pool initialization.\nThe\
+    \ calling thread will be blocked from continuing until a successful connection\n\
+    to the database, or until the timeout is reached.  If the timeout is reached,\
+    \ then\na {@code PoolInitializationException} will be thrown. </li>\n<li>A value\
+    \ of zero will <i>not</i>  prevent the pool from starting in the\ncase that a\
+    \ connection cannot be obtained. However, upon start the pool will\nattempt to\
+    \ obtain a connection and validate that the {@code connectionTestQuery}\nand {@code\
+    \ connectionInitSql} are valid.  If those validations fail, an exception\nwill\
+    \ be thrown.  If a connection cannot be obtained, the validation is skipped\n\
+    and the the pool will start and continue to try to obtain connections in the\n\
+    background. This can mean that callers to {@code DataSource#getConnection()} may\n\
+    encounter exceptions. </li>\n<li>A value less than zero will <i>not</i> bypass\
+    \ any connection attempt and\nvalidation during startup, and therefore the pool\
+    \ will start immediately.  The\npool will continue to try to obtain connections\
+    \ in the background. This can mean\nthat callers to {@code DataSource#getConnection()}\
+    \ may encounter exceptions. </li>\n</ul>\nNote that if this timeout value is greater\
+    \ than or equal to zero (0), and therefore an\ninitial connection validation is\
+    \ performed, this timeout does not override the\n{@code connectionTimeout} or\
+    \ {@code validationTimeout}; they will be honored before this\ntimeout is applied.\
+    \  The default value is one millisecond."
+  shortDescription: "Set the pool initialization failure timeout."
+  name: "cas.authn.attribute-repository.jdbc[].fail-fast-timeout"
+  defaultValue: "1"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "int"
+  description: "Used to specify number of rows to be fetched in a select query."
+  shortDescription: "Used to specify number of rows to be fetched in a select query."
+  name: "cas.authn.attribute-repository.jdbc[].fetch-size"
+  defaultValue: "100"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Allow hibernate to generate query statistics."
+  shortDescription: "Allow hibernate to generate query statistics."
+  name: "cas.authn.attribute-repository.jdbc[].generate-statistics"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The SQL query to be executed to test the validity of connections."
+  shortDescription: "The SQL query to be executed to test the validity of connections."
+  name: "cas.authn.attribute-repository.jdbc[].health-query"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.jdbc[].id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Controls the maximum amount of time that a connection is allowed to\
+    \ sit idle in the pool."
+  shortDescription: "Controls the maximum amount of time that a connection is allowed\
+    \ to sit idle in the pool."
+  name: "cas.authn.attribute-repository.jdbc[].idle-timeout"
+  defaultValue: "PT10M"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "boolean"
+  description: "This property determines whether data source isolates internal pool\
+    \ queries, such as the connection alive test,\nin their own transaction.\n<p>\n\
+    Since these are typically read-only queries, it is rarely necessary to encapsulate\
+    \ them in their own transaction.\nThis property only applies if {@link #autocommit}\
+    \ is disabled."
+  shortDescription: "This property determines whether data source isolates internal\
+    \ pool queries, such as the connection alive test, in their own transaction."
+  name: "cas.authn.attribute-repository.jdbc[].isolate-internal-queries"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Defines the isolation level for transactions."
+  shortDescription: "Defines the isolation level for transactions."
+  name: "cas.authn.attribute-repository.jdbc[].isolation-level-name"
+  defaultValue: "ISOLATION_READ_COMMITTED"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "int"
+  description: "Controls the amount of time that a connection can be out of the pool\
+    \ before a message\nis logged indicating a possible connection leak."
+  shortDescription: "Controls the amount of time that a connection can be out of the\
+    \ pool before a message is logged indicating a possible connection leak."
+  name: "cas.authn.attribute-repository.jdbc[].leak-threshold"
+  defaultValue: "3_000"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "int"
+  description: "The order of this attribute repository in the chain of repositories.\n\
+    Can be used to explicitly position this source in chain and affects\nmerging strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.jdbc[].order"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The database connection password."
+  shortDescription: "The database connection password."
+  name: "cas.authn.attribute-repository.jdbc[].password"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Fully-qualified name of the class that can control the physical naming\
+    \ strategy of hibernate."
+  shortDescription: "Fully-qualified name of the class that can control the physical\
+    \ naming strategy of hibernate."
+  name: "cas.authn.attribute-repository.jdbc[].physical-naming-strategy-class-name"
+  defaultValue: "org.apereo.cas.hibernate.CasHibernatePhysicalNamingStrategy"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Defines the propagation behavior for transactions."
+  shortDescription: "Defines the propagation behavior for transactions."
+  name: "cas.authn.attribute-repository.jdbc[].propagation-behavior-name"
+  defaultValue: "PROPAGATION_REQUIRED"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.util.Map<String,String>"
+  description: "Additional settings provided by Hibernate in form of key-value pairs."
+  shortDescription: "Additional settings provided by Hibernate in form of key-value\
+    \ pairs."
+  name: "cas.authn.attribute-repository.jdbc[].properties"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.util.Map<String,String>"
+  description: "Define a {@code Map} of query attribute names to data-layer attribute\
+    \ names to use when building the query.\nThe key is always the name of the query\
+    \ attribute that is defined by CAS and passed internally,\nand the value is the\
+    \ database column that should map."
+  shortDescription: "Define a {@code Map} of query attribute names to data-layer attribute\
+    \ names to use when building the query."
+  name: "cas.authn.attribute-repository.jdbc[].query-attributes"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Indicates how multiple attributes in a query should be concatenated\
+    \ together.\nAccepted values are:\n* <ul>\n<li>{@code AND}: Concatenate attributes\
+    \ in the query using an AND-clause.</li>\n<li>{@code OR}: Concatenate attributes\
+    \ in the query using an OR-clause.</li>\n</ul>"
+  shortDescription: "Indicates how multiple attributes in a query should be concatenated\
+    \ together."
+  name: "cas.authn.attribute-repository.jdbc[].query-type"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "boolean"
+  description: "If the SQL should only be run if all attributes listed in the mappings\
+    \ exist in the query."
+  shortDescription: "If the SQL should only be run if all attributes listed in the\
+    \ mappings exist in the query."
+  name: "cas.authn.attribute-repository.jdbc[].require-all-attributes"
+  defaultValue: true
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Designed to work against a table where there is a mapping of one row\
+    \ to one user.\nThe fields in the table structure is assumed to match {@code username|name|lastname|address}\n\
+    where there is only a single row per user.\nSetting this setting to {@code false}\
+    \ will force CAS to work against a table where\nthere is a mapping of one row\
+    \ to one user.\nThe fields in the table structure is assumed to match {@code username|attr_name|attr_value}\n\
+    where there is more than one row per username."
+  shortDescription: "Designed to work against a table where there is a mapping of\
+    \ one row to one user."
+  name: "cas.authn.attribute-repository.jdbc[].single-row"
+  defaultValue: true
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The SQL statement to execute and fetch attributes.\nThe syntax of\
+    \ the query must be {@code SELECT * FROM table WHERE {0}}.\nThe {@code WHERE}\
+    \ clause is dynamically generated by CAS."
+  shortDescription: "The SQL statement to execute and fetch attributes."
+  name: "cas.authn.attribute-repository.jdbc[].sql"
+  defaultValue: ""
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The database connection URL."
+  shortDescription: "The database connection URL."
+  name: "cas.authn.attribute-repository.jdbc[].url"
+  defaultValue: "jdbc:hsqldb:mem:cas-hsql-database"
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The database user.\n<p>\nThe database user must have sufficient permissions\
+    \ to be able to handle\nschema changes and updates, when needed."
+  shortDescription: "The database user."
+  name: "cas.authn.attribute-repository.jdbc[].user"
+  defaultValue: "sa"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcPrincipalAttributesProperties"
+  type: "java.util.List<String>"
+  description: "Username attribute(s) to use when running the SQL query."
+  shortDescription: "Username attribute(s) to use when running the SQL query."
+  name: "cas.authn.attribute-repository.jdbc[].username"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.JsonPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.json[].id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.JsonPrincipalAttributesProperties"
+  type: "Resource"
+  description: "The location of the resource. Resources can be URLS, or\nfiles found\
+    \ either on the classpath or outside somewhere\nin the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.attribute-repository.json[].location"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.JsonPrincipalAttributesProperties"
+  type: "int"
+  description: "The order of this attribute repository in the chain of repositories.\n\
+    Can be used to explicitly position this source in chain and affects\nmerging strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.json[].order"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether search/query results are allowed to match on multiple DNs,\n\
+    or whether a single unique DN is expected for the result."
+  shortDescription: "Whether search/query results are allowed to match on multiple\
+    \ DNs, or whether a single unique DN is expected for the result."
+  name: "cas.authn.attribute-repository.ldap[].allow-multiple-dns"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Set if multiple Entries are allowed."
+  shortDescription: "Set if multiple Entries are allowed."
+  name: "cas.authn.attribute-repository.ldap[].allow-multiple-entries"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.util.Map<String,String>"
+  description: "Map of attributes to fetch from the source.\nAttributes are defined\
+    \ using a key-value structure\nwhere CAS allows the attribute name/key to be renamed\
+    \ virtually\nto a different attribute. The key is the attribute fetched\nfrom\
+    \ the data source and the value is the attribute name CAS should\nuse for virtual\
+    \ renames.\n\nAttributes may be allowed to be virtually renamed and remapped.\
+    \ The key in the\nattribute map is the original attribute,\nand the value should\
+    \ be the virtually-renamed attribute.\n\nTo fetch and resolve attributes that\
+    \ carry tags/options,\nconsider tagging the mapped attribute as such: {@code affiliation=affiliation}."
+  shortDescription: "Map of attributes to fetch from the source."
+  name: "cas.authn.attribute-repository.ldap[].attributes"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Base DN to use.\nThere may be scenarios where different parts of a\
+    \ single LDAP tree could be considered as base-dns. Rather than duplicating\n\
+    the LDAP configuration block for each individual base-dn, each entry can be specified\n\
+    and joined together using a special delimiter character. The user DN is retrieved\
+    \ using the combination of all base-dn and DN\nresolvers in the order defined.\
+    \ DN resolution should fail if multiple DNs are found. Otherwise the first DN\
+    \ found is returned.\nUsual syntax is: {@code subtreeA,dc=example,dc=net|subtreeC,dc=example,dc=net}."
+  shortDescription: "Base DN to use."
+  name: "cas.authn.attribute-repository.ldap[].base-dn"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.util.List<String>"
+  description: "Indicate the collection of attributes that are to be tagged and processed\
+    \ as binary\nattributes by the underlying search resolver."
+  shortDescription: "Indicate the collection of attributes that are to be tagged and\
+    \ processed as binary attributes by the underlying search resolver."
+  name: "cas.authn.attribute-repository.ldap[].binary-attributes"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The bind credential to use when connecting to LDAP."
+  shortDescription: "The bind credential to use when connecting to LDAP."
+  name: "cas.authn.attribute-repository.ldap[].bind-credential"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The bind DN to use when connecting to LDAP.\nLDAP connection configuration\
+    \ injected into the LDAP connection pool can be initialized with the following\
+    \ parameters:\n<ul>\n<li>{@code bindDn/bindCredential} provided - Use the provided\
+    \ credentials to bind when initializing connections.</li>\n<li>{@code bindDn/bindCredential}\
+    \  set to {@code *} - Use a fast-bind strategy to initialize the pool.</li>\n\
+    <li>{@code bindDn/bindCredential}  set to blank - Skip connection initializing;\
+    \ perform operations anonymously. </li>\n<li>SASL mechanism provided - Use the\
+    \ given SASL mechanism to bind when initializing connections. </li>\n</ul>"
+  shortDescription: "The bind DN to use when connecting to LDAP."
+  name: "cas.authn.attribute-repository.ldap[].bind-dn"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The length of time the pool will block.\nBy default the pool will\
+    \ block indefinitely and there is no guarantee that\nwaiting threads will be serviced\
+    \ in the order in which they made their request.\nThis option should be used with\
+    \ a blocking connection pool when you need to control the exact\nnumber of connections\
+    \ that can be created"
+  shortDescription: "The length of time the pool will block."
+  name: "cas.authn.attribute-repository.ldap[].block-wait-time"
+  defaultValue: "PT3S"
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Sets the maximum amount of time that connects will block."
+  shortDescription: "Sets the maximum amount of time that connects will block."
+  name: "cas.authn.attribute-repository.ldap[].connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "If multiple URLs are provided as the ldapURL this describes how each\
+    \ URL will be processed.\n<ul>\n<li>{@code ACTIVE_PASSIVE} First LDAP will be\
+    \ used for every request unless it fails and then the next shall be used.</li>\n\
+    <li>{@code ROUND_ROBIN} For each new connection the next url in the list will\
+    \ be used.</li>\n<li>{@code RANDOM} For each new connection a random LDAP url\
+    \ will be selected.</li>\n<li>{@code DNS_SRV} LDAP urls based on DNS SRV records\
+    \ of the configured/given LDAP url will be used. </li>\n</ul>"
+  shortDescription: "If multiple URLs are provided as the ldapURL this describes how\
+    \ each URL will be processed."
+  name: "cas.authn.attribute-repository.ldap[].connection-strategy"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether to use a pooled connection factory in components."
+  shortDescription: "Whether to use a pooled connection factory in components."
+  name: "cas.authn.attribute-repository.ldap[].disable-pooling"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Attempt to populate the connection pool early on startup\nand fail\
+    \ quickly if something goes wrong."
+  shortDescription: "Attempt to populate the connection pool early on startup and\
+    \ fail quickly if something goes wrong."
+  name: "cas.authn.attribute-repository.ldap[].fail-fast"
+  defaultValue: true
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Set if search referrals should be followed."
+  shortDescription: "Set if search referrals should be followed."
+  name: "cas.authn.attribute-repository.ldap[].follow-referrals"
+  defaultValue: true
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "org.apereo.cas.configuration.model.support.ldap.AbstractLdapProperties.LdapHostnameVerifierOptions"
+  description: "Hostname verification options.\nAvailable values are as follows:\n\
+    <ul><li>{@code DEFAULT}: Default option, forcing verification.</li><li>{@code\
+    \ ANY}: Skip hostname verification and allow all.</li></ul>"
+  shortDescription: "Hostname verification options."
+  name: "cas.authn.attribute-repository.ldap[].hostname-verifier"
+  defaultValue: "DEFAULT"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.ldap[].id"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Removes connections from the pool based on how long they have been\
+    \ idle in the available queue.\nPrunes connections that have been idle for more\
+    \ than the indicated amount."
+  shortDescription: "Removes connections from the pool based on how long they have\
+    \ been idle in the available queue."
+  name: "cas.authn.attribute-repository.ldap[].idle-time"
+  defaultValue: "PT10M"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Path to the keystore used for SSL connections.\nTypically contains\
+    \ SSL certificates for the LDAP server."
+  shortDescription: "Path to the keystore used for SSL connections."
+  name: "cas.authn.attribute-repository.ldap[].keystore"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Keystore password."
+  shortDescription: "Keystore password."
+  name: "cas.authn.attribute-repository.ldap[].keystore-password"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The type of keystore. {@code PKCS12} or {@code JKS}.\nIf left blank,\
+    \ defaults to the default keystore type indicated\nby the underlying Java platform."
+  shortDescription: "The type of keystore."
+  name: "cas.authn.attribute-repository.ldap[].keystore-type"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The LDAP url to the server. More than one may be specified, separated\
+    \ by space and/or comma."
+  shortDescription: "The LDAP url to the server."
+  name: "cas.authn.attribute-repository.ldap[].ldap-url"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "int"
+  description: "Maximum LDAP connection pool size which the pool can use to grow."
+  shortDescription: "Maximum LDAP connection pool size which the pool can use to grow."
+  name: "cas.authn.attribute-repository.ldap[].max-pool-size"
+  defaultValue: "10"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "int"
+  description: "Minimum LDAP connection pool size.\nSize the pool should be initialized\
+    \ to and pruned to"
+  shortDescription: "Minimum LDAP connection pool size."
+  name: "cas.authn.attribute-repository.ldap[].min-pool-size"
+  defaultValue: "3"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Name of the LDAP handler."
+  shortDescription: "Name of the LDAP handler."
+  name: "cas.authn.attribute-repository.ldap[].name"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "int"
+  description: "The order of this attribute repository in the chain of repositories.\n\
+    Can be used to explicitly position this source in chain and affects\nmerging strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.ldap[].order"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "int"
+  description: "Request that the server return results in batches of a\nspecific size.\
+    \ See <a href=\"http://www.ietf.org/rfc/rfc2696.txt\">RFC 2696</a>. This control\
+    \ is often\nused to work around server result size limits.\nA negative/zero value\
+    \ disables paged requests."
+  shortDescription: "Request that the server return results in batches of a specific\
+    \ size."
+  name: "cas.authn.attribute-repository.ldap[].page-size"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "You may receive unexpected LDAP failures, when CAS is configured to\
+    \ authenticate\nusing {@code DIRECT} or {@code AUTHENTICATED} types and LDAP is\
+    \ locked down to not allow anonymous binds/searches.\nEvery second attempt with\
+    \ a given LDAP connection from the pool would fail if it was on\nthe same connection\
+    \ as a failed login attempt, and the regular connection validator would\nsimilarly\
+    \ fail. When a connection is returned back to a pool,\nit still may contain the\
+    \ principal and credentials from the previous attempt.\nBefore the next bind attempt\
+    \ using that connection, the validator tries to\nvalidate the connection again\
+    \ but fails because it’s no longer trying with the\nconfigured bind credentials\
+    \ but with whatever user DN was used in the previous step.\nGiven the validation\
+    \ failure, the connection is closed and CAS would deny\naccess by default. Passivators\
+    \ attempt to reconnect\nto LDAP with the configured bind credentials, effectively\
+    \ resetting the connection\nto what it should be after each bind request.\nFurthermore\
+    \ if you are seeing errors in the logs that resemble\na 'Operation exception encountered,\
+    \ reopening connection' type of message, this\nusually is an indication that the\
+    \ connection pool’s validation timeout\nestablished and created by CAS is greater\
+    \ than the timeout configured\nin the LDAP server, or more likely, in the load\
+    \ balancer in front of\nthe LDAP servers. You can adjust the LDAP server session’\
+    s timeout\nfor connections, or you can teach CAS to use a validity period that\n\
+    is equal or less than the LDAP server session’s timeout.\nAccepted values are:\n\
+    <ul>\n<li>{@code NONE}: No passivation takes place.</li>\n<li>{@code BIND}: The\
+    \ default behavior which passivates a connection by performing a\nbind operation\
+    \ on it. This option requires the availability of bind credentials when establishing\
+    \ connections to LDAP.</li>\n</ul>"
+  shortDescription: "You may receive unexpected LDAP failures, when CAS is configured\
+    \ to authenticate using {@code DIRECT} or {@code AUTHENTICATED} types and LDAP\
+    \ is locked down to not allow anonymous binds/searches."
+  name: "cas.authn.attribute-repository.ldap[].pool-passivator"
+  defaultValue: "BIND"
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Removes connections from the pool based on how long they have been\
+    \ idle in the available queue.\nRun the pruning process at the indicated interval."
+  shortDescription: "Removes connections from the pool based on how long they have\
+    \ been idle in the available queue."
+  name: "cas.authn.attribute-repository.ldap[].prune-period"
+  defaultValue: "PT2H"
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Duration of time to wait for responses."
+  shortDescription: "Duration of time to wait for responses."
+  name: "cas.authn.attribute-repository.ldap[].response-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "SASL authorization id."
+  shortDescription: "SASL authorization id."
+  name: "cas.authn.attribute-repository.ldap[].sasl-authorization-id"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The SASL mechanism."
+  shortDescription: "The SASL mechanism."
+  name: "cas.authn.attribute-repository.ldap[].sasl-mechanism"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.Boolean"
+  description: "SASL mutual auth is enabled?"
+  shortDescription: "SASL mutual auth is enabled?"
+  name: "cas.authn.attribute-repository.ldap[].sasl-mutual-auth"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "SASL quality of protected."
+  shortDescription: "SASL quality of protected."
+  name: "cas.authn.attribute-repository.ldap[].sasl-quality-of-protection"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The SASL realm."
+  shortDescription: "The SASL realm."
+  name: "cas.authn.attribute-repository.ldap[].sasl-realm"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "SASL security strength."
+  shortDescription: "SASL security strength."
+  name: "cas.authn.attribute-repository.ldap[].sasl-security-strength"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.util.List<LdapSearchEntryHandlersProperties>"
+  description: "Search handlers."
+  shortDescription: "Search handlers."
+  name: "cas.authn.attribute-repository.ldap[].search-entry-handlers"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "User filter to use for searching.\nSyntax is {@code cn={user}} or\
+    \ {@code cn={0}}.\n\nYou may also provide an external groovy script\nin the syntax\
+    \ of {@code file:/path/to/GroovyScript.groovy}\nto fully build the final filter\
+    \ template dynamically."
+  shortDescription: "User filter to use for searching."
+  name: "cas.authn.attribute-repository.ldap[].search-filter"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether subtree searching is allowed."
+  shortDescription: "Whether subtree searching is allowed."
+  name: "cas.authn.attribute-repository.ldap[].subtree-search"
+  defaultValue: true
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Path of the trust certificates to use for the SSL connection.\nIgnores\
+    \ keystore-related settings when activated and used."
+  shortDescription: "Path of the trust certificates to use for the SSL connection."
+  name: "cas.authn.attribute-repository.ldap[].trust-certificates"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Trust Manager options.\nTrust managers are responsible for managing\
+    \ the trust material that is used when making LDAP trust decisions,\nand for deciding\
+    \ whether credentials presented by a peer should be accepted.\nAccepted values\
+    \ are:\n* <ul>\n<li>{@code DEFAULT}: Enable and force the default JVM trust managers.</li>\n\
+    <li>{@code ANY}: Trust any client or server.</li>\n</ul>"
+  shortDescription: "Trust Manager options."
+  name: "cas.authn.attribute-repository.ldap[].trust-manager"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Path to the keystore used to determine which certificates or\ncertificate\
+    \ authorities should be trusted.\nUsed when connecting to an LDAP server via LDAPS\
+    \ or startTLS connection.\nIf left blank, the default truststore for the Java\
+    \ runtime is used."
+  shortDescription: "Path to the keystore used to determine which certificates or\
+    \ certificate authorities should be trusted."
+  name: "cas.authn.attribute-repository.ldap[].trust-store"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Password needed to open the truststore."
+  shortDescription: "Password needed to open the truststore."
+  name: "cas.authn.attribute-repository.ldap[].trust-store-password"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The type of trust keystore that determines which certificates or certificate\
+    \ authorities are trusted.\nTypes depend on underlying java platform, typically\
+    \ {@code PKCS12} or {@code JKS}.\nIf left blank, defaults to the default keystore\
+    \ type indicated\nby the underlying Java platform."
+  shortDescription: "The type of trust keystore that determines which certificates\
+    \ or certificate authorities are trusted."
+  name: "cas.authn.attribute-repository.ldap[].trust-store-type"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether TLS should be used and enabled when establishing the connection."
+  shortDescription: "Whether TLS should be used and enabled when establishing the\
+    \ connection."
+  name: "cas.authn.attribute-repository.ldap[].use-start-tls"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether connections should be validated when loaned out from the pool."
+  shortDescription: "Whether connections should be validated when loaned out from\
+    \ the pool."
+  name: "cas.authn.attribute-repository.ldap[].validate-on-checkout"
+  defaultValue: true
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Period at which pool should be validated."
+  shortDescription: "Period at which pool should be validated."
+  name: "cas.authn.attribute-repository.ldap[].validate-period"
+  defaultValue: "PT5M"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether connections should be validated periodically when the pool\
+    \ is idle."
+  shortDescription: "Whether connections should be validated periodically when the\
+    \ pool is idle."
+  name: "cas.authn.attribute-repository.ldap[].validate-periodically"
+  defaultValue: true
+- duration: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.support.ldap.LdapPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Period at which validation operations may time out."
+  shortDescription: "Period at which validation operations may time out."
+  name: "cas.authn.attribute-repository.ldap[].validate-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication,\nspecify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.attribute-repository.rest[].basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication,\nspecify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.attribute-repository.rest[].basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether attribute repository should consider the underlying\nattribute\
+    \ names in a case-insensitive manner."
+  shortDescription: "Whether attribute repository should consider the underlying attribute\
+    \ names in a case-insensitive manner."
+  name: "cas.authn.attribute-repository.rest[].case-insensitive"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "java.util.Map<String,String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call.\nWill overwrite any header that CAS is pre-defined to\nsend and include\
+    \ in the request. Key in the map should be the header name\nand the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.attribute-repository.rest[].headers"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.rest[].id"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint.\nExamples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.attribute-repository.rest[].method"
+  defaultValue: "GET"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "int"
+  description: "The order of this attribute repository in the chain of repositories.\n\
+    Can be used to explicitly position this source in chain and affects\nmerging strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.rest[].order"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.attribute-repository.rest[].url"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RestPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "The attribute name that would be used to look up and\ndetermine the\
+    \ user id from the query map. The value\nlinked to this attribute would be used\
+    \ as the username\nor subject by the attribute repository to pass on\nto the ultimate\
+    \ source to locate the user record."
+  shortDescription: "The attribute name that would be used to look up and determine\
+    \ the user id from the query map."
+  name: "cas.authn.attribute-repository.rest[].username-attribute"
+  defaultValue: "username"
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.ScriptedPrincipalAttributesProperties"
+  type: "boolean"
+  description: "Whether attribute repository should consider the underlying\nattribute\
+    \ names in a case-insensitive manner."
+  shortDescription: "Whether attribute repository should consider the underlying attribute\
+    \ names in a case-insensitive manner."
+  name: "cas.authn.attribute-repository.script[].case-insensitive"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.ScriptedPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "Script engine name, e.g. groovy, js, python, etc.\nRequired if CAS\
+    \ can't determine based on extension.\nThe file extension of the resource will\
+    \ be used to determine the engineName if not specified.\nEngines must be on the\
+    \ classpath in order for the engineName to be determined automatically.\nThe first\
+    \ engine found claiming to support the extension of the file specified will be\
+    \ used."
+  shortDescription: "Script engine name, e.g. groovy, js, python, etc."
+  name: "cas.authn.attribute-repository.script[].engine-name"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.ScriptedPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.script[].id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.ScriptedPrincipalAttributesProperties"
+  type: "Resource"
+  description: "The location of the resource. Resources can be URLS, or\nfiles found\
+    \ either on the classpath or outside somewhere\nin the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.attribute-repository.script[].location"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.ScriptedPrincipalAttributesProperties"
+  type: "int"
+  description: "The order of this attribute repository in the chain of repositories.\n\
+    Can be used to explicitly position this source in chain and affects\nmerging strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.script[].order"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.StubPrincipalAttributesProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Static attributes that need to be mapped to a hardcoded value belong\
+    \ here. The structure follows a key-value pair where key is the attribute name\
+    \ and value is the attribute value. The key is the attribute fetched from the\
+    \ source and the value is the attribute name CAS should use for virtual renames.\
+    \ Attributes may be allowed to be virtually renamed and remapped. The key in the\
+    \ attribute map is the original attribute, and the value should be the virtually-renamed\
+    \ attribute."
+  shortDescription: "Static attributes that need to be mapped to a hardcoded value\
+    \ belong here."
+  name: "cas.authn.attribute-repository.stub.attributes"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.StubPrincipalAttributesProperties"
+  type: "java.lang.String"
+  description: "A value can be assigned to this field to uniquely identify this resolver."
+  shortDescription: "A value can be assigned to this field to uniquely identify this\
+    \ resolver."
+  name: "cas.authn.attribute-repository.stub.id"
+  defaultValue: ""
+- module: "cas-server-support-person-directory"
+  owner: "org.apereo.cas.configuration.model.core.authentication.StubPrincipalAttributesProperties"
+  type: "java.lang.Integer"
+  description: "The order of this attribute repository in the chain of repositories.\
+    \ Can be used to explicitly position this source in chain and affects merging\
+    \ strategies."
+  shortDescription: "The order of this attribute repository in the chain of repositories."
+  name: "cas.authn.attribute-repository.stub.order"
+  defaultValue: 0

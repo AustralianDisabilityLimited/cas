@@ -1,0 +1,8 @@
+---
+- module: "cas-server-support-service-registry-stream-kafka"
+  owner: "org.apereo.cas.configuration.model.support.services.stream.hazelcast.StreamServicesKafkaProperties"
+  type: "java.lang.String"
+  description: "Kafka bootstrapping server address (i.e. localhost:9092)."
+  shortDescription: "Kafka bootstrapping server address (i.e. localhost:9092)."
+  name: "cas.service-registry.stream.kafka.bootstrap-address"
+  defaultValue: ""

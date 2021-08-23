@@ -1,0 +1,37 @@
+---
+- method: "GET"
+  path: "qrDevices/{principal}"
+  name: "qrDevices"
+  endpointType: "Endpoint"
+  signature: "QRAuthenticationDeviceRepositoryEndpoint.devices(java.lang.String)"
+  owner: "org.apereo.cas.qr.web.QRAuthenticationDeviceRepositoryEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Get registered and authorized devices for the principal."
+  parameters:
+  - name: "principal"
+    required: true
+- method: "POST"
+  path: "qrDevices/{principal}"
+  name: "qrDevices"
+  endpointType: "Endpoint"
+  signature: "QRAuthenticationDeviceRepositoryEndpoint.registerDevice(java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.qr.web.QRAuthenticationDeviceRepositoryEndpoint"
+  casEndpoint: true
+  summary: "Register device using the principal id and device id."
+  parameters:
+  - name: "principal"
+    required: true
+  - name: "deviceId"
+    required: true
+- method: "DELETE"
+  path: "qrDevices/{deviceId}"
+  name: "qrDevices"
+  endpointType: "Endpoint"
+  signature: "QRAuthenticationDeviceRepositoryEndpoint.removeDevice(java.lang.String)"
+  owner: "org.apereo.cas.qr.web.QRAuthenticationDeviceRepositoryEndpoint"
+  casEndpoint: true
+  summary: "Remove authorized device using the device id."
+  parameters:
+  - name: "deviceId"
+    required: true

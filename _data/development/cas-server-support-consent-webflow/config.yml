@@ -1,0 +1,53 @@
+---
+- module: "cas-server-support-consent-webflow"
+  owner: "org.apereo.cas.configuration.model.support.consent.ConsentProperties"
+  type: "java.lang.Boolean"
+  description: "Whether consent functionality should be globally applicapable to all\
+    \ applications and requests."
+  shortDescription: "Whether consent functionality should be globally applicapable\
+    \ to all applications and requests."
+  name: "cas.consent.active"
+  defaultValue: true
+- module: "cas-server-support-consent-webflow"
+  owner: "org.apereo.cas.configuration.model.support.consent.ConsentProperties"
+  type: "java.lang.Boolean"
+  description: "Whether consent functionality should be enabled."
+  shortDescription: "Whether consent functionality should be enabled."
+  name: "cas.consent.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-consent-webflow"
+  owner: "org.apereo.cas.configuration.model.support.consent.GroovyConsentProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.consent.groovy.location"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-consent-webflow"
+  owner: "org.apereo.cas.configuration.model.support.consent.JsonConsentProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.consent.json.location"
+  defaultValue: ""
+- module: "cas-server-support-consent-webflow"
+  owner: "org.apereo.cas.configuration.model.support.consent.ConsentProperties"
+  type: "java.lang.Long"
+  description: "Global reminder time unit, to reconfirm consent in cases no changes\
+    \ are detected."
+  shortDescription: "Global reminder time unit, to reconfirm consent in cases no changes\
+    \ are detected."
+  name: "cas.consent.reminder"
+  defaultValue: 30
+- module: "cas-server-support-consent-webflow"
+  owner: "org.apereo.cas.configuration.model.support.consent.ConsentProperties"
+  type: "java.time.temporal.ChronoUnit"
+  description: "Global reminder time unit of measure, to reconfirm consent in cases\
+    \ no changes are detected."
+  shortDescription: "Global reminder time unit of measure, to reconfirm consent in\
+    \ cases no changes are detected."
+  name: "cas.consent.reminder-time-unit"
+  defaultValue: ""

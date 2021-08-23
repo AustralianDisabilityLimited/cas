@@ -1,0 +1,47 @@
+---
+- module: "cas-server-support-saml-mdui"
+  owner: "org.apereo.cas.configuration.model.support.saml.mdui.SamlMetadataUIProperties"
+  type: "java.lang.Long"
+  description: "If specified, creates a validity filter on the metadata to check for\
+    \ metadata freshness based on the max validity. Value is specified in seconds."
+  shortDescription: "If specified, creates a validity filter on the metadata to check\
+    \ for metadata freshness based on the max validity."
+  name: "cas.saml-metadata-ui.max-validity"
+  defaultValue: 0
+- module: "cas-server-support-saml-mdui"
+  owner: "org.apereo.cas.configuration.model.support.saml.mdui.SamlMetadataUIProperties"
+  type: "java.lang.String"
+  description: "The parameter name that indicates the entity id of the service provider\
+    \ submitted to CAS."
+  shortDescription: "The parameter name that indicates the entity id of the service\
+    \ provider submitted to CAS."
+  name: "cas.saml-metadata-ui.parameter"
+  defaultValue: "entityId"
+- module: "cas-server-support-saml-mdui"
+  owner: "org.apereo.cas.configuration.model.support.saml.mdui.SamlMetadataUIProperties"
+  type: "java.lang.Boolean"
+  description: "When parsing metadata, whether the root element is required to be\
+    \ signed."
+  shortDescription: "When parsing metadata, whether the root element is required to\
+    \ be signed."
+  name: "cas.saml-metadata-ui.require-signed-root"
+  defaultValue: false
+- module: "cas-server-support-saml-mdui"
+  owner: "org.apereo.cas.configuration.model.support.saml.mdui.SamlMetadataUIProperties"
+  type: "java.lang.Boolean"
+  description: "Whether valid metadata is required when parsing metadata."
+  shortDescription: "Whether valid metadata is required when parsing metadata."
+  name: "cas.saml-metadata-ui.require-valid-metadata"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-saml-mdui"
+  owner: "org.apereo.cas.configuration.model.support.saml.mdui.SamlMetadataUIProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Metadata resources to load and parse through based on the incoming\
+    \ entity id in order to locate MDUI. Resources can be classpath/file/http resources.\
+    \ If each metadata resource has a signing certificate, they can be added onto\
+    \ the resource with a {@code ::} separator. Example: {@code classpath:/sp-metadata.xml::classpath:/pub.key}."
+  shortDescription: "Metadata resources to load and parse through based on the incoming\
+    \ entity id in order to locate MDUI."
+  name: "cas.saml-metadata-ui.resources"
+  defaultValue: ""

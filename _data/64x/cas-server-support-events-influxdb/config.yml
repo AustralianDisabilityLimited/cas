@@ -1,0 +1,76 @@
+---
+- duration: true
+  module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.String"
+  description: "The interval used to run batch jobs to flush points."
+  shortDescription: "The interval used to run batch jobs to flush points."
+  name: "cas.events.influx-db.batch-interval"
+  defaultValue: "PT5S"
+- module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.String"
+  description: "Database consistency level. Acceptable values are {@code ALL, ANY,\
+    \ ONE, QUORUM}. <ul> <li>ALL - Write succeeds only if write reached all cluster\
+    \ members.</li> <li>ANY - Write succeeds if write reached any cluster members.</li>\
+    \ <li>ONE - Write succeeds if write reached at least one cluster members.</li>\
+    \ <li>QUORUM - Write succeeds only if write reached a quorum of cluster members.</li>\
+    \ </ul>"
+  shortDescription: "Database consistency level."
+  name: "cas.events.influx-db.consistency-level"
+  defaultValue: "ALL"
+- required: true
+  module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.String"
+  description: "Database name."
+  shortDescription: "Database name."
+  name: "cas.events.influx-db.database"
+  defaultValue: ""
+- module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the indicated database should be dropped and recreated."
+  shortDescription: "Whether the indicated database should be dropped and recreated."
+  name: "cas.events.influx-db.drop-database"
+  defaultValue: false
+- required: true
+  module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.String"
+  description: "InfluxDb connection password."
+  shortDescription: "InfluxDb connection password."
+  name: "cas.events.influx-db.password"
+  defaultValue: "root"
+- module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.Integer"
+  description: "The number of point to flush and write to the database as part of\
+    \ the batch."
+  shortDescription: "The number of point to flush and write to the database as part\
+    \ of the batch."
+  name: "cas.events.influx-db.points-to-flush"
+  defaultValue: 100
+- module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.String"
+  description: "Database retention policy to use."
+  shortDescription: "Database retention policy to use."
+  name: "cas.events.influx-db.retention-policy"
+  defaultValue: "autogen"
+- required: true
+  module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.String"
+  description: "InfluxDb connection url."
+  shortDescription: "InfluxDb connection url."
+  name: "cas.events.influx-db.url"
+  defaultValue: "http://localhost:8086"
+- required: true
+  module: "cas-server-support-events-influxdb"
+  owner: "org.apereo.cas.configuration.model.core.events.InfluxDbEventsProperties"
+  type: "java.lang.String"
+  description: "InfluxDb connection username."
+  shortDescription: "InfluxDb connection username."
+  name: "cas.events.influx-db.username"
+  defaultValue: "root"

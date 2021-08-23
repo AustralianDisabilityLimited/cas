@@ -1,0 +1,26 @@
+---
+- method: "GET"
+  path: "samlIdPRegisteredServiceMetadataCache"
+  name: "samlIdPRegisteredServiceMetadataCache"
+  endpointType: "Endpoint"
+  signature: "SamlRegisteredServiceCachedMetadataEndpoint.getCachedMetadataObject(java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.support.saml.web.idp.metadata.SamlRegisteredServiceCachedMetadataEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Get SAML2 cached metadata."
+  parameters:
+  - name: "serviceId"
+    required: true
+  - name: "entityId"
+    required: false
+- method: "DELETE"
+  path: "samlIdPRegisteredServiceMetadataCache"
+  name: "samlIdPRegisteredServiceMetadataCache"
+  endpointType: "Endpoint"
+  signature: "SamlRegisteredServiceCachedMetadataEndpoint.invalidate(java.lang.String)"
+  owner: "org.apereo.cas.support.saml.web.idp.metadata.SamlRegisteredServiceCachedMetadataEndpoint"
+  casEndpoint: true
+  summary: "Invalidate SAML2 metadata cache using an entity id."
+  parameters:
+  - name: "serviceId"
+    required: false

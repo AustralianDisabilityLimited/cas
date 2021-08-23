@@ -1,0 +1,13 @@
+---
+- method: "GET"
+  path: "springWebflow"
+  name: "springWebflow"
+  endpointType: "Endpoint"
+  signature: "SpringWebflowEndpoint.getReport(java.lang.String)"
+  owner: "org.apereo.cas.web.report.SpringWebflowEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Get Spring webflow report using an optional flow id."
+  parameters:
+  - name: "flowId"
+    required: false

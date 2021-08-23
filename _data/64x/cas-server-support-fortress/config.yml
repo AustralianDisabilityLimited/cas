@@ -1,0 +1,13 @@
+---
+- required: true
+  module: "cas-server-support-fortress"
+  owner: "org.apereo.cas.configuration.model.support.fortress.FortressAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Use this setting to set the tenant id onto function call into Fortress\
+    \ which allows segregation of data by customer. The context is used for multi-tenancy\
+    \ to isolate data sets within a particular sub-tree within DIT. Setting contextId\
+    \ into this object will render this class' implementer thread unsafe."
+  shortDescription: "Use this setting to set the tenant id onto function call into\
+    \ Fortress which allows segregation of data by customer."
+  name: "cas.authn.fortress.rbaccontext"
+  defaultValue: "HOME"

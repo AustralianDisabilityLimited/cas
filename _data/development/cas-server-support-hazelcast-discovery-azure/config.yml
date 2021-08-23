@@ -1,0 +1,160 @@
+---
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory Service Principal client ID."
+  shortDescription: "The Azure Active Directory Service Principal client ID."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.azure.client-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory Service Principal client secret."
+  shortDescription: "The Azure Active Directory Service Principal client secret."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.azure.client-secret"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The name of the tag on the hazelcast vm resources. With every Hazelcast\
+    \ Virtual Machine you deploy in your resource group, you need to ensure that each\
+    \ VM is tagged with the value of cluster-id defined in your Hazelcast configuration.\
+    \ The only requirement is that every VM can access each other either by private\
+    \ or public IP address."
+  shortDescription: "The name of the tag on the hazelcast vm resources."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.azure.cluster-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure resource group name of the cluster. You can find this in\
+    \ the Azure portal or CLI."
+  shortDescription: "The Azure resource group name of the cluster."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.azure.group-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure subscription ID."
+  shortDescription: "The Azure subscription ID."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.azure.subscription-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory tenant ID."
+  shortDescription: "The Azure Active Directory tenant ID."
+  name: "cas.authn.throttle.hazelcast.cluster.discovery.azure.tenant-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory Service Principal client ID."
+  shortDescription: "The Azure Active Directory Service Principal client ID."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.azure.client-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory Service Principal client secret."
+  shortDescription: "The Azure Active Directory Service Principal client secret."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.azure.client-secret"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The name of the tag on the hazelcast vm resources. With every Hazelcast\
+    \ Virtual Machine you deploy in your resource group, you need to ensure that each\
+    \ VM is tagged with the value of cluster-id defined in your Hazelcast configuration.\
+    \ The only requirement is that every VM can access each other either by private\
+    \ or public IP address."
+  shortDescription: "The name of the tag on the hazelcast vm resources."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.azure.cluster-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure resource group name of the cluster. You can find this in\
+    \ the Azure portal or CLI."
+  shortDescription: "The Azure resource group name of the cluster."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.azure.group-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure subscription ID."
+  shortDescription: "The Azure subscription ID."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.azure.subscription-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory tenant ID."
+  shortDescription: "The Azure Active Directory tenant ID."
+  name: "cas.service-registry.stream.hazelcast.config.cluster.discovery.azure.tenant-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory Service Principal client ID."
+  shortDescription: "The Azure Active Directory Service Principal client ID."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.azure.client-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory Service Principal client secret."
+  shortDescription: "The Azure Active Directory Service Principal client secret."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.azure.client-secret"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The name of the tag on the hazelcast vm resources. With every Hazelcast\
+    \ Virtual Machine you deploy in your resource group, you need to ensure that each\
+    \ VM is tagged with the value of cluster-id defined in your Hazelcast configuration.\
+    \ The only requirement is that every VM can access each other either by private\
+    \ or public IP address."
+  shortDescription: "The name of the tag on the hazelcast vm resources."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.azure.cluster-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure resource group name of the cluster. You can find this in\
+    \ the Azure portal or CLI."
+  shortDescription: "The Azure resource group name of the cluster."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.azure.group-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure subscription ID."
+  shortDescription: "The Azure subscription ID."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.azure.subscription-id"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-hazelcast-discovery-azure"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.discovery.HazelcastAzureDiscoveryProperties"
+  type: "java.lang.String"
+  description: "The Azure Active Directory tenant ID."
+  shortDescription: "The Azure Active Directory tenant ID."
+  name: "cas.ticket.registry.hazelcast.cluster.discovery.azure.tenant-id"
+  defaultValue: ""

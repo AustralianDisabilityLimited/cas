@@ -1,0 +1,38 @@
+---
+- module: "cas-server-support-consent-rest"
+  owner: "org.apereo.cas.configuration.model.support.consent.RestfulConsentProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.consent.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-consent-rest"
+  owner: "org.apereo.cas.configuration.model.support.consent.RestfulConsentProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.consent.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-consent-rest"
+  owner: "org.apereo.cas.configuration.model.support.consent.RestfulConsentProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.consent.rest.headers"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-consent-rest"
+  owner: "org.apereo.cas.configuration.model.support.consent.RestfulConsentProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.consent.rest.url"
+  defaultValue: ""

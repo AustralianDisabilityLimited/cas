@@ -1,0 +1,40 @@
+---
+- method: "GET"
+  path: "auditLog/{interval}"
+  name: "auditLog"
+  endpointType: "Endpoint"
+  signature: "AuditLogEndpoint.getAuditLog(java.lang.String)"
+  owner: "org.apereo.cas.web.report.AuditLogEndpoint"
+  returnType: "Set"
+  casEndpoint: true
+  summary: "Provide a report of the audit log using a given interval."
+  parameters:
+  - name: "interval"
+    description: "Accepts the duration syntax, such as PT1H"
+    required: false
+- method: "POST"
+  path: "auditLog"
+  name: "auditLog"
+  endpointType: "Endpoint"
+  signature: "AuditLogEndpoint.getAuditLog(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.web.report.AuditLogEndpoint"
+  returnType: "Set"
+  casEndpoint: true
+  summary: "Provide a report of the audit log. Each filter other than `interval` can\
+    \ accept a regular expression to match against."
+  parameters:
+  - name: "interval"
+    description: "Accepts the duration syntax, such as PT1H"
+    required: false
+  - name: "actionPerformed"
+    required: false
+  - name: "clientIpAddress"
+    required: false
+  - name: "principal"
+    required: false
+  - name: "resourceOperatedUpon"
+    required: false
+  produces:
+  - "application/vnd.spring-boot.actuator.v2+json"
+  - "application/vnd.cas.services+yaml"
+  - "application/json"

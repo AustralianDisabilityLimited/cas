@@ -1,0 +1,11 @@
+---
+- method: "GET"
+  path: "httptrace"
+  name: "httptrace"
+  endpointType: "Endpoint"
+  signature: "HttpTraceEndpoint.traces()"
+  owner: "org.springframework.boot.actuate.trace.http.HttpTraceEndpoint"
+  returnType: "HttpTraceDescriptor"
+  casEndpoint: false
+  summary: "Displays HTTP trace information (by default, the last 100 HTTP request-response\
+    \ exchanges)."

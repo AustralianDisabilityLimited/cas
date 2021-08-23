@@ -1,0 +1,843 @@
+---
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "When CRLs are cached, indicate whether cache should overflow to disk."
+  shortDescription: "When CRLs are cached, indicate whether cache should overflow\
+    \ to disk."
+  name: "cas.authn.x509.cache-disk-overflow"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "Size of cache on disk."
+  shortDescription: "Size of cache on disk."
+  name: "cas.authn.x509.cache-disk-size"
+  defaultValue: "100MB"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "When CRLs are cached, indicate if cache items should be eternal."
+  shortDescription: "When CRLs are cached, indicate if cache items should be eternal."
+  name: "cas.authn.x509.cache-eternal"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Integer"
+  description: "When CRLs are cached, indicate maximum number of elements kept in\
+    \ memory."
+  shortDescription: "When CRLs are cached, indicate maximum number of elements kept\
+    \ in memory."
+  name: "cas.authn.x509.cache-max-elements-in-memory"
+  defaultValue: 1000
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Long"
+  description: "When CRLs are cached, indicate the time-to-live of cache items."
+  shortDescription: "When CRLs are cached, indicate the time-to-live of cache items."
+  name: "cas.authn.x509.cache-time-to-live-seconds"
+  defaultValue: 4
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "Whether revocation checking should check all resources, or stop at\
+    \ first one."
+  shortDescription: "Whether revocation checking should check all resources, or stop\
+    \ at first one."
+  name: "cas.authn.x509.check-all"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "Deployer supplied setting to check the KeyUsage extension."
+  shortDescription: "Deployer supplied setting to check the KeyUsage extension."
+  name: "cas.authn.x509.check-key-usage"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.CnEdipiPrincipalResolverProperties"
+  type: "java.lang.String"
+  description: "Attribute name that will be used by X509 principal resolvers if the\
+    \ main attribute in the certificate is not present. This only applies to principal\
+    \ resolvers that are looking for attributes in the certificate that are not common\
+    \ to all certificates. (e.g. {@code SUBJECT_ALT_NAME}, {@code CN_EDIPI}) <p> This\
+    \ assumes you would rather get something like the {@code subjectDn} rather than\
+    \ {@code null} where {@code null} would allow falling through to another authentication\
+    \ mechanism. <p> Currently supported values are: {@code subjectDn}, {@code sigAlgOid},\
+    \ {@code subjectX500Principal}."
+  shortDescription: "Attribute name that will be used by X509 principal resolvers\
+    \ if the main attribute in the certificate is not present."
+  name: "cas.authn.x509.cn-edipi.alternate-principal-attribute"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.CnEdipiPrincipalResolverProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to extract EDIPI as an attribute, regardless of principal\
+    \ resolver type."
+  shortDescription: "Whether to extract EDIPI as an attribute, regardless of principal\
+    \ resolver type."
+  name: "cas.authn.x509.cn-edipi.extract-edipi-as-attribute"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "If the CRL has expired, activate the this policy. Activated if {@link\
+    \ #revocationChecker} is {@code CRL}. Accepted values are: <ul> <li>{@code ALLOW}:\
+    \ Allow authentication to proceed.</li> <li>{@code DENY}: Deny authentication\
+    \ and block.</li> <li>{@code THRESHOLD}: Applicable to CRL expiration, throttle\
+    \ the request whereby expired data is permitted up to a threshold period of time\
+    \ but not afterward.</li> </ul>"
+  shortDescription: "If the CRL has expired, activate the this policy."
+  name: "cas.authn.x509.crl-expired-policy"
+  defaultValue: "DENY"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "Options to describe how to fetch CRL resources.  To fetch CRLs, the\
+    \ following options are available: <ul> <li>{@code RESOURCE}: By default, all\
+    \ revocation checks use fixed resources to fetch the CRL resource from the specified\
+    \ location.</li> <li>{@code LDAP}: A CRL resource may be fetched from a pre-configured\
+    \ attribute, in the event that the CRL resource location is an LDAP URI.</li>\
+    \ </ul>"
+  shortDescription: "Options to describe how to fetch CRL resources."
+  name: "cas.authn.x509.crl-fetcher"
+  defaultValue: "RESOURCE"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "If the CRL resource has expired, activate the this policy. Activated\
+    \ if {@link #revocationChecker} is {@code RESOURCE}. Accepted values are: <ul>\
+    \ <li>{@code ALLOW}: Allow authentication to proceed.</li> <li>{@code DENY}: Deny\
+    \ authentication and block.</li> <li>{@code THRESHOLD}: Applicable to CRL expiration,\
+    \ throttle the request whereby expired data is permitted up to a threshold period\
+    \ of time but not afterward.</li> </ul>"
+  shortDescription: "If the CRL resource has expired, activate the this policy."
+  name: "cas.authn.x509.crl-resource-expired-policy"
+  defaultValue: "DENY"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "If the CRL resource is unavailable, activate the this policy. Activated\
+    \ if {@link #revocationChecker} is {@code RESOURCE}. Accepted values are: <ul>\
+    \ <li>{@code ALLOW}: Allow authentication to proceed.</li> <li>{@code DENY}: Deny\
+    \ authentication and block.</li> <li>{@code THRESHOLD}: Applicable to CRL expiration,\
+    \ throttle the request whereby expired data is permitted up to a threshold period\
+    \ of time but not afterward.</li> </ul>"
+  shortDescription: "If the CRL resource is unavailable, activate the this policy."
+  name: "cas.authn.x509.crl-resource-unavailable-policy"
+  defaultValue: "DENY"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of CRL resources to use for fetching."
+  shortDescription: "List of CRL resources to use for fetching."
+  name: "cas.authn.x509.crl-resources"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "If the CRL is unavailable, activate the this policy. Activated if\
+    \ {@link #revocationChecker} is {@code CRL}. Accepted values are: <ul> <li>{@code\
+    \ ALLOW}: Allow authentication to proceed.</li> <li>{@code DENY}: Deny authentication\
+    \ and block.</li> <li>{@code THRESHOLD}: Applicable to CRL expiration, throttle\
+    \ the request whereby expired data is permitted up to a threshold period of time\
+    \ but not afterward.</li> </ul>"
+  shortDescription: "If the CRL is unavailable, activate the this policy."
+  name: "cas.authn.x509.crl-unavailable-policy"
+  defaultValue: "DENY"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "Whether to extract certificate from request. The default implementation\
+    \ extracts certificate from header via Tomcat SSLValve parsing logic and using\
+    \ the {@link #DEFAULT_CERT_HEADER_NAME} header. Must be false by default because\
+    \ if someone enables it they need to make sure they are behind proxy that won't\
+    \ let the header arrive directly from the browser."
+  shortDescription: "Whether to extract certificate from request."
+  name: "cas.authn.x509.extract-cert"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Whether search/query results are allowed to match on multiple DNs,\
+    \ or whether a single unique DN is expected for the result."
+  shortDescription: "Whether search/query results are allowed to match on multiple\
+    \ DNs, or whether a single unique DN is expected for the result."
+  name: "cas.authn.x509.ldap.allow-multiple-dns"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Set if multiple Entries are allowed."
+  shortDescription: "Set if multiple Entries are allowed."
+  name: "cas.authn.x509.ldap.allow-multiple-entries"
+  defaultValue: false
+- required: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Base DN to use. There may be scenarios where different parts of a\
+    \ single LDAP tree could be considered as base-dns. Rather than duplicating the\
+    \ LDAP configuration block for each individual base-dn, each entry can be specified\
+    \ and joined together using a special delimiter character. The user DN is retrieved\
+    \ using the combination of all base-dn and DN resolvers in the order defined.\
+    \ DN resolution should fail if multiple DNs are found. Otherwise the first DN\
+    \ found is returned. Usual syntax is: {@code subtreeA,dc=example,dc=net|subtreeC,dc=example,dc=net}."
+  shortDescription: "Base DN to use."
+  name: "cas.authn.x509.ldap.base-dn"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Indicate the collection of attributes that are to be tagged and processed\
+    \ as binary attributes by the underlying search resolver."
+  shortDescription: "Indicate the collection of attributes that are to be tagged and\
+    \ processed as binary attributes by the underlying search resolver."
+  name: "cas.authn.x509.ldap.binary-attributes"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The bind credential to use when connecting to LDAP."
+  shortDescription: "The bind credential to use when connecting to LDAP."
+  name: "cas.authn.x509.ldap.bind-credential"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The bind DN to use when connecting to LDAP. LDAP connection configuration\
+    \ injected into the LDAP connection pool can be initialized with the following\
+    \ parameters: <ul> <li>{@code bindDn/bindCredential} provided - Use the provided\
+    \ credentials to bind when initializing connections.</li> <li>{@code bindDn/bindCredential}\
+    \  set to {@code *} - Use a fast-bind strategy to initialize the pool.</li> <li>{@code\
+    \ bindDn/bindCredential}  set to blank - Skip connection initializing; perform\
+    \ operations anonymously. </li> <li>SASL mechanism provided - Use the given SASL\
+    \ mechanism to bind when initializing connections. </li> </ul>"
+  shortDescription: "The bind DN to use when connecting to LDAP."
+  name: "cas.authn.x509.ldap.bind-dn"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The length of time the pool will block. By default the pool will block\
+    \ indefinitely and there is no guarantee that waiting threads will be serviced\
+    \ in the order in which they made their request. This option should be used with\
+    \ a blocking connection pool when you need to control the exact number of connections\
+    \ that can be created"
+  shortDescription: "The length of time the pool will block."
+  name: "cas.authn.x509.ldap.block-wait-time"
+  defaultValue: "PT3S"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The LDAP attribute that holds the certificate revocation list."
+  shortDescription: "The LDAP attribute that holds the certificate revocation list."
+  name: "cas.authn.x509.ldap.certificate-attribute"
+  defaultValue: "certificateRevocationList"
+- duration: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Sets the maximum amount of time that connects will block."
+  shortDescription: "Sets the maximum amount of time that connects will block."
+  name: "cas.authn.x509.ldap.connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "If multiple URLs are provided as the ldapURL this describes how each\
+    \ URL will be processed. <ul> <li>{@code ACTIVE_PASSIVE} First LDAP will be used\
+    \ for every request unless it fails and then the next shall be used.</li> <li>{@code\
+    \ ROUND_ROBIN} For each new connection the next url in the list will be used.</li>\
+    \ <li>{@code RANDOM} For each new connection a random LDAP url will be selected.</li>\
+    \ <li>{@code DNS_SRV} LDAP urls based on DNS SRV records of the configured/given\
+    \ LDAP url will be used. </li> </ul>"
+  shortDescription: "If multiple URLs are provided as the ldapURL this describes how\
+    \ each URL will be processed."
+  name: "cas.authn.x509.ldap.connection-strategy"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to use a pooled connection factory in components."
+  shortDescription: "Whether to use a pooled connection factory in components."
+  name: "cas.authn.x509.ldap.disable-pooling"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Attempt to populate the connection pool early on startup and fail\
+    \ quickly if something goes wrong."
+  shortDescription: "Attempt to populate the connection pool early on startup and\
+    \ fail quickly if something goes wrong."
+  name: "cas.authn.x509.ldap.fail-fast"
+  defaultValue: true
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Set if search referrals should be followed."
+  shortDescription: "Set if search referrals should be followed."
+  name: "cas.authn.x509.ldap.follow-referrals"
+  defaultValue: true
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "org.apereo.cas.configuration.model.support.ldap.AbstractLdapProperties$LdapHostnameVerifierOptions"
+  description: "Hostname verification options.\nAvailable values are as follows:\n\
+    <ul><li>{@code DEFAULT}: Default option, forcing verification.</li><li>{@code\
+    \ ANY}: Skip hostname verification and allow all.</li></ul>"
+  shortDescription: "Hostname verification options."
+  name: "cas.authn.x509.ldap.hostname-verifier"
+  defaultValue: "DEFAULT"
+- duration: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Removes connections from the pool based on how long they have been\
+    \ idle in the available queue. Prunes connections that have been idle for more\
+    \ than the indicated amount."
+  shortDescription: "Removes connections from the pool based on how long they have\
+    \ been idle in the available queue."
+  name: "cas.authn.x509.ldap.idle-time"
+  defaultValue: "PT10M"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Path to the keystore used for SSL connections. Typically contains\
+    \ SSL certificates for the LDAP server."
+  shortDescription: "Path to the keystore used for SSL connections."
+  name: "cas.authn.x509.ldap.keystore"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Keystore password."
+  shortDescription: "Keystore password."
+  name: "cas.authn.x509.ldap.keystore-password"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The type of keystore. {@code PKCS12} or {@code JKS}. If left blank,\
+    \ defaults to the default keystore type indicated by the underlying Java platform."
+  shortDescription: "The type of keystore."
+  name: "cas.authn.x509.ldap.keystore-type"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The LDAP url to the server. More than one may be specified, separated\
+    \ by space and/or comma."
+  shortDescription: "The LDAP url to the server."
+  name: "cas.authn.x509.ldap.ldap-url"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Integer"
+  description: "Maximum LDAP connection pool size which the pool can use to grow."
+  shortDescription: "Maximum LDAP connection pool size which the pool can use to grow."
+  name: "cas.authn.x509.ldap.max-pool-size"
+  defaultValue: 10
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Integer"
+  description: "Minimum LDAP connection pool size. Size the pool should be initialized\
+    \ to and pruned to"
+  shortDescription: "Minimum LDAP connection pool size."
+  name: "cas.authn.x509.ldap.min-pool-size"
+  defaultValue: 3
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Name of the LDAP handler."
+  shortDescription: "Name of the LDAP handler."
+  name: "cas.authn.x509.ldap.name"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Integer"
+  description: "Request that the server return results in batches of a specific size.\
+    \ See <a href=\"http://www.ietf.org/rfc/rfc2696.txt\">RFC 2696</a>. This control\
+    \ is often used to work around server result size limits. A negative/zero value\
+    \ disables paged requests."
+  shortDescription: "Request that the server return results in batches of a specific\
+    \ size."
+  name: "cas.authn.x509.ldap.page-size"
+  defaultValue: 0
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "You may receive unexpected LDAP failures, when CAS is configured to\
+    \ authenticate using {@code DIRECT} or {@code AUTHENTICATED} types and LDAP is\
+    \ locked down to not allow anonymous binds/searches. Every second attempt with\
+    \ a given LDAP connection from the pool would fail if it was on the same connection\
+    \ as a failed login attempt, and the regular connection validator would similarly\
+    \ fail. When a connection is returned back to a pool, it still may contain the\
+    \ principal and credentials from the previous attempt. Before the next bind attempt\
+    \ using that connection, the validator tries to validate the connection again\
+    \ but fails because it’s no longer trying with the configured bind credentials\
+    \ but with whatever user DN was used in the previous step. Given the validation\
+    \ failure, the connection is closed and CAS would deny access by default. Passivators\
+    \ attempt to reconnect to LDAP with the configured bind credentials, effectively\
+    \ resetting the connection to what it should be after each bind request. Furthermore\
+    \ if you are seeing errors in the logs that resemble a 'Operation exception encountered,\
+    \ reopening connection' type of message, this usually is an indication that the\
+    \ connection pool’s validation timeout established and created by CAS is greater\
+    \ than the timeout configured in the LDAP server, or more likely, in the load\
+    \ balancer in front of the LDAP servers. You can adjust the LDAP server session’\
+    s timeout for connections, or you can teach CAS to use a validity period that\
+    \ is equal or less than the LDAP server session’s timeout. Accepted values are:\
+    \ <ul> <li>{@code NONE}: No passivation takes place.</li> <li>{@code BIND}: The\
+    \ default behavior which passivates a connection by performing a bind operation\
+    \ on it. This option requires the availability of bind credentials when establishing\
+    \ connections to LDAP.</li> </ul>"
+  shortDescription: "You may receive unexpected LDAP failures, when CAS is configured\
+    \ to authenticate using {@code DIRECT} or {@code AUTHENTICATED} types and LDAP\
+    \ is locked down to not allow anonymous binds/searches."
+  name: "cas.authn.x509.ldap.pool-passivator"
+  defaultValue: "BIND"
+- duration: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Removes connections from the pool based on how long they have been\
+    \ idle in the available queue. Run the pruning process at the indicated interval."
+  shortDescription: "Removes connections from the pool based on how long they have\
+    \ been idle in the available queue."
+  name: "cas.authn.x509.ldap.prune-period"
+  defaultValue: "PT2H"
+- duration: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Duration of time to wait for responses."
+  shortDescription: "Duration of time to wait for responses."
+  name: "cas.authn.x509.ldap.response-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "SASL authorization id."
+  shortDescription: "SASL authorization id."
+  name: "cas.authn.x509.ldap.sasl-authorization-id"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The SASL mechanism."
+  shortDescription: "The SASL mechanism."
+  name: "cas.authn.x509.ldap.sasl-mechanism"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "SASL mutual auth is enabled?"
+  shortDescription: "SASL mutual auth is enabled?"
+  name: "cas.authn.x509.ldap.sasl-mutual-auth"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "SASL quality of protected."
+  shortDescription: "SASL quality of protected."
+  name: "cas.authn.x509.ldap.sasl-quality-of-protection"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The SASL realm."
+  shortDescription: "The SASL realm."
+  name: "cas.authn.x509.ldap.sasl-realm"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "SASL security strength."
+  shortDescription: "SASL security strength."
+  name: "cas.authn.x509.ldap.sasl-security-strength"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.ldap.LdapSearchEntryHandlersProperties>"
+  description: "Search handlers."
+  shortDescription: "Search handlers."
+  name: "cas.authn.x509.ldap.search-entry-handlers"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "User filter to use for searching. Syntax is {@code cn={user}} or {@code\
+    \ cn={0}}.  You may also provide an external groovy script in the syntax of {@code\
+    \ file:/path/to/GroovyScript.groovy} to fully build the final filter template\
+    \ dynamically."
+  shortDescription: "User filter to use for searching."
+  name: "cas.authn.x509.ldap.search-filter"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Whether subtree searching is allowed."
+  shortDescription: "Whether subtree searching is allowed."
+  name: "cas.authn.x509.ldap.subtree-search"
+  defaultValue: true
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Path of the trust certificates to use for the SSL connection. Ignores\
+    \ keystore-related settings when activated and used."
+  shortDescription: "Path of the trust certificates to use for the SSL connection."
+  name: "cas.authn.x509.ldap.trust-certificates"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Trust Manager options. Trust managers are responsible for managing\
+    \ the trust material that is used when making LDAP trust decisions, and for deciding\
+    \ whether credentials presented by a peer should be accepted. Accepted values\
+    \ are: * <ul> <li>{@code DEFAULT}: Enable and force the default JVM trust managers.</li>\
+    \ <li>{@code ANY}: Trust any client or server.</li> </ul>"
+  shortDescription: "Trust Manager options."
+  name: "cas.authn.x509.ldap.trust-manager"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Path to the keystore used to determine which certificates or certificate\
+    \ authorities should be trusted. Used when connecting to an LDAP server via LDAPS\
+    \ or startTLS connection. If left blank, the default truststore for the Java runtime\
+    \ is used."
+  shortDescription: "Path to the keystore used to determine which certificates or\
+    \ certificate authorities should be trusted."
+  name: "cas.authn.x509.ldap.trust-store"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Password needed to open the truststore."
+  shortDescription: "Password needed to open the truststore."
+  name: "cas.authn.x509.ldap.trust-store-password"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "The type of trust keystore that determines which certificates or certificate\
+    \ authorities are trusted. Types depend on underlying java platform, typically\
+    \ {@code PKCS12} or {@code JKS}. If left blank, defaults to the default keystore\
+    \ type indicated by the underlying Java platform."
+  shortDescription: "The type of trust keystore that determines which certificates\
+    \ or certificate authorities are trusted."
+  name: "cas.authn.x509.ldap.trust-store-type"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Whether TLS should be used and enabled when establishing the connection."
+  shortDescription: "Whether TLS should be used and enabled when establishing the\
+    \ connection."
+  name: "cas.authn.x509.ldap.use-start-tls"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Whether connections should be validated when loaned out from the pool."
+  shortDescription: "Whether connections should be validated when loaned out from\
+    \ the pool."
+  name: "cas.authn.x509.ldap.validate-on-checkout"
+  defaultValue: true
+- duration: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Period at which pool should be validated."
+  shortDescription: "Period at which pool should be validated."
+  name: "cas.authn.x509.ldap.validate-period"
+  defaultValue: "PT5M"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.Boolean"
+  description: "Whether connections should be validated periodically when the pool\
+    \ is idle."
+  shortDescription: "Whether connections should be validated periodically when the\
+    \ pool is idle."
+  name: "cas.authn.x509.ldap.validate-periodically"
+  defaultValue: true
+- duration: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509LdapProperties"
+  type: "java.lang.String"
+  description: "Period at which validation operations may time out."
+  shortDescription: "Period at which validation operations may time out."
+  name: "cas.authn.x509.ldap.validate-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Integer"
+  description: "Deployer supplied setting for maximum pathLength in a SUPPLIED certificate."
+  shortDescription: "Deployer supplied setting for maximum pathLength in a SUPPLIED\
+    \ certificate."
+  name: "cas.authn.x509.max-path-length"
+  defaultValue: 1
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "Deployer supplied setting to allow unlimited pathLength in a SUPPLIED\
+    \ certificate."
+  shortDescription: "Deployer supplied setting to allow unlimited pathLength in a\
+    \ SUPPLIED certificate."
+  name: "cas.authn.x509.max-path-length-allow-unspecified"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "Determine whether X509 authentication should allow other forms of\
+    \ authentication such as username/password. If this setting is turned off, typically\
+    \ the ability to view the login form as the primary form of authentication is\
+    \ turned off."
+  shortDescription: "Determine whether X509 authentication should allow other forms\
+    \ of authentication such as username/password."
+  name: "cas.authn.x509.mixed-mode"
+  defaultValue: true
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "The authentication handler name."
+  shortDescription: "The authentication handler name."
+  name: "cas.authn.x509.name"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Integer"
+  description: "The order of the authentication handler in the chain."
+  shortDescription: "The order of the authentication handler in the chain."
+  name: "cas.authn.x509.order"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "The principal descriptor used for principal resolution when type is\
+    \ set to {@link PrincipalTypes#SUBJECT}."
+  shortDescription: "The principal descriptor used for principal resolution when type\
+    \ is set to {@link PrincipalTypes#SUBJECT}."
+  name: "cas.authn.x509.principal-descriptor"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "org.apereo.cas.configuration.model.support.x509.X509Properties$PrincipalTypes"
+  description: "Indicates the type of principal resolution for X509.\nAvailable values\
+    \ are as follows:\n<ul><li>{@code CN_EDIPI}: Create principal by common name and\
+    \ EDIPI.</li><li>{@code RFC822_EMAIL}: Create principal from the RFC822 type name\
+    \ (aka email address) in the subject alternative name field.\nThe subject alternative\
+    \ name field contains a list of various types of names, one type is RFC822 e-mail\n\
+    address. This will return the first e-mail address that is found (if there are\
+    \ more than one).</li><li>{@code SERIAL_NO}: Create principal by serial no.\n\
+    Resolve the principal by the serial number with a configurable <strong>radix</strong>,\
+    \ ranging from 2 to 36.\nIf {@code radix} is {@code 16}, then the serial number\
+    \ could be filled with leading zeros to even the number of digits.</li><li>{@code\
+    \ SERIAL_NO_DN}: Create principal by serial no and DN.</li><li>{@code SUBJECT}:\
+    \ Create principal by subject.\nResolve the principal by extracting one or more\
+    \ attribute values from the\ncertificate subject DN and combining them with intervening\
+    \ delimiters.</li><li>{@code SUBJECT_ALT_NAME}: Create principal by subject alternative\
+    \ name.\nResolve the principal by the subject alternative name extension. (type:\
+    \ otherName).</li><li>{@code SUBJECT_DN}: Create principal by subject DN.</li></ul>"
+  shortDescription: "Indicates the type of principal resolution for X509."
+  name: "cas.authn.x509.principal-type"
+  defaultValue: "SUBJECT_DN"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Integer"
+  description: "The refresh interval of the internal scheduler in cases where CRL\
+    \ revocation checking is done via resources."
+  shortDescription: "The refresh interval of the internal scheduler in cases where\
+    \ CRL revocation checking is done via resources."
+  name: "cas.authn.x509.refresh-interval-seconds"
+  defaultValue: 3600
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "The pattern that authorizes an acceptable certificate by its subject\
+    \ dn."
+  shortDescription: "The pattern that authorizes an acceptable certificate by its\
+    \ subject dn."
+  name: "cas.authn.x509.reg-ex-subject-dn-pattern"
+  defaultValue: ".+"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "The compiled pattern supplied by the deployer."
+  shortDescription: "The compiled pattern supplied by the deployer."
+  name: "cas.authn.x509.reg-ex-trusted-issuer-dn-pattern"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "Deployer supplied setting to force require the correct KeyUsage extension."
+  shortDescription: "Deployer supplied setting to force require the correct KeyUsage\
+    \ extension."
+  name: "cas.authn.x509.require-key-usage"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "Revocation certificate checking can be carried out in one of the following\
+    \ ways: <ul> <li>{@code NONE}: No revocation is performed.</li> <li>{@code CRL}:\
+    \ The CRL URI(s) mentioned in the certificate cRLDistributionPoints extension\
+    \ field. Caches are available to prevent excessive IO against CRL endpoints. CRL\
+    \ data is fetched if does not exist in the cache or if it is expired.</li> <li>{@code\
+    \ RESOURCE}: A CRL hosted at a fixed location. The CRL is fetched at periodic\
+    \ intervals and cached.</li> </ul>"
+  shortDescription: "Revocation certificate checking can be carried out in one of\
+    \ the following ways: <ul> <li>{@code NONE}: No revocation is performed."
+  name: "cas.authn.x509.revocation-checker"
+  defaultValue: "NONE"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Integer"
+  description: "Threshold value if expired CRL revocation policy is to be handled\
+    \ via threshold."
+  shortDescription: "Threshold value if expired CRL revocation policy is to be handled\
+    \ via threshold."
+  name: "cas.authn.x509.revocation-policy-threshold"
+  defaultValue: 172800
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.Rfc822EmailPrincipalResolverProperties"
+  type: "java.lang.String"
+  description: "Attribute name that will be used by X509 principal resolvers if the\
+    \ main attribute in the certificate is not present. This only applies to principal\
+    \ resolvers that are looking for attributes in the certificate that are not common\
+    \ to all certificates. (e.g. {@code SUBJECT_ALT_NAME}, {@code CN_EDIPI}) <p> This\
+    \ assumes you would rather get something like the {@code subjectDn} rather than\
+    \ {@code null} where {@code null} would allow falling through to another authentication\
+    \ mechanism. <p> Currently supported values are: {@code subjectDn}, {@code sigAlgOid},\
+    \ {@code subjectX500Principal}."
+  shortDescription: "Attribute name that will be used by X509 principal resolvers\
+    \ if the main attribute in the certificate is not present."
+  name: "cas.authn.x509.rfc822-email.alternate-principal-attribute"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.SerialNoDnPrincipalResolverProperties"
+  type: "java.lang.String"
+  description: "The serial number prefix used for principal resolution when type is\
+    \ set to {@link X509Properties.PrincipalTypes#SERIAL_NO_DN}."
+  shortDescription: "The serial number prefix used for principal resolution when type\
+    \ is set to {@link X509Properties.PrincipalTypes#SERIAL_NO_DN}."
+  name: "cas.authn.x509.serial-no-dn.serial-number-prefix"
+  defaultValue: "SERIALNUMBER="
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.SerialNoDnPrincipalResolverProperties"
+  type: "java.lang.String"
+  description: "Value delimiter used for principal resolution when type is set to\
+    \ {@link X509Properties.PrincipalTypes#SERIAL_NO_DN}."
+  shortDescription: "Value delimiter used for principal resolution when type is set\
+    \ to {@link X509Properties.PrincipalTypes#SERIAL_NO_DN}."
+  name: "cas.authn.x509.serial-no-dn.value-delimiter"
+  defaultValue: ", "
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.SerialNoPrincipalResolverProperties"
+  type: "java.lang.Boolean"
+  description: "If radix hex padding should be used when {@link X509Properties.PrincipalTypes}\
+    \ is {@link X509Properties.PrincipalTypes#SERIAL_NO}."
+  shortDescription: "If radix hex padding should be used when {@link X509Properties.PrincipalTypes}\
+    \ is {@link X509Properties.PrincipalTypes#SERIAL_NO}."
+  name: "cas.authn.x509.serial-no.principal-hex-s-n-zero-padding"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.SerialNoPrincipalResolverProperties"
+  type: "java.lang.Integer"
+  description: "Radix used when {@link X509Properties.PrincipalTypes} is {@link X509Properties.PrincipalTypes#SERIAL_NO}."
+  shortDescription: "Radix used when {@link X509Properties.PrincipalTypes} is {@link\
+    \ X509Properties.PrincipalTypes#SERIAL_NO}."
+  name: "cas.authn.x509.serial-no.principal-s-n-radix"
+  defaultValue: 0
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.String"
+  description: "The name of the header to consult for an X509 cert (e.g. when behind\
+    \ proxy)."
+  shortDescription: "The name of the header to consult for an X509 cert (e.g. when\
+    \ behind proxy)."
+  name: "cas.authn.x509.ssl-header-name"
+  defaultValue: "ssl_client_cert"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.SubjectAltNamePrincipalResolverProperties"
+  type: "java.lang.String"
+  description: "Attribute name that will be used by X509 principal resolvers if the\
+    \ main attribute in the certificate is not present. This only applies to principal\
+    \ resolvers that are looking for attributes in the certificate that are not common\
+    \ to all certificates. (e.g. {@code SUBJECT_ALT_NAME}, {@code CN_EDIPI}) <p> This\
+    \ assumes you would rather get something like the {@code subjectDn} rather than\
+    \ {@code null} where {@code null} would allow falling through to another authentication\
+    \ mechanism. <p> Currently supported values are: {@code subjectDn}, {@code sigAlgOid},\
+    \ {@code subjectX500Principal}."
+  shortDescription: "Attribute name that will be used by X509 principal resolvers\
+    \ if the main attribute in the certificate is not present."
+  name: "cas.authn.x509.subject-alt-name.alternate-principal-attribute"
+  defaultValue: ""
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.SubjectDnPrincipalResolverProperties"
+  type: "org.apereo.cas.configuration.model.support.x509.SubjectDnPrincipalResolverProperties$SubjectDnFormat"
+  description: "Format of subject DN to use.\nAvailable values are as follows:\n<ul><li>{@code\
+    \ DEFAULT}: Denigrated result of calling certificate.getSubjectDN() method.\n\
+    Javadocs designate this method as \"denigrated\" for not being portable and/or\
+    \ not being well defined.\nIt is what has been used by CAS for a long time so\
+    \ it remains the default.</li><li>{@code RFC1779}: RFC 1779 String format of Distinguished\
+    \ Names.\nCalls {@code X500Principal.getName(\"RFC1779\")} which emits a subject\
+    \ DN with the attribute keywords defined\nin RFC 1779 (CN, L, ST, O, OU, C, STREET).\
+    \ Any other attribute type is emitted as an OID.</li><li>{@code RFC2253}: RFC\
+    \ 2253 String format of Distinguished Names.\nCalls {@code X500Principal.getName(\"\
+    RFC2253\")} which emits a subject DN with the attribute keywords defined in\n\
+    RFC 2253 (CN, L, ST, O, OU, C, STREET, DC, UID). Any other attribute type is emitted\
+    \ as an OID.</li><li>{@code CANONICAL}: Canonical String format of Distinguished\
+    \ Names.\nCalls X500Principal.getName(\"CANONICAL\" which emits a subject DN that\
+    \ starts with RFC 2253 and applies\nadditional canonicalizations described in\
+    \ the javadoc.</li></ul>"
+  shortDescription: "Format of subject DN to use."
+  name: "cas.authn.x509.subject-dn.format"
+  defaultValue: "DEFAULT"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509Properties"
+  type: "java.lang.Boolean"
+  description: "When CRL revocation checking is done via distribution points, decide\
+    \ if fetch failures should throw errors."
+  shortDescription: "When CRL revocation checking is done via distribution points,\
+    \ decide if fetch failures should throw errors."
+  name: "cas.authn.x509.throw-on-fetch-failure"
+  defaultValue: false
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509WebflowAutoConfigurationProperties"
+  type: "java.lang.String"
+  description: "Indicate the strategy that should be used to enforce client x509 authentication.\
+    \ Accepted values are {@code true, false, want}."
+  shortDescription: "Indicate the strategy that should be used to enforce client x509\
+    \ authentication."
+  name: "cas.authn.x509.webflow.client-auth"
+  defaultValue: "want"
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509WebflowAutoConfigurationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether webflow auto-configuration should be enabled."
+  shortDescription: "Whether webflow auto-configuration should be enabled."
+  name: "cas.authn.x509.webflow.enabled"
+  defaultValue: true
+- module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509WebflowAutoConfigurationProperties"
+  type: "java.lang.Integer"
+  description: "The order in which the webflow is configured."
+  shortDescription: "The order in which the webflow is configured."
+  name: "cas.authn.x509.webflow.order"
+  defaultValue: 0
+- required: true
+  module: "cas-server-support-x509-webflow"
+  owner: "org.apereo.cas.configuration.model.support.x509.X509WebflowAutoConfigurationProperties"
+  type: "java.lang.Integer"
+  description: "Port that is used to enact x509 client authentication as a separate\
+    \ connector. Configuration of a separate server connector and port allows the\
+    \ separation of client-auth functionality from the rest of the server, allowing\
+    \ for opt-in behavior.  To activate, a non-zero port must be specified."
+  shortDescription: "Port that is used to enact x509 client authentication as a separate\
+    \ connector."
+  name: "cas.authn.x509.webflow.port"
+  defaultValue: 0

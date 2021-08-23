@@ -1,0 +1,19 @@
+---
+- method: "GET"
+  path: "metrics"
+  name: "metrics"
+  endpointType: "Endpoint"
+  signature: "MetricsEndpoint.listNames()"
+  owner: "org.springframework.boot.actuate.metrics.MetricsEndpoint"
+  returnType: "ListNamesResponse"
+  casEndpoint: false
+  summary: "Runtime metrics and stats."
+- method: "GET"
+  path: "metrics/{requiredMetricName}"
+  name: "metrics"
+  endpointType: "Endpoint"
+  signature: "MetricsEndpoint.metric(java.lang.String,java.util.List<java.lang.String>)"
+  owner: "org.springframework.boot.actuate.metrics.MetricsEndpoint"
+  returnType: "MetricResponse"
+  casEndpoint: false
+  summary: "Runtime metrics and stats."

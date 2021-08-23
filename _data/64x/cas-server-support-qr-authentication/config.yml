@@ -1,0 +1,24 @@
+---
+- module: "cas-server-support-qr-authentication"
+  owner: "org.apereo.cas.configuration.model.support.qr.QRAuthenticationProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Configure allowed {@code Origin} header values. This check is mostly\
+    \ designed for browser clients. There is nothing preventing other types of client\
+    \ to modify the {@code Origin} header value. <p>When SockJS is enabled and origins\
+    \ are restricted, transport types that do not allow to check request origin (Iframe\
+    \ based transports) are disabled. As a consequence, IE 6 to 9 are not supported\
+    \ when origins are restricted. <p>Each provided allowed origin must start by \"\
+    http://\", \"https://\" or be \"*\" (means that all origins are allowed). By default,\
+    \ only same origin requests are allowed (empty list)."
+  shortDescription: "Configure allowed {@code Origin} header values."
+  name: "cas.authn.qr.allowed-origins"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-qr-authentication"
+  owner: "org.apereo.cas.configuration.model.support.qr.JsonQRAuthenticationProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.qr.json.location"
+  defaultValue: ""

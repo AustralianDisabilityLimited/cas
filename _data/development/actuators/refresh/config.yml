@@ -1,0 +1,11 @@
+---
+- method: "POST"
+  path: "refresh"
+  name: "refresh"
+  endpointType: "Endpoint"
+  signature: "RefreshEndpoint.refresh()"
+  owner: "org.springframework.cloud.endpoint.RefreshEndpoint"
+  returnType: "Collection"
+  casEndpoint: false
+  summary: "Refresh the application configuration via a `POST` to let components reload\
+    \ and recognize new values."

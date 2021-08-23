@@ -1,0 +1,37 @@
+---
+- method: "GET"
+  path: "duoAdmin/{username}"
+  name: "duoAdmin"
+  endpointType: "RestControllerEndpoint"
+  signature: "DuoSecurityAdminApiEndpoint.getUser(java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.adaptors.duo.web.DuoSecurityAdminApiEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Fetch Duo Security user account from Duo Admin API."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "providerId"
+    required: false
+  produces:
+  - "application/json"
+- method: "POST"
+  path: "duoAdmin/bypassCodes"
+  name: "duoAdmin"
+  endpointType: "RestControllerEndpoint"
+  signature: "DuoSecurityAdminApiEndpoint.createBypassCodes(java.lang.String,java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.adaptors.duo.web.DuoSecurityAdminApiEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Create bypass codes using Duo Admin API."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "providerId"
+    required: false
+  - name: "userId"
+    required: false
+  produces:
+  - "application/json"
+  consumes:
+  - "application/json"

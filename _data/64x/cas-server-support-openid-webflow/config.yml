@@ -1,0 +1,27 @@
+---
+- module: "cas-server-support-openid-webflow"
+  owner: "org.apereo.cas.configuration.model.support.openid.OpenIdProperties"
+  type: "java.lang.Boolean"
+  description: "Whether relying party identifies should be enforced. This is used\
+    \ during the realm verification process. @deprecated Since 6.2"
+  shortDescription: "Whether relying party identifies should be enforced."
+  name: "cas.authn.openid.enforce-rp-id"
+  defaultValue: false
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-openid-webflow"
+  owner: "org.apereo.cas.configuration.model.support.openid.OpenIdProperties"
+  type: "java.lang.String"
+  description: "Name of the underlying authentication handler. @deprecated Since 6.2"
+  shortDescription: "Name of the underlying authentication handler."
+  name: "cas.authn.openid.name"
+  defaultValue: ""
+  deprecationLevel: "ERROR"
+- module: "cas-server-support-openid-webflow"
+  owner: "org.apereo.cas.configuration.model.support.openid.OpenIdProperties"
+  type: "java.lang.Integer"
+  description: "Order of the authentication handler in the chain. @deprecated Since\
+    \ 6.2"
+  shortDescription: "Order of the authentication handler in the chain."
+  name: "cas.authn.openid.order"
+  defaultValue: ""
+  deprecationLevel: "ERROR"

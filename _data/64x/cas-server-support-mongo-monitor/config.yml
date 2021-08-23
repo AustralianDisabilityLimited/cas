@@ -1,0 +1,134 @@
+---
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "Name of the database to use for authentication."
+  shortDescription: "Name of the database to use for authentication."
+  name: "cas.monitor.mongo.authentication-database-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "The connection uri to the mongodb instance. This typically takes on\
+    \ the form of {@code mongodb://user:psw@ds135522.somewhere.com:35522/db}. If not\
+    \ specified, will fallback onto other individual settings. If specified, takes\
+    \ over all other settings where applicable."
+  shortDescription: "The connection uri to the mongodb instance."
+  name: "cas.monitor.mongo.client-uri"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "MongoDb database instance name."
+  shortDescription: "MongoDb database instance name."
+  name: "cas.monitor.mongo.database-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "MongoDb database host for authentication. Multiple host addresses\
+    \ may be defined, separated by comma. If more than one host is defined, it is\
+    \ assumed that each host contains the port as well, if any. Otherwise the configuration\
+    \ may fallback onto the port defined."
+  shortDescription: "MongoDb database host for authentication."
+  name: "cas.monitor.mongo.host"
+  defaultValue: "localhost"
+- required: true
+  module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "MongoDb database password for authentication."
+  shortDescription: "MongoDb database password for authentication."
+  name: "cas.monitor.mongo.password"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.Integer"
+  description: "MongoDb database port."
+  shortDescription: "MongoDb database port."
+  name: "cas.monitor.mongo.port"
+  defaultValue: 27017
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "Read concern. Accepted values are: <ul>     <li>{@code LOCAL}</li>\
+    \     <li>{@code MAJORITY}</li>     <li>{@code LINEARIZABLE}</li>     <li>{@code\
+    \ SNAPSHOT}</li>     <li>{@code AVAILABLE}</li> </ul>"
+  shortDescription: "Read concern."
+  name: "cas.monitor.mongo.read-concern"
+  defaultValue: "AVAILABLE"
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "Read preference. Accepted values are: <ul>     <li>{@code PRIMARY}</li>\
+    \     <li>{@code SECONDARY}</li>     <li>{@code SECONDARY_PREFERRED}</li>    \
+    \ <li>{@code PRIMARY_PREFERRED}</li>     <li>{@code NEAREST}</li> </ul>"
+  shortDescription: "Read preference."
+  name: "cas.monitor.mongo.read-preference"
+  defaultValue: "PRIMARY"
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "A replica set in MongoDB is a group of {@code mongod} processes that\
+    \ maintain the same data set. Replica sets provide redundancy and high availability,\
+    \ and are the basis for all production deployments."
+  shortDescription: "A replica set in MongoDB is a group of {@code mongod} processes\
+    \ that maintain the same data set."
+  name: "cas.monitor.mongo.replica-set"
+  defaultValue: ""
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "Sets whether writes should be retried if they fail due to a network\
+    \ error."
+  shortDescription: "Sets whether writes should be retried if they fail due to a network\
+    \ error."
+  name: "cas.monitor.mongo.retry-writes"
+  defaultValue: false
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the database socket connection should be tagged with keep-alive."
+  shortDescription: "Whether the database socket connection should be tagged with\
+    \ keep-alive."
+  name: "cas.monitor.mongo.socket-keep-alive"
+  defaultValue: false
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.Boolean"
+  description: "Whether connections require SSL."
+  shortDescription: "Whether connections require SSL."
+  name: "cas.monitor.mongo.ssl-enabled"
+  defaultValue: false
+- duration: true
+  module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "MongoDb database connection timeout."
+  shortDescription: "MongoDb database connection timeout."
+  name: "cas.monitor.mongo.timeout"
+  defaultValue: "PT5S"
+- required: true
+  module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "MongoDb database user for authentication."
+  shortDescription: "MongoDb database user for authentication."
+  name: "cas.monitor.mongo.user-id"
+  defaultValue: ""
+- module: "cas-server-support-mongo-monitor"
+  owner: "org.apereo.cas.configuration.model.core.monitor.MongoDbMonitorProperties"
+  type: "java.lang.String"
+  description: "Write concern describes the level of acknowledgement requested from\
+    \ MongoDB for write operations to a standalone mongo db or to replica sets or\
+    \ to sharded clusters. In sharded clusters, mongo db instances will pass the write\
+    \ concern on to the shards."
+  shortDescription: "Write concern describes the level of acknowledgement requested\
+    \ from MongoDB for write operations to a standalone mongo db or to replica sets\
+    \ or to sharded clusters."
+  name: "cas.monitor.mongo.write-concern"
+  defaultValue: "ACKNOWLEDGED"

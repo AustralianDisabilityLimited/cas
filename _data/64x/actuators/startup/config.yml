@@ -1,0 +1,21 @@
+---
+- method: "GET"
+  path: "startup"
+  name: "startup"
+  endpointType: "Endpoint"
+  signature: "StartupEndpoint.startupSnapshot()"
+  owner: "org.springframework.boot.actuate.startup.StartupEndpoint"
+  returnType: "StartupResponse"
+  casEndpoint: false
+  summary: "Analyze application startup events, beans and load and optionally report\
+    \ events to Java Flight Recorder."
+- method: "POST"
+  path: "startup"
+  name: "startup"
+  endpointType: "Endpoint"
+  signature: "StartupEndpoint.startup()"
+  owner: "org.springframework.boot.actuate.startup.StartupEndpoint"
+  returnType: "StartupResponse"
+  casEndpoint: false
+  summary: "Analyze application startup events, beans and load and optionally report\
+    \ events to Java Flight Recorder."

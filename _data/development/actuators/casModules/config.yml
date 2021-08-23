@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "casModules"
+  name: "casModules"
+  endpointType: "Endpoint"
+  signature: "CasRuntimeModulesEndpoint.reportModules()"
+  owner: "org.apereo.cas.web.report.CasRuntimeModulesEndpoint"
+  returnType: "List"
+  casEndpoint: true
+  summary: "Get all available CAS runtime module descriptors."

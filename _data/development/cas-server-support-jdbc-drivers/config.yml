@@ -1,0 +1,39 @@
+---
+- module: "cas-server-support-jdbc-drivers"
+  owner: "org.apereo.cas.configuration.model.support.jpa.DatabaseProperties"
+  type: "java.lang.Boolean"
+  description: "When choosing physical table names, determine whether names should\
+    \ be considered case-insensitive."
+  shortDescription: "When choosing physical table names, determine whether names should\
+    \ be considered case-insensitive."
+  name: "cas.jdbc.case-insensitive"
+  defaultValue: false
+- module: "cas-server-support-jdbc-drivers"
+  owner: "org.apereo.cas.configuration.model.support.jpa.DatabaseProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to generate DDL after the EntityManagerFactory has been initialized\
+    \ creating/updating all relevant tables."
+  shortDescription: "Whether to generate DDL after the EntityManagerFactory has been\
+    \ initialized creating/updating all relevant tables."
+  name: "cas.jdbc.gen-ddl"
+  defaultValue: true
+- module: "cas-server-support-jdbc-drivers"
+  owner: "org.apereo.cas.configuration.model.support.jpa.DatabaseProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Indicate a physical table name to be used by the hibernate naming\
+    \ strategy in case table names need to be customized for the specific type of\
+    \ database. The key here indicates the CAS-provided table name and the value is\
+    \ the translate physical name for the database. If a match is not found for the\
+    \ CAS-provided table name, then that name will be used by default."
+  shortDescription: "Indicate a physical table name to be used by the hibernate naming\
+    \ strategy in case table names need to be customized for the specific type of\
+    \ database."
+  name: "cas.jdbc.physical-table-names"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-drivers"
+  owner: "org.apereo.cas.configuration.model.support.jpa.DatabaseProperties"
+  type: "java.lang.Boolean"
+  description: "Whether SQL queries should be displayed in the console/logs."
+  shortDescription: "Whether SQL queries should be displayed in the console/logs."
+  name: "cas.jdbc.show-sql"
+  defaultValue: false

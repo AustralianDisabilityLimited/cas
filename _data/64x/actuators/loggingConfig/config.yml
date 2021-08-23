@@ -1,0 +1,25 @@
+---
+- method: "GET"
+  path: "loggingConfig"
+  name: "loggingConfig"
+  endpointType: "Endpoint"
+  signature: "LoggingConfigurationEndpoint.configuration()"
+  owner: "org.apereo.cas.logging.web.LoggingConfigurationEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Get logging configuration report."
+- method: "POST"
+  path: "loggingConfig/{loggerName}"
+  name: "loggingConfig"
+  endpointType: "Endpoint"
+  signature: "LoggingConfigurationEndpoint.updateLoggerLevel(java.lang.String,java.lang.String,boolean)"
+  owner: "org.apereo.cas.logging.web.LoggingConfigurationEndpoint"
+  casEndpoint: true
+  summary: "Update logger level for a logger name."
+  parameters:
+  - name: "loggerName"
+    required: true
+  - name: "loggerLevel"
+    required: true
+  - name: "additive"
+    required: false

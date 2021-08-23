@@ -1,0 +1,11 @@
+---
+- module: "cas-server-support-jms-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.jms.JmsTicketRegistryProperties"
+  type: "java.lang.String"
+  description: "Identifier for this CAS server node that tags the sender/receiver\
+    \ in the JMS queue and avoid processing of inbound calls. If left blank, an identifier\
+    \ is generated automatically and kept in memory."
+  shortDescription: "Identifier for this CAS server node that tags the sender/receiver\
+    \ in the JMS queue and avoid processing of inbound calls."
+  name: "cas.ticket.registry.jms.queue-identifier"
+  defaultValue: ""

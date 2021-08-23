@@ -1,0 +1,17 @@
+---
+- required: true
+  module: "cas-server-support-geolocation-maxmind"
+  owner: "org.apereo.cas.configuration.model.support.geo.maxmind.MaxmindProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "Path to the location of the database file containing cities."
+  shortDescription: "Path to the location of the database file containing cities."
+  name: "cas.maxmind.city-database"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-geolocation-maxmind"
+  owner: "org.apereo.cas.configuration.model.support.geo.maxmind.MaxmindProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "Path to the location of the database file containing countries."
+  shortDescription: "Path to the location of the database file containing countries."
+  name: "cas.maxmind.country-database"
+  defaultValue: ""

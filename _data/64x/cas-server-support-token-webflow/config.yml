@@ -1,0 +1,17 @@
+---
+- module: "cas-server-support-token-webflow"
+  owner: "org.apereo.cas.configuration.model.support.token.TokenAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Name of the authentication handler."
+  shortDescription: "Name of the authentication handler."
+  name: "cas.authn.token.name"
+  defaultValue: ""
+- module: "cas-server-support-token-webflow"
+  owner: "org.apereo.cas.configuration.model.support.token.TokenAuthenticationProperties"
+  type: "org.apereo.cas.configuration.model.core.authentication.AuthenticationHandlerStates"
+  description: "Define the scope and state of this authentication handler and the\
+    \ lifecycle in which it can be invoked or activated."
+  shortDescription: "Define the scope and state of this authentication handler and\
+    \ the lifecycle in which it can be invoked or activated."
+  name: "cas.authn.token.state"
+  defaultValue: ""

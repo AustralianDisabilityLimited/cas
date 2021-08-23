@@ -1,0 +1,17 @@
+---
+- method: "POST"
+  path: "busrefresh"
+  name: "busrefresh"
+  endpointType: "Endpoint"
+  signature: "RefreshBusEndpoint.busRefresh()"
+  owner: "org.springframework.cloud.bus.endpoint.RefreshBusEndpoint"
+  casEndpoint: false
+  summary: "Clears the RefreshScope cache and rebinds configuration properties."
+- method: "POST"
+  path: "busrefresh/{destinations}"
+  name: "busrefresh"
+  endpointType: "Endpoint"
+  signature: "RefreshBusEndpoint.busRefreshWithDestination(java.lang.String[])"
+  owner: "org.springframework.cloud.bus.endpoint.RefreshBusEndpoint"
+  casEndpoint: false
+  summary: "Clears the RefreshScope cache and rebinds configuration properties."

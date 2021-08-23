@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "throttles"
+  name: "throttles"
+  endpointType: "Endpoint"
+  signature: "ThrottledSubmissionHandlerEndpoint.getRecords()"
+  owner: "org.apereo.cas.web.support.ThrottledSubmissionHandlerEndpoint"
+  returnType: "List"
+  casEndpoint: true
+  summary: "Get throttled authentication records."

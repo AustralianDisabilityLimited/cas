@@ -1,0 +1,30 @@
+---
+- method: "GET"
+  path: "sessions/{sessionId}"
+  name: "sessions"
+  endpointType: "Endpoint"
+  signature: "SessionsEndpoint.getSession(java.lang.String)"
+  owner: "org.springframework.boot.actuate.session.SessionsEndpoint"
+  returnType: "SessionDescriptor"
+  casEndpoint: false
+  summary: "Provides information about the applicationâ\x80\x99s HTTP sessions that\
+    \ are managed by Spring Session."
+- method: "GET"
+  path: "sessions"
+  name: "sessions"
+  endpointType: "Endpoint"
+  signature: "SessionsEndpoint.sessionsForUsername(java.lang.String)"
+  owner: "org.springframework.boot.actuate.session.SessionsEndpoint"
+  returnType: "SessionsReport"
+  casEndpoint: false
+  summary: "Provides information about the applicationâ\x80\x99s HTTP sessions that\
+    \ are managed by Spring Session."
+- method: "DELETE"
+  path: "sessions/{sessionId}"
+  name: "sessions"
+  endpointType: "Endpoint"
+  signature: "SessionsEndpoint.deleteSession(java.lang.String)"
+  owner: "org.springframework.boot.actuate.session.SessionsEndpoint"
+  casEndpoint: false
+  summary: "Provides information about the applicationâ\x80\x99s HTTP sessions that\
+    \ are managed by Spring Session."

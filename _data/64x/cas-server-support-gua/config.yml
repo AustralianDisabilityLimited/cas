@@ -1,0 +1,428 @@
+---
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether search/query results are allowed to match on multiple DNs,\
+    \ or whether a single unique DN is expected for the result."
+  shortDescription: "Whether search/query results are allowed to match on multiple\
+    \ DNs, or whether a single unique DN is expected for the result."
+  name: "cas.authn.gua.ldap.allow-multiple-dns"
+  defaultValue: false
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Set if multiple Entries are allowed."
+  shortDescription: "Set if multiple Entries are allowed."
+  name: "cas.authn.gua.ldap.allow-multiple-entries"
+  defaultValue: false
+- required: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Base DN to use. There may be scenarios where different parts of a\
+    \ single LDAP tree could be considered as base-dns. Rather than duplicating the\
+    \ LDAP configuration block for each individual base-dn, each entry can be specified\
+    \ and joined together using a special delimiter character. The user DN is retrieved\
+    \ using the combination of all base-dn and DN resolvers in the order defined.\
+    \ DN resolution should fail if multiple DNs are found. Otherwise the first DN\
+    \ found is returned. Usual syntax is: {@code subtreeA,dc=example,dc=net|subtreeC,dc=example,dc=net}."
+  shortDescription: "Base DN to use."
+  name: "cas.authn.gua.ldap.base-dn"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Indicate the collection of attributes that are to be tagged and processed\
+    \ as binary attributes by the underlying search resolver."
+  shortDescription: "Indicate the collection of attributes that are to be tagged and\
+    \ processed as binary attributes by the underlying search resolver."
+  name: "cas.authn.gua.ldap.binary-attributes"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The bind credential to use when connecting to LDAP."
+  shortDescription: "The bind credential to use when connecting to LDAP."
+  name: "cas.authn.gua.ldap.bind-credential"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The bind DN to use when connecting to LDAP. LDAP connection configuration\
+    \ injected into the LDAP connection pool can be initialized with the following\
+    \ parameters: <ul> <li>{@code bindDn/bindCredential} provided - Use the provided\
+    \ credentials to bind when initializing connections.</li> <li>{@code bindDn/bindCredential}\
+    \  set to {@code *} - Use a fast-bind strategy to initialize the pool.</li> <li>{@code\
+    \ bindDn/bindCredential}  set to blank - Skip connection initializing; perform\
+    \ operations anonymously. </li> <li>SASL mechanism provided - Use the given SASL\
+    \ mechanism to bind when initializing connections. </li> </ul>"
+  shortDescription: "The bind DN to use when connecting to LDAP."
+  name: "cas.authn.gua.ldap.bind-dn"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The length of time the pool will block. By default the pool will block\
+    \ indefinitely and there is no guarantee that waiting threads will be serviced\
+    \ in the order in which they made their request. This option should be used with\
+    \ a blocking connection pool when you need to control the exact number of connections\
+    \ that can be created"
+  shortDescription: "The length of time the pool will block."
+  name: "cas.authn.gua.ldap.block-wait-time"
+  defaultValue: "PT3S"
+- duration: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Sets the maximum amount of time that connects will block."
+  shortDescription: "Sets the maximum amount of time that connects will block."
+  name: "cas.authn.gua.ldap.connect-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "If multiple URLs are provided as the ldapURL this describes how each\
+    \ URL will be processed. <ul> <li>{@code ACTIVE_PASSIVE} First LDAP will be used\
+    \ for every request unless it fails and then the next shall be used.</li> <li>{@code\
+    \ ROUND_ROBIN} For each new connection the next url in the list will be used.</li>\
+    \ <li>{@code RANDOM} For each new connection a random LDAP url will be selected.</li>\
+    \ <li>{@code DNS_SRV} LDAP urls based on DNS SRV records of the configured/given\
+    \ LDAP url will be used. </li> </ul>"
+  shortDescription: "If multiple URLs are provided as the ldapURL this describes how\
+    \ each URL will be processed."
+  name: "cas.authn.gua.ldap.connection-strategy"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether to use a pooled connection factory in components."
+  shortDescription: "Whether to use a pooled connection factory in components."
+  name: "cas.authn.gua.ldap.disable-pooling"
+  defaultValue: false
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Attempt to populate the connection pool early on startup and fail\
+    \ quickly if something goes wrong."
+  shortDescription: "Attempt to populate the connection pool early on startup and\
+    \ fail quickly if something goes wrong."
+  name: "cas.authn.gua.ldap.fail-fast"
+  defaultValue: true
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Set if search referrals should be followed."
+  shortDescription: "Set if search referrals should be followed."
+  name: "cas.authn.gua.ldap.follow-referrals"
+  defaultValue: true
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "org.apereo.cas.configuration.model.support.ldap.AbstractLdapProperties$LdapHostnameVerifierOptions"
+  description: "Hostname verification options.\nAvailable values are as follows:\n\
+    <ul><li>{@code DEFAULT}: Default option, forcing verification.</li><li>{@code\
+    \ ANY}: Skip hostname verification and allow all.</li></ul>"
+  shortDescription: "Hostname verification options."
+  name: "cas.authn.gua.ldap.hostname-verifier"
+  defaultValue: "DEFAULT"
+- duration: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Removes connections from the pool based on how long they have been\
+    \ idle in the available queue. Prunes connections that have been idle for more\
+    \ than the indicated amount."
+  shortDescription: "Removes connections from the pool based on how long they have\
+    \ been idle in the available queue."
+  name: "cas.authn.gua.ldap.idle-time"
+  defaultValue: "PT10M"
+- required: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Entry attribute that holds the user image."
+  shortDescription: "Entry attribute that holds the user image."
+  name: "cas.authn.gua.ldap.image-attribute"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Path to the keystore used for SSL connections. Typically contains\
+    \ SSL certificates for the LDAP server."
+  shortDescription: "Path to the keystore used for SSL connections."
+  name: "cas.authn.gua.ldap.keystore"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Keystore password."
+  shortDescription: "Keystore password."
+  name: "cas.authn.gua.ldap.keystore-password"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The type of keystore. {@code PKCS12} or {@code JKS}. If left blank,\
+    \ defaults to the default keystore type indicated by the underlying Java platform."
+  shortDescription: "The type of keystore."
+  name: "cas.authn.gua.ldap.keystore-type"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The LDAP url to the server. More than one may be specified, separated\
+    \ by space and/or comma."
+  shortDescription: "The LDAP url to the server."
+  name: "cas.authn.gua.ldap.ldap-url"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "Maximum LDAP connection pool size which the pool can use to grow."
+  shortDescription: "Maximum LDAP connection pool size which the pool can use to grow."
+  name: "cas.authn.gua.ldap.max-pool-size"
+  defaultValue: 10
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "Minimum LDAP connection pool size. Size the pool should be initialized\
+    \ to and pruned to"
+  shortDescription: "Minimum LDAP connection pool size."
+  name: "cas.authn.gua.ldap.min-pool-size"
+  defaultValue: 3
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Name of the LDAP handler."
+  shortDescription: "Name of the LDAP handler."
+  name: "cas.authn.gua.ldap.name"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "Request that the server return results in batches of a specific size.\
+    \ See <a href=\"http://www.ietf.org/rfc/rfc2696.txt\">RFC 2696</a>. This control\
+    \ is often used to work around server result size limits. A negative/zero value\
+    \ disables paged requests."
+  shortDescription: "Request that the server return results in batches of a specific\
+    \ size."
+  name: "cas.authn.gua.ldap.page-size"
+  defaultValue: 0
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "You may receive unexpected LDAP failures, when CAS is configured to\
+    \ authenticate using {@code DIRECT} or {@code AUTHENTICATED} types and LDAP is\
+    \ locked down to not allow anonymous binds/searches. Every second attempt with\
+    \ a given LDAP connection from the pool would fail if it was on the same connection\
+    \ as a failed login attempt, and the regular connection validator would similarly\
+    \ fail. When a connection is returned back to a pool, it still may contain the\
+    \ principal and credentials from the previous attempt. Before the next bind attempt\
+    \ using that connection, the validator tries to validate the connection again\
+    \ but fails because it’s no longer trying with the configured bind credentials\
+    \ but with whatever user DN was used in the previous step. Given the validation\
+    \ failure, the connection is closed and CAS would deny access by default. Passivators\
+    \ attempt to reconnect to LDAP with the configured bind credentials, effectively\
+    \ resetting the connection to what it should be after each bind request. Furthermore\
+    \ if you are seeing errors in the logs that resemble a 'Operation exception encountered,\
+    \ reopening connection' type of message, this usually is an indication that the\
+    \ connection pool’s validation timeout established and created by CAS is greater\
+    \ than the timeout configured in the LDAP server, or more likely, in the load\
+    \ balancer in front of the LDAP servers. You can adjust the LDAP server session’\
+    s timeout for connections, or you can teach CAS to use a validity period that\
+    \ is equal or less than the LDAP server session’s timeout. Accepted values are:\
+    \ <ul> <li>{@code NONE}: No passivation takes place.</li> <li>{@code BIND}: The\
+    \ default behavior which passivates a connection by performing a bind operation\
+    \ on it. This option requires the availability of bind credentials when establishing\
+    \ connections to LDAP.</li> </ul>"
+  shortDescription: "You may receive unexpected LDAP failures, when CAS is configured\
+    \ to authenticate using {@code DIRECT} or {@code AUTHENTICATED} types and LDAP\
+    \ is locked down to not allow anonymous binds/searches."
+  name: "cas.authn.gua.ldap.pool-passivator"
+  defaultValue: "BIND"
+- duration: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Removes connections from the pool based on how long they have been\
+    \ idle in the available queue. Run the pruning process at the indicated interval."
+  shortDescription: "Removes connections from the pool based on how long they have\
+    \ been idle in the available queue."
+  name: "cas.authn.gua.ldap.prune-period"
+  defaultValue: "PT2H"
+- duration: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Duration of time to wait for responses."
+  shortDescription: "Duration of time to wait for responses."
+  name: "cas.authn.gua.ldap.response-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "SASL authorization id."
+  shortDescription: "SASL authorization id."
+  name: "cas.authn.gua.ldap.sasl-authorization-id"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The SASL mechanism."
+  shortDescription: "The SASL mechanism."
+  name: "cas.authn.gua.ldap.sasl-mechanism"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "SASL mutual auth is enabled?"
+  shortDescription: "SASL mutual auth is enabled?"
+  name: "cas.authn.gua.ldap.sasl-mutual-auth"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "SASL quality of protected."
+  shortDescription: "SASL quality of protected."
+  name: "cas.authn.gua.ldap.sasl-quality-of-protection"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The SASL realm."
+  shortDescription: "The SASL realm."
+  name: "cas.authn.gua.ldap.sasl-realm"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "SASL security strength."
+  shortDescription: "SASL security strength."
+  name: "cas.authn.gua.ldap.sasl-security-strength"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.ldap.LdapSearchEntryHandlersProperties>"
+  description: "Search handlers."
+  shortDescription: "Search handlers."
+  name: "cas.authn.gua.ldap.search-entry-handlers"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "User filter to use for searching. Syntax is {@code cn={user}} or {@code\
+    \ cn={0}}.  You may also provide an external groovy script in the syntax of {@code\
+    \ file:/path/to/GroovyScript.groovy} to fully build the final filter template\
+    \ dynamically."
+  shortDescription: "User filter to use for searching."
+  name: "cas.authn.gua.ldap.search-filter"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether subtree searching is allowed."
+  shortDescription: "Whether subtree searching is allowed."
+  name: "cas.authn.gua.ldap.subtree-search"
+  defaultValue: true
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Path of the trust certificates to use for the SSL connection. Ignores\
+    \ keystore-related settings when activated and used."
+  shortDescription: "Path of the trust certificates to use for the SSL connection."
+  name: "cas.authn.gua.ldap.trust-certificates"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Trust Manager options. Trust managers are responsible for managing\
+    \ the trust material that is used when making LDAP trust decisions, and for deciding\
+    \ whether credentials presented by a peer should be accepted. Accepted values\
+    \ are: * <ul> <li>{@code DEFAULT}: Enable and force the default JVM trust managers.</li>\
+    \ <li>{@code ANY}: Trust any client or server.</li> </ul>"
+  shortDescription: "Trust Manager options."
+  name: "cas.authn.gua.ldap.trust-manager"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Path to the keystore used to determine which certificates or certificate\
+    \ authorities should be trusted. Used when connecting to an LDAP server via LDAPS\
+    \ or startTLS connection. If left blank, the default truststore for the Java runtime\
+    \ is used."
+  shortDescription: "Path to the keystore used to determine which certificates or\
+    \ certificate authorities should be trusted."
+  name: "cas.authn.gua.ldap.trust-store"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Password needed to open the truststore."
+  shortDescription: "Password needed to open the truststore."
+  name: "cas.authn.gua.ldap.trust-store-password"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The type of trust keystore that determines which certificates or certificate\
+    \ authorities are trusted. Types depend on underlying java platform, typically\
+    \ {@code PKCS12} or {@code JKS}. If left blank, defaults to the default keystore\
+    \ type indicated by the underlying Java platform."
+  shortDescription: "The type of trust keystore that determines which certificates\
+    \ or certificate authorities are trusted."
+  name: "cas.authn.gua.ldap.trust-store-type"
+  defaultValue: ""
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether TLS should be used and enabled when establishing the connection."
+  shortDescription: "Whether TLS should be used and enabled when establishing the\
+    \ connection."
+  name: "cas.authn.gua.ldap.use-start-tls"
+  defaultValue: false
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether connections should be validated when loaned out from the pool."
+  shortDescription: "Whether connections should be validated when loaned out from\
+    \ the pool."
+  name: "cas.authn.gua.ldap.validate-on-checkout"
+  defaultValue: true
+- duration: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Period at which pool should be validated."
+  shortDescription: "Period at which pool should be validated."
+  name: "cas.authn.gua.ldap.validate-period"
+  defaultValue: "PT5M"
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether connections should be validated periodically when the pool\
+    \ is idle."
+  shortDescription: "Whether connections should be validated periodically when the\
+    \ pool is idle."
+  name: "cas.authn.gua.ldap.validate-periodically"
+  defaultValue: true
+- duration: true
+  module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.LdapGraphicalUserAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Period at which validation operations may time out."
+  shortDescription: "Period at which validation operations may time out."
+  name: "cas.authn.gua.ldap.validate-timeout"
+  defaultValue: "PT5S"
+- module: "cas-server-support-gua"
+  owner: "org.apereo.cas.configuration.model.support.gua.GraphicalUserAuthenticationProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Locate GUA settings and images from a static image per user. This\
+    \ is treated as a {@link Map} where the key is the user id and the value should\
+    \ be the graphical resource."
+  shortDescription: "Locate GUA settings and images from a static image per user."
+  name: "cas.authn.gua.simple"
+  defaultValue: ""

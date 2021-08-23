@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "mappings"
+  name: "mappings"
+  endpointType: "Endpoint"
+  signature: "MappingsEndpoint.mappings()"
+  owner: "org.springframework.boot.actuate.web.mappings.MappingsEndpoint"
+  returnType: "ApplicationMappings"
+  casEndpoint: false
+  summary: "Describes how requests are mapped and handled by CAS."

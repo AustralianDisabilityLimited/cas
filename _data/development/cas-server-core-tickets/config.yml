@@ -1,0 +1,196 @@
+---
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ProxyGrantingTicketProperties"
+  type: "java.lang.Integer"
+  description: "Maximum length of the proxy granting ticket, when generating one."
+  shortDescription: "Maximum length of the proxy granting ticket, when generating\
+    \ one."
+  name: "cas.ticket.pgt.max-length"
+  defaultValue: 50
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ProxyTicketProperties"
+  type: "java.lang.Integer"
+  description: "Number of uses allowed."
+  shortDescription: "Number of uses allowed."
+  name: "cas.ticket.pt.number-of-uses"
+  defaultValue: 1
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ProxyTicketProperties"
+  type: "java.lang.Integer"
+  description: "Number of seconds after which this ticket becomes invalid."
+  shortDescription: "Number of seconds after which this ticket becomes invalid."
+  name: "cas.ticket.pt.time-to-kill-in-seconds"
+  defaultValue: 10
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.registry.InMemoryTicketRegistryProperties"
+  type: "java.lang.Boolean"
+  description: "Allow the ticket registry to cache ticket items for period of time\
+    \ and auto-evict and clean up, removing the need to running a ticket registry\
+    \ cleaner in the background."
+  shortDescription: "Allow the ticket registry to cache ticket items for period of\
+    \ time and auto-evict and clean up, removing the need to running a ticket registry\
+    \ cleaner in the background."
+  name: "cas.ticket.registry.in-memory.cache"
+  defaultValue: false
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.registry.InMemoryTicketRegistryProperties"
+  type: "java.lang.Integer"
+  description: "The estimated number of concurrently updating threads. The implementation\
+    \ performs internal sizing to try to accommodate this many threads."
+  shortDescription: "The estimated number of concurrently updating threads."
+  name: "cas.ticket.registry.in-memory.concurrency"
+  defaultValue: 20
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.registry.InMemoryTicketRegistryProperties"
+  type: "java.lang.Integer"
+  description: "The initial capacity of the underlying memory store. The implementation\
+    \ performs internal sizing to accommodate this many elements."
+  shortDescription: "The initial capacity of the underlying memory store."
+  name: "cas.ticket.registry.in-memory.initial-capacity"
+  defaultValue: 1000
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.registry.InMemoryTicketRegistryProperties"
+  type: "java.lang.Integer"
+  description: "The load factor threshold, used to control resizing. Resizing may\
+    \ be performed when the average number of elements per bin exceeds this threshold."
+  shortDescription: "The load factor threshold, used to control resizing."
+  name: "cas.ticket.registry.in-memory.load-factor"
+  defaultValue: 1
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ServiceTicketProperties"
+  type: "java.lang.Integer"
+  description: "Maximum length of generated service tickets."
+  shortDescription: "Maximum length of generated service tickets."
+  name: "cas.ticket.st.max-length"
+  defaultValue: 20
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ServiceTicketProperties"
+  type: "java.lang.Integer"
+  description: "Controls number of times a service ticket can be used within CAS server.\
+    \ Usage in CAS context means service ticket validation transaction."
+  shortDescription: "Controls number of times a service ticket can be used within\
+    \ CAS server."
+  name: "cas.ticket.st.number-of-uses"
+  defaultValue: 1
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ServiceTicketProperties"
+  type: "java.lang.Long"
+  description: "Time in seconds that service tickets should be considered live in\
+    \ CAS server."
+  shortDescription: "Time in seconds that service tickets should be considered live\
+    \ in CAS server."
+  name: "cas.ticket.st.time-to-kill-in-seconds"
+  defaultValue: 10
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.TicketGrantingTicketCoreProperties"
+  type: "java.lang.Integer"
+  description: "Maximum length of tickets."
+  shortDescription: "Maximum length of tickets."
+  name: "cas.ticket.tgt.core.max-length"
+  defaultValue: 50
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.TicketGrantingTicketCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Flag to control whether to track most recent SSO sessions. As multiple\
+    \ tickets may be issued for the same application, this impacts how session information\
+    \ is tracked for every ticket which then has a subsequent impact on logout."
+  shortDescription: "Flag to control whether to track most recent SSO sessions."
+  name: "cas.ticket.tgt.core.only-track-most-recent-session"
+  defaultValue: true
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.HardTimeoutTicketExpirationPolicyProperties"
+  type: "java.lang.Long"
+  description: "Timeout in seconds to kill the session and consider tickets expired."
+  shortDescription: "Timeout in seconds to kill the session and consider tickets expired."
+  name: "cas.ticket.tgt.hard-timeout.time-to-kill-in-seconds"
+  defaultValue: 0
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.PrimaryTicketExpirationPolicyProperties"
+  type: "java.lang.Integer"
+  description: "Maximum time in seconds tickets would be live in CAS server."
+  shortDescription: "Maximum time in seconds tickets would be live in CAS server."
+  name: "cas.ticket.tgt.primary.max-time-to-live-in-seconds"
+  defaultValue: 28800
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.PrimaryTicketExpirationPolicyProperties"
+  type: "java.lang.Integer"
+  description: "Time in seconds after which tickets would be destroyed after a period\
+    \ of inactivity."
+  shortDescription: "Time in seconds after which tickets would be destroyed after\
+    \ a period of inactivity."
+  name: "cas.ticket.tgt.primary.time-to-kill-in-seconds"
+  defaultValue: 7200
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.RememberMeAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Flag to indicate whether remember-me facility is enabled."
+  shortDescription: "Flag to indicate whether remember-me facility is enabled."
+  name: "cas.ticket.tgt.remember-me.enabled"
+  defaultValue: false
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.RememberMeAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Regular expression that, when defined, forces CAS to create a remember-me\
+    \ authentication session if the current client ip (remote) address matches this\
+    \ pattern. If a match is not found, remember-me is ignored. If left undefined,\
+    \ remember-me authentication will proceed with the default CAS behavior."
+  shortDescription: "Regular expression that, when defined, forces CAS to create a\
+    \ remember-me authentication session if the current client ip (remote) address\
+    \ matches this pattern."
+  name: "cas.ticket.tgt.remember-me.supported-ip-addresses"
+  defaultValue: ""
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.RememberMeAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Regular expression that, when defined, forces CAS to create a remember-me\
+    \ authentication session if the current user-agent matches this pattern. If a\
+    \ match is not found, remember-me is ignored. If left undefined, remember-me authentication\
+    \ will proceed with the default CAS behavior."
+  shortDescription: "Regular expression that, when defined, forces CAS to create a\
+    \ remember-me authentication session if the current user-agent matches this pattern."
+  name: "cas.ticket.tgt.remember-me.supported-user-agents"
+  defaultValue: ""
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.RememberMeAuthenticationProperties"
+  type: "java.lang.Long"
+  description: "Time in seconds after which remember-me enabled SSO session will be\
+    \ destroyed."
+  shortDescription: "Time in seconds after which remember-me enabled SSO session will\
+    \ be destroyed."
+  name: "cas.ticket.tgt.remember-me.time-to-kill-in-seconds"
+  defaultValue: 1209600
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ThrottledTimeoutTicketExpirationPolicyProperties"
+  type: "java.lang.Long"
+  description: "Timeout in between each attempt."
+  shortDescription: "Timeout in between each attempt."
+  name: "cas.ticket.tgt.throttled-timeout.time-in-between-uses-in-seconds"
+  defaultValue: 0
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.ThrottledTimeoutTicketExpirationPolicyProperties"
+  type: "java.lang.Long"
+  description: "Timeout in seconds to kill the session and consider tickets expired."
+  shortDescription: "Timeout in seconds to kill the session and consider tickets expired."
+  name: "cas.ticket.tgt.throttled-timeout.time-to-kill-in-seconds"
+  defaultValue: 0
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.TimeoutTicketExpirationPolicyProperties"
+  type: "java.lang.Integer"
+  description: "Maximum time in seconds. for TGTs to be live in CAS server."
+  shortDescription: "Maximum time in seconds. for TGTs to be live in CAS server."
+  name: "cas.ticket.tgt.timeout.max-time-to-live-in-seconds"
+  defaultValue: 0
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.TransientSessionTicketProperties"
+  type: "java.lang.Integer"
+  description: "Controls number of times a ticket can be used within CAS server."
+  shortDescription: "Controls number of times a ticket can be used within CAS server."
+  name: "cas.ticket.tst.number-of-uses"
+  defaultValue: 1
+- module: "cas-server-core-tickets"
+  owner: "org.apereo.cas.configuration.model.core.ticket.TransientSessionTicketProperties"
+  type: "java.lang.Long"
+  description: "Number of seconds after which this ticket becomes invalid."
+  shortDescription: "Number of seconds after which this ticket becomes invalid."
+  name: "cas.ticket.tst.time-to-kill-in-seconds"
+  defaultValue: 5

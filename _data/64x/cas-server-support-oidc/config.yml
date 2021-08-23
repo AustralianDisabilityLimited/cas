@@ -1,0 +1,399 @@
+---
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcCoreProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "A mapping of authentication context refs (ACR) values. This is where\
+    \ specific authentication context classes are referenced and mapped to providers\
+    \ that CAS may support mainly for MFA purposes. <p> Example might be {@code acr-value->mfa-duo}."
+  shortDescription: "A mapping of authentication context refs (ACR) values."
+  name: "cas.authn.oidc.core.authentication-context-reference-mappings"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcCoreProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Map fixed claims to CAS attributes. Key is the existing claim name\
+    \ for a scope and value is the new attribute that should take its place and value."
+  shortDescription: "Map fixed claims to CAS attributes."
+  name: "cas.authn.oidc.core.claims-map"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcCoreProperties"
+  type: "java.lang.String"
+  description: "Whether dynamic registration operates in {@code OPEN} or {@code PROTECTED}\
+    \ mode."
+  shortDescription: "Whether dynamic registration operates in {@code OPEN} or {@code\
+    \ PROTECTED} mode."
+  name: "cas.authn.oidc.core.dynamic-client-registration-mode"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcCoreProperties"
+  type: "java.lang.Boolean"
+  description: "As per OpenID Connect Core section 5.4, \"The Claims requested by\
+    \ the {@code profile}, {@code email}, {@code address}, and {@code phone} scope\
+    \ values are returned from the userinfo endpoint\", except for {@code response_type}={@code\
+    \ id_token}, where they are returned in the id_token (as there is no access token\
+    \ issued that could be used to access the userinfo endpoint). The Claims requested\
+    \ by the profile, email, address, and phone scope values are returned from the\
+    \ userinfo endpoint when a {@code response_type} value is used that results in\
+    \ an access token being issued. However, when no access token is issued (which\
+    \ is the case for the {@code response_type} value {@code id_token}), the resulting\
+    \ Claims are returned in the ID Token. <p> Setting this flag to true will force\
+    \ CAS to include claims in the ID token regardless of the response type. Note\
+    \ that this setting <strong>MUST ONLY</strong> be used as a last resort, to stay\
+    \ compliant with the specification as much as possible. <strong>DO NOT</strong>\
+    \ use this setting without due consideration. <p> Note that this setting is set\
+    \ to {@code true} by default mainly provided to preserve backward compatibility\
+    \ with previous CAS versions that included claims into the ID token without considering\
+    \ the response type. The behavior of this setting may change and it may be removed\
+    \ in future CAS releases."
+  shortDescription: "As per OpenID Connect Core section 5.4, \"The Claims requested\
+    \ by the {@code profile}, {@code email}, {@code address}, and {@code phone} scope\
+    \ values are returned from the userinfo endpoint\", except for {@code response_type}={@code\
+    \ id_token}, where they are returned in the id_token (as there is no access token\
+    \ issued that could be used to access the userinfo endpoint)."
+  name: "cas.authn.oidc.core.include-id-token-claims"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcCoreProperties"
+  type: "java.lang.String"
+  description: "OIDC issuer."
+  shortDescription: "OIDC issuer."
+  name: "cas.authn.oidc.core.issuer"
+  defaultValue: "http://localhost:8080/cas/oidc"
+- duration: true
+  module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcCoreProperties"
+  type: "java.lang.String"
+  description: "Skew value used to massage the authentication issue instance."
+  shortDescription: "Skew value used to massage the authentication issue instance."
+  name: "cas.authn.oidc.core.skew"
+  defaultValue: "PT5M"
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcCoreProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Mapping of user-defined scopes. Key is the new scope name and value\
+    \ is a comma-separated list of claims mapped to the scope."
+  shortDescription: "Mapping of user-defined scopes."
+  name: "cas.authn.oidc.core.user-defined-scopes"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of ACR values supported. This discovery element contains a list\
+    \ of the supported acr values supported by this server."
+  shortDescription: "List of ACR values supported."
+  name: "cas.authn.oidc.discovery.acr-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.lang.Boolean"
+  description: "Parameter indicating whether the authorization server provides the\
+    \ {@code iss} parameter in the authorization response."
+  shortDescription: "Parameter indicating whether the authorization server provides\
+    \ the {@code iss} parameter in the authorization response."
+  name: "cas.authn.oidc.discovery.authorization-response-issuer-parameter-supported"
+  defaultValue: false
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported claim types."
+  shortDescription: "Supported claim types."
+  name: "cas.authn.oidc.discovery.claim-types-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of supported claims."
+  shortDescription: "List of supported claims."
+  name: "cas.authn.oidc.discovery.claims"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.lang.Boolean"
+  description: "Specifying whether this provider supports use of the claims parameter."
+  shortDescription: "Specifying whether this provider supports use of the claims parameter."
+  name: "cas.authn.oidc.discovery.claims-parameter-supported"
+  defaultValue: true
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of PKCE code challenge methods supported."
+  shortDescription: "List of PKCE code challenge methods supported."
+  name: "cas.authn.oidc.discovery.code-challenge-methods-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported grant types."
+  shortDescription: "Supported grant types."
+  name: "cas.authn.oidc.discovery.grant-types-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported algorithms for id token encryption."
+  shortDescription: "Supported algorithms for id token encryption."
+  name: "cas.authn.oidc.discovery.id-token-encryption-alg-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported encoding strategies for id token encryption."
+  shortDescription: "Supported encoding strategies for id token encryption."
+  name: "cas.authn.oidc.discovery.id-token-encryption-encoding-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported algorithms for id token signing."
+  shortDescription: "Supported algorithms for id token signing."
+  name: "cas.authn.oidc.discovery.id-token-signing-alg-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported authentication methods for introspection."
+  shortDescription: "Supported authentication methods for introspection."
+  name: "cas.authn.oidc.discovery.introspection-supported-authentication-methods"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported algorithms for request object encryption."
+  shortDescription: "Supported algorithms for request object encryption."
+  name: "cas.authn.oidc.discovery.request-object-encryption-alg-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported encoding strategies for request object encryption."
+  shortDescription: "Supported encoding strategies for request object encryption."
+  name: "cas.authn.oidc.discovery.request-object-encryption-encoding-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported algorithms for request object signing."
+  shortDescription: "Supported algorithms for request object signing."
+  name: "cas.authn.oidc.discovery.request-object-signing-alg-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.lang.Boolean"
+  description: "Specifying whether this provider supports use of the {@code request}\
+    \ parameter."
+  shortDescription: "Specifying whether this provider supports use of the {@code request}\
+    \ parameter."
+  name: "cas.authn.oidc.discovery.request-parameter-supported"
+  defaultValue: true
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.lang.Boolean"
+  description: "Specifying whether this provider supports use of the {@code request_uri}\
+    \ parameter."
+  shortDescription: "Specifying whether this provider supports use of the {@code request_uri}\
+    \ parameter."
+  name: "cas.authn.oidc.discovery.request-uri-parameter-supported"
+  defaultValue: true
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported response types."
+  shortDescription: "Supported response types."
+  name: "cas.authn.oidc.discovery.response-types-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of supported scopes."
+  shortDescription: "List of supported scopes."
+  name: "cas.authn.oidc.discovery.scopes"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of supported subject types."
+  shortDescription: "List of supported subject types."
+  name: "cas.authn.oidc.discovery.subject-types"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of client authentication methods supported by token endpoint."
+  shortDescription: "List of client authentication methods supported by token endpoint."
+  name: "cas.authn.oidc.discovery.token-endpoint-auth-methods-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported algorithms for user-info encryption."
+  shortDescription: "Supported algorithms for user-info encryption."
+  name: "cas.authn.oidc.discovery.user-info-encryption-alg-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported encoding strategies for user-info encryption."
+  shortDescription: "Supported encoding strategies for user-info encryption."
+  name: "cas.authn.oidc.discovery.user-info-encryption-encoding-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcDiscoveryProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "Supported algorithms for user-info signing."
+  shortDescription: "Supported algorithms for user-info signing."
+  name: "cas.authn.oidc.discovery.user-info-signing-alg-values-supported"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcJsonWebKeystoreProperties"
+  type: "java.lang.Integer"
+  description: "Timeout that indicates how long should the JWKS file be kept in cache."
+  shortDescription: "Timeout that indicates how long should the JWKS file be kept\
+    \ in cache."
+  name: "cas.authn.oidc.jwks.jwks-cache-in-minutes"
+  defaultValue: 60
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcJsonWebKeystoreProperties"
+  type: "java.lang.String"
+  description: "Path to the JWKS file resource used to handle signing/encryption of\
+    \ authentication tokens."
+  shortDescription: "Path to the JWKS file resource used to handle signing/encryption\
+    \ of authentication tokens."
+  name: "cas.authn.oidc.jwks.jwks-file"
+  defaultValue: "file:/etc/cas/config/keystore.jwks"
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcJsonWebKeystoreProperties"
+  type: "java.lang.Integer"
+  description: "The key size for the generated jwks. This is an algorithm-specific\
+    \ metric, such as modulus length, specified in number of bits. <p> If the keystore\
+    \ type is {@code EC}, the key size defined here should switch to one of {@code\
+    \ 256}, {@code 384} or {@code 521}. If using  {@code EC}, then the size should\
+    \ match the number of bits required."
+  shortDescription: "The key size for the generated jwks."
+  name: "cas.authn.oidc.jwks.jwks-key-size"
+  defaultValue: 2048
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcJsonWebKeystoreProperties"
+  type: "java.lang.String"
+  description: "The type of the JWKS used to handle signing/encryption of authentication\
+    \ tokens. Accepted values are {@code RSA} or {@code EC}."
+  shortDescription: "The type of the JWKS used to handle signing/encryption of authentication\
+    \ tokens."
+  name: "cas.authn.oidc.jwks.jwks-type"
+  defaultValue: "RSA"
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.RestfulOidcJsonWebKeystoreProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.oidc.jwks.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.RestfulOidcJsonWebKeystoreProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.oidc.jwks.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.RestfulOidcJsonWebKeystoreProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.oidc.jwks.rest.headers"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.RestfulOidcJsonWebKeystoreProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.oidc.jwks.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.RestfulOidcJsonWebKeystoreProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.oidc.jwks.rest.url"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcLogoutProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the back-channel logout is supported."
+  shortDescription: "Whether the back-channel logout is supported."
+  name: "cas.authn.oidc.logout.backchannel-logout-supported"
+  defaultValue: true
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcLogoutProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the front-channel logout is supported."
+  shortDescription: "Whether the front-channel logout is supported."
+  name: "cas.authn.oidc.logout.frontchannel-logout-supported"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcWebFingerProperties.Groovy"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.oidc.webfinger.user-info.groovy.location"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcWebFingerProperties.Rest"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.oidc.webfinger.user-info.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcWebFingerProperties.Rest"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.oidc.webfinger.user-info.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcWebFingerProperties.Rest"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.oidc.webfinger.user-info.rest.headers"
+  defaultValue: ""
+- module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcWebFingerProperties.Rest"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.oidc.webfinger.user-info.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-support-oidc"
+  owner: "org.apereo.cas.configuration.model.support.oidc.OidcWebFingerProperties.Rest"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.oidc.webfinger.user-info.rest.url"
+  defaultValue: ""

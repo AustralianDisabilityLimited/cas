@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "channels"
+  name: "channels"
+  endpointType: "Endpoint"
+  signature: "ChannelsEndpoint.channels()"
+  owner: "org.springframework.cloud.stream.endpoint.ChannelsEndpoint"
+  returnType: "Map"
+  casEndpoint: false
+  summary: "Describes available streaming channels for Spring Cloud Stream."

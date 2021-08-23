@@ -1,0 +1,55 @@
+---
+- module: "cas-server-core-services"
+  owner: "org.apereo.cas.configuration.model.core.services.ServiceRegistryCacheProperties"
+  type: "java.lang.Long"
+  description: "Services cache size specifies the maximum number of entries the cache\
+    \ may contain."
+  shortDescription: "Services cache size specifies the maximum number of entries the\
+    \ cache may contain."
+  name: "cas.service-registry.cache.cache-size"
+  defaultValue: 5000
+- duration: true
+  module: "cas-server-core-services"
+  owner: "org.apereo.cas.configuration.model.core.services.ServiceRegistryCacheProperties"
+  type: "java.lang.String"
+  description: "Services cache duration specifies the fixed duration for an entry\
+    \ to be automatically removed from the cache after its creation or update."
+  shortDescription: "Services cache duration specifies the fixed duration for an entry\
+    \ to be automatically removed from the cache after its creation or update."
+  name: "cas.service-registry.cache.duration"
+  defaultValue: "PT15M"
+- module: "cas-server-core-services"
+  owner: "org.apereo.cas.configuration.model.core.services.ServiceRegistryCacheProperties"
+  type: "java.lang.Integer"
+  description: "Services cache capacity sets the minimum total size for the internal\
+    \ data structures."
+  shortDescription: "Services cache capacity sets the minimum total size for the internal\
+    \ data structures."
+  name: "cas.service-registry.cache.initial-capacity"
+  defaultValue: 2000
+- module: "cas-server-core-services"
+  owner: "org.apereo.cas.configuration.model.core.services.ServiceRegistryCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Flag that indicates whether to initialise active service registry\
+    \ implementation with a default set of service definitions included with CAS by\
+    \ default in JSON format. The initialization generally tends to find JSON service\
+    \ definitions from {@link org.apereo.cas.configuration.model.support.services.json.JsonServiceRegistryProperties#getLocation()}."
+  shortDescription: "Flag that indicates whether to initialise active service registry\
+    \ implementation with a default set of service definitions included with CAS by\
+    \ default in JSON format."
+  name: "cas.service-registry.core.init-from-json"
+  defaultValue: false
+- module: "cas-server-core-services"
+  owner: "org.apereo.cas.configuration.model.core.services.ServiceRegistryCoreProperties"
+  type: "org.apereo.cas.configuration.model.core.services.ServiceRegistryCoreProperties$ServiceManagementTypes"
+  description: "Determine how services are internally managed, queried, cached and\
+    \ reloaded by CAS. Accepted values are the following: <ul> <li>DEFAULT: Keep all\
+    \ services inside a concurrent map.</li> <li>DOMAIN: Group registered services\
+    \ by their domain having been explicitly defined.</li> </ul>\nAvailable values\
+    \ are as follows:\n<ul><li>{@code DOMAIN}: Group service definitions by their\
+    \ domain.</li><li>{@code DEFAULT}: Default option to keep definitions in a map\
+    \ as they arrive.</li></ul>"
+  shortDescription: "Determine how services are internally managed, queried, cached\
+    \ and reloaded by CAS."
+  name: "cas.service-registry.core.management-type"
+  defaultValue: "DEFAULT"

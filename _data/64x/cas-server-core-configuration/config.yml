@@ -1,0 +1,67 @@
+---
+- module: "cas-server-core-configuration"
+  owner: "org.apereo.cas.configuration.model.core.config.standalone.StandaloneConfigurationProperties"
+  type: "java.io.File"
+  description: "Describes a directory path where CAS configuration may be found."
+  shortDescription: "Describes a directory path where CAS configuration may be found."
+  name: "cas.standalone.configuration-directory"
+  defaultValue: ""
+- module: "cas-server-core-configuration"
+  owner: "org.apereo.cas.configuration.model.core.config.standalone.StandaloneConfigurationProperties"
+  type: "java.io.File"
+  description: "Describes a file path where that contains the CAS properties in a\
+    \ single file."
+  shortDescription: "Describes a file path where that contains the CAS properties\
+    \ in a single file."
+  name: "cas.standalone.configuration-file"
+  defaultValue: ""
+- module: "cas-server-core-configuration"
+  owner: "org.apereo.cas.configuration.model.core.config.standalone.StandaloneConfigurationSecurityProperties"
+  type: "java.lang.String"
+  description: "Algorithm to use when deciphering settings. Default algorithm is {@code\
+    \ PBEWithMD5AndTripleDES}."
+  shortDescription: "Algorithm to use when deciphering settings."
+  name: "cas.standalone.configuration-security.alg"
+  defaultValue: ""
+- module: "cas-server-core-configuration"
+  owner: "org.apereo.cas.configuration.model.core.config.standalone.StandaloneConfigurationSecurityProperties"
+  type: "java.lang.Boolean"
+  description: "An initialization vector is required for {@code PBEWithDigestAndAES}\
+    \ algorithms that aren't BouncyCastle. Enabling an initialization vector will\
+    \ break passwords encrypted without one. Toggling this value will make pre-existing\
+    \ non-{@code PBEWithDigestAndAES} encrypted passwords not work. For non-BouncyCastle\
+    \ {@code PBEWithDigestAndAES} algorithms that require an initialization vector,\
+    \ one will be used regardless of this setting since backwards compatibility with\
+    \ existing passwords using those algorithms is not an issue (since they didn't\
+    \ work in previous CAS versions). The default value is false so as not to break\
+    \ existing encrypted passwords. In general the use of an initialization vector\
+    \ will increase the encrypted text's length."
+  shortDescription: "An initialization vector is required for {@code PBEWithDigestAndAES}\
+    \ algorithms that aren't BouncyCastle."
+  name: "cas.standalone.configuration-security.initialization-vector"
+  defaultValue: ""
+- module: "cas-server-core-configuration"
+  owner: "org.apereo.cas.configuration.model.core.config.standalone.StandaloneConfigurationSecurityProperties"
+  type: "java.lang.Long"
+  description: "Total number of iterations to use when deciphering settings. Default\
+    \ value comes from Jasypt {@value StandardPBEByteEncryptor#DEFAULT_KEY_OBTENTION_ITERATIONS}"
+  shortDescription: "Total number of iterations to use when deciphering settings."
+  name: "cas.standalone.configuration-security.iteration"
+  defaultValue: 0
+- module: "cas-server-core-configuration"
+  owner: "org.apereo.cas.configuration.model.core.config.standalone.StandaloneConfigurationSecurityProperties"
+  type: "java.lang.String"
+  description: "Security provider to use when deciphering settings. Leave blank for\
+    \ Java, {@code BC} for BouncyCastle. This property can be set as a Java system\
+    \ property: {@code cas.standalone.configuration-security.provider}."
+  shortDescription: "Security provider to use when deciphering settings."
+  name: "cas.standalone.configuration-security.provider"
+  defaultValue: ""
+- module: "cas-server-core-configuration"
+  owner: "org.apereo.cas.configuration.model.core.config.standalone.StandaloneConfigurationSecurityProperties"
+  type: "java.lang.String"
+  description: "Secret key/password to use when deciphering settings. This property\
+    \ can be set as a Java system property: {@code cas.standalone.configuration-security.psw}."
+  shortDescription: "Secret key/password to use when deciphering settings."
+  name: "cas.standalone.configuration-security.psw"
+  defaultValue: ""

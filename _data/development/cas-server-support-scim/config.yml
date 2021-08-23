@@ -1,0 +1,49 @@
+---
+- module: "cas-server-support-scim"
+  owner: "org.apereo.cas.configuration.model.support.scim.ScimProperties"
+  type: "java.lang.Boolean"
+  description: "Decide whether scim should be enabled."
+  shortDescription: "Decide whether scim should be enabled."
+  name: "cas.scim.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-scim"
+  owner: "org.apereo.cas.configuration.model.support.scim.ScimProperties"
+  type: "java.lang.String"
+  description: "Authenticate into the SCIM server/service via a pre-generated OAuth\
+    \ token."
+  shortDescription: "Authenticate into the SCIM server/service via a pre-generated\
+    \ OAuth token."
+  name: "cas.scim.oauth-token"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-scim"
+  owner: "org.apereo.cas.configuration.model.support.scim.ScimProperties"
+  type: "java.lang.String"
+  description: "Authenticate into the SCIM server with a pre-defined password."
+  shortDescription: "Authenticate into the SCIM server with a pre-defined password."
+  name: "cas.scim.password"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-scim"
+  owner: "org.apereo.cas.configuration.model.support.scim.ScimProperties"
+  type: "java.lang.String"
+  description: "The SCIM provisioning target URI."
+  shortDescription: "The SCIM provisioning target URI."
+  name: "cas.scim.target"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-scim"
+  owner: "org.apereo.cas.configuration.model.support.scim.ScimProperties"
+  type: "java.lang.String"
+  description: "Authenticate into the SCIM server with a pre-defined username."
+  shortDescription: "Authenticate into the SCIM server with a pre-defined username."
+  name: "cas.scim.username"
+  defaultValue: ""
+- module: "cas-server-support-scim"
+  owner: "org.apereo.cas.configuration.model.support.scim.ScimProperties"
+  type: "java.lang.Long"
+  description: "Indicate what version of the scim protocol is and should be used."
+  shortDescription: "Indicate what version of the scim protocol is and should be used."
+  name: "cas.scim.version"
+  defaultValue: 2

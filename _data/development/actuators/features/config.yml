@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "features"
+  name: "features"
+  endpointType: "Endpoint"
+  signature: "FeaturesEndpoint.features()"
+  owner: "org.springframework.cloud.client.actuator.FeaturesEndpoint"
+  returnType: "Features"
+  casEndpoint: false
+  summary: "Provides information about Spring Cloud enabled/disabled features."

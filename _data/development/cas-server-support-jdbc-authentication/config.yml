@@ -1,0 +1,1221 @@
+---
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.jdbc.authn.BindJdbcAuthenticationProperties>"
+  description: "Settings related to bind-mode jdbc authentication. Authenticates a\
+    \ user by attempting to create a database connection using the username and (hashed)\
+    \ password."
+  shortDescription: "Settings related to bind-mode jdbc authentication."
+  name: "cas.authn.jdbc.bind"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "The default auto-commit behavior of connections in the pool.\nDetermined\
+    \ whether queries such as update/insert should be immediately executed\nwithout\
+    \ waiting for an underlying transaction."
+  shortDescription: "The default auto-commit behavior of connections in the pool."
+  name: "cas.authn.jdbc.bind[].autocommit"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "int"
+  description: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  shortDescription: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  name: "cas.authn.jdbc.bind[].batch-size"
+  defaultValue: "100"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "A number of authentication handlers are allowed to determine whether\
+    \ they can operate on the provided credential\nand as such lend themselves to\
+    \ be tried and tested during the authentication handler selection phase.\nThe\
+    \ credential criteria may be one of the following options:<ul>\n<li>1) A regular\
+    \ expression pattern that is tested against the credential identifier.</li>\n\
+    <li>2) A fully qualified class name of your own design that implements {@code\
+    \ Predicate}.</li>\n<li>3) Path to an external Groovy script that implements the\
+    \ same interface.</li>\n</ul>"
+  shortDescription: "A number of authentication handlers are allowed to determine\
+    \ whether they can operate on the provided credential and as such lend themselves\
+    \ to be tried and tested during the authentication handler selection phase."
+  name: "cas.authn.jdbc.bind[].credential-criteria"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Attempts to do a JNDI data source look up for the data source name\
+    \ specified.\nWill attempt to locate the data source object as is."
+  shortDescription: "Attempts to do a JNDI data source look up for the data source\
+    \ name specified."
+  name: "cas.authn.jdbc.bind[].data-source-name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Hibernate feature to automatically validate and exports DDL to the\
+    \ schema.\nBy default, creates and drops the schema automatically when a session\
+    \ is starts and ends.\nSetting the value to {@code validate} or {@code none} may\
+    \ be more desirable for production,\nbut any of the following options can be used:\n\
+    <ul>\n    <li>{@code validate}: Validate the schema, but make no changes to the\
+    \ database.</li>\n    <li>{@code update}: Update the schema.</li>\n    <li>{@code\
+    \ create}: Create the schema, destroying previous data.</li>\n    <li>{@code create-drop}:\
+    \ Drop the schema at the end of the session.</li>\n    <li>{@code none}: Do nothing.</li>\n\
+    </ul>\n<p>\nNote that during a version migration where any schema has changed\
+    \ {@code create-drop} will result\nin the loss of all data as soon as CAS is started.\
+    \ For transient data like tickets this is probably\nnot an issue, but in cases\
+    \ like the audit table important data could be lost. Using `update`, while safe\n\
+    for data, is confirmed to result in invalid database state. {@code validate} or\
+    \ {@code none} settings\nare likely the only safe options for production use.\n\
+    </p>\nFor more info, <a href=\"http://docs.spring.io/spring-framework/docs/current/javadoc-api\"\
+    >see this</a>."
+  shortDescription: "Hibernate feature to automatically validate and exports DDL to\
+    \ the schema."
+  name: "cas.authn.jdbc.bind[].ddl-auto"
+  defaultValue: "update"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  shortDescription: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  name: "cas.authn.jdbc.bind[].default-catalog"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualify unqualified table names with the given schema/tablespace in\
+    \ generated SQL."
+  shortDescription: "Qualify unqualified table names with the given schema/tablespace\
+    \ in generated SQL."
+  name: "cas.authn.jdbc.bind[].default-schema"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database dialect is a configuration setting for platform independent\
+    \ software (JPA, Hibernate, etc)\nwhich allows such software to translate its\
+    \ generic SQL statements into vendor specific DDL, DML."
+  shortDescription: "The database dialect is a configuration setting for platform\
+    \ independent software (JPA, Hibernate, etc) which allows such software to translate\
+    \ its generic SQL statements into vendor specific DDL, DML."
+  name: "cas.authn.jdbc.bind[].dialect"
+  defaultValue: "org.hibernate.dialect.HSQLDialect"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The JDBC driver used to connect to the database."
+  shortDescription: "The JDBC driver used to connect to the database."
+  name: "cas.authn.jdbc.bind[].driver-class"
+  defaultValue: "org.hsqldb.jdbcDriver"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "long"
+  description: "Set the pool initialization failure timeout.\n<ul>\n<li>Any value\
+    \ greater than zero will be treated as a timeout for pool initialization.\nThe\
+    \ calling thread will be blocked from continuing until a successful connection\n\
+    to the database, or until the timeout is reached.  If the timeout is reached,\
+    \ then\na {@code PoolInitializationException} will be thrown. </li>\n<li>A value\
+    \ of zero will <i>not</i>  prevent the pool from starting in the\ncase that a\
+    \ connection cannot be obtained. However, upon start the pool will\nattempt to\
+    \ obtain a connection and validate that the {@code connectionTestQuery}\nand {@code\
+    \ connectionInitSql} are valid.  If those validations fail, an exception\nwill\
+    \ be thrown.  If a connection cannot be obtained, the validation is skipped\n\
+    and the the pool will start and continue to try to obtain connections in the\n\
+    background. This can mean that callers to {@code DataSource#getConnection()} may\n\
+    encounter exceptions. </li>\n<li>A value less than zero will <i>not</i> bypass\
+    \ any connection attempt and\nvalidation during startup, and therefore the pool\
+    \ will start immediately.  The\npool will continue to try to obtain connections\
+    \ in the background. This can mean\nthat callers to {@code DataSource#getConnection()}\
+    \ may encounter exceptions. </li>\n</ul>\nNote that if this timeout value is greater\
+    \ than or equal to zero (0), and therefore an\ninitial connection validation is\
+    \ performed, this timeout does not override the\n{@code connectionTimeout} or\
+    \ {@code validationTimeout}; they will be honored before this\ntimeout is applied.\
+    \  The default value is one millisecond."
+  shortDescription: "Set the pool initialization failure timeout."
+  name: "cas.authn.jdbc.bind[].fail-fast-timeout"
+  defaultValue: "1"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "int"
+  description: "Used to specify number of rows to be fetched in a select query."
+  shortDescription: "Used to specify number of rows to be fetched in a select query."
+  name: "cas.authn.jdbc.bind[].fetch-size"
+  defaultValue: "100"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "Allow hibernate to generate query statistics."
+  shortDescription: "Allow hibernate to generate query statistics."
+  name: "cas.authn.jdbc.bind[].generate-statistics"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The SQL query to be executed to test the validity of connections."
+  shortDescription: "The SQL query to be executed to test the validity of connections."
+  name: "cas.authn.jdbc.bind[].health-query"
+  defaultValue: "EMPTY"
+- duration: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Controls the maximum amount of time that a connection is allowed to\
+    \ sit idle in the pool."
+  shortDescription: "Controls the maximum amount of time that a connection is allowed\
+    \ to sit idle in the pool."
+  name: "cas.authn.jdbc.bind[].idle-timeout"
+  defaultValue: "PT10M"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "This property determines whether data source isolates internal pool\
+    \ queries, such as the connection alive test,\nin their own transaction.\n<p>\n\
+    Since these are typically read-only queries, it is rarely necessary to encapsulate\
+    \ them in their own transaction.\nThis property only applies if {@link #autocommit}\
+    \ is disabled."
+  shortDescription: "This property determines whether data source isolates internal\
+    \ pool queries, such as the connection alive test, in their own transaction."
+  name: "cas.authn.jdbc.bind[].isolate-internal-queries"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the isolation level for transactions."
+  shortDescription: "Defines the isolation level for transactions."
+  name: "cas.authn.jdbc.bind[].isolation-level-name"
+  defaultValue: "ISOLATION_READ_COMMITTED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "int"
+  description: "Controls the amount of time that a connection can be out of the pool\
+    \ before a message\nis logged indicating a possible connection leak."
+  shortDescription: "Controls the amount of time that a connection can be out of the\
+    \ pool before a message is logged indicating a possible connection leak."
+  name: "cas.authn.jdbc.bind[].leak-threshold"
+  defaultValue: "3_000"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Name of the authentication handler."
+  shortDescription: "Name of the authentication handler."
+  name: "cas.authn.jdbc.bind[].name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "int"
+  description: "Order of the authentication handler in the chain."
+  shortDescription: "Order of the authentication handler in the chain."
+  name: "cas.authn.jdbc.bind[].order"
+  defaultValue: "MAX_VALUE"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection password."
+  shortDescription: "The database connection password."
+  name: "cas.authn.jdbc.bind[].password"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Fully-qualified name of the class that can control the physical naming\
+    \ strategy of hibernate."
+  shortDescription: "Fully-qualified name of the class that can control the physical\
+    \ naming strategy of hibernate."
+  name: "cas.authn.jdbc.bind[].physical-naming-strategy-class-name"
+  defaultValue: "org.apereo.cas.hibernate.CasHibernatePhysicalNamingStrategy"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the propagation behavior for transactions."
+  shortDescription: "Defines the propagation behavior for transactions."
+  name: "cas.authn.jdbc.bind[].propagation-behavior-name"
+  defaultValue: "PROPAGATION_REQUIRED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.util.Map<String,String>"
+  description: "Additional settings provided by Hibernate in form of key-value pairs."
+  shortDescription: "Additional settings provided by Hibernate in form of key-value\
+    \ pairs."
+  name: "cas.authn.jdbc.bind[].properties"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "AuthenticationHandlerStates"
+  description: "Define the scope and state of this authentication handler\nand the\
+    \ lifecycle in which it can be invoked or activated."
+  shortDescription: "Define the scope and state of this authentication handler and\
+    \ the lifecycle in which it can be invoked or activated."
+  name: "cas.authn.jdbc.bind[].state"
+  defaultValue: "ACTIVE"
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection URL."
+  shortDescription: "The database connection URL."
+  name: "cas.authn.jdbc.bind[].url"
+  defaultValue: "jdbc:hsqldb:mem:cas-hsql-database"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.BaseJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database user.\n<p>\nThe database user must have sufficient permissions\
+    \ to be able to handle\nschema changes and updates, when needed."
+  shortDescription: "The database user."
+  name: "cas.authn.jdbc.bind[].user"
+  defaultValue: "sa"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties>"
+  description: "Settings related to query-encode-mode jdbc authentication. A JDBC\
+    \ querying handler that will pull back the password and the private salt value\
+    \ for a user and validate the encoded password using the public salt value. Assumes\
+    \ everything is inside the same database table. Supports settings for number of\
+    \ iterations as well as private salt. This password encoding method combines the\
+    \ private Salt and the public salt which it prepends to the password before hashing.\
+    \ If multiple iterations are used, the byte code hash of the first iteration is\
+    \ rehashed without the salt values. The final hash is converted to hex before\
+    \ comparing it to the database value."
+  shortDescription: "Settings related to query-encode-mode jdbc authentication."
+  name: "cas.authn.jdbc.encode"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Algorithm used for hashing."
+  shortDescription: "Algorithm used for hashing."
+  name: "cas.authn.jdbc.encode[].algorithm-name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "The default auto-commit behavior of connections in the pool.\nDetermined\
+    \ whether queries such as update/insert should be immediately executed\nwithout\
+    \ waiting for an underlying transaction."
+  shortDescription: "The default auto-commit behavior of connections in the pool."
+  name: "cas.authn.jdbc.encode[].autocommit"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "int"
+  description: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  shortDescription: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  name: "cas.authn.jdbc.encode[].batch-size"
+  defaultValue: "100"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "A number of authentication handlers are allowed to determine whether\
+    \ they can operate on the provided credential\nand as such lend themselves to\
+    \ be tried and tested during the authentication handler selection phase.\nThe\
+    \ credential criteria may be one of the following options:<ul>\n<li>1) A regular\
+    \ expression pattern that is tested against the credential identifier.</li>\n\
+    <li>2) A fully qualified class name of your own design that implements {@code\
+    \ Predicate}.</li>\n<li>3) Path to an external Groovy script that implements the\
+    \ same interface.</li>\n</ul>"
+  shortDescription: "A number of authentication handlers are allowed to determine\
+    \ whether they can operate on the provided credential and as such lend themselves\
+    \ to be tried and tested during the authentication handler selection phase."
+  name: "cas.authn.jdbc.encode[].credential-criteria"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Attempts to do a JNDI data source look up for the data source name\
+    \ specified.\nWill attempt to locate the data source object as is."
+  shortDescription: "Attempts to do a JNDI data source look up for the data source\
+    \ name specified."
+  name: "cas.authn.jdbc.encode[].data-source-name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Hibernate feature to automatically validate and exports DDL to the\
+    \ schema.\nBy default, creates and drops the schema automatically when a session\
+    \ is starts and ends.\nSetting the value to {@code validate} or {@code none} may\
+    \ be more desirable for production,\nbut any of the following options can be used:\n\
+    <ul>\n    <li>{@code validate}: Validate the schema, but make no changes to the\
+    \ database.</li>\n    <li>{@code update}: Update the schema.</li>\n    <li>{@code\
+    \ create}: Create the schema, destroying previous data.</li>\n    <li>{@code create-drop}:\
+    \ Drop the schema at the end of the session.</li>\n    <li>{@code none}: Do nothing.</li>\n\
+    </ul>\n<p>\nNote that during a version migration where any schema has changed\
+    \ {@code create-drop} will result\nin the loss of all data as soon as CAS is started.\
+    \ For transient data like tickets this is probably\nnot an issue, but in cases\
+    \ like the audit table important data could be lost. Using `update`, while safe\n\
+    for data, is confirmed to result in invalid database state. {@code validate} or\
+    \ {@code none} settings\nare likely the only safe options for production use.\n\
+    </p>\nFor more info, <a href=\"http://docs.spring.io/spring-framework/docs/current/javadoc-api\"\
+    >see this</a>."
+  shortDescription: "Hibernate feature to automatically validate and exports DDL to\
+    \ the schema."
+  name: "cas.authn.jdbc.encode[].ddl-auto"
+  defaultValue: "update"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  shortDescription: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  name: "cas.authn.jdbc.encode[].default-catalog"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualify unqualified table names with the given schema/tablespace in\
+    \ generated SQL."
+  shortDescription: "Qualify unqualified table names with the given schema/tablespace\
+    \ in generated SQL."
+  name: "cas.authn.jdbc.encode[].default-schema"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database dialect is a configuration setting for platform independent\
+    \ software (JPA, Hibernate, etc)\nwhich allows such software to translate its\
+    \ generic SQL statements into vendor specific DDL, DML."
+  shortDescription: "The database dialect is a configuration setting for platform\
+    \ independent software (JPA, Hibernate, etc) which allows such software to translate\
+    \ its generic SQL statements into vendor specific DDL, DML."
+  name: "cas.authn.jdbc.encode[].dialect"
+  defaultValue: "org.hibernate.dialect.HSQLDialect"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Column name that indicates whether account is disabled."
+  shortDescription: "Column name that indicates whether account is disabled."
+  name: "cas.authn.jdbc.encode[].disabled-field-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The JDBC driver used to connect to the database."
+  shortDescription: "The JDBC driver used to connect to the database."
+  name: "cas.authn.jdbc.encode[].driver-class"
+  defaultValue: "org.hsqldb.jdbcDriver"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Column name that indicates whether account is expired."
+  shortDescription: "Column name that indicates whether account is expired."
+  name: "cas.authn.jdbc.encode[].expired-field-name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "long"
+  description: "Set the pool initialization failure timeout.\n<ul>\n<li>Any value\
+    \ greater than zero will be treated as a timeout for pool initialization.\nThe\
+    \ calling thread will be blocked from continuing until a successful connection\n\
+    to the database, or until the timeout is reached.  If the timeout is reached,\
+    \ then\na {@code PoolInitializationException} will be thrown. </li>\n<li>A value\
+    \ of zero will <i>not</i>  prevent the pool from starting in the\ncase that a\
+    \ connection cannot be obtained. However, upon start the pool will\nattempt to\
+    \ obtain a connection and validate that the {@code connectionTestQuery}\nand {@code\
+    \ connectionInitSql} are valid.  If those validations fail, an exception\nwill\
+    \ be thrown.  If a connection cannot be obtained, the validation is skipped\n\
+    and the the pool will start and continue to try to obtain connections in the\n\
+    background. This can mean that callers to {@code DataSource#getConnection()} may\n\
+    encounter exceptions. </li>\n<li>A value less than zero will <i>not</i> bypass\
+    \ any connection attempt and\nvalidation during startup, and therefore the pool\
+    \ will start immediately.  The\npool will continue to try to obtain connections\
+    \ in the background. This can mean\nthat callers to {@code DataSource#getConnection()}\
+    \ may encounter exceptions. </li>\n</ul>\nNote that if this timeout value is greater\
+    \ than or equal to zero (0), and therefore an\ninitial connection validation is\
+    \ performed, this timeout does not override the\n{@code connectionTimeout} or\
+    \ {@code validationTimeout}; they will be honored before this\ntimeout is applied.\
+    \  The default value is one millisecond."
+  shortDescription: "Set the pool initialization failure timeout."
+  name: "cas.authn.jdbc.encode[].fail-fast-timeout"
+  defaultValue: "1"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "int"
+  description: "Used to specify number of rows to be fetched in a select query."
+  shortDescription: "Used to specify number of rows to be fetched in a select query."
+  name: "cas.authn.jdbc.encode[].fetch-size"
+  defaultValue: "100"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "Allow hibernate to generate query statistics."
+  shortDescription: "Allow hibernate to generate query statistics."
+  name: "cas.authn.jdbc.encode[].generate-statistics"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The SQL query to be executed to test the validity of connections."
+  shortDescription: "The SQL query to be executed to test the validity of connections."
+  name: "cas.authn.jdbc.encode[].health-query"
+  defaultValue: "EMPTY"
+- duration: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Controls the maximum amount of time that a connection is allowed to\
+    \ sit idle in the pool."
+  shortDescription: "Controls the maximum amount of time that a connection is allowed\
+    \ to sit idle in the pool."
+  name: "cas.authn.jdbc.encode[].idle-timeout"
+  defaultValue: "PT10M"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "This property determines whether data source isolates internal pool\
+    \ queries, such as the connection alive test,\nin their own transaction.\n<p>\n\
+    Since these are typically read-only queries, it is rarely necessary to encapsulate\
+    \ them in their own transaction.\nThis property only applies if {@link #autocommit}\
+    \ is disabled."
+  shortDescription: "This property determines whether data source isolates internal\
+    \ pool queries, such as the connection alive test, in their own transaction."
+  name: "cas.authn.jdbc.encode[].isolate-internal-queries"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the isolation level for transactions."
+  shortDescription: "Defines the isolation level for transactions."
+  name: "cas.authn.jdbc.encode[].isolation-level-name"
+  defaultValue: "ISOLATION_READ_COMMITTED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "int"
+  description: "Controls the amount of time that a connection can be out of the pool\
+    \ before a message\nis logged indicating a possible connection leak."
+  shortDescription: "Controls the amount of time that a connection can be out of the\
+    \ pool before a message is logged indicating a possible connection leak."
+  name: "cas.authn.jdbc.encode[].leak-threshold"
+  defaultValue: "3_000"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Name of the authentication handler."
+  shortDescription: "Name of the authentication handler."
+  name: "cas.authn.jdbc.encode[].name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "int"
+  description: "Default number of iterations for hashing."
+  shortDescription: "Default number of iterations for hashing."
+  name: "cas.authn.jdbc.encode[].number-of-iterations"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Field/column name that indicates the number of iterations used for\
+    \ password hashing."
+  shortDescription: "Field/column name that indicates the number of iterations used\
+    \ for password hashing."
+  name: "cas.authn.jdbc.encode[].number-of-iterations-field-name"
+  defaultValue: "numIterations"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "int"
+  description: "Order of the authentication handler in the chain."
+  shortDescription: "Order of the authentication handler in the chain."
+  name: "cas.authn.jdbc.encode[].order"
+  defaultValue: "MAX_VALUE"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection password."
+  shortDescription: "The database connection password."
+  name: "cas.authn.jdbc.encode[].password"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Password column name."
+  shortDescription: "Password column name."
+  name: "cas.authn.jdbc.encode[].password-field-name"
+  defaultValue: "password"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Fully-qualified name of the class that can control the physical naming\
+    \ strategy of hibernate."
+  shortDescription: "Fully-qualified name of the class that can control the physical\
+    \ naming strategy of hibernate."
+  name: "cas.authn.jdbc.encode[].physical-naming-strategy-class-name"
+  defaultValue: "org.apereo.cas.hibernate.CasHibernatePhysicalNamingStrategy"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the propagation behavior for transactions."
+  shortDescription: "Defines the propagation behavior for transactions."
+  name: "cas.authn.jdbc.encode[].propagation-behavior-name"
+  defaultValue: "PROPAGATION_REQUIRED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.util.Map<String,String>"
+  description: "Additional settings provided by Hibernate in form of key-value pairs."
+  shortDescription: "Additional settings provided by Hibernate in form of key-value\
+    \ pairs."
+  name: "cas.authn.jdbc.encode[].properties"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Field/column name that indicates the salt used for password hashing."
+  shortDescription: "Field/column name that indicates the salt used for password hashing."
+  name: "cas.authn.jdbc.encode[].salt-field-name"
+  defaultValue: "salt"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "SQL query to execute and look up accounts.\nExample: {@code SELECT\
+    \ * FROM table WHERE username=?}."
+  shortDescription: "SQL query to execute and look up accounts."
+  name: "cas.authn.jdbc.encode[].sql"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "AuthenticationHandlerStates"
+  description: "Define the scope and state of this authentication handler\nand the\
+    \ lifecycle in which it can be invoked or activated."
+  shortDescription: "Define the scope and state of this authentication handler and\
+    \ the lifecycle in which it can be invoked or activated."
+  name: "cas.authn.jdbc.encode[].state"
+  defaultValue: "ACTIVE"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Static salt to be used for hashing."
+  shortDescription: "Static salt to be used for hashing."
+  name: "cas.authn.jdbc.encode[].static-salt"
+  defaultValue: ""
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection URL."
+  shortDescription: "The database connection URL."
+  name: "cas.authn.jdbc.encode[].url"
+  defaultValue: "jdbc:hsqldb:mem:cas-hsql-database"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryEncodeJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database user.\n<p>\nThe database user must have sufficient permissions\
+    \ to be able to handle\nschema changes and updates, when needed."
+  shortDescription: "The database user."
+  name: "cas.authn.jdbc.encode[].user"
+  defaultValue: "sa"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties>"
+  description: "Settings related to query-mode jdbc authentication. Authenticates\
+    \ a user by comparing the user password (which can be encoded with a password\
+    \ encoder) against the password on record determined by a configurable database\
+    \ query."
+  shortDescription: "Settings related to query-mode jdbc authentication."
+  name: "cas.authn.jdbc.query"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "The default auto-commit behavior of connections in the pool.\nDetermined\
+    \ whether queries such as update/insert should be immediately executed\nwithout\
+    \ waiting for an underlying transaction."
+  shortDescription: "The default auto-commit behavior of connections in the pool."
+  name: "cas.authn.jdbc.query[].autocommit"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "int"
+  description: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  shortDescription: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  name: "cas.authn.jdbc.query[].batch-size"
+  defaultValue: "100"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "A number of authentication handlers are allowed to determine whether\
+    \ they can operate on the provided credential\nand as such lend themselves to\
+    \ be tried and tested during the authentication handler selection phase.\nThe\
+    \ credential criteria may be one of the following options:<ul>\n<li>1) A regular\
+    \ expression pattern that is tested against the credential identifier.</li>\n\
+    <li>2) A fully qualified class name of your own design that implements {@code\
+    \ Predicate}.</li>\n<li>3) Path to an external Groovy script that implements the\
+    \ same interface.</li>\n</ul>"
+  shortDescription: "A number of authentication handlers are allowed to determine\
+    \ whether they can operate on the provided credential and as such lend themselves\
+    \ to be tried and tested during the authentication handler selection phase."
+  name: "cas.authn.jdbc.query[].credential-criteria"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Attempts to do a JNDI data source look up for the data source name\
+    \ specified.\nWill attempt to locate the data source object as is."
+  shortDescription: "Attempts to do a JNDI data source look up for the data source\
+    \ name specified."
+  name: "cas.authn.jdbc.query[].data-source-name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Hibernate feature to automatically validate and exports DDL to the\
+    \ schema.\nBy default, creates and drops the schema automatically when a session\
+    \ is starts and ends.\nSetting the value to {@code validate} or {@code none} may\
+    \ be more desirable for production,\nbut any of the following options can be used:\n\
+    <ul>\n    <li>{@code validate}: Validate the schema, but make no changes to the\
+    \ database.</li>\n    <li>{@code update}: Update the schema.</li>\n    <li>{@code\
+    \ create}: Create the schema, destroying previous data.</li>\n    <li>{@code create-drop}:\
+    \ Drop the schema at the end of the session.</li>\n    <li>{@code none}: Do nothing.</li>\n\
+    </ul>\n<p>\nNote that during a version migration where any schema has changed\
+    \ {@code create-drop} will result\nin the loss of all data as soon as CAS is started.\
+    \ For transient data like tickets this is probably\nnot an issue, but in cases\
+    \ like the audit table important data could be lost. Using `update`, while safe\n\
+    for data, is confirmed to result in invalid database state. {@code validate} or\
+    \ {@code none} settings\nare likely the only safe options for production use.\n\
+    </p>\nFor more info, <a href=\"http://docs.spring.io/spring-framework/docs/current/javadoc-api\"\
+    >see this</a>."
+  shortDescription: "Hibernate feature to automatically validate and exports DDL to\
+    \ the schema."
+  name: "cas.authn.jdbc.query[].ddl-auto"
+  defaultValue: "update"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  shortDescription: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  name: "cas.authn.jdbc.query[].default-catalog"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualify unqualified table names with the given schema/tablespace in\
+    \ generated SQL."
+  shortDescription: "Qualify unqualified table names with the given schema/tablespace\
+    \ in generated SQL."
+  name: "cas.authn.jdbc.query[].default-schema"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database dialect is a configuration setting for platform independent\
+    \ software (JPA, Hibernate, etc)\nwhich allows such software to translate its\
+    \ generic SQL statements into vendor specific DDL, DML."
+  shortDescription: "The database dialect is a configuration setting for platform\
+    \ independent software (JPA, Hibernate, etc) which allows such software to translate\
+    \ its generic SQL statements into vendor specific DDL, DML."
+  name: "cas.authn.jdbc.query[].dialect"
+  defaultValue: "org.hibernate.dialect.HSQLDialect"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The JDBC driver used to connect to the database."
+  shortDescription: "The JDBC driver used to connect to the database."
+  name: "cas.authn.jdbc.query[].driver-class"
+  defaultValue: "org.hsqldb.jdbcDriver"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "long"
+  description: "Set the pool initialization failure timeout.\n<ul>\n<li>Any value\
+    \ greater than zero will be treated as a timeout for pool initialization.\nThe\
+    \ calling thread will be blocked from continuing until a successful connection\n\
+    to the database, or until the timeout is reached.  If the timeout is reached,\
+    \ then\na {@code PoolInitializationException} will be thrown. </li>\n<li>A value\
+    \ of zero will <i>not</i>  prevent the pool from starting in the\ncase that a\
+    \ connection cannot be obtained. However, upon start the pool will\nattempt to\
+    \ obtain a connection and validate that the {@code connectionTestQuery}\nand {@code\
+    \ connectionInitSql} are valid.  If those validations fail, an exception\nwill\
+    \ be thrown.  If a connection cannot be obtained, the validation is skipped\n\
+    and the the pool will start and continue to try to obtain connections in the\n\
+    background. This can mean that callers to {@code DataSource#getConnection()} may\n\
+    encounter exceptions. </li>\n<li>A value less than zero will <i>not</i> bypass\
+    \ any connection attempt and\nvalidation during startup, and therefore the pool\
+    \ will start immediately.  The\npool will continue to try to obtain connections\
+    \ in the background. This can mean\nthat callers to {@code DataSource#getConnection()}\
+    \ may encounter exceptions. </li>\n</ul>\nNote that if this timeout value is greater\
+    \ than or equal to zero (0), and therefore an\ninitial connection validation is\
+    \ performed, this timeout does not override the\n{@code connectionTimeout} or\
+    \ {@code validationTimeout}; they will be honored before this\ntimeout is applied.\
+    \  The default value is one millisecond."
+  shortDescription: "Set the pool initialization failure timeout."
+  name: "cas.authn.jdbc.query[].fail-fast-timeout"
+  defaultValue: "1"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "int"
+  description: "Used to specify number of rows to be fetched in a select query."
+  shortDescription: "Used to specify number of rows to be fetched in a select query."
+  name: "cas.authn.jdbc.query[].fetch-size"
+  defaultValue: "100"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Boolean field that should indicate whether the account is disabled."
+  shortDescription: "Boolean field that should indicate whether the account is disabled."
+  name: "cas.authn.jdbc.query[].field-disabled"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Boolean field that should indicate whether the account is expired."
+  shortDescription: "Boolean field that should indicate whether the account is expired."
+  name: "cas.authn.jdbc.query[].field-expired"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Password field/column name to retrieve."
+  shortDescription: "Password field/column name to retrieve."
+  name: "cas.authn.jdbc.query[].field-password"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "Allow hibernate to generate query statistics."
+  shortDescription: "Allow hibernate to generate query statistics."
+  name: "cas.authn.jdbc.query[].generate-statistics"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The SQL query to be executed to test the validity of connections."
+  shortDescription: "The SQL query to be executed to test the validity of connections."
+  name: "cas.authn.jdbc.query[].health-query"
+  defaultValue: "EMPTY"
+- duration: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Controls the maximum amount of time that a connection is allowed to\
+    \ sit idle in the pool."
+  shortDescription: "Controls the maximum amount of time that a connection is allowed\
+    \ to sit idle in the pool."
+  name: "cas.authn.jdbc.query[].idle-timeout"
+  defaultValue: "PT10M"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "This property determines whether data source isolates internal pool\
+    \ queries, such as the connection alive test,\nin their own transaction.\n<p>\n\
+    Since these are typically read-only queries, it is rarely necessary to encapsulate\
+    \ them in their own transaction.\nThis property only applies if {@link #autocommit}\
+    \ is disabled."
+  shortDescription: "This property determines whether data source isolates internal\
+    \ pool queries, such as the connection alive test, in their own transaction."
+  name: "cas.authn.jdbc.query[].isolate-internal-queries"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the isolation level for transactions."
+  shortDescription: "Defines the isolation level for transactions."
+  name: "cas.authn.jdbc.query[].isolation-level-name"
+  defaultValue: "ISOLATION_READ_COMMITTED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "int"
+  description: "Controls the amount of time that a connection can be out of the pool\
+    \ before a message\nis logged indicating a possible connection leak."
+  shortDescription: "Controls the amount of time that a connection can be out of the\
+    \ pool before a message is logged indicating a possible connection leak."
+  name: "cas.authn.jdbc.query[].leak-threshold"
+  defaultValue: "3_000"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Name of the authentication handler."
+  shortDescription: "Name of the authentication handler."
+  name: "cas.authn.jdbc.query[].name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "int"
+  description: "Order of the authentication handler in the chain."
+  shortDescription: "Order of the authentication handler in the chain."
+  name: "cas.authn.jdbc.query[].order"
+  defaultValue: "MAX_VALUE"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection password."
+  shortDescription: "The database connection password."
+  name: "cas.authn.jdbc.query[].password"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Fully-qualified name of the class that can control the physical naming\
+    \ strategy of hibernate."
+  shortDescription: "Fully-qualified name of the class that can control the physical\
+    \ naming strategy of hibernate."
+  name: "cas.authn.jdbc.query[].physical-naming-strategy-class-name"
+  defaultValue: "org.apereo.cas.hibernate.CasHibernatePhysicalNamingStrategy"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.util.List<String>"
+  description: "List of column names to fetch as user attributes."
+  shortDescription: "List of column names to fetch as user attributes."
+  name: "cas.authn.jdbc.query[].principal-attribute-list"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the propagation behavior for transactions."
+  shortDescription: "Defines the propagation behavior for transactions."
+  name: "cas.authn.jdbc.query[].propagation-behavior-name"
+  defaultValue: "PROPAGATION_REQUIRED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.util.Map<String,String>"
+  description: "Additional settings provided by Hibernate in form of key-value pairs."
+  shortDescription: "Additional settings provided by Hibernate in form of key-value\
+    \ pairs."
+  name: "cas.authn.jdbc.query[].properties"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "SQL query to execute. Example: {@code SELECT * FROM table WHERE name=?}."
+  shortDescription: "SQL query to execute."
+  name: "cas.authn.jdbc.query[].sql"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "AuthenticationHandlerStates"
+  description: "Define the scope and state of this authentication handler\nand the\
+    \ lifecycle in which it can be invoked or activated."
+  shortDescription: "Define the scope and state of this authentication handler and\
+    \ the lifecycle in which it can be invoked or activated."
+  name: "cas.authn.jdbc.query[].state"
+  defaultValue: "ACTIVE"
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection URL."
+  shortDescription: "The database connection URL."
+  name: "cas.authn.jdbc.query[].url"
+  defaultValue: "jdbc:hsqldb:mem:cas-hsql-database"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.QueryJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database user.\n<p>\nThe database user must have sufficient permissions\
+    \ to be able to handle\nschema changes and updates, when needed."
+  shortDescription: "The database user."
+  name: "cas.authn.jdbc.query[].user"
+  defaultValue: "sa"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.JdbcAuthenticationProperties"
+  type: "java.util.List<org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties>"
+  description: "Settings related to search-mode jdbc authentication. Searches for\
+    \ a user record by querying against a username and password; the user is authenticated\
+    \ if at least one result is found."
+  shortDescription: "Settings related to search-mode jdbc authentication."
+  name: "cas.authn.jdbc.search"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "The default auto-commit behavior of connections in the pool.\nDetermined\
+    \ whether queries such as update/insert should be immediately executed\nwithout\
+    \ waiting for an underlying transaction."
+  shortDescription: "The default auto-commit behavior of connections in the pool."
+  name: "cas.authn.jdbc.search[].autocommit"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "int"
+  description: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  shortDescription: "A non-zero value enables use of JDBC2 batch updates by Hibernate.\
+    \ e.g. recommended values between 5 and 30."
+  name: "cas.authn.jdbc.search[].batch-size"
+  defaultValue: "100"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "A number of authentication handlers are allowed to determine whether\
+    \ they can operate on the provided credential\nand as such lend themselves to\
+    \ be tried and tested during the authentication handler selection phase.\nThe\
+    \ credential criteria may be one of the following options:<ul>\n<li>1) A regular\
+    \ expression pattern that is tested against the credential identifier.</li>\n\
+    <li>2) A fully qualified class name of your own design that implements {@code\
+    \ Predicate}.</li>\n<li>3) Path to an external Groovy script that implements the\
+    \ same interface.</li>\n</ul>"
+  shortDescription: "A number of authentication handlers are allowed to determine\
+    \ whether they can operate on the provided credential and as such lend themselves\
+    \ to be tried and tested during the authentication handler selection phase."
+  name: "cas.authn.jdbc.search[].credential-criteria"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Attempts to do a JNDI data source look up for the data source name\
+    \ specified.\nWill attempt to locate the data source object as is."
+  shortDescription: "Attempts to do a JNDI data source look up for the data source\
+    \ name specified."
+  name: "cas.authn.jdbc.search[].data-source-name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Hibernate feature to automatically validate and exports DDL to the\
+    \ schema.\nBy default, creates and drops the schema automatically when a session\
+    \ is starts and ends.\nSetting the value to {@code validate} or {@code none} may\
+    \ be more desirable for production,\nbut any of the following options can be used:\n\
+    <ul>\n    <li>{@code validate}: Validate the schema, but make no changes to the\
+    \ database.</li>\n    <li>{@code update}: Update the schema.</li>\n    <li>{@code\
+    \ create}: Create the schema, destroying previous data.</li>\n    <li>{@code create-drop}:\
+    \ Drop the schema at the end of the session.</li>\n    <li>{@code none}: Do nothing.</li>\n\
+    </ul>\n<p>\nNote that during a version migration where any schema has changed\
+    \ {@code create-drop} will result\nin the loss of all data as soon as CAS is started.\
+    \ For transient data like tickets this is probably\nnot an issue, but in cases\
+    \ like the audit table important data could be lost. Using `update`, while safe\n\
+    for data, is confirmed to result in invalid database state. {@code validate} or\
+    \ {@code none} settings\nare likely the only safe options for production use.\n\
+    </p>\nFor more info, <a href=\"http://docs.spring.io/spring-framework/docs/current/javadoc-api\"\
+    >see this</a>."
+  shortDescription: "Hibernate feature to automatically validate and exports DDL to\
+    \ the schema."
+  name: "cas.authn.jdbc.search[].ddl-auto"
+  defaultValue: "update"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  shortDescription: "Qualifies unqualified table names with the given catalog in generated\
+    \ SQL."
+  name: "cas.authn.jdbc.search[].default-catalog"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Qualify unqualified table names with the given schema/tablespace in\
+    \ generated SQL."
+  shortDescription: "Qualify unqualified table names with the given schema/tablespace\
+    \ in generated SQL."
+  name: "cas.authn.jdbc.search[].default-schema"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database dialect is a configuration setting for platform independent\
+    \ software (JPA, Hibernate, etc)\nwhich allows such software to translate its\
+    \ generic SQL statements into vendor specific DDL, DML."
+  shortDescription: "The database dialect is a configuration setting for platform\
+    \ independent software (JPA, Hibernate, etc) which allows such software to translate\
+    \ its generic SQL statements into vendor specific DDL, DML."
+  name: "cas.authn.jdbc.search[].dialect"
+  defaultValue: "org.hibernate.dialect.HSQLDialect"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The JDBC driver used to connect to the database."
+  shortDescription: "The JDBC driver used to connect to the database."
+  name: "cas.authn.jdbc.search[].driver-class"
+  defaultValue: "org.hsqldb.jdbcDriver"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "long"
+  description: "Set the pool initialization failure timeout.\n<ul>\n<li>Any value\
+    \ greater than zero will be treated as a timeout for pool initialization.\nThe\
+    \ calling thread will be blocked from continuing until a successful connection\n\
+    to the database, or until the timeout is reached.  If the timeout is reached,\
+    \ then\na {@code PoolInitializationException} will be thrown. </li>\n<li>A value\
+    \ of zero will <i>not</i>  prevent the pool from starting in the\ncase that a\
+    \ connection cannot be obtained. However, upon start the pool will\nattempt to\
+    \ obtain a connection and validate that the {@code connectionTestQuery}\nand {@code\
+    \ connectionInitSql} are valid.  If those validations fail, an exception\nwill\
+    \ be thrown.  If a connection cannot be obtained, the validation is skipped\n\
+    and the the pool will start and continue to try to obtain connections in the\n\
+    background. This can mean that callers to {@code DataSource#getConnection()} may\n\
+    encounter exceptions. </li>\n<li>A value less than zero will <i>not</i> bypass\
+    \ any connection attempt and\nvalidation during startup, and therefore the pool\
+    \ will start immediately.  The\npool will continue to try to obtain connections\
+    \ in the background. This can mean\nthat callers to {@code DataSource#getConnection()}\
+    \ may encounter exceptions. </li>\n</ul>\nNote that if this timeout value is greater\
+    \ than or equal to zero (0), and therefore an\ninitial connection validation is\
+    \ performed, this timeout does not override the\n{@code connectionTimeout} or\
+    \ {@code validationTimeout}; they will be honored before this\ntimeout is applied.\
+    \  The default value is one millisecond."
+  shortDescription: "Set the pool initialization failure timeout."
+  name: "cas.authn.jdbc.search[].fail-fast-timeout"
+  defaultValue: "1"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "int"
+  description: "Used to specify number of rows to be fetched in a select query."
+  shortDescription: "Used to specify number of rows to be fetched in a select query."
+  name: "cas.authn.jdbc.search[].fetch-size"
+  defaultValue: "100"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Password column name."
+  shortDescription: "Password column name."
+  name: "cas.authn.jdbc.search[].field-password"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Username column name."
+  shortDescription: "Username column name."
+  name: "cas.authn.jdbc.search[].field-user"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "Allow hibernate to generate query statistics."
+  shortDescription: "Allow hibernate to generate query statistics."
+  name: "cas.authn.jdbc.search[].generate-statistics"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The SQL query to be executed to test the validity of connections."
+  shortDescription: "The SQL query to be executed to test the validity of connections."
+  name: "cas.authn.jdbc.search[].health-query"
+  defaultValue: "EMPTY"
+- duration: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Controls the maximum amount of time that a connection is allowed to\
+    \ sit idle in the pool."
+  shortDescription: "Controls the maximum amount of time that a connection is allowed\
+    \ to sit idle in the pool."
+  name: "cas.authn.jdbc.search[].idle-timeout"
+  defaultValue: "PT10M"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "boolean"
+  description: "This property determines whether data source isolates internal pool\
+    \ queries, such as the connection alive test,\nin their own transaction.\n<p>\n\
+    Since these are typically read-only queries, it is rarely necessary to encapsulate\
+    \ them in their own transaction.\nThis property only applies if {@link #autocommit}\
+    \ is disabled."
+  shortDescription: "This property determines whether data source isolates internal\
+    \ pool queries, such as the connection alive test, in their own transaction."
+  name: "cas.authn.jdbc.search[].isolate-internal-queries"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the isolation level for transactions."
+  shortDescription: "Defines the isolation level for transactions."
+  name: "cas.authn.jdbc.search[].isolation-level-name"
+  defaultValue: "ISOLATION_READ_COMMITTED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "int"
+  description: "Controls the amount of time that a connection can be out of the pool\
+    \ before a message\nis logged indicating a possible connection leak."
+  shortDescription: "Controls the amount of time that a connection can be out of the\
+    \ pool before a message is logged indicating a possible connection leak."
+  name: "cas.authn.jdbc.search[].leak-threshold"
+  defaultValue: "3_000"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Name of the authentication handler."
+  shortDescription: "Name of the authentication handler."
+  name: "cas.authn.jdbc.search[].name"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "int"
+  description: "Order of the authentication handler in the chain."
+  shortDescription: "Order of the authentication handler in the chain."
+  name: "cas.authn.jdbc.search[].order"
+  defaultValue: "MAX_VALUE"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection password."
+  shortDescription: "The database connection password."
+  name: "cas.authn.jdbc.search[].password"
+  defaultValue: "EMPTY"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Fully-qualified name of the class that can control the physical naming\
+    \ strategy of hibernate."
+  shortDescription: "Fully-qualified name of the class that can control the physical\
+    \ naming strategy of hibernate."
+  name: "cas.authn.jdbc.search[].physical-naming-strategy-class-name"
+  defaultValue: "org.apereo.cas.hibernate.CasHibernatePhysicalNamingStrategy"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Defines the propagation behavior for transactions."
+  shortDescription: "Defines the propagation behavior for transactions."
+  name: "cas.authn.jdbc.search[].propagation-behavior-name"
+  defaultValue: "PROPAGATION_REQUIRED"
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.util.Map<String,String>"
+  description: "Additional settings provided by Hibernate in form of key-value pairs."
+  shortDescription: "Additional settings provided by Hibernate in form of key-value\
+    \ pairs."
+  name: "cas.authn.jdbc.search[].properties"
+  defaultValue: ""
+- module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "AuthenticationHandlerStates"
+  description: "Define the scope and state of this authentication handler\nand the\
+    \ lifecycle in which it can be invoked or activated."
+  shortDescription: "Define the scope and state of this authentication handler and\
+    \ the lifecycle in which it can be invoked or activated."
+  name: "cas.authn.jdbc.search[].state"
+  defaultValue: "ACTIVE"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Table name where accounts are held."
+  shortDescription: "Table name where accounts are held."
+  name: "cas.authn.jdbc.search[].table-users"
+  defaultValue: ""
+- expressionLanguage: true
+  required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database connection URL."
+  shortDescription: "The database connection URL."
+  name: "cas.authn.jdbc.search[].url"
+  defaultValue: "jdbc:hsqldb:mem:cas-hsql-database"
+- required: true
+  module: "cas-server-support-jdbc-authentication"
+  owner: "org.apereo.cas.configuration.model.support.jdbc.authn.SearchJdbcAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The database user.\n<p>\nThe database user must have sufficient permissions\
+    \ to be able to handle\nschema changes and updates, when needed."
+  shortDescription: "The database user."
+  name: "cas.authn.jdbc.search[].user"
+  defaultValue: "sa"

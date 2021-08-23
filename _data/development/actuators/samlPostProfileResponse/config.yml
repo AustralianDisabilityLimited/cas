@@ -1,0 +1,42 @@
+---
+- method: "GET"
+  path: "samlPostProfileResponse"
+  name: "samlPostProfileResponse"
+  endpointType: "RestControllerEndpoint"
+  signature: "SSOSamlIdPPostProfileHandlerEndpoint.produceGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)"
+  owner: "org.apereo.cas.support.saml.web.idp.profile.sso.SSOSamlIdPPostProfileHandlerEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Produce SAML2 response entity."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "password"
+    required: true
+  - name: "entityId"
+    required: true
+  - name: "encrypt"
+    required: false
+  produces:
+  - "application/xml"
+- method: "POST"
+  path: "samlPostProfileResponse"
+  name: "samlPostProfileResponse"
+  endpointType: "RestControllerEndpoint"
+  signature: "SSOSamlIdPPostProfileHandlerEndpoint.producePost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.util.Map<java.lang.String,\
+    \ java.lang.String>)"
+  owner: "org.apereo.cas.support.saml.web.idp.profile.sso.SSOSamlIdPPostProfileHandlerEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Produce SAML2 response entity."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "password"
+    required: true
+  - name: "entityId"
+    required: true
+  - name: "encrypt"
+    required: false
+  produces:
+  - "application/xml"

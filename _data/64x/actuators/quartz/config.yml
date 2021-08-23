@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "quartz"
+  name: "quartz"
+  endpointType: "Endpoint"
+  signature: "QuartzEndpoint.quartzReport() "
+  owner: "org.springframework.boot.actuate.quartz.QuartzEndpoint"
+  returnType: "QuartzReport"
+  casEndpoint: false
+  summary: "Report back scheduled groups and triggers for Quartz."

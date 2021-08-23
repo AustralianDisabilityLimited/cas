@@ -1,0 +1,28 @@
+---
+- module: "cas-server-support-rest-x509"
+  owner: "org.apereo.cas.configuration.model.core.rest.RestX509Properties"
+  type: "java.lang.Boolean"
+  description: "Flag that enables {@link java.security.cert.X509Certificate} extraction\
+    \ from the request body for authentication."
+  shortDescription: "Flag that enables {@link java.security.cert.X509Certificate}\
+    \ extraction from the request body for authentication."
+  name: "cas.rest.x509.body-auth"
+  defaultValue: false
+- module: "cas-server-support-rest-x509"
+  owner: "org.apereo.cas.configuration.model.core.rest.RestX509Properties"
+  type: "java.lang.Boolean"
+  description: "Flag that enables {@link java.security.cert.X509Certificate} extraction\
+    \ from the request headers for authentication."
+  shortDescription: "Flag that enables {@link java.security.cert.X509Certificate}\
+    \ extraction from the request headers for authentication."
+  name: "cas.rest.x509.header-auth"
+  defaultValue: true
+- module: "cas-server-support-rest-x509"
+  owner: "org.apereo.cas.configuration.model.core.rest.RestX509Properties"
+  type: "java.lang.Boolean"
+  description: "Flag that enables TLS client {@link java.security.cert.X509Certificate}\
+    \ extraction from the servlet container for authentication."
+  shortDescription: "Flag that enables TLS client {@link java.security.cert.X509Certificate}\
+    \ extraction from the servlet container for authentication."
+  name: "cas.rest.x509.tls-client-auth"
+  defaultValue: false

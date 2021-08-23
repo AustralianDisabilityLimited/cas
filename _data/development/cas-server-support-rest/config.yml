@@ -1,0 +1,23 @@
+---
+- required: true
+  module: "cas-server-support-rest"
+  owner: "org.apereo.cas.configuration.model.core.rest.RestRegisteredServicesProperties"
+  type: "java.lang.String"
+  description: "Authorization attribute name required by the REST endpoint in order\
+    \ to allow for the requested operation. Attribute must be resolvable by the authenticated\
+    \ principal, or must have been already."
+  shortDescription: "Authorization attribute name required by the REST endpoint in\
+    \ order to allow for the requested operation."
+  name: "cas.rest.services.attribute-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-rest"
+  owner: "org.apereo.cas.configuration.model.core.rest.RestRegisteredServicesProperties"
+  type: "java.lang.String"
+  description: "Matching authorization attribute value, pulled from the attribute\
+    \ required by the REST endpoint in order to allow for the requested operation.\
+    \ The attribute value may also be constructed as a regex pattern."
+  shortDescription: "Matching authorization attribute value, pulled from the attribute\
+    \ required by the REST endpoint in order to allow for the requested operation."
+  name: "cas.rest.services.attribute-value"
+  defaultValue: ""

@@ -1,0 +1,50 @@
+---
+- method: "GET"
+  path: "u2fDevices"
+  name: "u2fDevices"
+  endpointType: "Endpoint"
+  signature: "U2FRegisteredDevicesEndpoint.fetchAll()"
+  owner: "org.apereo.cas.adaptors.u2f.web.U2FRegisteredDevicesEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Get all registered devices."
+  produces:
+  - "application/json"
+- method: "GET"
+  path: "u2fDevices/{username}"
+  name: "u2fDevices"
+  endpointType: "Endpoint"
+  signature: "U2FRegisteredDevicesEndpoint.fetchBy(java.lang.String)"
+  owner: "org.apereo.cas.adaptors.u2f.web.U2FRegisteredDevicesEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Get all registered devices for the user."
+  parameters:
+  - name: "username"
+    required: true
+  produces:
+  - "application/json"
+- method: "DELETE"
+  path: "u2fDevices/{username}"
+  name: "u2fDevices"
+  endpointType: "Endpoint"
+  signature: "U2FRegisteredDevicesEndpoint.delete(java.lang.String)"
+  owner: "org.apereo.cas.adaptors.u2f.web.U2FRegisteredDevicesEndpoint"
+  casEndpoint: true
+  summary: "Delete all registered devices."
+  parameters:
+  - name: "username"
+    required: true
+- method: "DELETE"
+  path: "u2fDevices/{username}"
+  name: "u2fDevices"
+  endpointType: "Endpoint"
+  signature: "U2FRegisteredDevicesEndpoint.delete(java.lang.String,java.lang.Long)"
+  owner: "org.apereo.cas.adaptors.u2f.web.U2FRegisteredDevicesEndpoint"
+  casEndpoint: true
+  summary: "Delete registered device for username and device."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "id"
+    required: true

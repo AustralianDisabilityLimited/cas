@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "liquibase"
+  name: "liquibase"
+  endpointType: "Endpoint"
+  signature: "LiquibaseEndpoint.liquibaseBeans()"
+  owner: "org.springframework.boot.actuate.liquibase.LiquibaseEndpoint"
+  returnType: "ApplicationLiquibaseBeans"
+  casEndpoint: false
+  summary: "Provides information about database change sets applied by Liquibase."

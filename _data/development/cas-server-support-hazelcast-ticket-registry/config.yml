@@ -1,0 +1,10 @@
+---
+- module: "cas-server-support-hazelcast-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.hazelcast.HazelcastTicketRegistryProperties"
+  type: "java.lang.Long"
+  description: "Page size is used by a special Predicate which helps to get a page-by-page\
+    \ result of a query."
+  shortDescription: "Page size is used by a special Predicate which helps to get a\
+    \ page-by-page result of a query."
+  name: "cas.ticket.registry.hazelcast.page-size"
+  defaultValue: 500

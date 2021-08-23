@@ -1,0 +1,154 @@
+---
+- required: true
+  module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.account.PasswordlessAuthenticationGroovyAccountsProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.passwordless.accounts.groovy.location"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.account.PasswordlessAuthenticationJsonAccountsProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.passwordless.accounts.json.location"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.account.PasswordlessAuthenticationRestAccountsProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.passwordless.accounts.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.account.PasswordlessAuthenticationRestAccountsProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.passwordless.accounts.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.account.PasswordlessAuthenticationRestAccountsProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.passwordless.accounts.rest.headers"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.account.PasswordlessAuthenticationRestAccountsProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.passwordless.accounts.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.account.PasswordlessAuthenticationRestAccountsProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.passwordless.accounts.rest.url"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.PasswordlessAuthenticationAccountsProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Passwordless authentication settings using static accounts. The key\
+    \ is the user identifier, while the value is the form of contact such as email,\
+    \ sms, etc."
+  shortDescription: "Passwordless authentication settings using static accounts."
+  name: "cas.authn.passwordless.accounts.simple"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.PasswordlessAuthenticationCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Allow passwordless authentication to skip its own flow in favor of\
+    \ delegated authentication providers that may be available and defined in CAS.\
+    \ <p> If delegated authentication is activated, CAS will skip its normal passwordless\
+    \ authentication flow in favor of the requested delegated authentication provider.\
+    \ If no delegated providers are available, passwordless authentication flow will\
+    \ commence as usual."
+  shortDescription: "Allow passwordless authentication to skip its own flow in favor\
+    \ of delegated authentication providers that may be available and defined in CAS."
+  name: "cas.authn.passwordless.core.delegated-authentication-activated"
+  defaultValue: false
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.PasswordlessAuthenticationCoreProperties"
+  type: "java.lang.Boolean"
+  description: "Allow passwordless authentication to skip its own flow in favor of\
+    \ multifactor authentication providers that may be available and defined in CAS.\
+    \ <p> If multifactor authentication is activated, and defined MFA triggers in\
+    \ CAS signal availability and eligibility of an MFA flow for the given passwordless\
+    \ user, CAS will skip its normal passwordless authentication flow in favor of\
+    \ the requested multifactor authentication provider. If no MFA providers are available,\
+    \ or if no triggers require MFA for the verified passwordless user, passwordless\
+    \ authentication flow will commence as usual."
+  shortDescription: "Allow passwordless authentication to skip its own flow in favor\
+    \ of multifactor authentication providers that may be available and defined in\
+    \ CAS."
+  name: "cas.authn.passwordless.core.multifactor-authentication-activated"
+  defaultValue: false
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.PasswordlessAuthenticationTokensProperties"
+  type: "java.lang.Integer"
+  description: "Indicate how long should the token be considered valid."
+  shortDescription: "Indicate how long should the token be considered valid."
+  name: "cas.authn.passwordless.tokens.expire-in-seconds"
+  defaultValue: 180
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.token.PasswordlessAuthenticationRestTokensProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.authn.passwordless.tokens.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.token.PasswordlessAuthenticationRestTokensProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.authn.passwordless.tokens.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.token.PasswordlessAuthenticationRestTokensProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.authn.passwordless.tokens.rest.headers"
+  defaultValue: ""
+- module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.token.PasswordlessAuthenticationRestTokensProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.authn.passwordless.tokens.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-support-passwordless"
+  owner: "org.apereo.cas.configuration.model.support.passwordless.token.PasswordlessAuthenticationRestTokensProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.authn.passwordless.tokens.rest.url"
+  defaultValue: ""

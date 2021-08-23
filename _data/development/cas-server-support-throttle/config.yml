@@ -1,0 +1,42 @@
+---
+- module: "cas-server-support-throttle"
+  owner: "org.apereo.cas.configuration.model.support.throttle.ThrottleCoreProperties"
+  type: "java.lang.String"
+  description: "Application code used to identify this application in the audit logs."
+  shortDescription: "Application code used to identify this application in the audit\
+    \ logs."
+  name: "cas.authn.throttle.core.app-code"
+  defaultValue: "CAS"
+- module: "cas-server-support-throttle"
+  owner: "org.apereo.cas.configuration.model.support.throttle.ThrottleCoreProperties"
+  type: "java.lang.String"
+  description: "Username parameter to use in order to extract the username from the\
+    \ request."
+  shortDescription: "Username parameter to use in order to extract the username from\
+    \ the request."
+  name: "cas.authn.throttle.core.username-parameter"
+  defaultValue: ""
+- module: "cas-server-support-throttle"
+  owner: "org.apereo.cas.configuration.model.support.throttle.ThrottleFailureProperties"
+  type: "java.lang.String"
+  description: "Failure code to record in the audit log. Generally this indicates\
+    \ an authentication failure event."
+  shortDescription: "Failure code to record in the audit log."
+  name: "cas.authn.throttle.failure.code"
+  defaultValue: "AUTHENTICATION_FAILED"
+- module: "cas-server-support-throttle"
+  owner: "org.apereo.cas.configuration.model.support.throttle.ThrottleFailureProperties"
+  type: "java.lang.Integer"
+  description: "Period of time in seconds during which the threshold applies."
+  shortDescription: "Period of time in seconds during which the threshold applies."
+  name: "cas.authn.throttle.failure.range-seconds"
+  defaultValue: -1
+- module: "cas-server-support-throttle"
+  owner: "org.apereo.cas.configuration.model.support.throttle.ThrottleFailureProperties"
+  type: "java.lang.Integer"
+  description: "Number of failed login attempts permitted in the above period. All\
+    \ login throttling components that ship with CAS limit successive failed login\
+    \ attempts that exceed a threshold rate in failures per second."
+  shortDescription: "Number of failed login attempts permitted in the above period."
+  name: "cas.authn.throttle.failure.threshold"
+  defaultValue: -1

@@ -1,0 +1,39 @@
+---
+- method: "GET"
+  path: "ssoSessions"
+  name: "ssoSessions"
+  endpointType: "Endpoint"
+  signature: "SingleSignOnSessionsEndpoint.getSsoSessions(java.lang.String)"
+  owner: "org.apereo.cas.web.report.SingleSignOnSessionsEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Get all single sign-on sessions with the given type."
+  parameters:
+  - name: "type"
+    required: true
+- method: "DELETE"
+  path: "ssoSessions/{ticketGrantingTicket}"
+  name: "ssoSessions"
+  endpointType: "Endpoint"
+  signature: "SingleSignOnSessionsEndpoint.destroySsoSession(java.lang.String)"
+  owner: "org.apereo.cas.web.report.SingleSignOnSessionsEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Remove single sign-on session for ticket id."
+  parameters:
+  - name: "ticketGrantingTicket"
+    required: true
+- method: "DELETE"
+  path: "ssoSessions"
+  name: "ssoSessions"
+  endpointType: "Endpoint"
+  signature: "SingleSignOnSessionsEndpoint.destroySsoSessions(java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.web.report.SingleSignOnSessionsEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Remove single sign-on session for type and user."
+  parameters:
+  - name: "type"
+    required: false
+  - name: "username"
+    required: false

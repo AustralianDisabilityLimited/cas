@@ -1,0 +1,74 @@
+---
+- method: "GET"
+  path: "gauthCredentialRepository/export"
+  name: "gauthCredentialRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.exportAccounts()"
+  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: true
+  summary: "Export accounts as a zip file."
+  produces:
+  - "application/octet-stream"
+- method: "GET"
+  path: "gauthCredentialRepository/{username}"
+  name: "gauthCredentialRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.get(java.lang.String)"
+  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Load and get all accounts for the user."
+  parameters:
+  - name: "username"
+    required: true
+  produces:
+  - "application/json"
+- method: "GET"
+  path: "gauthCredentialRepository"
+  name: "gauthCredentialRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.load()"
+  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  returnType: "Collection"
+  casEndpoint: true
+  summary: "Load and get all accounts."
+  produces:
+  - "application/json"
+- method: "DELETE"
+  path: "gauthCredentialRepository"
+  name: "gauthCredentialRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.deleteAll()"
+  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  casEndpoint: true
+  summary: "Delete all accounts."
+  produces:
+  - "application/json"
+- method: "DELETE"
+  path: "gauthCredentialRepository/{username}"
+  name: "gauthCredentialRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.delete(java.lang.String)"
+  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  casEndpoint: true
+  summary: "Delete account for the user."
+  parameters:
+  - name: "username"
+    required: true
+  produces:
+  - "application/json"
+- method: "POST"
+  path: "gauthCredentialRepository/import"
+  name: "gauthCredentialRepository"
+  endpointType: "RestControllerEndpoint"
+  signature: "GoogleAuthenticatorTokenCredentialRepositoryEndpoint.importAccount(javax.servlet.http.HttpServletRequest) "
+  owner: "org.apereo.cas.gauth.credential.GoogleAuthenticatorTokenCredentialRepositoryEndpoint"
+  returnType: "HttpStatus"
+  casEndpoint: true
+  summary: "Import account as a JSON document."
+  parameters:
+  - name: "request"
+    required: false
+  consumes:
+  - "application/json"

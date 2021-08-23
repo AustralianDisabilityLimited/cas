@@ -1,0 +1,8 @@
+---
+- module: "cas-server-support-shibboleth"
+  owner: "org.apereo.cas.configuration.model.support.saml.shibboleth.ShibbolethIdPProperties"
+  type: "java.lang.String"
+  description: "The server url of the shibboleth idp deployment."
+  shortDescription: "The server url of the shibboleth idp deployment."
+  name: "cas.authn.shib-idp.server-url"
+  defaultValue: "localhost"

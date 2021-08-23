@@ -1,0 +1,30 @@
+---
+- module: "cas-server-core-events"
+  owner: "org.apereo.cas.configuration.model.core.events.CoreEventsProperties"
+  type: "java.lang.Boolean"
+  description: "Whether event tracking and recording functionality should be enabled."
+  shortDescription: "Whether event tracking and recording functionality should be\
+    \ enabled."
+  name: "cas.events.core.enabled"
+  defaultValue: true
+- module: "cas-server-core-events"
+  owner: "org.apereo.cas.configuration.model.core.events.CoreEventsProperties"
+  type: "java.lang.Boolean"
+  description: "Whether CAS should track the underlying configuration store for changes.\
+    \ This depends on whether the store provides that sort of functionality. When\
+    \ running in standalone mode, this typically translates to CAS monitoring configuration\
+    \ files and reloading context conditionally if there are any changes."
+  shortDescription: "Whether CAS should track the underlying configuration store for\
+    \ changes."
+  name: "cas.events.core.track-configuration-modifications"
+  defaultValue: false
+- module: "cas-server-core-events"
+  owner: "org.apereo.cas.configuration.model.core.events.CoreEventsProperties"
+  type: "java.lang.Boolean"
+  description: "Whether geolocation should be tracked as part of collected authentication\
+    \ events. This of course require's consent from the user's browser to collect\
+    \ stats on location."
+  shortDescription: "Whether geolocation should be tracked as part of collected authentication\
+    \ events."
+  name: "cas.events.core.track-geolocation"
+  defaultValue: false

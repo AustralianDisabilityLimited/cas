@@ -1,0 +1,9 @@
+---
+- required: true
+  module: "cas-server-support-configuration-cloud-mongo"
+  owner: "org.apereo.cas.configuration.model.core.config.cloud.SpringCloudConfigurationProperties.MongoDb"
+  type: "java.lang.String"
+  description: "Mongodb URI."
+  shortDescription: "Mongodb URI."
+  name: "cas.spring.cloud.mongo.uri"
+  defaultValue: ""

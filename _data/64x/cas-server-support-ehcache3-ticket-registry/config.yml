@@ -1,0 +1,121 @@
+---
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Long"
+  description: "Timeout when connecting to Terracotta cluster."
+  shortDescription: "Timeout when connecting to Terracotta cluster."
+  name: "cas.ticket.registry.ehcache3.cluster-connection-timeout"
+  defaultValue: 150
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Long"
+  description: "Timeout when reading or writing to/from Terracotta cluster."
+  shortDescription: "Timeout when reading or writing to/from Terracotta cluster."
+  name: "cas.ticket.registry.ehcache3.cluster-read-write-timeout"
+  defaultValue: 5
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties$Consistency"
+  description: "Cluster consistency may be STRONG or EVENTUAL.\nAvailable values are\
+    \ as follows:\n<ul><li>{@code EVENTUAL}: Indicates that the visibility of mutative\
+    \ operations is not guaranteed on operation completion.</li><li>{@code STRONG}:\
+    \ Indicates that the visibility of mutative operations is guaranteed on operation\
+    \ completion.</li></ul>"
+  shortDescription: "Cluster consistency may be STRONG or EVENTUAL."
+  name: "cas.ticket.registry.ehcache3.clustered-cache-consistency"
+  defaultValue: "STRONG"
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.String"
+  description: "Name of default server resource on Terracotta cluster."
+  shortDescription: "Name of default server resource on Terracotta cluster."
+  name: "cas.ticket.registry.ehcache3.default-server-resource"
+  defaultValue: "main"
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Boolean"
+  description: "Sets whether JMX management beans are enabled for all caches."
+  shortDescription: "Sets whether JMX management beans are enabled for all caches."
+  name: "cas.ticket.registry.ehcache3.enable-management"
+  defaultValue: true
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Boolean"
+  description: "Sets whether statistics are enabled for all caches."
+  shortDescription: "Sets whether statistics are enabled for all caches."
+  name: "cas.ticket.registry.ehcache3.enable-statistics"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Boolean"
+  description: "Enabled allows this registry to be disabled on startup (so registry\
+    \ choice can be made at runtime)."
+  shortDescription: "Enabled allows this registry to be disabled on startup (so registry\
+    \ choice can be made at runtime)."
+  name: "cas.ticket.registry.ehcache3.enabled"
+  defaultValue: true
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Boolean"
+  description: "Sets whether elements are eternal. If eternal, timeouts are ignored\
+    \ and the element is never expired. False by default. Functionality brought over\
+    \ from Ehcache 2, document use case."
+  shortDescription: "Sets whether elements are eternal."
+  name: "cas.ticket.registry.ehcache3.eternal"
+  defaultValue: false
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Integer"
+  description: "Builder that sets the maximum objects to be held in memory (0 = no\
+    \ limit)."
+  shortDescription: "Builder that sets the maximum objects to be held in memory (0\
+    \ = no limit)."
+  name: "cas.ticket.registry.ehcache3.max-elements-in-memory"
+  defaultValue: 10000
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.String"
+  description: "Per cache size of disk cache."
+  shortDescription: "Per cache size of disk cache."
+  name: "cas.ticket.registry.ehcache3.per-cache-size-on-disk"
+  defaultValue: "20MB"
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.Boolean"
+  description: "Persist data on disk when jvm is shut down if not using terracotta\
+    \ cluster."
+  shortDescription: "Persist data on disk when jvm is shut down if not using terracotta\
+    \ cluster."
+  name: "cas.ticket.registry.ehcache3.persist-on-disk"
+  defaultValue: true
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.String"
+  description: "Name of resource pool to use on Terracotta cluster."
+  shortDescription: "Name of resource pool to use on Terracotta cluster."
+  name: "cas.ticket.registry.ehcache3.resource-pool-name"
+  defaultValue: "cas-ticket-pool"
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.String"
+  description: "Size of resource pool on terracotta cluster."
+  shortDescription: "Size of resource pool on terracotta cluster."
+  name: "cas.ticket.registry.ehcache3.resource-pool-size"
+  defaultValue: "15MB"
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.String"
+  description: "Root directory to store data if not using terracotta cluster."
+  shortDescription: "Root directory to store data if not using terracotta cluster."
+  name: "cas.ticket.registry.ehcache3.root-directory"
+  defaultValue: "/tmp/cas/ehcache3"
+- module: "cas-server-support-ehcache3-ticket-registry"
+  owner: "org.apereo.cas.configuration.model.support.ehcache.Ehcache3Properties"
+  type: "java.lang.String"
+  description: "URI in format something like \"terracotta://host1.company.org:9410,host2.company.org:9410/cas-application\"\
+    . Default port for terracotta (9410) is used if not specified in URI."
+  shortDescription: "URI in format something like \"terracotta://host1.company.org:9410,host2.company.org:9410/cas-application\"\
+    ."
+  name: "cas.ticket.registry.ehcache3.terracotta-cluster-uri"
+  defaultValue: ""

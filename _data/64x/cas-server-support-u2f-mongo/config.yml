@@ -1,0 +1,149 @@
+---
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Name of the database to use for authentication."
+  shortDescription: "Name of the database to use for authentication."
+  name: "cas.authn.mfa.u2f.mongo.authentication-database-name"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "The connection uri to the mongodb instance. This typically takes on\
+    \ the form of {@code mongodb://user:psw@ds135522.somewhere.com:35522/db}. If not\
+    \ specified, will fallback onto other individual settings. If specified, takes\
+    \ over all other settings where applicable."
+  shortDescription: "The connection uri to the mongodb instance."
+  name: "cas.authn.mfa.u2f.mongo.client-uri"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "MongoDb database collection name to fetch and/or create."
+  shortDescription: "MongoDb database collection name to fetch and/or create."
+  name: "cas.authn.mfa.u2f.mongo.collection"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "MongoDb database instance name."
+  shortDescription: "MongoDb database instance name."
+  name: "cas.authn.mfa.u2f.mongo.database-name"
+  defaultValue: ""
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether collections should be dropped on startup and re-created."
+  shortDescription: "Whether collections should be dropped on startup and re-created."
+  name: "cas.authn.mfa.u2f.mongo.drop-collection"
+  defaultValue: false
+- required: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "MongoDb database host for authentication. Multiple host addresses\
+    \ may be defined, separated by comma. If more than one host is defined, it is\
+    \ assumed that each host contains the port as well, if any. Otherwise the configuration\
+    \ may fallback onto the port defined."
+  shortDescription: "MongoDb database host for authentication."
+  name: "cas.authn.mfa.u2f.mongo.host"
+  defaultValue: "localhost"
+- required: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "MongoDb database password for authentication."
+  shortDescription: "MongoDb database password for authentication."
+  name: "cas.authn.mfa.u2f.mongo.password"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "MongoDb database port."
+  shortDescription: "MongoDb database port."
+  name: "cas.authn.mfa.u2f.mongo.port"
+  defaultValue: 27017
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Read concern. Accepted values are: <ul>     <li>{@code LOCAL}</li>\
+    \     <li>{@code MAJORITY}</li>     <li>{@code LINEARIZABLE}</li>     <li>{@code\
+    \ SNAPSHOT}</li>     <li>{@code AVAILABLE}</li> </ul>"
+  shortDescription: "Read concern."
+  name: "cas.authn.mfa.u2f.mongo.read-concern"
+  defaultValue: "AVAILABLE"
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Read preference. Accepted values are: <ul>     <li>{@code PRIMARY}</li>\
+    \     <li>{@code SECONDARY}</li>     <li>{@code SECONDARY_PREFERRED}</li>    \
+    \ <li>{@code PRIMARY_PREFERRED}</li>     <li>{@code NEAREST}</li> </ul>"
+  shortDescription: "Read preference."
+  name: "cas.authn.mfa.u2f.mongo.read-preference"
+  defaultValue: "PRIMARY"
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "A replica set in MongoDB is a group of {@code mongod} processes that\
+    \ maintain the same data set. Replica sets provide redundancy and high availability,\
+    \ and are the basis for all production deployments."
+  shortDescription: "A replica set in MongoDB is a group of {@code mongod} processes\
+    \ that maintain the same data set."
+  name: "cas.authn.mfa.u2f.mongo.replica-set"
+  defaultValue: ""
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Sets whether writes should be retried if they fail due to a network\
+    \ error."
+  shortDescription: "Sets whether writes should be retried if they fail due to a network\
+    \ error."
+  name: "cas.authn.mfa.u2f.mongo.retry-writes"
+  defaultValue: false
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the database socket connection should be tagged with keep-alive."
+  shortDescription: "Whether the database socket connection should be tagged with\
+    \ keep-alive."
+  name: "cas.authn.mfa.u2f.mongo.socket-keep-alive"
+  defaultValue: false
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether connections require SSL."
+  shortDescription: "Whether connections require SSL."
+  name: "cas.authn.mfa.u2f.mongo.ssl-enabled"
+  defaultValue: false
+- duration: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "MongoDb database connection timeout."
+  shortDescription: "MongoDb database connection timeout."
+  name: "cas.authn.mfa.u2f.mongo.timeout"
+  defaultValue: "PT5S"
+- required: true
+  module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "MongoDb database user for authentication."
+  shortDescription: "MongoDb database user for authentication."
+  name: "cas.authn.mfa.u2f.mongo.user-id"
+  defaultValue: ""
+- module: "cas-server-support-u2f-mongo"
+  owner: "org.apereo.cas.configuration.model.support.mfa.u2f.U2FMongoDbMultifactorAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Write concern describes the level of acknowledgement requested from\
+    \ MongoDB for write operations to a standalone mongo db or to replica sets or\
+    \ to sharded clusters. In sharded clusters, mongo db instances will pass the write\
+    \ concern on to the shards."
+  shortDescription: "Write concern describes the level of acknowledgement requested\
+    \ from MongoDB for write operations to a standalone mongo db or to replica sets\
+    \ or to sharded clusters."
+  name: "cas.authn.mfa.u2f.mongo.write-concern"
+  defaultValue: "ACKNOWLEDGED"

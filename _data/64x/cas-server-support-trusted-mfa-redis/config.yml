@@ -1,0 +1,86 @@
+---
+- duration: true
+  module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.String"
+  description: "Connection timeout."
+  shortDescription: "Connection timeout."
+  name: "cas.authn.mfa.trusted.redis.connect-timeout"
+  defaultValue: "PT10S"
+- required: true
+  module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.Integer"
+  description: "Database index used by the connection factory."
+  shortDescription: "Database index used by the connection factory."
+  name: "cas.authn.mfa.trusted.redis.database"
+  defaultValue: 0
+- required: true
+  module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.Boolean"
+  description: "Whether the module is enabled or not, defaults to true."
+  shortDescription: "Whether the module is enabled or not, defaults to true."
+  name: "cas.authn.mfa.trusted.redis.enabled"
+  defaultValue: true
+- required: true
+  module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.String"
+  description: "Redis server host."
+  shortDescription: "Redis server host."
+  name: "cas.authn.mfa.trusted.redis.host"
+  defaultValue: "localhost"
+- required: true
+  module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.String"
+  description: "Login password of the redis server."
+  shortDescription: "Login password of the redis server."
+  name: "cas.authn.mfa.trusted.redis.password"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.Integer"
+  description: "Redis server port."
+  shortDescription: "Redis server port."
+  name: "cas.authn.mfa.trusted.redis.port"
+  defaultValue: 6379
+- module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "org.apereo.cas.configuration.model.support.redis.BaseRedisProperties$RedisReadFromTypes"
+  description: "Setting that describes how Lettuce routes read operations to replica\
+    \ nodes. Note that modes referencing MASTER/SLAVE are deprecated (but still supported)\
+    \ in the Lettuce redis client dependency so migrate config to UPSTREAM/REPLICA.\n\
+    Available values are as follows:\n<ul><li>{@code UPSTREAM}: Read from the current\
+    \ upstream node.</li><li>{@code UPSTREAMPREFERRED}: Read from the upstream node,\
+    \ but if it is unavailable, read from replica nodes.</li><li>{@code MASTER}: Read\
+    \ from the current upstream node.</li><li>{@code MASTERPREFERRED}: Read from the\
+    \ upstream node, but if it is unavailable, read from replica nodes.</li><li>{@code\
+    \ SLAVE}: Read from replica nodes.</li><li>{@code SLAVEPREFERRED}:  Read from\
+    \ the replica nodes, but if none is unavailable, read from the upstream node.</li><li>{@code\
+    \ REPLICA}: Read from replica nodes.</li><li>{@code REPLICAPREFERRED}: Read from\
+    \ the replica nodes, but if none is unavailable, read from the upstream node.</li><li>{@code\
+    \ ANY}: Read from any node of the cluster.</li><li>{@code ANYREPLICA}: Read from\
+    \ any replica node of the cluster.</li><li>{@code NEAREST}: Read from the nearest\
+    \ node.</li></ul>"
+  shortDescription: "Setting that describes how Lettuce routes read operations to\
+    \ replica nodes."
+  name: "cas.authn.mfa.trusted.redis.read-from"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.String"
+  description: "Command timeout."
+  shortDescription: "Command timeout."
+  name: "cas.authn.mfa.trusted.redis.timeout"
+  defaultValue: "PT60S"
+- module: "cas-server-support-trusted-mfa-redis"
+  owner: "org.apereo.cas.configuration.model.support.mfa.trusteddevice.RedisTrustedDevicesMultifactorProperties"
+  type: "java.lang.Boolean"
+  description: "Whether or not to use SSL for connection factory."
+  shortDescription: "Whether or not to use SSL for connection factory."
+  name: "cas.authn.mfa.trusted.redis.use-ssl"
+  defaultValue: false

@@ -1,0 +1,17 @@
+---
+- method: "GET"
+  path: "samlValidate"
+  name: "samlValidate"
+  endpointType: "Endpoint"
+  signature: "SamlValidateEndpoint.handle(java.lang.String,java.lang.String,java.lang.String)"
+  owner: "org.apereo.cas.support.saml.web.SamlValidateEndpoint"
+  returnType: "Map"
+  casEndpoint: true
+  summary: "Handle validation request and produce saml1 payload."
+  parameters:
+  - name: "username"
+    required: true
+  - name: "password"
+    required: true
+  - name: "service"
+    required: true

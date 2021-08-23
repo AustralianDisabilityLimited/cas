@@ -1,0 +1,186 @@
+---
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether webflow auto-configuration should be enabled."
+  shortDescription: "Whether webflow auto-configuration should be enabled."
+  name: "cas.authn.pm.webflow.enabled"
+  defaultValue: true
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Integer"
+  description: "The order in which the webflow is configured."
+  shortDescription: "The order in which the webflow is configured."
+  name: "cas.authn.pm.webflow.order"
+  defaultValue: 0
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether webflow auto-configuration should be enabled."
+  shortDescription: "Whether webflow auto-configuration should be enabled."
+  name: "cas.authn.spnego.webflow.enabled"
+  defaultValue: true
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Integer"
+  description: "The order in which the webflow is configured."
+  shortDescription: "The order in which the webflow is configured."
+  name: "cas.authn.spnego.webflow.order"
+  defaultValue: 0
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether webflow auto-configuration should be enabled."
+  shortDescription: "Whether webflow auto-configuration should be enabled."
+  name: "cas.authn.token.webflow.enabled"
+  defaultValue: true
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Integer"
+  description: "The order in which the webflow is configured."
+  shortDescription: "The order in which the webflow is configured."
+  name: "cas.authn.token.webflow.order"
+  defaultValue: 0
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether webflow auto-configuration should be enabled."
+  shortDescription: "Whether webflow auto-configuration should be enabled."
+  name: "cas.consent.webflow.enabled"
+  defaultValue: true
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Integer"
+  description: "The order in which the webflow is configured."
+  shortDescription: "The order in which the webflow is configured."
+  name: "cas.consent.webflow.order"
+  defaultValue: 0
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Boolean"
+  description: "Whether webflow auto-configuration should be enabled."
+  shortDescription: "Whether webflow auto-configuration should be enabled."
+  name: "cas.webflow.auto-configuration.enabled"
+  defaultValue: true
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowAutoConfigurationProperties"
+  type: "java.lang.Integer"
+  description: "The order in which the webflow is configured."
+  shortDescription: "The order in which the webflow is configured."
+  name: "cas.webflow.auto-configuration.order"
+  defaultValue: 0
+- required: true
+  module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.GroovyWebflowProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.webflow.groovy.location"
+  defaultValue: ""
+- required: true
+  module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.GroovyWebflowLoginDecoratorProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.webflow.login-decorator.groovy.location"
+  defaultValue: ""
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.RestfulWebflowLoginDecoratorProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ password for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the password for authentication."
+  name: "cas.webflow.login-decorator.rest.basic-auth-password"
+  defaultValue: ""
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.RestfulWebflowLoginDecoratorProperties"
+  type: "java.lang.String"
+  description: "If REST endpoint is protected via basic authentication, specify the\
+    \ username for authentication."
+  shortDescription: "If REST endpoint is protected via basic authentication, specify\
+    \ the username for authentication."
+  name: "cas.webflow.login-decorator.rest.basic-auth-username"
+  defaultValue: ""
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.RestfulWebflowLoginDecoratorProperties"
+  type: "java.util.Map<java.lang.String,java.lang.String>"
+  description: "Headers, defined as a Map, to include in the request when making the\
+    \ REST call. Will overwrite any header that CAS is pre-defined to send and include\
+    \ in the request. Key in the map should be the header name and the value in the\
+    \ map should be the header value."
+  shortDescription: "Headers, defined as a Map, to include in the request when making\
+    \ the REST call."
+  name: "cas.webflow.login-decorator.rest.headers"
+  defaultValue: ""
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.RestfulWebflowLoginDecoratorProperties"
+  type: "java.lang.String"
+  description: "HTTP method to use when contacting the rest endpoint. Examples include\
+    \ {@code GET, POST}, etc."
+  shortDescription: "HTTP method to use when contacting the rest endpoint."
+  name: "cas.webflow.login-decorator.rest.method"
+  defaultValue: "GET"
+- required: true
+  module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.RestfulWebflowLoginDecoratorProperties"
+  type: "java.lang.String"
+  description: "The endpoint URL to contact and retrieve attributes."
+  shortDescription: "The endpoint URL to contact and retrieve attributes."
+  name: "cas.webflow.login-decorator.rest.url"
+  defaultValue: ""
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowSessionManagementProperties"
+  type: "java.lang.Boolean"
+  description: "Whether or not the snapshots should be compressed."
+  shortDescription: "Whether or not the snapshots should be compressed."
+  name: "cas.webflow.session.compress"
+  defaultValue: false
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowSessionManagementProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "If sessions are to be replicated via Hazelcast, defines the location\
+    \ of a {@code hazelcast.xml} file that defines how state should be replicated.\
+    \ Only relevant if session storage is done on the server."
+  shortDescription: "If sessions are to be replicated via Hazelcast, defines the location\
+    \ of a {@code hazelcast.xml} file that defines how state should be replicated."
+  name: "cas.webflow.session.hz-location"
+  defaultValue: ""
+- duration: true
+  module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowSessionManagementProperties"
+  type: "java.lang.String"
+  description: "Sets the time period that can elapse before a timeout occurs on an\
+    \ attempt to acquire a conversation lock. The default is 30 seconds. Only relevant\
+    \ if session storage is done on the server."
+  shortDescription: "Sets the time period that can elapse before a timeout occurs\
+    \ on an attempt to acquire a conversation lock."
+  name: "cas.webflow.session.lock-timeout"
+  defaultValue: "PT30S"
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowSessionManagementProperties"
+  type: "java.lang.Integer"
+  description: "Using the maxConversations property, you can limit the number of concurrently\
+    \ active conversations allowed in a single session. If the maximum is exceeded,\
+    \ the conversation manager will automatically end the oldest conversation. The\
+    \ default is 5, which should be fine for most situations. Set it to -1 for no\
+    \ limit. Setting maxConversations to 1 allows easy resource cleanup in situations\
+    \ where there should only be one active conversation per session. Only relevant\
+    \ if session storage is done on the server."
+  shortDescription: "Using the maxConversations property, you can limit the number\
+    \ of concurrently active conversations allowed in a single session."
+  name: "cas.webflow.session.max-conversations"
+  defaultValue: 5
+- module: "cas-server-core-webflow"
+  owner: "org.apereo.cas.configuration.model.core.web.flow.WebflowSessionManagementProperties"
+  type: "java.lang.Boolean"
+  description: "Controls whether spring webflow sessions are to be stored server-side\
+    \ or client side. By default state is managed on the client side, that is also\
+    \ signed and encrypted."
+  shortDescription: "Controls whether spring webflow sessions are to be stored server-side\
+    \ or client side."
+  name: "cas.webflow.session.storage"
+  defaultValue: false

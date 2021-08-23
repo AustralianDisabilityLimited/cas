@@ -1,0 +1,223 @@
+---
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Boolean"
+  description: "Whether google reCAPTCHA should be enabled."
+  shortDescription: "Whether google reCAPTCHA should be enabled."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.enabled"
+  defaultValue: true
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Boolean"
+  description: "Whether google reCAPTCHA invisible should be enabled."
+  shortDescription: "Whether google reCAPTCHA invisible should be enabled."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.invisible"
+  defaultValue: false
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA badge position (only if invisible is enabled).\
+    \ Accepted values are: <ul> <li>{@code bottomright}: bottom right corner, default\
+    \ value.</li> <li>{@code bottomleft}: bottom left corner</li> <li>{@code inline}:\
+    \ allows to control the CSS.</li> </ul>"
+  shortDescription: "The google reCAPTCHA badge position (only if invisible is enabled)."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.position"
+  defaultValue: "bottomright"
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Double"
+  description: "reCAPTCHA v3 returns a score (1.0 is very likely a good interaction,\
+    \ 0.0 is very likely a bot). reCAPTCHA learns by seeing real traffic on your site.\
+    \ For this reason, scores in a staging environment or soon after implementing\
+    \ may differ from production. As reCAPTCHA v3 doesn't ever interrupt the user\
+    \ flow, you can first run reCAPTCHA without taking action and then decide on thresholds\
+    \ by looking at your traffic in the admin console. By default, you can use a threshold\
+    \ of 0.5."
+  shortDescription: "reCAPTCHA v3 returns a score (1.0 is very likely a good interaction,\
+    \ 0.0 is very likely a bot). reCAPTCHA learns by seeing real traffic on your site."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.score"
+  defaultValue: 0.5
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA site secret."
+  shortDescription: "The google reCAPTCHA site secret."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.secret"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA site key."
+  shortDescription: "The google reCAPTCHA site key."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.site-key"
+  defaultValue: ""
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA endpoint for verification of tokens and input."
+  shortDescription: "The google reCAPTCHA endpoint for verification of tokens and\
+    \ input."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.verify-url"
+  defaultValue: "https://www.google.com/recaptcha/api/siteverify"
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties$RecaptchaVersions"
+  description: "Indicate the version of the recaptcha api. Accepted values are: {@code\
+    \ V2, V3}.\nAvailable values are as follows:\n<ul><li>{@code GOOGLE_RECAPTCHA_V2}:\
+    \ V2 version of the recaptcha API.</li><li>{@code GOOGLE_RECAPTCHA_V3}: V3 version\
+    \ of the recaptcha API.</li><li>{@code HCAPTCHA}: hCaptcha.</li></ul>"
+  shortDescription: "Indicate the version of the recaptcha api."
+  name: "cas.authn.pm.forgot-username.google-recaptcha.version"
+  defaultValue: "GOOGLE_RECAPTCHA_V2"
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Boolean"
+  description: "Whether google reCAPTCHA should be enabled."
+  shortDescription: "Whether google reCAPTCHA should be enabled."
+  name: "cas.authn.pm.google-recaptcha.enabled"
+  defaultValue: true
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Boolean"
+  description: "Whether google reCAPTCHA invisible should be enabled."
+  shortDescription: "Whether google reCAPTCHA invisible should be enabled."
+  name: "cas.authn.pm.google-recaptcha.invisible"
+  defaultValue: false
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA badge position (only if invisible is enabled).\
+    \ Accepted values are: <ul> <li>{@code bottomright}: bottom right corner, default\
+    \ value.</li> <li>{@code bottomleft}: bottom left corner</li> <li>{@code inline}:\
+    \ allows to control the CSS.</li> </ul>"
+  shortDescription: "The google reCAPTCHA badge position (only if invisible is enabled)."
+  name: "cas.authn.pm.google-recaptcha.position"
+  defaultValue: "bottomright"
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Double"
+  description: "reCAPTCHA v3 returns a score (1.0 is very likely a good interaction,\
+    \ 0.0 is very likely a bot). reCAPTCHA learns by seeing real traffic on your site.\
+    \ For this reason, scores in a staging environment or soon after implementing\
+    \ may differ from production. As reCAPTCHA v3 doesn't ever interrupt the user\
+    \ flow, you can first run reCAPTCHA without taking action and then decide on thresholds\
+    \ by looking at your traffic in the admin console. By default, you can use a threshold\
+    \ of 0.5."
+  shortDescription: "reCAPTCHA v3 returns a score (1.0 is very likely a good interaction,\
+    \ 0.0 is very likely a bot). reCAPTCHA learns by seeing real traffic on your site."
+  name: "cas.authn.pm.google-recaptcha.score"
+  defaultValue: 0.5
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA site secret."
+  shortDescription: "The google reCAPTCHA site secret."
+  name: "cas.authn.pm.google-recaptcha.secret"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA site key."
+  shortDescription: "The google reCAPTCHA site key."
+  name: "cas.authn.pm.google-recaptcha.site-key"
+  defaultValue: ""
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA endpoint for verification of tokens and input."
+  shortDescription: "The google reCAPTCHA endpoint for verification of tokens and\
+    \ input."
+  name: "cas.authn.pm.google-recaptcha.verify-url"
+  defaultValue: "https://www.google.com/recaptcha/api/siteverify"
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties$RecaptchaVersions"
+  description: "Indicate the version of the recaptcha api. Accepted values are: {@code\
+    \ V2, V3}.\nAvailable values are as follows:\n<ul><li>{@code GOOGLE_RECAPTCHA_V2}:\
+    \ V2 version of the recaptcha API.</li><li>{@code GOOGLE_RECAPTCHA_V3}: V3 version\
+    \ of the recaptcha API.</li><li>{@code HCAPTCHA}: hCaptcha.</li></ul>"
+  shortDescription: "Indicate the version of the recaptcha api."
+  name: "cas.authn.pm.google-recaptcha.version"
+  defaultValue: "GOOGLE_RECAPTCHA_V2"
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Boolean"
+  description: "Whether google reCAPTCHA should be enabled."
+  shortDescription: "Whether google reCAPTCHA should be enabled."
+  name: "cas.google-recaptcha.enabled"
+  defaultValue: true
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Boolean"
+  description: "Whether google reCAPTCHA invisible should be enabled."
+  shortDescription: "Whether google reCAPTCHA invisible should be enabled."
+  name: "cas.google-recaptcha.invisible"
+  defaultValue: false
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA badge position (only if invisible is enabled).\
+    \ Accepted values are: <ul> <li>{@code bottomright}: bottom right corner, default\
+    \ value.</li> <li>{@code bottomleft}: bottom left corner</li> <li>{@code inline}:\
+    \ allows to control the CSS.</li> </ul>"
+  shortDescription: "The google reCAPTCHA badge position (only if invisible is enabled)."
+  name: "cas.google-recaptcha.position"
+  defaultValue: "bottomright"
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.Double"
+  description: "reCAPTCHA v3 returns a score (1.0 is very likely a good interaction,\
+    \ 0.0 is very likely a bot). reCAPTCHA learns by seeing real traffic on your site.\
+    \ For this reason, scores in a staging environment or soon after implementing\
+    \ may differ from production. As reCAPTCHA v3 doesn't ever interrupt the user\
+    \ flow, you can first run reCAPTCHA without taking action and then decide on thresholds\
+    \ by looking at your traffic in the admin console. By default, you can use a threshold\
+    \ of 0.5."
+  shortDescription: "reCAPTCHA v3 returns a score (1.0 is very likely a good interaction,\
+    \ 0.0 is very likely a bot). reCAPTCHA learns by seeing real traffic on your site."
+  name: "cas.google-recaptcha.score"
+  defaultValue: 0.5
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA site secret."
+  shortDescription: "The google reCAPTCHA site secret."
+  name: "cas.google-recaptcha.secret"
+  defaultValue: ""
+- required: true
+  module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA site key."
+  shortDescription: "The google reCAPTCHA site key."
+  name: "cas.google-recaptcha.site-key"
+  defaultValue: ""
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "java.lang.String"
+  description: "The google reCAPTCHA endpoint for verification of tokens and input."
+  shortDescription: "The google reCAPTCHA endpoint for verification of tokens and\
+    \ input."
+  name: "cas.google-recaptcha.verify-url"
+  defaultValue: "https://www.google.com/recaptcha/api/siteverify"
+- module: "cas-server-support-captcha"
+  owner: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties"
+  type: "org.apereo.cas.configuration.model.support.captcha.GoogleRecaptchaProperties$RecaptchaVersions"
+  description: "Indicate the version of the recaptcha api. Accepted values are: {@code\
+    \ V2, V3}.\nAvailable values are as follows:\n<ul><li>{@code GOOGLE_RECAPTCHA_V2}:\
+    \ V2 version of the recaptcha API.</li><li>{@code GOOGLE_RECAPTCHA_V3}: V3 version\
+    \ of the recaptcha API.</li><li>{@code HCAPTCHA}: hCaptcha.</li></ul>"
+  shortDescription: "Indicate the version of the recaptcha api."
+  name: "cas.google-recaptcha.version"
+  defaultValue: "GOOGLE_RECAPTCHA_V2"

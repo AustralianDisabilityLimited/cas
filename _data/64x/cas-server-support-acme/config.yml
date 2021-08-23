@@ -1,0 +1,55 @@
+---
+- required: true
+  module: "cas-server-support-acme"
+  owner: "org.apereo.cas.configuration.model.support.acme.AcmeProperties"
+  type: "java.util.List<java.lang.String>"
+  description: "List of domains or sub domains that are requesting a certificate renewal."
+  shortDescription: "List of domains or sub domains that are requesting a certificate\
+    \ renewal."
+  name: "cas.acme.domains"
+  defaultValue: ""
+- module: "cas-server-support-acme"
+  owner: "org.apereo.cas.configuration.model.support.acme.AcmeProperties"
+  type: "java.lang.Integer"
+  description: "Indicate the key length/size used when requesting/generating keys."
+  shortDescription: "Indicate the key length/size used when requesting/generating\
+    \ keys."
+  name: "cas.acme.key-size"
+  defaultValue: 2048
+- module: "cas-server-support-acme"
+  owner: "org.apereo.cas.configuration.model.support.acme.AcmeProperties"
+  type: "java.lang.Integer"
+  description: "Number of attempts to retry when executing certificate orders or checking\
+    \ for status of an existing order or challenge acknowledgement."
+  shortDescription: "Number of attempts to retry when executing certificate orders\
+    \ or checking for status of an existing order or challenge acknowledgement."
+  name: "cas.acme.retry-attempts"
+  defaultValue: 3
+- duration: true
+  module: "cas-server-support-acme"
+  owner: "org.apereo.cas.configuration.model.support.acme.AcmeProperties"
+  type: "java.lang.String"
+  description: "Delay interval between to retry attempts when executing certificate\
+    \ orders or checking for status of an existing order or challenge acknowledgement."
+  shortDescription: "Delay interval between to retry attempts when executing certificate\
+    \ orders or checking for status of an existing order or challenge acknowledgement."
+  name: "cas.acme.retry-internal"
+  defaultValue: "PT2S"
+- required: true
+  module: "cas-server-support-acme"
+  owner: "org.apereo.cas.configuration.model.support.acme.AcmeProperties"
+  type: "java.lang.String"
+  description: "Server url to contact, when requesting certificates. Use {@code acme://letsencrypt.org}\
+    \ for production."
+  shortDescription: "Server url to contact, when requesting certificates."
+  name: "cas.acme.server-url"
+  defaultValue: "acme://letsencrypt.org/staging"
+- required: true
+  module: "cas-server-support-acme"
+  owner: "org.apereo.cas.configuration.model.support.acme.AcmeProperties"
+  type: "java.lang.Boolean"
+  description: "Flag that indicates ACME terms of use has been accepted by the user."
+  shortDescription: "Flag that indicates ACME terms of use has been accepted by the\
+    \ user."
+  name: "cas.acme.terms-of-use-accepted"
+  defaultValue: false

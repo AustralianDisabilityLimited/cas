@@ -1,0 +1,28 @@
+---
+- required: true
+  module: "cas-server-support-authentication"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GroovyAuthenticationHandlerResolutionProperties"
+  type: "org.springframework.core.io.Resource"
+  description: "The location of the resource. Resources can be URLS, or files found\
+    \ either on the classpath or outside somewhere in the file system."
+  shortDescription: "The location of the resource."
+  name: "cas.authn.core.groovy-authentication-resolution.location"
+  defaultValue: ""
+- module: "cas-server-support-authentication"
+  owner: "org.apereo.cas.configuration.model.core.authentication.GroovyAuthenticationHandlerResolutionProperties"
+  type: "java.lang.Integer"
+  description: "The execution order of this resolver in the chain of authentication\
+    \ handler resolvers."
+  shortDescription: "The execution order of this resolver in the chain of authentication\
+    \ handler resolvers."
+  name: "cas.authn.core.groovy-authentication-resolution.order"
+  defaultValue: 0
+- module: "cas-server-support-authentication"
+  owner: "org.apereo.cas.configuration.model.core.authentication.RegisteredServiceAuthenticationHandlerResolutionProperties"
+  type: "java.lang.Integer"
+  description: "The execution order of this resolver in the chain of authentication\
+    \ handler resolvers."
+  shortDescription: "The execution order of this resolver in the chain of authentication\
+    \ handler resolvers."
+  name: "cas.authn.core.service-authentication-resolution.order"
+  defaultValue: 0

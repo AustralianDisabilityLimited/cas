@@ -1,0 +1,100 @@
+---
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Activated attribute repository identifiers that should be used for\
+    \ fetching attributes if attribute resolution is enabled. The list here may include\
+    \ identifiers separated by comma."
+  shortDescription: "Activated attribute repository identifiers that should be used\
+    \ for fetching attributes if attribute resolution is enabled."
+  name: "cas.authn.trusted.active-attribute-repository-ids"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "org.apereo.cas.util.model.TriStateBoolean"
+  description: "Whether attribute repositories should be contacted to fetch person\
+    \ attributes. Defaults to true if not set."
+  shortDescription: "Whether attribute repositories should be contacted to fetch person\
+    \ attributes."
+  name: "cas.authn.trusted.attribute-resolution-enabled"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Indicates the name of the authentication handler."
+  shortDescription: "Indicates the name of the authentication handler."
+  name: "cas.authn.trusted.name"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "java.lang.Integer"
+  description: "Order of the authentication handler in the chain."
+  shortDescription: "Order of the authentication handler in the chain."
+  name: "cas.authn.trusted.order"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Attribute name to use to indicate the identifier of the principal\
+    \ constructed. If the attribute is blank or has no values, the default principal\
+    \ id will be used determined by the underlying authentication engine. The principal\
+    \ id attribute usually is removed from the collection of attributes collected,\
+    \ though this behavior depends on the schematics of the underlying authentication\
+    \ strategy."
+  shortDescription: "Attribute name to use to indicate the identifier of the principal\
+    \ constructed."
+  name: "cas.authn.trusted.principal-attribute"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "java.lang.String"
+  description: "In the event that the principal resolution engine resolves more than\
+    \ one principal, (specially if such principals in the chain have different identifiers),\
+    \ this setting determines strategy by which the principal id would be chosen from\
+    \ the chain. Accepted values are: {@code last}, {@code first}."
+  shortDescription: "In the event that the principal resolution engine resolves more\
+    \ than one principal, (specially if such principals in the chain have different\
+    \ identifiers), this setting determines strategy by which the principal id would\
+    \ be chosen from the chain."
+  name: "cas.authn.trusted.principal-resolution-conflict-strategy"
+  defaultValue: "last"
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "org.apereo.cas.util.model.TriStateBoolean"
+  description: "When true, throws an error back indicating that principal resolution\
+    \ has failed and no principal can be found based on the authentication requirements.\
+    \ Otherwise, logs the condition as an error without raising a catastrophic error."
+  shortDescription: "When true, throws an error back indicating that principal resolution\
+    \ has failed and no principal can be found based on the authentication requirements."
+  name: "cas.authn.trusted.principal-resolution-failure-fatal"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "java.lang.String"
+  description: "Indicates the name of the request header that may be extracted from\
+    \ the request as the indicated authenticated userid from the remote authn system."
+  shortDescription: "Indicates the name of the request header that may be extracted\
+    \ from the request as the indicated authenticated userid from the remote authn\
+    \ system."
+  name: "cas.authn.trusted.remote-principal-header"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "org.apereo.cas.util.model.TriStateBoolean"
+  description: "Return a null principal object if no attributes can be found for the\
+    \ principal."
+  shortDescription: "Return a null principal object if no attributes can be found\
+    \ for the principal."
+  name: "cas.authn.trusted.return-null"
+  defaultValue: ""
+- module: "cas-server-support-trusted-webflow"
+  owner: "org.apereo.cas.configuration.model.support.trusted.TrustedAuthenticationProperties"
+  type: "org.apereo.cas.util.model.TriStateBoolean"
+  description: "Uses an existing principal id that may have already been established\
+    \ in order to run person directory queries. This is generally useful in situations\
+    \ where authentication is delegated to an external identity provider and a principal\
+    \ is first established to then query an attribute source."
+  shortDescription: "Uses an existing principal id that may have already been established\
+    \ in order to run person directory queries."
+  name: "cas.authn.trusted.use-existing-principal-id"
+  defaultValue: ""

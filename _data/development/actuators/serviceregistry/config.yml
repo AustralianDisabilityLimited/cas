@@ -1,0 +1,19 @@
+---
+- method: "GET"
+  path: "serviceregistry"
+  name: "serviceregistry"
+  endpointType: "Endpoint"
+  signature: "ServiceRegistryEndpoint.getStatus()"
+  owner: "org.springframework.cloud.client.serviceregistry.endpoint.ServiceRegistryEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: false
+  summary: "Control the status of the Spring Cloud Service Registry."
+- method: "POST"
+  path: "serviceregistry"
+  name: "serviceregistry"
+  endpointType: "Endpoint"
+  signature: "ServiceRegistryEndpoint.setStatus(java.lang.String)"
+  owner: "org.springframework.cloud.client.serviceregistry.endpoint.ServiceRegistryEndpoint"
+  returnType: "ResponseEntity"
+  casEndpoint: false
+  summary: "Control the status of the Spring Cloud Service Registry."

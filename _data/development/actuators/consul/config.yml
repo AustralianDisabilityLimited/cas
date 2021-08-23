@@ -1,0 +1,10 @@
+---
+- method: "GET"
+  path: "consul"
+  name: "consul"
+  endpointType: "Endpoint"
+  signature: "ConsulEndpoint.invoke()"
+  owner: "org.springframework.cloud.consul.ConsulEndpoint"
+  returnType: "ConsulData"
+  casEndpoint: false
+  summary: "Invokes Consul to output services, nodes, and agents."

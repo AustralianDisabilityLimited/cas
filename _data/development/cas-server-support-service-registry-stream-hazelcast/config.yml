@@ -1,0 +1,15 @@
+---
+- duration: true
+  module: "cas-server-support-service-registry-stream-hazelcast"
+  owner: "org.apereo.cas.configuration.model.support.services.stream.hazelcast.StreamServicesHazelcastProperties"
+  type: "java.lang.String"
+  description: "Duration that indicates how long should items be kept in the hazelcast\
+    \ cache. Note that generally this number needs to be short as once an item is\
+    \ delivered to a target, it is explicitly removed from the cache/queue. This duration\
+    \ needs to be adjusted if the latency between the CAS nodes in the cluster is\
+    \ too large. Having too short a value will cause the record to expire before it\
+    \ reaches other members of the cluster."
+  shortDescription: "Duration that indicates how long should items be kept in the\
+    \ hazelcast cache."
+  name: "cas.service-registry.stream.hazelcast.duration"
+  defaultValue: "PT1M"

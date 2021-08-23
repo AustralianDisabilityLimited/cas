@@ -1,0 +1,22 @@
+---
+- required: true
+  module: "cas-server-support-ws-idp"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationIdentityProviderProperties"
+  type: "java.lang.String"
+  description: "At this point, by default security token service’s endpoint operate\
+    \ using a single realm configuration and identity provider configuration is only\
+    \ able to recognize and request tokens for a single realm. Registration of clients\
+    \ need to ensure this value is matched."
+  shortDescription: "At this point, by default security token service’s endpoint operate\
+    \ using a single realm configuration and identity provider configuration is only\
+    \ able to recognize and request tokens for a single realm."
+  name: "cas.authn.wsfed-idp.idp.realm"
+  defaultValue: "urn:org:apereo:cas:ws:idp:realm-CAS"
+- required: true
+  module: "cas-server-support-ws-idp"
+  owner: "org.apereo.cas.configuration.model.support.wsfed.WsFederationIdentityProviderProperties"
+  type: "java.lang.String"
+  description: "Realm name."
+  shortDescription: "Realm name."
+  name: "cas.authn.wsfed-idp.idp.realm-name"
+  defaultValue: "CAS"
